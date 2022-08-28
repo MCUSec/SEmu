@@ -1,0 +1,367 @@
+4002_C000; Module Configuration Register (SPI0_MCR);32;R/W;0000_4001;Contains bits to configure various attributes associated with the module operations.
+4002_C008; Transfer Count Register (SPI0_TCR);32;R/W;0000_0000;50.3.2/1454
+4002_C00C; Clock and Transfer Attributes Register (In Master Mode)(SPI0_CTAR0);32;R/W;7800_0000;50.3.3/1454 
+4002_C00C; Clock and Transfer Attributes Register (In Slave Mode)(SPI0_CTAR0_SLAVE);32;R/W;7800_0000;50.3.4/1459 
+4002_C010; Clock and Transfer Attributes Register (In Master Mode)(SPI0_CTAR1);32;R/W;7800_0000;50.3.3/1454 
+4002_C02C; Status Register (SPI0_SR);32;R/W;0200_0000;MUST CHECK
+4002_C030; DMA/Interrupt Request Select and Enable Register(SPI0_RSER); 32;R/W;0000_0000;50.3.6/1463 
+4002_C034; PUSH TX FIFO Register In Master Mode (SPI0_PUSHR);32;R/W;0000_0000;50.3.7/1465
+4002_C034; PUSH TX FIFO Register In Slave Mode(SPI0_PUSHR_SLAVE); 32;R/W;0000_0000;50.3.8/1466 
+4002_C038; POP RX FIFO Register (SPI0_POPR);32;R;0000_0000;50.3.9/1467
+4002_C03C; Transmit FIFO Registers (SPI0_TXFR0);32;R;0000_0000;50.3.10/ 1468
+4002_C040; Transmit FIFO Registers (SPI0_TXFR1);32;R;0000_0000;50.3.10/ 1468
+4002_C044; Transmit FIFO Registers (SPI0_TXFR2);32;R;0000_0000h;50.3.10/ 1468
+4002_C048; Transmit FIFO Registers (SPI0_TXFR3);32;R;0000_0000h;50.3.10/ 1468
+4002_C07C; Receive FIFO Registers (SPI0_RXFR0);32;R;0000_0000h;50.3.11/ 1468
+4002_C080; Receive FIFO Registers (SPI0_RXFR1);32;R;0000_0000h;50.3.11/ 1468
+4002_C084; Receive FIFO Registers (SPI0_RXFR2);32;R;0000_0000h;50.3.11/ 1468
+4002_C088; Receive FIFO Registers (SPI0_RXFR3);32;R;0000_0000h;50.3.11/ 1468
+4002_D000; Module Configuration Register (SPI1_MCR);32;R/W;0000_4001h;50.3.1/1451
+4002_D008; Transfer Count Register (SPI1_TCR);32;R/W;0000_0000h;50.3.2/1454
+4002_D00C; Clock and Transfer Attributes Register (In Master Mode)(SPI1_CTAR0);32;R/W;7800_0000h;50.3.3/1454 
+4002_D00C; Clock and Transfer Attributes Register (In Slave Mode)(SPI1_CTAR0_SLAVE);32;R/W;7800_0000h;50.3.4/1459 
+4002_D010; Clock and Transfer Attributes Register (In Master Mode)(SPI1_CTAR1);32;R/W;7800_0000h;50.3.3/1454 
+4002_D02C; Status Register (SPI1_SR);32;R/W;0200_0000h;MUST CHECK
+4002_D030; DMA/Interrupt Request Select and Enable Register(SPI1_RSER);32;R/W;0000_0000h;50.3.6/1463 
+4002_D034; PUSH TX FIFO Register In Master Mode (SPI1_PUSHR);32;R/W;0000_0000h;50.3.6/1463
+4002_D034; PUSH TX FIFO Register In Slave Mode (SPI1_PUSHR_SLAVE);32;R/W;0000_0000h;50.3.6/1463
+4002_D038; POP RX FIFO Register (SPI1_POPR);32;R;0000_0000h;50.3.6/1463
+4002_D03C; Transmit FIFO Registers (SPI1_TXFR0);32;R;0000_0000h;50.3.6/1463
+4002_D040; Transmit FIFO Registers (SPI1_TXFR1);32;R;0000_0000h;50.3.6/1463
+4002_D044; Transmit FIFO Registers (SPI1_TXFR2);32;R;0000_0000h;50.3.6/1463
+4002_D048; Transmit FIFO Registers (SPI1_TXFR3);32;R;0000_0000h;50.3.6/1463
+4002_D07C; Receive FIFO Registers (SPI1_RXFR0);32;R;0000_0000h;50.3.6/1463
+4002_D080; Receive FIFO Registers (SPI1_RXFR1);32;R;0000_0000h;50.3.6/1463
+4002_D084; Receive FIFO Registers (SPI1_RXFR2);32;R;0000_0000h;50.3.6/1463
+4002_D088; Receive FIFO Registers (SPI1_RXFR3);32;R;0000_0000h;50.3.6/1463
+400A_C000; Module Configuration Register (SPI2_MCR);32;R/W;0000_4001h;50.3.1/1451
+400A_C008; Transfer Count Register (SPI2_TCR);32;R/W;0000_0000h;50.3.2/1454
+400A_C00C; Clock and Transfer Attributes Register (In Master Mode)(SPI2_CTAR0);32;R/W;7800_0000h;50.3.3/1454 
+400A_C00C; Clock and Transfer Attributes Register (In Slave Mode)(SPI2_CTAR0_SLAVE);32;R/W;7800_0000h;50.3.4/1459 
+400A_C010; Clock and Transfer Attributes Register (In Master Mode)(SPI2_CTAR1);32;R/W;7800_0000h;50.3.3/1454 
+400A_C02C; Status Register (SPI2_SR);32;R/W;0200_0000h;MUST CHECK
+400A_C030; DMA/Interrupt Request Select and Enable Register(SPI2_RSER);32;R/W;0000_0000h;50.3.6/1463 
+400A_C034; PUSH TX FIFO Register In Master Mode (SPI2_PUSHR);32;R/W;0000_0000h;50.3.7/1465
+400A_C034; PUSH TX FIFO Register In Slave Mode(SPI2_PUSHR_SLAVE);32;R/W;0000_0000h;50.3.8/1466 
+400A_C038; POP RX FIFO Register (SPI2_POPR);32;R;0000_0000h;50.3.9/1467
+400A_C03C; Transmit FIFO Registers (SPI2_TXFR0);32;R;0000_0000h;50.3.10/ 1468
+400A_C040; Transmit FIFO Registers (SPI2_TXFR1);32;R;0000_0000h;50.3.10/ 1468
+400A_C044; Transmit FIFO Registers (SPI2_TXFR2);32;R;0000_0000h;50.3.10/ 1468
+400A_C048; Transmit FIFO Registers (SPI2_TXFR3);32;R;0000_0000h;50.3.10/ 1468
+400A_C07C; Receive FIFO Registers (SPI2_RXFR0);32;R;0000_0000h;50.3.11/ 1468
+400A_C080; Receive FIFO Registers (SPI2_RXFR1);32;R;0000_0000h;50.3.11/ 1468
+400A_C084; Receive FIFO Registers (SPI2_RXFR2);32;R;0000_0000h;50.3.11/ 1468
+400A_C088; Receive FIFO Registers (SPI2_RXFR3);32;R;0000_0000h;50.3.11/ 1468
+
+====
+SPIx_MCR Field Description;
+31 MSTR;Master/Slave Mode Select
+;Enables either Master mode (if supported) or Slave mode (if supported) operation.
+;0; Enables Slave mode
+;1; Enables Master mode
+30 CONT_SCKE; Continuous SCK Enable
+;Enables the Serial Communication Clock (SCK) to run continuously.
+;0; Continuous SCK disabled.
+;1; Continuous SCK enabled.
+29-28 DCONF;SPI Configuration. READ ONLY
+;Selects among the different configurations of the module.
+;00; SPI
+;01; Reserved 10 Reserved 11 Reserved
+27 FRZ;Freeze
+;Enables transfers to be stopped on the next frame boundary when the device enters Debug mode.
+;0; Do not halt serial transfers in Debug mode.
+;1; Halt serial transfers in Debug mode.
+26 MTFE;Modified Timing Format Enable
+;Enables a modified transfer format to be used.
+;0; Modified SPI transfer format disabled.
+;1; Modified SPI transfer format enabled.
+25 PCSSE;Peripheral Chip Select Strobe Enable
+;Enables the PCS5/ PCSS to operate as a PCS Strobe output signal.
+;0; PCS5/ PCSS is used as the Peripheral Chip Select[5] signal.
+;1; PCS5/ PCSS is used as an active-low PCS Strobe signal.
+24 ROOE;Receive FIFO Overflow Overwrite Enable
+;In the RX FIFO overflow condition, configures the module to ignore the incoming serial data or overwrite existing data. If the RX FIFO is full and new data is received, the data from the transfer, generating the overflow, is ignored or shifted into the shift register.
+;0; Incoming data is ignored.
+;1; Incoming data is shifted into the shift register.
+23-22 Reserved; This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+21-16 PCSIS;Peripheral Chip Select x Inactive State
+;Determines the inactive state of PCSx.
+;0; The inactive state of PCSx is low.
+;1; The inactive state of PCSx is high.
+15 DOZE;Doze Enable
+;Provides support for an externally controlled Doze mode power-saving mechanism.
+;0; Doze mode has no effect on the module.
+;1; Doze mode disables the module.
+14 MDIS;Module Disable
+;Allows the clock to be stopped to the non-memory mapped logic in the module effectively putting it in a software-controlled power-saving state. The reset value of the MDIS bit is parameterized, with a default reset value of 0. When the module is used in Slave Mode, we recommend leaving this bit 0, because a slave doesn't have control over master transactions.
+;0; Enables the module clocks.
+;1; Allows external logic to disable the module clocks.
+13 DIS_TXF;Disable Transmit FIFO
+;When the TX FIFO is disabled, the transmit part of the module operates as a simplified double-buffered SPI. This bit can be written only when the MDIS bit is cleared.
+;0; TX FIFO is enabled.
+;1; TX FIFO is disabled.
+12 DIS_RXF;Disable Receive FIFO
+;When the RX FIFO is disabled, the receive part of the module operates as a simplified double-buffered SPI. This bit can only be written when the MDIS bit is cleared.
+;0; RX FIFO is enabled.
+;1; RX FIFO is disabled.
+11 CLR_TXF;Clear TX FIFO WRITE ONLY
+;Flushes the TX FIFO. Writing a 1 to CLR_TXF clears the TX FIFO Counter. The CLR_TXF bit is always read as zero.
+;0; Do not clear the TX FIFO counter.
+;1; Clear the TX FIFO counter.
+10 CLR_RXF;Flushes the RX FIFO.  WRITE ONLY
+;Writing a 1 to CLR_RXF clears the RX Counter. The CLR_RXF bit is always read as zero.
+;0; Do not clear the RX FIFO counter.
+;1; Clear the RX FIFO counter.
+9-8 SMPL_PT;Sample Point
+;Controls when the module master samples SIN in Modified Transfer Format. This field is valid only when CPHA bit in CTARn[CPHA] is 0.
+;00; 0 protocol clock cycles between SCK edge and SIN sample
+;01; 1 protocol clock cycle between SCK edge and SIN sample
+;10; 2 protocol clock cycles between SCK edge and SIN sample 11 Reserved
+7-3 Reserved; This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+2 Reserved;This field is reserved. 
+1 Reserved;This field is reserved. 
+0 HALT;Halt
+;The HALT bit starts and stops frame transfers. See Start and Stop of Module transfers
+;0; Start transfers.
+;1; Stop transfers.
+
+SPIx_TCR field descriptions;
+31-16 TCNT;SPI Transfer Counter
+;Counts the number of SPI transfers the module makes. The TCNT field increments every time the last bit of an SPI frame is transmitted. A value written to TCNT presets the counter to that value. TCNT is reset to zero at the beginning of the frame when the CTCNT field is set in the executing SPI command. The Transfer Counter wraps around; incrementing the counter past 65535 resets the counter to zero.
+15-0 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+
+SPIx_CTARn field descriptions;
+31 DBR;Double Baud Rate
+;Doubles the effective baud rate of the Serial Communications Clock (SCK). This field is used only in master mode. It effectively halves the Baud Rate division ratio, supporting faster frequencies, and odd division ratios for the Serial Communications Clock (SCK). When the DBR bit is set, the duty cycle of the Serial Communications Clock (SCK) depends on the value in the Baud Rate Prescaler and the Clock Phase bit as listed in the following table. See the BR field description for details on how to compute the baud rate.
+;0; The baud rate is computed normally with a 50/50 duty cycle.
+;1; The baud rate is doubled with the duty cycle depending on the Baud Rate Prescaler.
+30-27 FMSZ; Frame Size
+;The number of bits transferred per frame is equal to the FMSZ value plus 1. Regardless of the transmission mode, the minimum valid frame size value is 4.
+26 CPOL;Clock Polarity
+;Selects the inactive state of the Serial Communications Clock (SCK). This bit is used in both master and slave mode. For successful communication between serial devices, the devices must have identical clock polarities. When the Continuous Selection Format is selected, switching between clock polarities without stopping the module can cause errors in the transfer due to the peripheral device interpreting the switch of clock polarity as a valid clock edge.
+;NOTE: In case of continous sck mode, when the module goes in low power mode(disabled), inactive state of sck is not guaranted.
+;0; The inactive state value of SCK is low.
+;1; The inactive state value of SCK is high.
+25 CPHA;Clock Phase
+;Selects which edge of SCK causes data to change and which edge causes data to be captured. This bit is used in both master and slave mode. For successful communication between serial devices, the devices must have identical clock phase settings. In Continuous SCK mode, the bit value is ignored and the transfers are done as if the CPHA bit is set to 1.
+;0; Data is captured on the leading edge of SCK and changed on the following edge.
+;1; Data is changed on the leading edge of SCK and captured on the following edge.
+24 LSBFE;LSB First
+;Specifies whether the LSB or MSB of the frame is transferred first.
+;0; Data is transferred MSB first.
+;1; Data is transferred LSB first.
+23-22 PCSSCK;PCS to SCK Delay Prescaler
+;Selects the prescaler value for the delay between assertion of PCS and the first edge of the SCK. See the CSSCK field description for information on how to compute the PCS to SCK Delay. Refer PCS to SCK Delay (tCSC ) for more details.
+21-20 PASC;After SCK Delay Prescaler
+;Selects the prescaler value for the delay between the last edge of SCK and the negation of PCS. See the ASC field description for information on how to compute the After SCK Delay. Refer After SCK Delay (tASC ) for more details.
+;00; Delay after Transfer Prescaler value is 1.
+;01; Delay after Transfer Prescaler value is 3.
+;10; Delay after Transfer Prescaler value is 5.
+;11; Delay after Transfer Prescaler value is 7.
+19-18 PDT;Delay after Transfer Prescaler 
+;Selects the prescaler value for the delay between the negation of the PCS signal at the end of a frame and the assertion of PCS at the beginning of the next frame. The PDT field is only used in master mode. See the DT field description for details on how to compute the Delay after Transfer. Refer Delay after Transfer (tDT ) for more details.
+;00; Delay after Transfer Prescaler value is 1.
+;01; Delay after Transfer Prescaler value is 3.
+;10; Delay after Transfer Prescaler value is 5.
+;11; Delay after Transfer Prescaler value is 7.
+17-16 PBR;Baud Rate Prescaler
+;Selects the prescaler value for the baud rate. This field is used only in master mode. The baud rate is the frequency of the SCK. The protocol clock is divided by the prescaler value before the baud rate selection takes place. See the BR field description for details on how to compute the baud rate.
+;00; Baud Rate Prescaler value is 2.
+;01; Baud Rate Prescaler value is 3.
+;10; Baud Rate Prescaler value is 5.
+;11; Baud Rate Prescaler value is 7.  
+15-12 CSSCK;PCS to SCK Delay Scaler
+;Selects the scaler value for the PCS to SCK delay. This field is used only in master mode. The PCS to SCK Delay is the delay between the assertion of PCS and the first edge of the SCK. The delay is a multiple of the protocol clock period, and it is computed according to the following equation:
+;t CSC = (1/fP ) x PCSSCK x CSSCK.
+;The following table lists the delay scaler values.
+11-8 ASC;After SCK Delay Scaler
+;Selects the scaler value for the After SCK Delay. This field is used only in master mode. The After SCK Delay is the delay between the last edge of SCK and the negation of PCS. The delay is a multiple of the protocol clock period, and it is computed according to the following equation:
+;t ASC = (1/fP) x PASC x ASC
+;See Delay Scaler Encoding table in CTARn[CSSCK] bit field description for scaler values. Refer After SCK Delay (tASC ) for more details.
+7-4 DT;Delay After Transfer Scaler
+;Selects the Delay after Transfer Scaler. This field is used only in master mode. The Delay after Transfer is the time between the negation of the PCS signal at the end of a frame and the assertion of PCS at the beginning of the next frame.
+;In the Continuous Serial Communications Clock operation, the DT value is fixed to one SCK clock period, The Delay after Transfer is a multiple of the protocol clock period, and it is computed according to the following equation:
+;tDT = (1/fP ) x PDT x DT
+;See Delay Scaler Encoding table in CTARn[CSSCK] bit field description for scaler values.   
+3-0 BR;Baud Rate Scaler
+;Selects the scaler value for the baud rate. This field is used only in master mode. The prescaled protocol clock is divided by the Baud Rate Scaler to generate the frequency of the SCK. The baud rate is computed according to the following equation:
+;SCK baud rate = (fP /PBR) x [(1+DBR)/BR]
+;The following table lists the baud rate scaler values.
+
+SPIx_CTARn_SLAVE field descriptions;
+31-27 FMSZ;Frame Size
+;The number of bits transfered per frame is equal to the FMSZ field value plus 1. Note that the minimum valid value of frame size is 4.
+26 CPOL;Clock Polarity
+;Selects the inactive state of the Serial Communications Clock (SCK).
+;NOTE: In case of continous sck mode, when the module goes in low power mode(disabled), inactive state of sck is not guaranted.
+;0; The inactive state value of SCK is low.
+;1; The inactive state value of SCK is high.
+25 CPHA;Clock Phase
+;Selects which edge of SCK causes data to change and which edge causes data to be captured. This bit is used in both master and slave mode. For successful communication between serial devices, the devices must have identical clock phase settings. In Continuous SCK mode, the bit value is ignored and the transfers are done as if the CPHA bit is set to 1.
+;0; Data is captured on the leading edge of SCK and changed on the following edge.
+;1; Data is changed on the leading edge of SCK and captured on the following edge.
+
+
+SPIx_SR field descriptions;
+31 TCF;Transfer Complete Flag
+;Indicates that all bits in a frame have been shifted out. TCF remains set until it is cleared by writing a 1 to it.
+;0; Transfer not complete.
+;1; Transfer complete.
+30 TXRXS;TX and RX Status
+;Reflects the run status of the module.
+;0; Transmit and receive operations are disabled (The module is in Stopped state).
+;1; Transmit and receive operations are enabled (The module is in Running state).
+29 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+28 EOQF;End of Queue Flag
+;Indicates that the last entry in a queue has been transmitted when the module is in Master mode. The EOQF bit is set when the TX FIFO entry has the EOQ bit set in the command halfword and the end of the transfer is reached. The EOQF bit remains set until cleared by writing a 1 to it. When the EOQF bit is set, the TXRXS bit is automatically cleared.
+;0; EOQ is not set in the executing command.
+;1; EOQ is set in the executing SPI command.
+27 TFUF;Transmit FIFO Underflow Flag
+;Indicates an underflow condition in the TX FIFO. The transmit underflow condition is detected only for SPI blocks operating in Slave mode and SPI configuration. TFUF is set when the TX FIFO of the module operating in SPI Slave mode is empty and an external SPI master initiates a transfer. The TFUF bit remains set until cleared by writing 1 to it.
+;0; No TX FIFO underflow.
+;1; TX FIFO underflow has occurred.
+26 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+25 TFFF;Transmit FIFO full Flag
+;Provides a method for the module to request more entries to be added to the TX FIFO. The TFFF bit is set while the TX FIFO is not full. The TFFF bit can be cleared by writing 1 to it or by acknowledgement from the DMA controller to the TX FIFO full request.
+;0 ;TX FIFO is full.
+;1 ;TX FIFO is not full.
+24 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+23 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+22 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+21 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+20 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+19 RFOF;Receive FIFO Overflow Flag
+;Indicates an overflow condition in the RX FIFO. The field is set when the RX FIFO and shift register are full and a transfer is initiated. The bit remains set until it is cleared by writing a 1 to it.
+;0; No Rx FIFO overflow.
+;1; Rx FIFO overflow has occurred.
+18 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+17 RFDF;Receive FIFO empty Flag
+;Provides a method for the module to request that entries be removed from the RX FIFO. The bit is set while the RX FIFO is not empty. The RFDF bit can be cleared by writing 1 to it or by acknowledgement from the DMA controller when the RX FIFO is empty.
+;0; RX FIFO is empty.
+;1; RX FIFO is not empty.
+16 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+15-12 TXCTR;TX FIFO Counter READ ONLY
+;this field indicates the number of valid entries in the TX FIFO. The TXCTR is incremented every time the PUSHR is written. The TXCTR is decremented every time an SPI command is executed and the SPI data is transferred to the shift register.
+11-8 TXNXTPTR;Transmit Next Pointer READ ONLY
+;Indicates which TX FIFO entry is transmitted during the next transfer. The TXNXTPTR field is updated every time SPI data is transferred from the TX FIFO to the shift register.
+7-4 RXCTR;RX FIFO Counter READ ONLY
+;this field indicates the number of entries in the RX FIFO. The RXCTR is decremented every time the POPR is read. The RXCTR is incremented every time data is transferred from the shift register to the RX FIFO.
+3-0 POPNXTPTR;Pop Next Pointer READ ONLY
+;Contains a pointer to the RX FIFO entry to be returned when the POPR is read. The POPNXTPTR is updated when the POPR is read.
+
+SPIx_RSER field descriptions;
+31 TCF_RE;Transmission Complete Request Enable
+;Enables TCF flag in the SR to generate an interrupt request.
+;0; TCF interrupt requests are disabled.
+;1; TCF interrupt requests are enabled.
+30 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+29 Reserved;This field is reserved. 
+28 EOQF_RE;Finished Request Enable
+;Enables the EOQF flag in the SR to generate an interrupt request.
+;0; EOQF interrupt requests are disabled.
+;1; EOQF interrupt requests are enabled.
+27 TFUF_RE;Transmit FIFO Underflow Request Enable
+;Enables the TFUF flag in the SR to generate an interrupt request.
+;0; TFUF interrupt requests are disabled.
+;1; TFUF interrupt requests are enabled.
+26 Reserved;This field is reserved.
+25 TFFF_RE;Transmit FIFO Fill Request Enable
+;Enables the TFFF flag in the SR to generate a request. The TFFF_DIRS bit selects between generating an interrupt request or a DMA request.
+;0; TFFF interrupts or DMA requests are disabled.
+;1; TFFF interrupts or DMA requests are enabled.
+24 TFFF_DIRS;Transmit FIFO Fill DMA or Interrupt Request Select
+;Selects between generating a DMA request or an interrupt request. When SR[TFFF] and RSER[TFFF_RE] are set, this field selects between generating an interrupt request or a DMA request.
+;0; TFFF flag generates interrupt requests.
+;1; TFFF flag generates DMA requests.
+23 Reserved;This field is reserved. READ ONLY
+22 Reserved;This field is reserved. READ ONLY
+21 Reserved;This field is reserved. READ ONLY
+20 Reserved;This field is reserved. READ ONLY
+19 RFOF_RE;Receive FIFO Overflow Request Enable
+;Enables the RFOF flag in the SR to generate an interrupt request.
+;0; RFOF interrupt requests are disabled.
+;1; RFOF interrupt requests are enabled.
+18 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+17 RFDF_RE;Receive FIFO Drain Request Enable
+;Enables the RFDF flag in the SR to generate a request. The RFDF_DIRS bit selects between generating an interrupt request or a DMA request.
+;0; RFDF interrupt or DMA requests are disabled.
+;1; RFDF interrupt or DMA requests are enabled.
+16 RFDF_DIRS;Receive FIFO Drain DMA or Interrupt Request Select
+;Selects between generating a DMA request or an interrupt request. When the RFDF flag bit in the SR is set, and the RFDF_RE bit in the RSER is set, the RFDF_DIRS bit selects between generating an interrupt request or a DMA request.
+;0; Interrupt request.
+;1; DMA request.
+15 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+14 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+13-0 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+
+SPIx_PUSHR field descriptions;
+31 CONT;Continuous Peripheral Chip Select Enable
+;Selects a continuous selection format. The bit is used in SPI Master mode. The bit enables the selected PCS signals to remain asserted between transfers.
+;0; Return PCSn signals to their inactive state between transfers.
+;1; Keep PCSn signals asserted between transfers.
+30-28 CTAS;Clock and Transfer Attributes Select
+;Selects which CTAR to use in master mode to specify the transfer attributes for the associated SPI frame. In SPI Slave mode, CTAR0 is used. See the chip configuration details to determine how many CTARs this device has. You should not program a value in this field for a register that is not present.
+;000; CTAR0 
+;001; CTAR1 
+;010; Reserved 
+;011; Reserved 
+;100; Reserved 
+;101; Reserved 
+;110; Reserved 
+;111; Reserved
+27 EOQ;End Of Queue
+;Host software uses this bit to signal to the module that the current SPI transfer is the last in a queue. At the end of the transfer, the EOQF bit in the SR is set.
+;0; The SPI data is not the last data to transfer.
+;1; The SPI data is the last data to transfer.
+26 CTCNT;Clear Transfer Counter
+;Clears the TCNT field in the TCR register. The TCNT field is cleared before the module starts transmitting the current SPI frame.
+;0; Do not clear the TCR[TCNT] field.
+;1; Clear the TCR[TCNT] field.
+25-24 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+23-22 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+21-16 PCS;
+;Select which PCS signals are to be asserted for the transfer. Refer to the chip configuration details for the number of PCS signals used in this MCU.
+;0; Negate the PCS[x] signal.
+;1; Assert the PCS[x] signal.
+15-0 TXDATA;Transmit Data
+;Holds SPI data to be transferred according to the associated SPI command.
+
+SPIx_PUSHR_SLAVE field descriptions;
+31-0 TXDATA;Transmit Data
+;Holds SPI data to be transferred according to the associated SPI command.
+
+SPIx_POPR field descriptions;
+31-0 RXDATA;Received Data
+;Contains the SPI data from the RX FIFO entry to which the Pop Next Data Pointer points.
+
+SPIx_TXFRn field descriptions;
+31-16 TXCMD;Transmit Command or Transmit Data
+;In Master mode the TXCMD field contains the command that sets the transfer attributes for the SPI data.In Slave mode, the TXDATA contains 16 MSB bits of the SPI data to be shifted out.
+31-16 TXDATA;Transmit Command or Transmit Data
+;In Master mode the TXCMD field contains the command that sets the transfer attributes for the SPI data.In Slave mode, the TXDATA contains 16 MSB bits of the SPI data to be shifted out.
+15-0 TXDATA;Transmit Data
+;Contains the SPI data to be shifted out.
+
+SPIx_RXFRn field descriptions;
+31-0 RXDATA;Receive Data
+;Contains the received SPI data.
+====

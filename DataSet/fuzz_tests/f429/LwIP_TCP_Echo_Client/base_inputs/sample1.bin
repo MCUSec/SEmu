@@ -1,0 +1,16 @@
+enable_fuz|< true
+entry_point: 134219173
+initial_sp: 0x20030000
+include:
+- ../../../Emulator_with_periphral/configs/hw/cortexm_memory.yml
+- ./syms.yml
+memory_map:
+  flash:
+    base_addr: 134217728
+    file: LwIP_TCP_Echo_Client.bin
+    permissions: r-x
+    size: 33554432
+rules: ../../../Emulator_with_periphral/periphral_modules/semu/rules/f429.txt
+
+fork_points: 0x8000D2C
+systick_reload: 500

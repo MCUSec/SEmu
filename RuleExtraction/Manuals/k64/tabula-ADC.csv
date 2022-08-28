@@ -1,0 +1,286 @@
+4003_B000;ADC Status and Control Registers 1 (ADC0_SC1A);32;R/W;0000_001Fh;MUST CHECK
+4003_B004;ADC Status and Control Registers 1 (ADC0_SC1B);32;R/W;0000_001Fh;MUST CHECK
+4003_B008;ADC Configuration Register 1 (ADC0_CFG1);32;R/W;0000_0000h;35.3.2/834
+4003_B00C;ADC Configuration Register 2 (ADC0_CFG2);32;R/W;0000_0000h;35.3.3/836
+4003_B010;ADC Data Result Register (ADC0_RA);32;R;0000_0000h;35.3.4/837
+4003_B014;ADC Data Result Register (ADC0_RB);32;R;0000_0000h;35.3.4/837
+4003_B018;Compare Value Registers (ADC0_CV1);32;R/W;0000_0000h;35.3.5/838
+4003_B01C;Compare Value Registers (ADC0_CV2);32;R/W;0000_0000h;35.3.5/838
+4003_B020;Status and Control Register 2 (ADC0_SC2);32;R/W;0000_0000h;35.3.6/839
+4003_B024;Status and Control Register 3 (ADC0_SC3);32;R/W;0000_0000h;35.3.7/841
+4003_B028;ADC Offset Correction Register (ADC0_OFS);32;R/W;0000_0004h;35.3.8/843
+4003_B02C;ADC Plus-Side Gain Register (ADC0_PG);32;R/W;0000_8200h;35.3.9/843
+4003_B030;ADC Minus-Side Gain Register (ADC0_MG);32;R/W;0000_8200h;35.3.10/ 844
+4003_B034;ADC Plus-Side General Calibration Value Register (ADC0_CLPD);32;R/W;0000_000Ah;35.3.11/ 844
+4003_B038;ADC Plus-Side General Calibration Value Register (ADC0_CLPS);32;R/W;0000_0020h;35.3.12/ 845
+4003_B03C;ADC Plus-Side General Calibration Value Register (ADC0_CLP4);32;R/W;0000_0200h;35.3.13/ 845
+4003_B040;ADC Plus-Side General Calibration Value Register (ADC0_CLP3);32;R/W;0000_0100h;35.3.14/ 846
+4003_B044;ADC Plus-Side General Calibration Value Register (ADC0_CLP2);32;R/W;0000_0080h;35.3.15/ 846
+4003_B048;ADC Plus-Side General Calibration Value Register (ADC0_CLP1);32;R/W;0000_0040h;35.3.15/ 846
+4003_B04C;ADC Plus-Side General Calibration Value Register (ADC0_CLP0);32;R/W;0000_0020h;35.3.15/ 846
+4003_B054;ADC Minus-Side General Calibration Value Register (ADC0_CLMD);32;R/W;0000_000Ah;35.3.15/ 846
+4003_B058;ADC Minus-Side General Calibration Value Register (ADC0_CLMS);32;R/W;0000_0020h;35.3.15/ 846
+4003_B05C;ADC Minus-Side General Calibration Value Register (ADC0_CLM4);32;R/W;0000_0200h;35.3.15/ 846
+4003_B060;ADC Minus-Side General Calibration Value Register (ADC0_CLM3);32;R/W;0000_0100h;35.3.15/ 846
+4003_B064;ADC Minus-Side General Calibration Value Register (ADC0_CLM2);32;R/W;0000_0080h;35.3.15/ 846
+4003_B068;ADC Minus-Side General Calibration Value Register (ADC0_CLM1);32;R/W;0000_0040h;35.3.15/ 846
+4003_B06C;ADC Minus-Side General Calibration Value Register (ADC0_CLM0);32;R/W;0000_0020h;35.3.15/ 846
+400B_B000;ADC Status and Control Registers 1 (ADC1_SC1A);32;R/W;0000_001Fh;MUST CHECK
+400B_B004;ADC Status and Control Registers 1 (ADC1_SC1B);32;R/W;0000_001Fh;MUST CHECK
+400B_B008;ADC Configuration Register 1 (ADC1_CFG1);32;R/W;0000_0000h;35.3.15/ 846
+400B_B00C;ADC Configuration Register 2 (ADC1_CFG2);32;R/W;0000_0000h;35.3.15/ 846
+400B_B010;ADC Data Result Register (ADC1_RA);32;R;0000_0000h;35.3.15/ 846
+400B_B014;ADC Data Result Register (ADC1_RB);32;R;0000_0000h;35.3.15/ 846
+400B_B018;Compare Value Registers (ADC1_CV1);32;R/W;0000_0000h;35.3.15/ 846
+400B_B01C;Compare Value Registers (ADC1_CV2);32;R/W;0000_0000h;35.3.15/ 846
+400B_B020;Status and Control Register 2 (ADC1_SC2);32;R/W;0000_0000h;35.3.6/839
+400B_B024;Status and Control Register 3 (ADC1_SC3);32;R/W;0000_0000h;35.3.7/841
+400B_B028;ADC Offset Correction Register (ADC1_OFS);32;R/W;0000_0004h;35.3.8/843
+400B_B02C;ADC Plus-Side Gain Register (ADC1_PG);32;R/W;0000_8200h;35.3.9/843
+400B_B030;ADC Minus-Side Gain Register (ADC1_MG);32;R/W;0000_8200h;35.3.10/ 844
+400B_B034;ADC Plus-Side General Calibration Value Register (ADC1_CLPD);32;R/W;0000_000Ah;35.3.11/ 844
+400B_B038;ADC Plus-Side General Calibration Value Register (ADC1_CLPS);32;R/W;0000_0020h;35.3.12/ 845
+400B_B03C;ADC Plus-Side General Calibration Value Register (ADC1_CLP4);32;R/W;0000_0200h;35.3.13/ 845
+400B_B040;ADC Plus-Side General Calibration Value Register (ADC1_CLP3);32;R/W;0000_0100h;35.3.14/ 846
+400B_B044;ADC Plus-Side General Calibration Value Register (ADC1_CLP2);32;R/W;0000_0080h;35.3.15/ 846
+400B_B048;ADC Plus-Side General Calibration Value Register (ADC1_CLP1);32;R/W;0000_0040h;35.3.16/ 847
+400B_B04C;ADC Plus-Side General Calibration Value Register (ADC1_CLP0);32;R/W;0000_0020h;35.3.17/ 847
+400B_B054;ADC Minus-Side General Calibration Value Register (ADC1_CLMD);32;R/W;0000_000Ah;35.3.18/ 848
+400B_B058;ADC Minus-Side General Calibration Value Register (ADC1_CLMS);32;R/W;0000_0020h;35.3.19/ 848
+400B_B05C;ADC Minus-Side General Calibration Value Register (ADC1_CLM4);32;R/W;0000_0200h;35.3.20/ 849
+400B_B060;ADC Minus-Side General Calibration Value Register (ADC1_CLM3);32;R/W;0000_0100h;35.3.21/ 849
+400B_B064;ADC Minus-Side General Calibration Value Register (ADC1_CLM2);32;R/W;0000_0080h;35.3.22/ 850
+400B_B068;ADC Minus-Side General Calibration Value Register (ADC1_CLM1);32;R/W;0000_0040h;35.3.23/ 850
+400B_B06C;ADC Minus-Side General Calibration Value Register (ADC1_CLM0);32;R/W;0000_0020h;35.3.24/
+====
+ADCx_SC1n field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 COCO;end of conversion READ ONLY
+;This is a read-only field that is set each time a conversion is completed when the compare function is disabled, or SC2[ACFE]=0 and the hardware average function is disabled, or SC3[AVGE]=0. When the compare function is enabled, or SC2[ACFE]=1, COCO is set upon completion of a conversion only if the compare result is true. When the hardware average function is enabled, or SC3[AVGE]=1, COCO is set upon completion of the selected number of conversions (determined by AVGS). COCO in SC1A is also set at the completion of a calibration sequence. COCO is cleared when the respective SC1n register is written or when the respective Rn register is read.
+;0; Conversion is not completed.
+;1; Conversion is completed.
+6 AIEN;Interrupt Enable
+;Enables conversion complete interrupts. When COCO becomes set while the respective AIEN is high, an interrupt is asserted. when DMAEN and COCO is set, it request DMA.
+;0; Conversion complete interrupt is disabled.
+;1; Conversion complete interrupt is enabled.
+5 DIFF;Differential Mode Enable
+;Configures the ADC to operate in differential mode. When enabled, this mode automatically selects from the differential channels, and changes the conversion algorithm and the number of cycles to complete a conversion.
+;0; Single-ended conversions and input channels are selected.
+;1; Differential conversions and input channels are selected.
+4-0 ADCH;Input channel select
+;Selects one of the input channels. The input channel decode depends on the value of DIFF. DAD0-DAD3 are associated with the input pin pairs DADPx and DADMx.
+;NOTE: Some of the input channel options in the bitfield-setting descriptions might not be available for your device. For the actual ADC channel assignments for your device, see the Chip Configuration details.
+;The successive approximation converter subsystem is turned off when the channel select bits are all set, that is, ADCH = 11111. This feature allows explicit disabling of the ADC and isolation of the input channel from all sources. Terminating continuous conversions this way prevents an additional single conversion from being performed. It is not necessary to set ADCH to all 1s to place the ADC in a low-power state when continuous conversions are not enabled because the module automatically enters a low-power state when a conversion completes.
+
+
+ADCx_CFG1 field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 ADLPC;Low-Power Configuration
+;Controls the power configuration of the successive approximation converter. This optimizes power consumption when higher sample rates are not required.
+;0; Normal power configuration.
+;1; Low-power configuration. The power is reduced at the expense of maximum clock speed.
+6-5 ADIV;Clock Divide Select
+;Selects the divide ratio used by the ADC to generate the internal clock ADCK.
+;00; The divide ratio is 1 and the clock rate is input clock.
+;01; The divide ratio is 2 and the clock rate is (input clock)/2.
+;10; The divide ratio is 4 and the clock rate is (input clock)/4.
+;11; The divide ratio is 8 and the clock rate is (input clock)/8.
+4 ADLSMP;Sample Time Configuration
+;Selects between different sample times based on the conversion mode selected. This field adjusts the sample period to allow higher impedance inputs to be accurately sampled or to maximize conversion speed for lower impedance inputs. Longer sample times can also be used to lower overall power consumption if continuous conversions are enabled and high conversion rates are not required. When ADLSMP=1, the long sample time select bits, (ADLSTS[1:0]), can select the extent of the long sample time.
+;0; Short sample time.
+;1; Long sample time.
+3-2 MODE;Conversion mode selection
+;Selects the ADC resolution mode.
+;00; When DIFF=0:It is single-ended 8-bit conversion. when DIFF=1, it is differential 9-bit conversion with 2's complement output.
+;01; When DIFF=0:It is single-ended 12-bit conversion. when DIFF=1, it is differential 13-bit conversion with 2's complement output.
+;10; When DIFF=0:It is single-ended 10-bit conversion. when DIFF=1, it is differential 11-bit conversion with 2's complement output
+;11; When DIFF=0:It is single-ended 16-bit conversion. when DIFF=1, it is differential 16-bit conversion with 2's complement output
+1-0 ADICLK;Input Clock Select
+;Selects the input clock source to generate the internal clock, ADCK. Note that when the ADACK clock source is selected, it is not required to be active prior to conversion start. When it is selected and it is not active prior to a conversion start, when CFG2[ADACKEN]=0, the asynchronous clock is activated at the start of a conversion and deactivated when conversions are terminated. In this case, there is an associated clock startup delay each time the clock source is re-activated.
+;00; Bus clock
+;01; Alternate clock 2 (ALTCLK2)
+;10; Alternate clock (ALTCLK)
+;11; Asynchronous clock (ADACK)
+
+ADCx_CFG2 field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4 MUXSEL;ADC Mux Select
+;Changes the ADC mux setting to select between alternate sets of ADC channels.
+;0; ADxxa channels are selected.
+;1; ADxxb channels are selected.
+3 ADACKEN;Asynchronous Clock Output Enable
+;Enables the asynchronous clock source and the clock source output regardless of the conversion and status of CFG1[ADICLK]. Based on MCU configuration, the asynchronous clock may be used by other modules. See chip configuration information. Setting this field allows the clock to be used even while the ADC is idle or operating from a different clock source. Also, latency of initiating a single or first-continuous conversion with the asynchronous clock selected is reduced because the ADACK clock is already operational.
+;0; Asynchronous clock output disabled. Asynchronous clock is enabled only if selected by ADICLK and a conversion is active.
+;1; Asynchronous clock and clock output is enabled regardless of the state of the ADC.
+2 ADHSC; High-Speed Configuration
+;Configures the ADC for very high-speed operation. The conversion sequence is altered with 2 ADCK cycles added to the conversion time to allow higher speed conversion clocks.
+;0; Normal conversion sequence selected.
+;1; High-speed conversion sequence selected with 2 additional ADCK cycles to total conversion time.
+1-0 ADLSTS;Long Sample Time Select
+;Selects between the extended sample times when long sample time is selected, that is, when CFG1[ADLSMP]=1. This allows higher impedance inputs to be accurately sampled or to maximize conversion speed for lower impedance inputs. Longer sample times can also be used to lower overall power consumption when continuous conversions are enabled if high conversion rates are not required.
+;00; Default longest sample time
+;01; 12 extra ADCK cycles
+;10; 6 extra ADCK cycles
+;11; 2 extra ADCK cycles
+
+ADCx_Rn field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 D;Data result
+
+ADCx_CVn field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 CV;Compare Value. 
+
+ADCx_SC2 field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 ADACT;Conversion Active 
+;Indicates that a conversion or hardware averaging is in progress. ADACT is set when a conversion is initiated and cleared when a conversion is completed or aborted.
+;0; Conversion not in progress.
+;1; Conversion in progress.
+6 ADTRG;Conversion Trigger Select
+;Selects the type of trigger used for initiating a conversion. Two types of trigger are selectable:
+;• Software trigger: When software trigger is selected, a conversion is initiated following a write to SC1A.
+;• Hardware trigger: When hardware trigger is selected, a conversion is initiated following the assertion of the ADHWT input after a pulse of the ADHWTSn input.
+;0;Software trigger selected. 
+;1;Hardware trigger selected.
+5 ACFE;Compare Function Enable
+;Enables the compare function.
+;0; Compare function disabled.
+;1; Compare function enabled.
+4 ACFGT;Compare Function Greater Than Enable
+;Configures the compare function to check the conversion result relative to the CV1 and CV2 based upon the value of ACREN. ACFE must be set for ACFGT to have any effect.
+;0; Configures less than threshold, outside range not inclusive and inside range not inclusive functionality based on the values placed in CV1 and CV2.
+;1; Configures greater than or equal to threshold, outside and inside ranges inclusive functionality based on the values placed in CV1 and CV2.
+3 ACREN;Compare Function Range Enable
+;Configures the compare function to check if the conversion result of the input being monitored is either between or outside the range formed by CV1 and CV2 determined by the value of ACFGT. ACFE must be set for ACFGT to have any effect.
+;0; Range function disabled. Only CV1 is compared.
+;1; Range function enabled. Both CV1 and CV2 are compared.
+2 DMAEN;DMA Enable
+;0; DMA is disabled.
+;1; DMA is enabled and will assert the ADC DMA request during an ADC conversion complete event noted when any of the SC1n[COCO] flags is asserted.
+1-0 REFSEL;Voltage Reference Selection
+;Selects the voltage reference source used for conversions.
+;00; Default voltage reference pin pair, that is, external pins VREFH and VREFL
+;01; Alternate reference pair, that is, VALTH and VALTL . This pair may be additional external pins or internal sources depending on the MCU configuration. See the chip configuration information for details specific to this MCU
+;10; Reserved 
+;11; Reserved
+
+ADCx_SC3 field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 CAL;Calibration
+;Begins the calibration sequence when set. This field stays set while the calibration is in progress and is cleared when the calibration sequence is completed. CALF must be checked to determine the result of the calibration sequence. Once started, the calibration routine cannot be interrupted by writes to the ADC registers or the results will be invalid and CALF will set. Setting CAL will abort any current conversion.
+6 CALF;Calibration Failed Flag
+;Displays the result of the calibration sequence. The calibration sequence will fail if SC2[ADTRG] = 1, any ADC register is written, or any stop mode is entered before the calibration sequence completes. Writing 1 to CALF clears it.
+;0; Calibration completed normally.
+;1; Calibration failed. ADC accuracy specifications are not guaranteed.
+5-4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 ADCO;Continuous Conversion Enable
+;Enables continuous conversions.
+;0; One conversion or one set of conversions if the hardware average function is enabled, that is, AVGE=1, after initiating a conversion.
+;1; Continuous conversions or sets of conversions if the hardware average function is enabled, that is, AVGE=1, after initiating a conversion.
+2 AVGE;Hardware Average Enable
+;Enables the hardware average function of the ADC.
+;0; Hardware average function disabled.
+;1; Hardware average function enabled.
+1-0 AVGS;Hardware Average Select
+;Determines how many ADC conversions will be averaged to create the ADC average result.
+;00; 4 samples averaged.
+;01; 8 samples averaged.
+;10; 16 samples averaged.
+;11; 32;samples averaged.
+
+ADCx_OFS field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 OFS; Offset Error Correction Value 
+
+ADCx_PG field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 PG;Plus-Side Gain 
+
+ADCx_MG field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 MG;Minus-Side Gain 
+
+ADCx_CLPD field descriptions;
+31-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 CLPD;Calibration Value 
+
+ADCx_CLPS field descriptions;
+31-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 CLPS;Calibration Value 
+
+ADCx_CLP4 field descriptions;
+31-10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9-0 CLP4;Calibration Value 
+
+ADCx_CLP3 field descriptions;
+31-9 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+8-0 CLP3;Calibration Value 
+
+ADCx_CLP2 field descriptions;
+31-7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6-0 CLP2;Calibration Value 
+
+ADCx_CLP1 field descriptions;
+31-7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6-0 CLP1;Calibration Value 
+
+ADCx_CLP0 field descriptions;
+31-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 CLP0;Calibration Value 
+
+ADCx_CLMD field descriptions;
+31-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 CLMD;Calibration Value 
+
+ADCx_CLMS field descriptions;
+31-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 CLMS;Calibration Value 
+
+ADCx_CLM4 field descriptions;
+31-10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9-0 CLM4;Calibration Value 
+
+ADCx_CLM3 field descriptions;
+31-9 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+8-0 CLM3;Calibration Value 
+
+ADCx_CLM2 field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 CLM2;Calibration Value 
+
+ADCx_CLM1 field descriptions;
+31-7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6-0 CLM1;Calibration Value 
+
+ADCx_CLM0 field descriptions;
+31-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 CLM0;Calibration Value 
+====

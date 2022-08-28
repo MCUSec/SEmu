@@ -1,0 +1,14 @@
+entry_point: 0x8000269
+fork_points: []
+include:
+- ./syms.yml
+- ../../../../.local/lib/python3.10/site-packages/semu_fuzz/helper/configs/hw/cortexm_memory.yml
+initial_sp: 0x20005000
+isr_vector: 0x8000269
+memory_map:
+  flash:
+    base_addr: 0x8000000
+    file: Soldering_Iron.bin
+    permissions: r-x
+    size: 0x2000000
+rules: ../../../rules/f103.txt

@@ -1,0 +1,910 @@
+400C_0004;Interrupt Event Register (ENET_EIR);32;w1c;0000_0000h; 
+400C_0008;Interrupt Mask Register (ENET_EIMR);32;R/W;0000_0000h; 
+400C_0010;Receive Descriptor Active Register (ENET_RDAR);32;R/W;0000_0000h; 
+400C_0014;Transmit Descriptor Active Register (ENET_TDAR);32;R/W;0000_0000h; 
+400C_0024;Ethernet Control Register (ENET_ECR);32;R/W;F000_0000h; 
+400C_0040;MII Management Frame Register (ENET_MMFR);32;R/W;0000_0000h; 
+400C_0044;MII Speed Control Register (ENET_MSCR);32;R/W;0000_0000h; 
+400C_0064;MIB Control Register (ENET_MIBC);32;R/W;C000_0000h; 
+400C_0084;Receive Control Register (ENET_RCR);32;R/W;05EE_0001h; 
+400C_00C4;Transmit Control Register (ENET_TCR);32;R/W;0000_0000h; 
+400C_00E4;Physical Address Lower Register (ENET_PALR);32;R/W;0000_0000h; 
+400C_00E8;Physical Address Upper Register (ENET_PAUR);32;R/W;0000_8808h; 
+400C_00EC;Opcode/Pause Duration Register (ENET_OPD) ;32;R/W;0001_0000h; 
+400C_0118;Descriptor Individual Upper Address Register (ENET_IAUR) ;32;R/W;0000_0000h; 
+400C_011C;Descriptor Individual Lower Address Register (ENET_IALR) ;32;R/W;0000_0000h; 
+400C_0120;Descriptor Group Upper Address Register (ENET_GAUR) ;32;R/W;0000_0000h; 
+400C_0124;Descriptor Group Lower Address Register (ENET_GALR) ;32;R/W;0000_0000h; 
+400C_0144;Transmit FIFO Watermark Register (ENET_TFWR) ;32;R/W;0000_0000h; 
+400C_0180;Receive Descriptor Ring Start Register (ENET_RDSR) ;32;R/W;0000_0000h; 
+400C_0184;Transmit Buffer Descriptor Ring Start Register (ENET_TDSR) ;32;R/W;0000_0000h; 
+400C_0188;Maximum Receive Buffer Size Register (ENET_MRBR)   ;32;R/W;0000_0000h; 
+400C_0190;Receive FIFO Section Full Threshold (ENET_RSFL);32;R/W;0000_0000h; 
+400C_0194;Receive FIFO Section Empty Threshold (ENET_RSEM) ;32;R/W;0000_0000h; 
+400C_0198;Receive FIFO Almost Empty Threshold (ENET_RAEM);32;R/W;0000_0004h; 
+400C_019C;Receive FIFO Almost Full Threshold (ENET_RAFL) ;32;R/W;0000_0004h; 
+400C_01A0;Transmit FIFO Section Empty Threshold (ENET_TSEM) ;32;R/W;0000_0000h; 
+400C_01A4;Transmit FIFO Almost Empty Threshold (ENET_TAEM);32;R/W;0000_0004h; 
+400C_01A8;Transmit FIFO Almost Full Threshold (ENET_TAFL);32;R/W;0000_0008h; 
+400C_01AC;Transmit Inter-Packet Gap (ENET_TIPG);32;R/W;0000_000Ch; 
+400C_01B0;Frame Truncation Length (ENET_FTRL);32;R/W;0000_07FFh; 
+400C_01C0;Transmit Accelerator Function Configuration (ENET_TACC);32;R/W;0000_0000h; 
+400C_01C4;Receive Accelerator Function Configuration (ENET_RACC);32;R/W;0000_0000h; 
+400C_0204;Tx Packet Count Statistic Register (ENET_RMON_T_PACKETS);32;R;0000_0000h; 
+400C_0208;Tx Broadcast Packets Statistic Register (ENET_RMON_T_BC_PKT);32;R;0000_0000h; 
+400C_020C;Tx Multicast Packets Statistic Register (ENET_RMON_T_MC_PKT);32;R;0000_0000h; 
+400C_0210;Tx Packets with CRC/Align Error Statistic Register (ENET_RMON_T_CRC_ALIGN);32;R;0000_0000h; 
+400C_0214;Tx Packets Less Than Bytes and Good CRC Statistic Register (ENET_RMON_T_UNDERSIZE);32;R;0000_0000h; 
+400C_0218;Tx Packets GT MAX_FL bytes and Good CRC Statistic Register (ENET_RMON_T_OVERSIZE);32;R;0000_0000h; 
+400C_021C;Tx Packets Less Than 64 Bytes and Bad CRC Statistic Register (ENET_RMON_T_FRAG);32;R;0000_0000h; 
+400C_0220;Tx Packets Greater Than MAX_FL bytes and Bad CRC Statistic Register (ENET_RMON_T_JAB);32;R;0000_0000h; 
+400C_0224;Tx Collision Count Statistic Register (ENET_RMON_T_COL);32;R;0000_0000h; 
+400C_0228;Tx 64-Byte Packets Statistic Register (ENET_RMON_T_P64) ;32;R;0000_0000h; 
+400C_022C;Tx 65- to 127-byte Packets Statistic Register (ENET_RMON_T_P65TO127) ;32;R;0000_0000h; 
+400C_0230;Tx 128- to 255-byte Packets Statistic Register (ENET_RMON_T_P128TO255) ;32;R;0000_0000h; 
+400C_0234;Tx 256- to 511-byte Packets Statistic Register (ENET_RMON_T_P256TO511) ;32;R;0000_0000h; 
+400C_0238;Tx 512- to 1023-byte Packets Statistic Register (ENET_RMON_T_P512TO1023) ;32;R;0000_0000h; 
+400C_023C;Tx 1024- to 2047-byte Packets Statistic Register (ENET_RMON_T_P1024TO2047) ;32;R;0000_0000h; 
+400C_0240;Tx Packets Greater Than 2048 Bytes Statistic Register (ENET_RMON_T_P_GTE2048) ;32;R;0000_0000h; 
+400C_0244;Tx Octets Statistic Register (ENET_RMON_T_OCTETS);32;R;0000_0000h; 
+400C_024C;Frames Transmitted OK Statistic Register (ENET_IEEE_T_FRAME_OK);32;R;0000_0000h; 
+400C_0250;Frames Transmitted with Single Collision Statistic Register (ENET_IEEE_T_1COL);32;R;0000_0000h; 
+400C_0254;Frames Transmitted with Multiple Collisions Statistic Register (ENET_IEEE_T_MCOL);32;R;0000_0000h; 
+400C_0258;Frames Transmitted after Deferral Delay Statistic Register (ENET_IEEE_T_DEF);32;R;0000_0000h; 
+400C_025C;Frames Transmitted with Late Collision Statistic Register (ENET_IEEE_T_LCOL);32;R;0000_0000h; 
+400C_0260;Frames Transmitted with Excessive Collisions Statistic Register (ENET_IEEE_T_EXCOL);32;R;0000_0000h; 
+400C_0264;Frames Transmitted with Tx FIFO Underrun Statistic Register (ENET_IEEE_T_MACERR);32;R;0000_0000h; 
+400C_0268;Frames Transmitted with Carrier Sense Error Statistic Register (ENET_IEEE_T_CSERR);32;R;0000_0000h; 
+400C_0270;Flow Control Pause Frames Transmitted Statistic Register (ENET_IEEE_T_FDXFC);32;R;0000_0000h; 
+400C_0274;Octet Count for Frames Transmitted w/o Error Statistic Register (ENET_IEEE_T_OCTETS_OK);32;R;0000_0000h; 
+400C_0284;Rx Packet Count Statistic Register (ENET_RMON_R_PACKETS);32;R;0000_0000h; 
+400C_0288;Rx Broadcast Packets Statistic Register (ENET_RMON_R_BC_PKT);32;R;0000_0000h; 
+400C_028C;Rx Multicast Packets Statistic Register (ENET_RMON_R_MC_PKT);32;R;0000_0000h; 
+400C_0290;Rx Packets with CRC/Align Error Statistic Register (ENET_RMON_R_CRC_ALIGN);32;R;0000_0000h; 
+400C_0294;Rx Packets with Less Than 64 Bytes and Good CRC Statistic Register (ENET_RMON_R_UNDERSIZE) ;32;R;0000_0000h; 
+400C_0298;Rx Packets Greater Than MAX_FL and Good CRC Statistic Register (ENET_RMON_R_OVERSIZE) ;32;R;0000_0000h; 
+400C_029C;Rx Packets Less Than 64 Bytes and Bad CRC Statistic Register (ENET_RMON_R_FRAG) ;32;R;0000_0000h; 
+400C_02A0;Rx Packets Greater Than MAX_FL Bytes and Bad CRC Statistic Register (ENET_RMON_R_JAB) ;32;R;0000_0000h; 
+400C_02A8;Rx 64-Byte Packets Statistic Register (ENET_RMON_R_P64) ;32;R;0000_0000h; 
+400C_02AC;Rx 65- to 127-Byte Packets Statistic Register (ENET_RMON_R_P65TO127) ;32;R;0000_0000h; 
+400C_02B0;Rx 128- to 255-Byte Packets Statistic Register (ENET_RMON_R_P128TO255) ;32;R;0000_0000h; 
+400C_02B4;Rx 256- to 511-Byte Packets Statistic Register (ENET_RMON_R_P256TO511);32;R;0000_0000h; 
+400C_02B8;Rx 512- to 1023-Byte Packets Statistic Register (ENET_RMON_R_P512TO1023);32;R;0000_0000h; 
+400C_02BC;Rx 1024- to 2047-Byte Packets Statistic Register (ENET_RMON_R_P1024TO2047);32;R;0000_0000h; 
+400C_02C0;Rx Packets Greater than 2048 Bytes Statistic Register (ENET_RMON_R_GTE2048);32;R;0000_0000h; 
+400C_02C4;Rx Octets Statistic Register (ENET_RMON_R_OCTETS);32;R;0000_0000h; 
+400C_02C8;Frames not Counted Correctly Statistic Register (ENET_IEEE_R_DROP);32;R;0000_0000h; 
+400C_02CC;Frames Received OK Statistic Register (ENET_IEEE_R_FRAME_OK);32;R;0000_0000h; 
+400C_02D0;Frames Received with CRC Error Statistic Register (ENET_IEEE_R_CRC);32;R;0000_0000h; 
+400C_02D4;Frames Received with Alignment Error Statistic Register (ENET_IEEE_R_ALIGN);32;R;0000_0000h; 
+400C_02D8;Receive FIFO Overflow Count Statistic Register (ENET_IEEE_R_MACERR);32;R;0000_0000h; 
+400C_02DC;Flow Control Pause Frames Received Statistic Register (ENET_IEEE_R_FDXFC);32;R;0000_0000h; 
+400C_02E0;Octet Count for Frames Received without Error Statistic Register (ENET_IEEE_R_OCTETS_OK);32;R;0000_0000h; 
+400C_0400;Adjustable Timer Control Register (ENET_ATCR);32;R/W;0000_0000h; 
+400C_0404;Timer Value Register (ENET_ATVR);32;R/W;0000_0000h; 
+400C_0408;Timer Offset Register (ENET_ATOFF);32;R/W;0000_0000h; 
+400C_040C;Timer Period Register (ENET_ATPER);32;R/W;3B9A_CA00h; 
+400C_0410 ;Timer Correction Register (ENET_ATCOR);32;R/W;0000_0000h; 
+400C_0414 ;Time-Stamping Clock Period Register (ENET_ATINC);32;R/W;0000_0000h; 
+400C_0418 ;Timestamp of Last Transmitted Frame (ENET_ATSTMP);32;R;0000_0000h; 
+400C_0604 ;Timer Global Status Register (ENET_TGSR);32;R/W;0000_0000h; 
+400C_0608 ;Timer Control Status Register (ENET_TCSR0);32;R/W;0000_0000h; 
+400C_060C;Timer Compare Capture Register (ENET_TCCR0);32;R/W;0000_0000h; 
+400C_0610;Timer Control Status Register (ENET_TCSR1);32;R/W;0000_0000h; 
+400C_0614;Timer Compare Capture Register (ENET_TCCR1);32;R/W;0000_0000h; 
+400C_0618;Timer Control Status Register (ENET_TCSR2);32;R/W;0000_0000h; 
+400C_061C;Timer Compare Capture Register (ENET_TCCR2);32;R/W;0000_0000h; 
+400C_0620;Timer Control Status Register (ENET_TCSR3);32;R/W;0000_0000h; 
+400C_0624;Timer Compare Capture Register (ENET_TCCR3);32;R/W;0000_0000h; 
+====
+ENET_EIR field descriptions;
+31 Reserved;This field is reserved. w1c
+;This read-only field is reserved and always has the value 0.
+30 BABR;Babbling Receive Error w1c
+;Indicates a frame was received with length in excess of RCR[MAX_FL] bytes.
+29 BABT;Babbling Transmit Error w1c
+;Indicates the transmitted frame length exceeds RCR[MAX_FL] bytes. Usually this condition is caused when a frame that is too long is placed into the transmit data buffer(s). Truncation does not occur.
+28 GRA;Graceful Stop Complete w1c
+;This interrupt is asserted after the transmitter is put into a pause state after completion of the frame currently being transmitted. See Graceful Transmit Stop (GTS) for conditions that lead to graceful stop.
+;NOTE: The GRA interrupt is asserted only when the TX transitions into the stopped state. If this bit is cleared by writing 1 and the TX is still stopped, the bit is not set again.
+27 TXF;Transmit Frame Interrupt w1c
+;Indicates a frame has been transmitted and the last corresponding buffer descriptor has been updated.
+26 TXB;Transmit Buffer Interrupt w1c
+;Indicates a transmit buffer descriptor has been updated.
+25 RXF;Receive Frame Interrupt w1c
+;Indicates a frame has been received and the last corresponding buffer descriptor has been updated.
+24 RXB;Receive Buffer Interrupt w1c
+;Indicates a receive buffer descriptor is not the last in the frame has been updated.
+23 MII;MII Interrupt. w1c
+;Indicates that the MII has completed the data transfer requested.
+22 EBERR;Ethernet Bus Error w1c
+;Indicates a system bus error occurred when a uDMA transaction is underway. When this bit is set, ECR[ETHEREN] is cleared, halting frame processing by the MAC. When this occurs, software must ensure proper actions, possibly resetting the system, to resume normal operation.
+21 LC; Late Collision w1c
+;Indicates a collision occurred beyond the collision window (slot time) in half-duplex mode. The frame truncates with a bad CRC and the remainder of the frame is discarded.
+20 RL;Collision Retry Limit w1c
+;Indicates a collision occurred on each of 16 successive attempts to transmit the frame. The frame is discarded without being transmitted and transmission of the next frame commences. This error can only occur in half-duplex mode.
+19 UN;Transmit FIFO Underrun w1c
+;Indicates the transmit FIFO became empty before the complete frame was transmitted. A bad CRC is appended to the frame fragment and the remainder of the frame is discarded.
+18 PLR;Payload Receive Error w1c
+;Indicates a frame was received with a payload length error. See Frame Length/Type Verification: Payload Length Check for more information.
+17 WAKEUP;Node Wakeup Request Indication w1c
+;Read-only status bit to indicate that a magic packet has been detected. Will act only if ECR[MAGICEN] is set.
+16 TS_AVAIL;Transmit Timestamp Available w1c
+;Indicates that the timestamp of the last transmitted timing frame is available in the ATSTMP register.
+15 TS_TIMER;Timestamp Timer w1c
+;The adjustable timer reached the period event. A period event interrupt can be generated if ATCR[PEREN] is set and the timer wraps according to the periodic setting in the ATPER register. Set the timer period value before setting ATCR[PEREN].
+14-0 Reserved;This field is reserved. w1c
+;This read-only field is reserved and always has the value 0.
+
+ENET_EIMR field descriptions;
+31 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+30 BABR;BABR Interrupt Mask
+;Corresponds to interrupt source EIR[BABR] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR BABR field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+;0; The corresponding interrupt source is masked.
+;1; The corresponding interrupt source is not masked.
+29 BABT;BABT Interrupt Mask
+;Corresponds to interrupt source EIR[BABT] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR BABT field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+;0; The corresponding interrupt source is masked.
+;1; The corresponding interrupt source is not masked.
+28 GRA; GRA Interrupt Mask
+;Corresponds to interrupt source EIR[GRA] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR GRA field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+;0; The corresponding interrupt source is masked.
+;1; The corresponding interrupt source is not masked.
+27 TXF;TXF Interrupt Mask
+;Corresponds to interrupt source EIR[TXF] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR TXF field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+;0; The corresponding interrupt source is masked.
+;1; The corresponding interrupt source is not masked.
+26 TXB;TXB Interrupt Mask
+;Corresponds to interrupt source EIR[TXB] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR TXF field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+;0; The corresponding interrupt source is masked.
+;1; The corresponding interrupt source is not masked.
+25 RXF;RXF Interrupt Mask
+;Corresponds to interrupt source EIR[RXF] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR RXF field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+24 RXB;RXB Interrupt Mask
+;Corresponds to interrupt source EIR[RXB] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR RXB field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+23 MII;MII Interrupt Mask
+;Corresponds to interrupt source EIR[MII] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR MII field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+22 EBERR;EBERR Interrupt Mask
+;Corresponds to interrupt source EIR[EBERR] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR EBERR field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+21 LC;LC Interrupt Mask
+;Corresponds to interrupt source EIR[LC] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR LC field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+20 RL;RL Interrupt Mask
+;Corresponds to interrupt source EIR[RL] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR RL field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+19 UN;UN Interrupt Mask
+;Corresponds to interrupt source EIR[UN] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR UN field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+18 PLR;PLR Interrupt Mask
+;Corresponds to interrupt source EIR[PLR] and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR PLR field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+17 WAKEUP;WAKEUP Interrupt Mask
+;Corresponds to interrupt source EIR[WAKEUP] register and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR WAKEUP field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+16 TS_AVAIL;TS_AVAIL Interrupt Mask
+;Corresponds to interrupt source EIR[TS_AVAIL] register and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR TS_AVAIL field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+15 TS_TIMER;TS_TIMER Interrupt Mask
+;Corresponds to interrupt source EIR[TS_TIMER] register and determines whether an interrupt condition can generate an interrupt. At every module clock, the EIR samples the signal generated by the interrupting source. The corresponding EIR TS_TIMER field reflects the state of the interrupt signal even if the corresponding EIMR field is cleared.
+14-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ENET_RDAR field descriptions;
+31-25 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+24 RDAR;Receive Descriptor Active
+;Always set to 1 when this register is written, regardless of the value written. This field is cleared by the MAC device when no additional empty descriptors remain in the receive ring. It is also cleared when ECR[ETHEREN] transitions from set to cleared or when ECR[RESET] is set.
+23-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ENET_TDAR field descriptions;
+31-25 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+24 TDAR;Transmit Descriptor Active
+;Always set to 1 when this register is written, regardless of the value written. This bit is cleared by the MAC device when no additional ready descriptors remain in the transmit ring. Also cleared when ECR[ETHEREN] transitions from set to cleared or when ECR[RESET] is set.
+23-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0
+
+ENET_ECR field descriptions;
+31-12 Reserved;This field is reserved.
+;This field must be set to F_0000h.
+12-9 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+8 DBSWP;Descriptor Byte Swapping Enable
+;Swaps the byte locations of the buffer descriptors. NOTE: This field must be written to 1 after reset.
+;0; The buffer descriptor bytes are not swapped to support big-endian devices.
+;1; The buffer descriptor bytes are swapped to support little-endian devices.
+7 STOPEN;STOPEN Signal Control
+;Controls device behavior in doze mode.
+;In doze mode, if this field is set then all the clocks of the ENET assembly are disabled, except the RMII / MII clock. Doze mode is similar to a conditional stop mode entry for the ENET assembly depending on ECR[STOPEN].
+;NOTE: If module clocks are gated in this mode, the module can still wake the system after receiving a magic packet in stop mode. MAGICEN must be set prior to entering sleep/stop mode.
+6 DBGEN;Debug Enable
+;Enables the MAC to enter hardware freeze mode when the device enters debug mode.
+;0; MAC continues operation in debug mode.
+;1; MAC enters hardware freeze mode when the processor is in debug mode.
+5 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+4 EN1588;EN1588 Enable
+;Enables enhanced functionality of the MAC.
+;0; Legacy FEC buffer descriptors and functions enabled.
+;1; Enhanced frame time-stamping functions enabled.
+3 SLEEP;Sleep Mode Enable
+;0; Normal operating mode.
+;1; Sleep mode.
+2 MAGICEN;Magic Packet Detection Enable Enables/disables magic packet detection.
+;NOTE: MAGICEN is relevant only if the SLEEP field is set. If MAGICEN is set, changing the SLEEP field enables/disables sleep mode and magic packet detection.
+;0; Magic detection logic disabled.
+;1; The MAC core detects magic packets and asserts EIR[WAKEUP] when a frame is detected.
+1 ETHEREN;Ethernet Enable
+;Enables/disables the Ethernet MAC. When the MAC is disabled, the buffer descriptors for an aborted transmit frame are not updated. The uDMA, buffer descriptor, and FIFO control logic are reset, including the buffer descriptor and FIFO pointers.
+;Hardware clears this field under the following conditions:
+;• RESET is set by software
+;• An error condition causes the EBERR field to set.
+;NOTE: • ETHEREN must be set at the very last step during ENET configuration/setup/initialization, only after all other ENET-related registers have been configured.
+;• If ETHEREN is cleared to 0 by software then then next time ETHEREN is set, the EIR interrupts must cleared to 0 due to previous pending interrupts.
+;0; Reception immediately stops and transmission stops after a bad CRC is appended to any currently transmitted frame.
+;1; MAC is enabled, and reception and transmission are possible.
+0 RESET;Ethernet MAC Reset
+;When this field is set, it clears the ETHEREN field.
+
+ENET_MMFR field descriptions;
+31-30 ST;Start Of Frame Delimiter
+;These fields must be programmed to 01 for a valid MII management frame.
+29-28 OP;Operation Code
+;Determines the frame operation.
+;00; Write frame operation, but not MII compliant.
+;01; Write frame operation for a valid MII management frame.
+;10; Read frame operation for a valid MII management frame.
+;11; Read frame operation, but not MII compliant.
+27-23 PA;PHY Address
+;Specifies one of up to 32 attached PHY devices.
+22-18 RA;Register Address
+;Specifies one of up to 32 registers within the specified PHY device.
+17-16 TA;Turn Around
+;This field must be programmed to 10 to generate a valid MII management frame.
+15-0 DATA;Management Frame Data
+;This is the field for data to be written to or read from the PHY register.
+
+ENET_MSCR field descriptions;
+31-11 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+10-8 HOLDTIME;Hold time On MDIO Output
+;IEEE802.3 clause 22 defines a minimum of 10 ns for the hold time on the MDIO output. Depending on the host bus frequency, the setting may need to be increased.
+;000; 1 internal module clock cycle
+;001; 2 internal module clock cycles
+;010; 3 internal module clock cycles 
+;111; 8 internal module clock cycles
+7 DIS_PRE;Disable Preamble
+;Enables/disables prepending a preamble to the MII management frame. The MII standard allows the preamble to be dropped if the attached PHY devices do not require it.
+;0; Preamble enabled.
+;1; Preamble (32 ones) is not prepended to the MII management frame.
+6-1 MII_SPEED;MII Speed
+;Controls the frequency of the MII management interface clock (MDC) relative to the internal module clock. A value of 0 in this field turns off MDC and leaves it in low voltage state. Any non-zero value results in the MDC frequency of:
+;1/((MII_SPEED + 1) x 2) of the internal module clock frequency
+0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ENET_MIBC field descriptions;
+31 MIB_DIS;Disable MIB Logic
+;If this control field is set, the MIB logic halts and does not update any MIB counters.
+30 MIB_IDLE;MIB Idle
+;If this status field is set, the MIB block is not currently updating any MIB counters.
+29 MIB_CLEAR;MIB Clear
+;If set, all statistics counters are reset to 0.
+;NOTE: This field is not self-clearing. To clear the MIB counters set and then clear the field.
+28-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ENET_RCR field descriptions;
+31 GRS;Graceful Receive Stopped
+;Read-only status indicating that the MAC receive datapath is stopped.
+30 NLC;Payload Length Check Disable Enables/disables a payload length check.
+;0; The payload length check is disabled.
+;1; The core checks the frame's payload length with the frame length/type field. Errors are indicated in the EIR[PLC] field.
+29-16 MAX_FL;Maximum Frame Length
+;Resets to decimal 1518. Length is measured starting at DA and includes the CRC at the end of the frame. Transmit frames longer than MAX_FL cause the BABT interrupt to occur. Receive frames longer than MAX_FL cause the BABR interrupt to occur and set the LG field in the end of frame receive buffer descriptor. The recommended default value to be programmed is 1518 or 1522 if VLAN tags are supported.
+15 CFEN;MAC Control Frame Enable
+;Enables/disables the MAC control frame.
+;0; MAC control frames with any opcode other than 0x0001 (pause frame) are accepted and forwarded to the client interface.
+;1; MAC control frames with any opcode other than 0x0001 (pause frame) are silently discarded.
+14 CRCFWD;Terminate/Forward Received CRC
+;Specifies whether the CRC field of received frames is transmitted or stripped.
+;NOTE: If padding function is enabled (PADEN = 1), CRCFWD is ignored and the CRC field is checked and always terminated and removed.
+;0; The CRC field of received frames is transmitted to the user application.
+;1; The CRC field is stripped from the frame.
+13 PAUFWD;Terminate/Forward Pause Frames
+;Specifies whether pause frames are terminated or forwarded.
+;0; Pause frames are terminated and discarded in the MAC.
+;1; Pause frames are forwarded to the user application.
+12 PADEN;Enable Frame Padding Remove On Receive
+;Specifies whether the MAC removes padding from received frames.
+;0; No padding is removed on receive by the MAC.
+;1; Padding is removed from received frames.
+11-10 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+9 RMII_10T;Enables 10-Mbps mode of the RMII .
+;0; 100 Mbps operation.
+;1; 10 Mbps operation.
+8 RMII_MODE;RMII Mode Enable
+;Specifies whether the MAC is configured for MII mode or RMII operation .
+;0; MAC configured for MII mode.
+;1; MAC configured for RMII operation.
+7 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+6 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+5 FCE;Flow Control Enable
+;If set, the receiver detects PAUSE frames. Upon PAUSE frame detection, the transmitter stops transmitting data frames for a given duration.
+4 BC_REJ;Broadcast Frame Reject
+;If set, frames with destination address (DA) equal to 0xFFFF_FFFF_FFFF are rejected unless the PROM field is set. If BC_REJ and PROM are set, frames with broadcast DA are accepted and the MISS (M) is set in the receive buffer descriptor.
+3 PROM;Promiscuous Mode
+;All frames are accepted regardless of address matching.
+;0; Disabled. 
+;1; Enabled.
+2 MII_MODE; Media Independent Interface Mode 
+;This field must always be set.
+;0; Reserved;
+;1; MII or RMII mode, as indicated by the RMII_MODE field.
+1 DRT;Disable Receive On Transmit
+;0; Receive path operates independently of transmit. Used for full-duplex or to monitor transmit activity in half-duplex mode.
+;1; Disable reception of frames while transmitting. Normally used for half-duplex mode.
+0 LOOP;Internal Loopback
+;This is an MII internal loopback, therefore MII_MODE must be written to 1 and RMII_MODE must be written to 0.
+;0; Loopback disabled.
+;1; Transmitted frames are looped back internal to the device and transmit MII output signals are not asserted. DRT must be cleared.
+
+ENET_TCR field descriptions;
+31-11 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+10 Reserved;This field is reserved.
+;This field is read/write and must be set to 0.
+9 CRCFWD;Forward Frame From Application With CRC 
+;0; TxBD[TC] controls whether the frame has a CRC from the application.
+;1; The transmitter does not append any CRC to transmitted frames, as it is expecting a frame with CRC from the application.
+8 ADDINS;Set MAC Address On Transmit
+;0; The source MAC address is not modified by the MAC.
+;1; The MAC overwrites the source MAC address with the programmed MAC address according to ADDSEL.
+7-5 ADDSEL;Source MAC Address Select On Transmit
+;If ADDINS is set, indicates the MAC address that overwrites the source MAC address.
+;000; Node MAC address programmed on PADDR1/2 registers. 
+;100; Reserved.
+;101; Reserved.
+;110; Reserved.
+4 RFC_PAUSE;Receive Frame Control Pause
+;This status field is set when a full-duplex flow control pause frame is received and the transmitter pauses for the duration defined in this pause frame. This field automatically clears when the pause duration is complete.
+3 TFC_PAUSE;Transmit Frame Control Pause
+;Pauses frame transmission. When this field is set, EIR[GRA] is set. With transmission of data frames stopped, the MAC transmits a MAC control PAUSE frame. Next, the MAC clears TFC_PAUSE and resumes transmitting data frames. If the transmitter pauses due to user assertion of GTS or reception of a PAUSE frame, the MAC may continue transmitting a MAC control PAUSE frame.
+;0; No PAUSE frame transmitted.
+;1; The MAC stops transmission of data frames after the current transmission is complete.
+2 FDEN;Full-Duplex Enable
+;If this field is set, frames transmit independent of carrier sense and collision inputs. Only modify this bit when ECR[ETHEREN] is cleared.
+1 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+0 GTS;Graceful Transmit Stop
+;When this field is set, MAC stops transmission after any frame currently transmitted is complete and EIR[GRA] is set. If frame transmission is not currently underway, the GRA interrupt is asserted immediately. After transmission finishes, clear GTS to restart. The next frame in the transmit FIFO is then transmitted. If an early collision occurs during transmission when GTS is set, transmission stops after the collision. The frame is transmitted again after GTS is cleared. There may be old frames in the transmit FIFO that transmit when GTS is reasserted. To avoid this, clear ECR[ETHEREN] following the GRA interrupt.
+
+ENET_PALR field descriptions;
+31-0 PADDR1;Pause Address
+;Bytes 0 (bits 31:24), 1 (bits 23:16), 2 (bits 15:8), and 3 (bits 7:0) of the 6-byte individual address are used for exact match and the source address field in PAUSE frames.
+
+ENET_PAUR field descriptions;
+31-16 PADDR2;Bytes 4 (bits 31:24) and 5 (bits 23:16) of the 6-byte individual address used for exact match, and the source address field in PAUSE frames.
+15-0 TYPE;Type Field In PAUSE Frames
+;These fields have a constant value of 0x8808.
+
+ENET_OPD field descriptions;
+31-16 OPCODE;Opcode Field In PAUSE Frames
+;These fields have a constant value of 0x0001.
+15-0 PAUSE_DUR;Pause Duration
+;Pause duration field used in PAUSE frames.
+
+ENET_IAUR field descriptions;
+31-0 IADDR1;
+;Contains the upper 32 bits of the 64-bit hash table used in the address recognition process for receive frames with a unicast address. Bit 31 of IADDR1 contains hash index bit 63. Bit 0 of IADDR1 contains hash index bit 32.
+
+ENET_IALR field descriptions;
+31-0 IADDR2;
+;Contains the lower 32 bits of the 64-bit hash table used in the address recognition process for receive frames with a unicast address. Bit 31 of IADDR2 contains hash index bit 31. Bit 0 of IADDR2 contains hash index bit 0.
+
+
+
+ENET_GAUR field descriptions;
+31-0 GADDR1;
+;Contains the upper 32 bits of the 64-bit hash table used in the address recognition process for receive frames with a multicast address. Bit 31 of GADDR1 contains hash index bit 63. Bit 0 of GADDR1 contains hash index bit 32.
+
+ENET_GALR field descriptions;
+31-0 GADDR2;
+;Contains the lower 32 bits of the 64-bit hash table used in the address recognition process for receive frames with a multicast address. Bit 31 of GADDR2 contains hash index bit 31. Bit 0 of GADDR2 contains hash index bit 0.
+
+ENET_TFWR field descriptions;
+31-9 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+8 STRFWD;Store And Forward Enable
+;0; Reset. The transmission start threshold is programmed in TFWR[TFWR]. 
+;1; Enabled.
+7-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 TFWR;Transmit FIFO Write
+;If TFWR[STRFWD] is cleared, this field indicates the number of bytes, in steps of 64 bytes, written to the transmit FIFO before transmission of a frame begins.
+;NOTE: If a frame with less than the threshold is written, it is still sent independently of this threshold setting. The threshold is relevant only if the frame is larger than the threshold given.
+;This chip may not support the maximum number of bytes written shown below. See the chip- specific information for the ENET module for this value.
+
+ENET_RDSR field descriptions;
+31-3 R_DES_START;Pointer to the beginning of the receive buffer descriptor queue.
+2 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+1-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ENET_TDSR field descriptions;
+31-3 X_DES_START;Pointer to the beginning of the transmit buffer descriptor queue.
+2 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+1-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ENET_MRBR field descriptions;
+31-14 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+13-4 R_BUF_SIZE;Receive buffer size in bytes.
+3-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ENET_RSFL field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 RX_SECTION_FULL;Value Of Receive FIFO Section Full Threshold
+;Value, in 64-bit words, of the receive FIFO section full threshold. Clear this field to enable store and forward on the RX FIFO. When programming a value greater than 0 (cut-through operation), it must be greater than RAEM[RX_ALMOST_EMPTY].
+;When the FIFO level reaches the value in this field, data is available in the Receive FIFO (cut-through operation).
+
+ENET_RSEM field descriptions;
+31-21 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+20-16 STAT_SECTION_EMPTY;RX Status FIFO Section Empty Threshold
+;Defines number of frames in the receive FIFO, independent of its size, that can be accepted. If the limit is reached, reception will continue normally, however a pause frame will be triggered to indicate a possible congestion to the remote device to avoid FIFO overflow. A value of 0 disables automatic pause frame generation
+15-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 RX_SECTION_EMPTY;Value Of The Receive FIFO Section Empty Threshold
+;Value, in 64-bit words, of the receive FIFO section empty threshold. When the FIFO has reached this level, a pause frame will be issued.
+;A value of 0 disables automatic pause frame generation.
+;When the FIFO level goes below the value programmed in this field, an XON pause frame is issued to indicate the FIFO congestion is cleared to the remote Ethernet client.
+;NOTE: The section-empty threshold indications from both FIFOs are OR'ed to cause XOFF pause frame generation.
+
+ENET_RAEM field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 RX_ALMOST_EMPTY;Value Of The Receive FIFO Almost Empty Threshold
+;Value, in 64-bit words, of the receive FIFO almost empty threshold. When the FIFO level reaches the value programmed in this field and the end-of-frame has not been received for the frame yet, the core receive read control stops FIFO read (and subsequently stops transferring data to the MAC client application). It continues to deliver the frame, if again more data than the threshold or the end-of-frame is available in the FIFO. A minimum value of 4 should be set.
+
+
+ENET_RAFL field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 RX_ALMOST_FULL;Value Of The Receive FIFO Almost Full Threshold
+;Value, in 64-bit words, of the receive FIFO almost full threshold. When the FIFO level comes close to the maximum, so that there is no more space for at least RX_ALMOST_FULL number of words, the MAC stops writing data in the FIFO and truncates the received frame to avoid FIFO overflow. The corresponding error status will be set when the frame is delivered to the application. A minimum value of 4 should be set.
+
+ENET_TSEM field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 TX_SECTION_EMPTY;Value Of The Transmit FIFO Section Empty Threshold
+;Value, in 64-bit words, of the transmit FIFO section empty threshold. See Transmit FIFO for more information.
+
+ENET_TAEM field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 TX_ALMOST_EMPTY;Value of Transmit FIFO Almost Empty Threshold
+;Value, in 64-bit words, of the transmit FIFO almost empty threshold.
+;When the FIFO level reaches the value programmed in this field, and no end-of-frame is available for the frame, the MAC transmit logic, to avoid FIFO underflow, stops reading the FIFO and transmits a frame with an MII error indication. See Transmit FIFO for more information.
+;A minimum value of 4 should be set.
+
+ENET_TAFL field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 TX_ALMOST_FULL;Value Of The Transmit FIFO Almost Full Threshold
+;Value, in 64-bit words, of the transmit FIFO almost full threshold. A minimum value of six is required . A recommended value of at least 8 should be set allowing a latency of two clock cycles to the application. If more latency is required the value can be increased as necessary (latency = TAFL - 5).
+;When the FIFO level comes close to the maximum, so that there is no more space for at least TX_ALMOST_FULL number of words, the pin ff_tx_rdy is deasserted. If the application does not react on this signal, the FIFO write control logic, to avoid FIFO overflow, truncates the current frame and sets the error status. As a result, the frame will be transmitted with an GMII/MII error indication. See Transmit FIFO for more information.
+;NOTE: A FIFO overflow is a fatal error and requires a global reset on the transmit datapath or at least deassertion of ETHEREN.
+
+ENET_TIPG field descriptions;
+31-5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4-0 IPG;Transmit Inter-Packet Gap
+;Indicates the IPG, in bytes, between transmitted frames. Valid values range from 8 to 27. If value is less than 8, the IPG is 8. If value is greater than 27, the IPG is 27.
+
+ENET_FTRL field descriptions;
+31-14 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+13-0 TRUNC_FL;Frame Truncation Length
+;Indicates the value a receive frame is truncated, if it is greater than this value. Must be greater than or equal to RCR[MAX_FL].
+;NOTE: Truncation happens at TRUNC_FL. However, when truncation occurs, the application (FIFO) may receive less data, guaranteeing that it never receives more than the set limit.
+
+ENET_TACC field descriptions;
+31-5 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+4 PROCHK;Enables insertion of protocol checksum.
+;0; Checksum not inserted.
+;1; If an IP frame with a known protocol is transmitted, the checksum is inserted automatically into the frame. The checksum field must be cleared. The other frames are not modified.
+3 IPCHK;Enables insertion of IP header checksum.
+;0; Checksum is not inserted.
+;1; If an IP frame is transmitted, the checksum is inserted automatically. The IP header checksum field must be cleared. If a non-IP frame is transmitted the frame is not modified.
+2-1 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+0 SHIFT16;TX FIFO Shift-16
+;0; Disabled.
+;1; Indicates to the transmit data FIFO that the written frames contain two additional octets before the frame data. This means the actual frame begins at bit 16 of the first word written into the FIFO. This function allows putting the frame payload on a 32-bit boundary in memory, as the 14-byte Ethernet header is extended to a 16-byte header.
+
+ENET_RACC field descriptions;
+31-8 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+7 SHIFT16;RX FIFO Shift-16
+;When this field is set, the actual frame data starts at bit 16 of the first word read from the RX FIFO aligning the Ethernet payload on a 32-bit boundary.
+;NOTE: This function only affects the FIFO storage and has no influence on the statistics, which use the actual length of the frame received.
+;0; Disabled.
+;1; Instructs the MAC to write two additional bytes in front of each frame received into the RX FIFO.
+6 LINEDIS;Enable Discard Of Frames With MAC Layer Errors
+;0; Frames with errors are not discarded.
+;1; Any frame received with a CRC, length, or PHY error is automatically discarded and not forwarded to the user application interface.
+5-3 Reserved;This field is reserved.
+;This write-only field is reserved. It must always be written with the value 0.
+2 PRODIS;Enable Discard Of Frames With Wrong Protocol Checksum
+;0; Frames with wrong checksum are not discarded.
+;1; If a TCP/IP, UDP/IP, or ICMP/IP frame is received that has a wrong TCP, UDP, or ICMP checksum, the frame is discarded. Discarding is only available when the RX FIFO operates in store and forward mode (RSFL cleared).
+1 IPDIS;Enable Discard Of Frames With Wrong IPv4 Header Checksum
+;0; Frames with wrong IPv4 header checksum are not discarded.
+;1; If an IPv4 frame is received with a mismatching header checksum, the frame is discarded. IPv6 has no header checksum and is not affected by this setting. Discarding is only available when the RX FIFO operates in store and forward mode (RSFL cleared).
+0 PADREM;Enable Padding Removal For Short IP Frames
+;0; Padding not removed.
+;1; Any bytes following the IP payload section of the frame are removed from the frame.
+
+ENET_RMON_T_PACKETS field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_BC_PKT field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Broadcast packets
+
+ENET_RMON_T_MC_PKT field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Multicast packets
+
+ENET_RMON_T_CRC_ALIGN field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packets with CRC/align error
+
+ENET_RMON_T_UNDERSIZE field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_OVERSIZE field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_FRAG field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_JAB field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_COL field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_P64 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_P65TO127 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_P128TO255 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_P256TO511 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_P512TO1023 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_P1024TO2047 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_P_GTE2048 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 TXPKTS;Packet count
+
+ENET_RMON_T_OCTETS field descriptions;
+31-0 TXOCTS;Octet count
+
+ENET_IEEE_T_FRAME_OK field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_1COL field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_MCOL field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_DEF field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_LCOL field descriptions
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_EXCOL field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_MACERR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_CSERR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_FDXFC field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_T_OCTETS_OK field descriptions;
+31-0 COUNT;Octet count
+
+ENET_RMON_R_PACKETS field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_BC_PKT field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_MC_PKT field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_CRC_ALIGN field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_UNDERSIZE field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_OVERSIZE field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_FRAG field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_JAB field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_P64 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_P65TO127 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_P128TO255 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_P256TO511 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_P512TO1023 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_P1024TO2047 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_GTE2048 field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_RMON_R_OCTETS field descriptions;
+31-0 COUNT;Octet count
+
+ENET_IEEE_R_DROP field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_R_FRAME_OK field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_R_CRC field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_R_ALIGN field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_R_MACERR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_R_FDXFC field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 COUNT;Frame count
+
+ENET_IEEE_R_OCTETS_OK field descriptions;
+31-0 COUNT;Octet count
+
+ENET_ATCR field descriptions;
+31-14 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+13 SLAVE;Enable Timer Slave Mode
+;0; The timer is active and all configuration fields in this register are relevant.
+;1; The internal timer is disabled and the externally provided timer value is used. All other fields, except CAPTURE, in this register have no effect. CAPTURE can still be used to capture the current timer value.
+12 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+11 CAPTURE;Capture Timer Value
+;0; No effect.
+;1; The current time is captured and can be read from the ATVR register.
+10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9 RESTART;Reset Timer
+;Resets the timer to zero. This has no effect on the counter enable. If the counter is enabled when this field is set, the timer is reset to zero and starts counting from there. When set, all other fields are ignored during a write.
+8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 PINPER;Enables event signal output assertion on period event.
+;NOTE: Not all devices contain the event signal output. See the chip configuration details.
+;0; Disable. 
+;1; Enable.
+6-5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4 PEREN;Enable Periodical Event 
+;0; Disable.
+;1;A period event interrupt can be generated (EIR[TS_TIMER]) and the event signal output is asserted when the timer wraps around according to the periodic setting ATPER. The timer period value must be set before setting this bit.
+;NOTE: Not all devices contain the event signal output. See the chip configuration details.
+3 OFFRST;Reset Timer On Offset Event
+;0; The timer is not affected and no action occurs, besides clearing OFFEN, when the offset is reached.
+;1; If OFFEN is set, the timer resets to zero when the offset setting is reached. The offset event does not cause a timer interrupt.
+2 OFFEN;Enable One-Shot Offset Event
+;0; Disable.
+;1; The timer can be reset to zero when the given offset time is reached (offset event). The field is cleared when the offset event is reached, so no further event occurs until the field is set again. The timer offset value must be set before setting this field.
+1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+0 EN;Enable Timer
+;0; The timer stops at the current value.
+;1; The timer starts incrementing.
+
+ENET_ATVR field descriptions;
+31-0 ATIME;
+;A write sets the timer. A read returns the last captured value. To read the current value, issue a capture command (set ATCR[CAPTURE]) prior to reading this register.
+
+ENET_ATOFF field descriptions;
+31-0 OFFSET;Offset value for one-shot event generation. When the timer reaches the value, an event can be generated to reset the counter. If the increment value in ATINC is given in true nanoseconds, this value is also given in true nanoseconds.
+
+ENET_ATPER field descriptions;
+31-0 PERIOD;
+;Value for generating periodic events. Each instance the timer reaches this value, the period event occurs and the timer restarts. If the increment value in ATINC is given in true nanoseconds, this value is also given in true nanoseconds. The value should be initialized to 1,000,000,000 (1 x 10 9 ) to represent a timer wrap around of one second. The increment value set in ATINC should be set to the true nanoseconds of the period of clock ts_clk, hence implementing a true 1 second counter.
+
+ENET_ATCOR field descriptions;
+31 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+30-0 COR;Correction Counter Wrap-Around Value
+;Defines after how many timer clock cycles (ts_clk) the correction counter should be reset and trigger a correction increment on the timer. The amount of correction is defined in ATINC[INC_CORR]. A value of 0 disables the correction counter and no corrections occur.
+;NOTE: This value is given in clock cycles, not in nanoseconds as all other values.
+
+ENET_ATINC field descriptions;
+31-15 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+14-8 INC_CORR;Correction Increment Value
+;This value is added every time the correction timer expires (every clock cycle given in ATCOR). A value less than INC slows down the timer. A value greater than INC speeds up the timer.
+7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6-0 INC;Clock Period Of The Timestamping Clock (ts_clk) In Nanoseconds
+;The timer increments by this amount each clock cycle. For example, set to 10 for 100 MHz, 8 for 125 MHz, 5 for 200 MHz.
+;NOTE: For highest precision, use a value that is an integer fraction of the period set in ATPER.
+
+ENET_ATSTMP field descriptions;
+31-0 TIMESTAMP;
+;Timestamp of the last frame transmitted by the core that had TxBD[TS] set . This register is only valid when EIR[TS_AVAIL] is set.
+
+ENET_TGSR field descriptions;
+31-4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 TF3;Copy Of Timer Flag For Channel 3
+;0; Timer Flag for Channel 3 is clear
+;1; Timer Flag for Channel 3 is set
+2 TF2;Copy Of Timer Flag For Channel 2
+;0; Timer Flag for Channel 2 is clear
+;1; Timer Flag for Channel 2 is set
+1 TF1;Copy Of Timer Flag For Channel 1
+;0; Timer Flag for Channel 1 is clear
+;1; Timer Flag for Channel 1 is set
+0 TF0;Copy Of Timer Flag For Channel 0
+;0; Timer Flag for Channel 0 is clear
+;1; Timer Flag for Channel 0 is set
+
+ENET_TCSRn field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 TF;Timer Flag
+;Sets when input capture or output compare occurs. This flag is double buffered between the module clock and 1588 clock domains. When this field is 1, it can be cleared to 0 by writing 1 to it.
+;0; Input Capture or Output Compare has not occurred
+;1; Input Capture or Output Compare has occurred
+6 TIE;Timer Interrupt Enable
+;0; Interrupt is disabled
+;1; Interrupt is enabled
+5-2 TMODE;Timer Mode
+;Updating the Timer Mode field takes a few cycles to register because it is synchronized to the 1588 clock. The version of Timer Mode returned on a read is from the 1588 clock domain. When changing Timer Mode, always disable the channel and read this register to verify the channel is disabled first.
+1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+0 TDRE;Timer DMA Request Enable
+;0; DMA request is disabled
+;1; DMA request is enabled
+
+ENET_TCCRn field descriptions;
+31-0 TCC;Timer Capture Compare
+;This register is double buffered between the module clock and 1588 clock domains.
+;When configured for compare, the 1588 clock domain updates with the value in the module clock domain whenever the Timer Channel is first enabled and on each subsequent compare. Write to this register with the first compare value before enabling the Timer Channel. When the Timer Channel is enabled, write the second compare value either immediately, or at least before the first compare occurs. After each compare, write the next compare value before the previous compare occurs and before clearing the Timer Flag.
+;The compare occurs one 1588 clock cycle after the IEEE 1588 Counter increments past the compare value in the 1588 clock domain. If the compare value is less than the value of the 1588 Counter when the Timer Channel is first enabled, then the compare does not occur until following the next overflow of the 1588 Counter. If the compare value is greater than the IEEE 1588 Counter when the 1588 Counter overflows, or the compare value is less than the value of the IEEE 1588 Counter after the overflow, then the compare occurs one 1588 clock cycle following the overflow.
+;When configured for Capture, the value of the IEEE 1588 Counter is captured into the 1588 clock domain and then updated into the module clock domain, provided the Timer Flag is clear. Always read the capture value before clearing the Timer Flag.
+
+
+====

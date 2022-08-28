@@ -1,0 +1,15 @@
+entry_point: 0x8009261
+fork_points:
+- 0x8001e8e
+include:
+- ./syms.yml
+- ../../../../.local/lib/python3.10/site-packages/semu_fuzz/helper/configs/hw/cortexm_memory.yml
+initial_sp: 0x2001ffff
+isr_vector: 0x8009261
+memory_map:
+  flash:
+    base_addr: 0x8000000
+    file: CNC.bin
+    permissions: r-x
+    size: 0x2000000
+rules: ../../../rules/f429.txt

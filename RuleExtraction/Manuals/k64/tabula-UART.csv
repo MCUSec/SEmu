@@ -1,0 +1,729 @@
+4006_A000;UART Baud Rate Registers: High (UART0_BDH);8;R/W;00h;This register, along with the BDL register, controls the prescale divisor for UART baud rate generation. To update the 13-bit baud rate setting (SBR[12:0]), first write to BDH to buffer the high half of the new value and then write to BDL. The working value in BDH does not change until BDL is written.
+4006_A001;UART Baud Rate Registers: Low (UART0_BDL);8;R/W;04h;This register, along with the BDH register, controls the prescale divisor for UART baud rate generation. To update the 13-bit baud rate setting, SBR[12:0], first write to BDH to buffer the high half of the new value and then write to BDL. The working value in BDH does not change until BDL is written. BDL is reset to a nonzero value, but after reset, the baud rate generator remains disabled until the first time the receiver or transmitter is enabled, that is, when C2[RE] or C2[TE] is set.
+4006_A002;UART Control Register 1 (UART0_C1);8;R/W;00h;This read/write register controls various optional features of the UART system.
+4006_A003;UART Control Register 2 (UART0_C2);8;R/W;00h;This register can be read or written at any time.
+4006_A004;UART Status Register 1 (UART0_S1);8;R;C0h;MUST CHECK
+4006_A005;UART Status Register 2 (UART0_S2);8;R/W;00h;The S2 register provides inputs to the MCU for generation of UART interrupts or DMA requests. Also, this register can be polled by the MCU to check the status of these bits. This register can be read or written at any time, with the exception of the MSBF and RXINV bits, which should be changed by the user only between transmit and receive packets.
+4006_A006;UART Control Register 3 (UART0_C3);8;R/W;00h;Writing R8 does not have any effect. TXDIR and TXINV can be changed only between transmit and receive packets.
+4006_A007;UART Data Register (UART0_D);8;R/W;00h;This register is actually two separate registers. Reads return the contents of the read-only receive data register and writes go to the write-only transmit data register.
+4006_A008;UART Match Address Registers 1 (UART0_MA1);8;R/W;00h;The MA1 and MA2 registers are compared to input data addresses when the most significant bit is set and the associated C4[MAEN] field is set. If a match occurs, the following data is transferred to the data register. If a match fails, the following data is discarded. These registers can be read and written at anytime.
+4006_A009;UART Match Address Registers 2 (UART0_MA2);8;R/W;00h;These registers can be read and written at anytime. The MA1 and MA2 registers are compared to input data addresses when the most significant bit is set and the associated C4[MAEN] field is set. If a match occurs, the following data is transferred to the data register. If a match fails, the following data is discarded.
+4006_A00A;UART Control Register 4 (UART0_C4);8;R/W;00h;59.4.11/ 1932
+4006_A00B;UART Control Register 5 (UART0_C5);8;R/W;00h;59.4.12/ 1933
+4006_A00C;UART Extended Data Register (UART0_ED);8; R;00h;59.4.13/ 1934
+4006_A00D;UART Modem Register (UART0_MODEM);8;R/W;00h;The MODEM register controls options for setting the modem configuration.
+4006_A00E;UART Infrared Register (UART0_IR);8;R/W;00h;The IR register controls options for setting the infrared configuration.
+4006_A010;UART FIFO Parameters (UART0_PFIFO);8;R/W;00h;This register provides the ability for the programmer to turn on and off FIFO functionality. It also provides the size of the FIFO that has been implemented. This register may be read at any time. This register must be written only when C2[RE] and C2[TE] are cleared/not set and when the data buffer/FIFO is empty.
+4006_A011;UART FIFO Control Register (UART0_CFIFO);8;R/W;00h;59.4.17/ 1938
+4006_A012;UART FIFO Status Register (UART0_SFIFO);8;R/W;C0h;59.4.18/ 1939
+4006_A013;UART FIFO Transmit Watermark (UART0_TWFIFO);8;R/W;00h;59.4.19/ 1940
+4006_A014;UART FIFO Transmit Count (UART0_TCFIFO);8; R;00h;59.4.20/ 1941
+4006_A015;UART FIFO Receive Watermark (UART0_RWFIFO);8;R/W;01h;59.4.21/ 1941
+4006_A016;UART FIFO Receive Count (UART0_RCFIFO);8;R;00h;59.4.22/ 1942
+4006_A018;UART 7816 Control Register (UART0_C7816);8;R/W;00h;59.4.23/ 1942
+4006_A019;UART 7816 Interrupt Enable Register (UART0_IE7816);8;R/W;00h;59.4.24/ 1944
+4006_A01A;UART 7816 Interrupt Status Register (UART0_IS7816);8;R/W;00h;59.4.25/ 1945
+4006_A01B;UART 7816 Wait Parameter Register (UART0_WP7816T0);8;R/W;00h;59.4.26/ 1947
+4006_A01B;UART 7816 Wait Parameter Register (UART0_WP7816T1);8;R/W;00h;59.4.26/ 1947
+4006_A01C;UART 7816 Wait N Register (UART0_WN7816);8;R/W;00h;59.4.27/ 1947
+4006_A01D;UART 7816 Wait FD Register (UART0_WF7816);8;R/W;01h;59.4.28/ 1948
+4006_A01E;UART 7816 Error Threshold Register (UART0_ET7816);8;R/W;00h;59.4.29/ 1948
+4006_A01F;UART 7816 Transmit Length Register (UART0_TL7816);8;R/W;00h;59.4.30/ 1949
+4006_B000;UART Baud Rate Registers: High (UART1_BDH); 8; R/W; 00h; 59.4.1/1919
+4006_B001;UART Baud Rate Registers: Low (UART1_BDL); 8; R/W; 04h; 59.4.2/1920
+4006_B002;UART Control Register 1 (UART1_C1); 8; R/W; 00h; 59.4.3/1921
+4006_B003;UART Control Register 2 (UART1_C2); 8; R/W; 00h; 59.4.4/1922
+4006_B004;UART Status Register 1 (UART1_S1); 8; R; C0h; MUST CHECK
+4006_B005; UART Status Register 2 (UART1_S2); 8; R/W; 00h;
+4006_B006; UART Control Register 3 (UART1_C3); 8; R/W; 00h;
+4006_B007; UART Data Register (UART1_D); 8; R/W; 00h;
+4006_B008; UART Match Address Registers 1 (UART1_MA1); 8; R/W; 00h;
+4006_B009; UART Match Address Registers 2 (UART1_MA2); 8; R/W; 00h;
+4006_B00A; UART Control Register 4 (UART1_C4); 8; R/W; 00h;
+4006_B00B; UART Control Register 5 (UART1_C5); 8; R/W; 00h;
+4006_B00C; UART Extended Data Register (UART1_ED); 8; R; 00h;
+4006_B00D; UART Modem Register (UART1_MODEM); 8; R/W; 00h;
+4006_B00E; UART Infrared Register (UART1_IR); 8; R/W; 00h;
+4006_B010; UART FIFO Parameters (UART1_PFIFO); 8; R/W; 00h;
+4006_B011; UART FIFO Control Register (UART1_CFIFO); 8; R/W; 00h;
+4006_B012; UART FIFO Status Register (UART1_SFIFO); 8; R/W; C0h;
+4006_B013; UART FIFO Transmit Watermark (UART1_TWFIFO); 8; R/W; 00h;
+4006_B014; UART FIFO Transmit Count (UART1_TCFIFO); 8; R; 00h;
+4006_B015; UART FIFO Receive Watermark (UART1_RWFIFO); 8; R/W; 01h;
+4006_B016; UART FIFO Receive Count (UART1_RCFIFO); 8; R; 00h;
+4006_B018; UART 7816 Control Register (UART1_C7816); 8; R/W; 00h;
+4006_B019; UART 7816 Interrupt Enable Register (UART1_IE7816); 8; R/W; 00h;
+4006_B01A; UART 7816 Interrupt Status Register (UART1_IS7816); 8; R/W; 00h;
+4006_B01B; UART 7816 Wait Parameter Register (UART1_WP7816T0);8;R/W;00h;59.4.26/ 1947
+4006_B01B; UART 7816 Wait Parameter Register (UART1_WP7816T1);8;R/W;00h;59.4.26/ 1947
+4006_B01C; UART 7816 Wait N Register (UART1_WN7816); 8; R/W; 00h;
+4006_B01D; UART 7816 Wait FD Register (UART1_WF7816); 8; R/W; 01h;
+4006_B01E; UART 7816 Error Threshold Register (UART1_ET7816); 8; R/W; 00h;
+4006_B01F; UART 7816 Transmit Length Register (UART1_TL7816); 8; R/W; 00h;
+4006_C000; UART Baud Rate Registers: High (UART2_BDH); 8; R/W; 00h;
+4006_C001; UART Baud Rate Registers: Low (UART2_BDL); 8; R/W; 04h;
+4006_C002; UART Control Register 1 (UART2_C1); 8; R/W; 00h;
+4006_C003; UART Control Register 2 (UART2_C2); 8; R/W; 00h;
+4006_C004; UART Status Register 1 (UART2_S1); 8; R; C0h;MUST CHECK
+4006_C005; UART Status Register 2 (UART2_S2); 8; R/W; 00h;
+4006_C006; UART Control Register 3 (UART2_C3); 8; R/W; 00h;
+4006_C007; UART Data Register (UART2_D); 8; R/W; 00h; 59.4.8/1930
+4006_C008; UART Match Address Registers 1 (UART2_MA1); 8; R/W; 00h; 59.4.9/1931
+4006_C009; UART Match Address Registers 2 (UART2_MA2); 8; R/W; 00h;
+4006_C00A; UART Control Register 4 (UART2_C4); 8; R/W; 00h;
+4006_C00B; UART Control Register 5 (UART2_C5); 8; R/W; 00h;
+4006_C00C; UART Extended Data Register (UART2_ED); 8; R; 00h;
+4006_C00D; UART Modem Register (UART2_MODEM); 8; R/W; 00h;
+4006_C00E; UART Infrared Register (UART2_IR); 8; R/W; 00h;
+4006_C010; UART FIFO Parameters (UART2_PFIFO); 8; R/W; 00h;
+4006_C011; UART FIFO Control Register (UART2_CFIFO); 8; R/W; 00h;
+4006_C012; UART FIFO Status Register (UART2_SFIFO); 8; R/W; C0h;
+4006_C013; UART FIFO Transmit Watermark (UART2_TWFIFO); 8; R/W; 00h;
+4006_C014; UART FIFO Transmit Count (UART2_TCFIFO); 8; R; 00h;
+4006_C015; UART FIFO Receive Watermark (UART2_RWFIFO); 8; R/W; 01h;
+4006_C016; UART FIFO Receive Count (UART2_RCFIFO); 8; R; 00h;
+4006_C018; UART 7816 Control Register (UART2_C7816); 8; R/W; 00h;
+4006_C019; UART 7816 Interrupt Enable Register (UART2_IE7816); 8; R/W; 00h;
+4006_C01A; UART 7816 Interrupt Status Register (UART2_IS7816); 8; R/W; 00h;
+4006_C01B; UART 7816 Wait Parameter Register (UART2_WP7816T0);8;R/W;00h;59.4.26/ 1947
+4006_C01B; UART 7816 Wait Parameter Register (UART2_WP7816T1);8;R/W;00h;59.4.26/ 1947
+4006_C01C; UART 7816 Wait N Register (UART2_WN7816); 8; R/W; 00h;
+4006_C01D; UART 7816 Wait FD Register (UART2_WF7816); 8; R/W; 00h;
+4006_C01E; UART 7816 Error Threshold Register (UART2_ET7816); 8; R/W; 00h;
+4006_C01F; UART 7816 Transmit Length Register (UART2_TL7816); 8; R/W; 00h;
+4006_D000; UART Baud Rate Registers: High (UART3_BDH); 8; R/W; 00h; 59.4.1/1919
+4006_D001; UART Baud Rate Registers: Low (UART3_BDL); 8; R/W; 04h; 59.4.2/1920
+4006_D002; UART Control Register 1 (UART3_C1); 8; R/W; 00h; 59.4.3/1921
+4006_D003; UART Control Register 2 (UART3_C2); 8; R/W; 00h;
+4006_D004; UART Status Register 1 (UART3_S1); 8; R; C0h;MUST CHECK
+4006_D005; UART Status Register 2 (UART3_S2); 8; R/W; 00h;
+4006_D006; UART Control Register 3 (UART3_C3); 8; R/W; 00h;
+4006_D007; UART Data Register (UART3_D); 8; R/W; 00h;
+4006_D008; UART Match Address Registers 1 (UART3_MA1); 8; R/W; 00h;
+4006_D009; UART Match Address Registers 2 (UART3_MA2); 8; R/W; 00h;
+4006_D00A; UART Control Register 4 (UART3_C4); 8; R/W; 00h;
+4006_D00B; UART Control Register 5 (UART3_C5); 8; R/W; 00h;
+4006_D00C; UART Extended Data Register (UART3_ED); 8; R; 00h;
+4006_D00D; UART Modem Register (UART3_MODEM); 8; R/W; 00h;
+4006_D00E; UART Infrared Register (UART3_IR); 8; R/W; 00h;
+4006_D010; UART FIFO Parameters (UART3_PFIFO); 8; R/W; 00h;
+4006_D011; UART FIFO Control Register (UART3_CFIFO); 8; R/W; 00h;
+4006_D012; UART FIFO Status Register (UART3_SFIFO); 8; R/W; C0h;
+4006_D013; UART FIFO Transmit Watermark (UART3_TWFIFO); 8; R/W; 00h;
+4006_D014; UART FIFO Transmit Count (UART3_TCFIFO); 8; R; 00h;
+4006_D015; UART FIFO Receive Watermark (UART3_RWFIFO); 8; R/W; 01h;
+4006_D016; UART FIFO Receive Count (UART3_RCFIFO); 8; R; 00h;
+4006_D018; UART 7816 Control Register (UART3_C7816); 8; R/W; 00h;
+4006_D019; UART 7816 Interrupt Enable Register (UART3_IE7816); 8; R/W; 00h;
+4006_D01A; UART 7816 Interrupt Status Register (UART3_IS7816); 8; R/W; 00h;
+4006_D01B; UART 7816 Wait Parameter Register (UART3_WP7816T0);8;R/W;00h;59.4.26/ 1947
+4006_D01B; UART 7816 Wait Parameter Register (UART3_WP7816T1);8;R/W;00h;59.4.26/ 1947
+4006_D01C; UART 7816 Wait N Register (UART3_WN7816); 8; R/W; 00h;
+4006_D01D; UART 7816 Wait FD Register (UART3_WF7816); 8; R/W; 01h;
+4006_D01E; UART 7816 Error Threshold Register (UART3_ET7816); 8; R/W; 00h;
+4006_D01F; UART 7816 Transmit Length Register (UART3_TL7816); 8; R/W; 00h;
+400E_A000; UART Baud Rate Registers: High (UART4_BDH); 8; R/W; 00h;
+400E_A001; UART Baud Rate Registers: Low (UART4_BDL); 8; R/W; 04h;
+400E_A002; UART Control Register 1 (UART4_C1); 8; R/W; 00h;
+400E_A003; UART Control Register 2 (UART4_C2); 8; R/W; 00h;
+400E_A004; UART Status Register 1 (UART4_S1); 8; R; C0h; MUST CHECK
+400E_A005; UART Status Register 2 (UART4_S2); 8; R/W; 00h; 59.4.6/1927
+400E_A006; UART Control Register 3 (UART4_C3); 8; R/W; 00h; 59.4.7/1929
+400E_A007; UART Data Register (UART4_D); 8; R/W; 00h; 59.4.8/1930
+400E_A008; UART Match Address Registers 1 (UART4_MA1); 8; R/W; 00h; 59.4.9/1931
+400E_A009; UART Match Address Registers 2 (UART4_MA2); 8; R/W; 00h;
+400E_A00A; UART Control Register 4 (UART4_C4); 8; R/W; 00h;
+400E_A00B; UART Control Register 5 (UART4_C5); 8; R/W; 00h;
+400E_A00C; UART Extended Data Register (UART4_ED); 8; R; 00h;
+400E_A00D; UART Modem Register (UART4_MODEM); 8; R/W; 00h;
+400E_A00E; UART Infrared Register (UART4_IR); 8; R/W; 00h;
+400E_A010; UART FIFO Parameters (UART4_PFIFO); 8; R/W; 00h;
+400E_A011; UART FIFO Control Register (UART4_CFIFO); 8; R/W; 00h;
+400E_A012; UART FIFO Status Register (UART4_SFIFO); 8; R/W; C0h;
+400E_A013; UART FIFO Transmit Watermark (UART4_TWFIFO); 8; R/W; 00h;
+400E_A014; UART FIFO Transmit Count (UART4_TCFIFO); 8; R; 00h;
+400E_A015; UART FIFO Receive Watermark (UART4_RWFIFO); 8; R/W; 01h;
+400E_A016; UART FIFO Receive Count (UART4_RCFIFO); 8; R; 00h;
+400E_A018; UART 7816 Control Register (UART4_C7816); 8; R/W; 00h;
+400E_A019; UART 7816 Interrupt Enable Register (UART4_IE7816); 8; R/W; 00h;
+400E_A01A; UART 7816 Interrupt Status Register (UART4_IS7816); 8; R/W; 00h;
+400E_A01B; UART 7816 Wait Parameter Register (UART4_WP7816T0);8;R/W;00h;59.4.26/ 1947
+400E_A01B; UART 7816 Wait Parameter Register (UART4_WP7816T1);8;R/W;00h;59.4.26/ 1947
+400E_A01C; UART 7816 Wait N Register (UART4_WN7816); 8; R/W; 00h;
+400E_A01D; UART 7816 Wait FD Register (UART4_WF7816); 8; R/W; 01h;
+400E_A01E; UART 7816 Error Threshold Register (UART4_ET7816); 8; R/W; 00h;
+400E_A01F; UART 7816 Transmit Length Register (UART4_TL7816); 8; R/W; 00h;
+400E_B000; UART Baud Rate Registers: High (UART5_BDH); 8; R/W; 00h;
+400E_B001; UART Baud Rate Registers: Low (UART5_BDL); 8; R/W; 04h;
+400E_B002; UART Control Register 1 (UART5_C1); 8; R/W; 00h;
+400E_B003; UART Control Register 2 (UART5_C2); 8; R/W; 00h;
+400E_B004; UART Status Register 1 (UART5_S1); 8; R; C0h; MUST CHECK
+400E_B005; UART Status Register 2 (UART5_S2); 8; R/W; 00h; 59.4.6/1927
+400E_B006; UART Control Register 3 (UART5_C3); 8; R/W; 00h; 59.4.7/1929
+400E_B007; UART Data Register (UART5_D); 8; R/W; 00h; 59.4.8/1930
+400E_B008; UART Match Address Registers 1 (UART5_MA1); 8; R/W; 00h; 59.4.9/1931
+400E_B009; UART Match Address Registers 2 (UART5_MA2); 8; R/W; 00h;
+400E_B00A; UART Control Register 4 (UART5_C4); 8; R/W; 00h;
+400E_B00B; UART Control Register 5 (UART5_C5); 8; R/W; 00h;
+400E_B00C; UART Extended Data Register (UART5_ED); 8; R; 00h;
+400E_B00D; UART Modem Register (UART5_MODEM); 8; R/W; 00h;
+400E_B00E; UART Infrared Register (UART5_IR); 8; R/W; 00h;
+400E_B010; UART FIFO Parameters (UART5_PFIFO); 8; R/W; 00h;
+400E_B011; UART FIFO Control Register (UART5_CFIFO); 8; R/W; 00h;
+400E_B012; UART FIFO Status Register (UART5_SFIFO); 8; R/W; C0h;
+400E_B013; UART FIFO Transmit Watermark (UART5_TWFIFO); 8; R/W; 00h;
+400E_B014; UART FIFO Transmit Count (UART5_TCFIFO); 8; R; 00h;
+400E_B015; UART FIFO Receive Watermark (UART5_RWFIFO); 8; R/W; 01h;
+400E_B016; UART FIFO Receive Count (UART5_RCFIFO); 8; R; 00h;
+400E_B018; UART 7816 Control Register (UART5_C7816); 8; R/W; 00h;
+400E_B019; UART 7816 Interrupt Enable Register (UART5_IE7816); 8; R/W; 00h;
+400E_B01A; UART 7816 Interrupt Status Register (UART5_IS7816); 8; R/W; 00h;
+400E_B01B;UART 7816 Wait Parameter Register (UART5_WP7816T0);8;R/W;00h;59.4.26/ 1947
+400E_B01B;UART 7816 Wait Parameter Register (UART5_WP7816T1);8;R/W;00h;59.4.26/ 1947
+400E_B01C; UART 7816 Wait N Register (UART5_WN7816); 8; R/W; 00h;
+400E_B01D; UART 7816 Wait FD Register (UART5_WF7816); 8; R/W; 01h;
+400E_B01E; UART 7816 Error Threshold Register (UART5_ET7816); 8; R/W; 00h;
+400E_B01F; UART 7816 Transmit Length Register (UART5_TL7816); 8; R/W; 00h;
+
+====
+
+UARTx_BDH field descriptions;
+7 LBKDIE;LIN Break Detect Interrupt Enable
+;Enables the LIN break detect flag, LBKDIF, to generate interrupt requests based on the state of LBKDDMAS. 
+;0;LBKDIF interrupt and DMA transfer requests disabled.
+;1;LBKDIF interrupt or DMA transfer requests enabled.
+6 RXEDGIE;RxD Input Active Edge Interrupt Enable
+;Enables the receive input active edge, RXEDGIF, to generate interrupt requests.
+;0;Hardware interrupts from RXEDGIF disabled using polling.
+;1;RXEDGIF interrupt request enabled.
+5 SBNS;Stop Bit Number Select
+;SBNS selects the number of stop bits present in a data frame. This field valid for all 8, 9 and 10 bit data formats available. This field is not valid when C7816[ISO7816E] is enabled.
+;0;Data frame consists of a single stop bit.
+;1;Data frame consists of two stop bits.
+4-0 SBR;UART Baud Rate Bits
+;The baud rate for the UART is determined by the 13 SBR fields. See Baud rate generation for details.
+;NOTE:•The baud rate generator is disabled until C2[TE] or C2[RE] is set for the first time after reset. The baud rate generator is disabled when SBR = 0.•Writing to BDH has no effect without writing to BDL, because writing to BDH puts the data in a temporary location until BDL is written.
+
+UARTx_BDL field descriptions;
+7-0 SBR;UART Baud Rate Bits
+;The baud rate for the UART is determined by the 13 SBR fields. See Baud rate generation for details.
+;NOTE: •The baud rate generator is disabled until C2[TE] or C2[RE] is set for the first time after reset.The baud rate generator is disabled when SBR = 0. •Writing to BDH has no effect without writing to BDL, because writing to BDH puts the data. •When the 1/32;narrow pulse width is selected for infrared (IrDA), the baud rate fields must be even, the least significant bit is 0. See MODEM register for more details.
+
+UARTx_C1 field descriptions;
+7 LOOPS;Loop Mode Select
+;When LOOPS is set, the RxD pin is disconnected from the UART and the transmitter output is internally connected to the receiver input. The transmitter and the receiver must be enabled to use the loop function.
+;0; Normal operation.
+;1; Loop mode where transmitter output is internally connected to receiver input. The receiver input is determined by RSRC.
+6 UARTSWAI;UART Stops in Wait Mode,
+;0; UART clock continues to run in Wait mode.
+;1; UART clock freezes while CPU is in Wait mode.
+5 RSRC;Receiver Source Select,
+;This field has no meaning or effect unless the LOOPS field is set. When LOOPS is set, the RSRC field determines the source for the receiver shift register input.
+;0; Selects internal loop back mode. The receiver input is internally connected to transmitter output.
+;1; Single wire UART mode where the receiver input is connected to the transmit pin input signal.
+4 M;9-bit or 8-bit Mode Select
+;This field must be set when C7816[ISO_7816E] is set/enabled.
+;0; Normal—start + 8 data bits (MSB/LSB first as determined by MSBF) + stop.
+;1; Use—start + 9 data bits (MSB/LSB first as determined by MSBF) + stop.
+3 WAKE;Receiver Wakeup Method Select
+;Determines which condition wakes the UART: • Address mark in the most significant bit position of a received data character, or • An idle condition on the receive pin input signal.
+;0; Idle line wakeup.
+;1; Address mark wakeup.
+2 ILT;Idle Line Type Select
+;Determines when the receiver starts counting logic 1s as idle character bits. The count begins either after a valid start bit or after the stop bit. If the count begins after the start bit, then a string of logic 1s preceding the stop bit can cause false recognition of an idle character. Beginning the count after the stop bit avoids false idle character recognition, but requires properly synchronized transmissions.
+;NOTE: • In case the UART is programmed with ILT = 1, a logic of 1'b0 is automatically shifted after a received stop bit, therefore resetting the idle count.• In case the UART is programmed for IDLE line wakeup (RWU = 1 and WAKE = 0), ILT has no effect on when the receiver starts counting logic 1s as idle character bits. In idle line wakeup, an idle character is recognized at anytime the receiver sees 10, 11, or 12 1s depending on the M, PE, and C4[M10] fields.
+;0; Idle character bit count starts after start bit.
+;1; Idle character bit count starts after stop bit.
+1 PE;Parity Enable
+;Enables the parity function. When parity is enabled, parity function inserts a parity bit in the bit position immediately preceding the stop bit. This field must be set when C7816[ISO_7816E] is set/enabled.
+;0; Parity function disabled.
+;1; Parity function enabled.
+0 PT;Parity Type
+;Determines whether the UART generates and checks for even parity or odd parity. With even parity, an even number of 1s clears the parity bit and an odd number of 1s sets the parity bit. With odd parity, an odd number of 1s clears the parity bit and an even number of 1s sets the parity bit. This field must be cleared when C7816[ISO_7816E] is set/enabled.
+;0; Even parity.
+;1; Odd parity.
+
+UARTx_C2 field descriptions;
+7 TIE;Transmitter Interrupt or DMA Transfer Enable.
+;Enables S1[TDRE] to generate interrupt requests or DMA transfer requests, based on the state of C5[TDMAS].
+;NOTE: If C2[TIE] and C5[TDMAS] are both set, then TCIE must be cleared, and D[D] must not be written unless servicing a DMA request.
+;0;TDRE interrupt and DMA transfer requests disabled.
+;1;TDRE interrupt or DMA transfer requests enabled.
+6 TCIE;Transmission Complete Interrupt or DMA Transfer Enable
+;Enables the transmission complete flag, S1[TC], to generate interrupt requests . or DMA transfer requests based on the state of C5[TCDMAS]
+;NOTE: If C2[TCIE] and C5[TCDMAS] are both set, then TIE must be cleared, and D[D] must not be written unless servicing a DMA request.
+;0;TC interrupt and DMA transfer requests disabled.
+;1;TC interrupt or DMA transfer requests enabled.
+5 RIE;Receiver Full Interrupt or DMA Transfer Enable
+;Enables S1[RDRF] to generate interrupt requests or DMA transfer requests, based on the state of C5[RDMAS].
+;0;RDRF interrupt and DMA transfer requests disabled.
+;1;RDRF interrupt or DMA transfer requests enabled.
+4 ILIE;Idle Line Interrupt DMA Transfer Enable
+;Enables the idle line flag, S1[IDLE], to generate interrupt requests or DMA transfer requests based on the state of C5[ILDMAS].
+;0;IDLE interrupt requests disabled.
+;1;IDLE interrupt requests enabled.
+3 TE;Transmitter Enable
+;Enables the UART transmitter. TE can be used to queue an idle preamble by clearing and then setting TE. When C7816[ISO_7816E] is set/enabled and C7816[TTYPE] = 1, this field is automatically cleared after the requested block has been transmitted. This condition is detected when TL7816[TLEN] = 0 and four additional characters are transmitted.
+;0;Transmitter off.
+;1;Transmitter on.
+2 RE;Receiver Enable
+;Enables the UART receiver.
+;0;Receiver off.
+;1;Receiver on.
+1 RWU;Receiver Wakeup Control
+;This field can be set to place the UART receiver in a standby state. RWU automatically clears when an RWU event occurs, that is, an IDLE event when C1[WAKE] is clear or an address match when C1[WAKE] is set. This field must be cleared when C7816[ISO_7816E] is set.
+;NOTE: RWU must be set only with C1[WAKE] = 0 (wakeup on idle) if the channel is currently not idle. This can be determined by S2[RAF]. If the flag is set to wake up an IDLE event and the channel is already idle, it is possible that the UART will discard data. This is because the data must be received or a LIN break detected after an IDLE is detected before IDLE is allowed to reasserted.
+;0; Normal operation.
+;1; RWU enables the wakeup function and inhibits further receiver interrupt requests. Normally, hardware wakes the receiver by automatically clearing RWU.
+0 SBK;Send Break
+;Toggling SBK sends one break character from the following: See Transmitting break characters for the number of logic 0s for the different configurations. Toggling implies clearing the SBK field before the break character has finished transmitting. As long as SBK is set, the transmitter continues to send complete break characters (10, 11, or 12 bits, or 13 or 14 bits, or 15 or 16 bits). Ensure that C2[TE] is asserted atleast 1 clock before assertion of this bit.
+;• 10, 11, or 12 logic 0s if S2[BRK13] is cleared,
+;• 13 or 14 logic 0s if S2[BRK13] is set.
+;• 15 or 16 logic 0s if BDH[SBNS] is set.
+;This field must be cleared when C7816[ISO_7816E] is set.
+;0;Normal transmitter operation.
+;1;Queue break characters to be sent.
+
+UARTx_S1 field descriptions;
+7 TDRE;Transmit Data Register Empty Flag
+;TDRE will set when the number of datawords in the transmit buffer (D and C3[T8]) is equal to or less than the number indicated by TWFIFO[TXWATER]. A character that is in the process of being transmitted is not included in the count. To clear TDRE, read S1 when TDRE is set and then write to the UART data register (D). For more efficient interrupt servicing, all data except the final value to be written to the buffer must be written to D/C3[T8]. Then S1 can be read before writing the final data value, resulting in the clearing of the TRDE flag. This is more efficient because the TDRE reasserts until the watermark has been exceeded. So, attempting to clear the TDRE with every write will be ineffective until sufficient data has been written.
+;0;The amount of data in the transmit buffer is greater than the value indicated by TWFIFO[TXWATER].
+;1;The amount of data in the transmit buffer is less than or equal to the value indicated by TWFIFO[TXWATER] at some point in time since the flag has been cleared.
+6 TC;Transmit Complete Flag
+;TC is set when the transmit buffer is empty and no data, preamble, or break character is being transmitted. When TC is set, the transmit data output signal becomes idle (logic 1). TC is cleared by reading S1 with TC set and then doing one of the following: When C7816[ISO_7816E] is set/enabled, this field is set after any NACK signal has been received, but prior to any corresponding guard times expiring.
+;•Writing to D to transmit new data.
+;•Queuing a preamble by clearing and then setting C2[TE].
+;•Queuing a break character by writing 1 to SBK in C2.
+;0;Transmitter active (sending data, a preamble, or a break).
+;1;Transmitter idle (transmission activity complete).
+5 RDRF;Receive Data Register Full Flag
+;RDRF is set when the number of datawords in the receive buffer is equal to or more than the number indicated by RWFIFO[RXWATER]. A dataword that is in the process of being received is not included in the count. To clear RDRF, read S1 when RDRF is set and then read D. For more efficient interrupt and DMA operation, read all data except the final value from the buffer, using D/C3[T8]/ED. Then read S1 and the final data value, resulting in the clearing of the RDRF flag. Even if RDRF is set, data will continue to be received until an overrun condition occurs.RDRF is prevented from setting while S2[LBKDE] is set. Additionally, when S2[LBKDE] is set, the received datawords are stored in the receive buffer but over-write each other.
+;0;The number of datawords in the receive buffer is less than the number indicated by RXWATER.
+;1;The number of datawords in the receive buffer is equal to or greater than the number indicated by RXWATER at some point in time since this flag was last cleared.
+4 IDLE;Idle Line Flag
+;After the IDLE flag is cleared, a frame must be received (although not necessarily stored in the data buffer, for example if C2[RWU] is set), or a LIN break character must set the S2[LBKDIF] flag before an idle condition can set the IDLE flag. To clear IDLE, read UART status S1 with IDLE set and then read D. IDLE is set when either of the following appear on the receiver input:
+;•10 consecutive logic 1s if C1[M] = 0.
+;•11 consecutive logic 1s if C1[M] = 1 and C4[M10] = 0.
+;•12 consecutive logic 1s if C1[M] = 1, C4[M10] = 1, and C1[PE] = 1.
+;Idle detection is not supported when 7816E is set/enabled and hence this flag is ignored.
+;NOTE: When RWU is set and WAKE is cleared, an idle line condition sets the IDLE flag if RWUID is set, else the IDLE flag does not become set.
+;0;Receiver input is either active now or has never become active since the IDLE flag was last cleared.
+;1;Receiver input has become idle or the flag has not been cleared since it last asserted.
+3 OR;Receiver Overrun Flag
+;OR is set when software fails to prevent the receive data register from overflowing with data. The OR bit is set immediately after the stop bit has been completely received for the dataword that overflows the buffer and all the other error flags (FE, NF, and PF) are prevented from setting. The data in the shift register is lost, but the data already in the UART data registers is not affected. If the OR flag is set, no data is stored in the data buffer even if sufficient room exists. Additionally, while the OR flag is set, the RDRF and IDLE flags are blocked from asserting, that is, transition from an inactive to an active state. To clear OR, read S1 when OR is set and then read D. See functional description for more details regarding the operation of the OR bit.If LBKDE is enabled and a LIN Break is detected, the OR field asserts if S2[LBKDIF] is not cleared before the next data character is received. In 7816 mode, it is possible to configure a NACK to be returned by programing C7816[ONACK].
+;0;No overrun has occurred since the last time the flag was cleared.
+;1;Overrun has occurred or the overrun flag has not been cleared since the last overrun occured.
+2 NF;Noise Flag
+;NF is set when the UART detects noise on the receiver input. NF does not become set in the case of an overrun or while the LIN break detect feature is enabled (S2[LBKDE] = 1). When NF is set, it indicates only that a dataword has been received with noise since the last time it was cleared. There is no guarantee that the first dataword read from the receive buffer has noise or that there is only one dataword in the buffer that was received with noise unless the receive buffer has a depth of one. To clear NF, read S1 and then read D.
+;0;No noise detected since the last time this flag was cleared. If the receive buffer has a depth greater than 1 then there may be data in the receiver buffer that was received with noise.
+;1;At least one dataword was received with noise detected since the last time the flag was cleared.
+1 FE;Framing Error Flag
+;FE is set when a logic 0 is accepted as the stop bit. When BDH[SBNS] is set, then FE will set when a logic 0 is accepted for either of the two stop bits. FE does not set in the case of an overrun or while the LIN break detect feature is enabled (S2[LBKDE] = 1). FE inhibits further data reception until it is cleared. To clear FE, read S1 when FE is set and then read D. The last data in the receive buffer represents the data that was received with the frame error enabled. Framing errors are not supported when 7816E is set/enabled. However, if this flag is set, data is still not received in 7816 mode.
+;0;No framing error detected.
+;1;Framing error.
+0 PF;Parity Error Flag
+;PF is set when PE is set and the parity of the received data does not match its parity bit. The PF is not set in the case of an overrun condition. When PF is set, it indicates only that a dataword was received with parity error, unless the receive buffer has a depth of one. To clear PF, read S1 and then read D. S2[LBKDE] is disabled. Within the receive buffer structure the received dataword is tagged if it is received  with a parity error. This information is available by reading the ED register prior to reading the D register.
+;0; No parity error detected since the last time this flag was cleared. If the receive buffer has a depth greater than 1, then there may be data in the receive buffer what was received with a parity error.
+;1; At least one dataword was received with a parity error since the last time this flag was cleared.
+
+UARTx_S2 field descriptions;
+7 LBKDIF;LIN Break Detect Interrupt Flag
+;LBKDIF is set when LBKDE is set and a LIN break character is detected on the receiver input. The LIN break characters are 11 consecutive logic 0s if C1[M] = 0 or 12 consecutive logic 0s if C1[M] = 1. LBKDIF is set after receiving the last LIN break character. LBKDIF is cleared by writing a 1 to it.
+;0; No LIN break character detected.
+;1; LIN break character detected.
+6 RXEDGIF;RxD Pin Active Edge Interrupt Flag
+;RXEDGIF is set when an active edge occurs on the RxD pin. The active edge is falling if RXINV = 0, and rising if RXINV=1. RXEDGIF is cleared by writing a 1 to it. See for additional details. RXEDGIF description
+;NOTE: The active edge is detected only in two wire mode and on receiving data coming from the RxD pin.
+;0; No active edge on the receive pin has occurred.
+;1; An active edge on the receive pin has occurred.
+5 MSBF;Most Significant Bit First
+;Setting this field reverses the order of the bits that are transmitted and received on the wire. This field does not affect the polarity of the bits, the location of the parity bit, or the location of the start or stop bits.
+;This field is automatically set when C7816[INIT] and C7816[ISO7816E] are enabled and an initial character is detected in T = 0 protocol mode.
+;0;LSB (bit0) is the first bit that is transmitted following the start bit. Further, the first bit received after the start bit is identified as bit0.
+;1;MSB (bit8, bit7 or bit6) is the first bit that is transmitted following the start bit, depending on the setting of C1[M] and C1[PE]. Further, the first bit received after the start bit is identified as bit8, bit7, or bit6, depending on the setting of C1[M] and C1[PE].
+4 RXINV;Receive Data Inversion
+;Setting this field reverses the polarity of the received data input. In NRZ format, a one is represented by a mark and a zero is represented by a space for normal polarity, and the opposite for inverted polarity. In IrDA format, a zero is represented by short high pulse in the middle of a bit time remaining idle low for a one for normal polarity. A zero is represented by a short low pulse in the middle of a bit time remaining idle high for a one for inverted polarity.This field is automatically set when C7816[INIT] and C7816[ISO7816E] are enabled and an initial character is detected in T = 0 protocol mode.
+;NOTE: Setting RXINV inverts the RxD input for data bits, start and stop bits, break, and idle. When C7816[ISO7816E] is set/enabled, only the data bits and the parity bit are inverted.
+;0;Receive data is not inverted.
+;1;Receive data is inverted.
+3 RWUID;Receive Wakeup Idle Detect
+;When RWU is set and WAKE is cleared, this field controls whether the idle character that wakes the receiver sets S1[IDLE]. This field must be cleared when C7816[ISO7816E] is set/enabled.
+;0;S1[IDLE] is not set upon detection of an idle character.
+;1;S1[IDLE] is set upon detection of an idle character.
+2 BRK13;Break Transmit Character Length
+;Determines whether the transmit break character is 10, 11, or 12 bits long, or 13 or 14 bits long. See for the length of the break character for the different configurations. The detection of a framing error is not affected by this field. Transmitting break characters
+;0;Break character is 10, 11, or 12 bits long.
+;1;Break character is 13 or 14 bits long.
+1 LBKDE;LIN Break Detection Enable
+;Enables the LIN Break detection feature. While LBKDE is set, S1[RDRF], S1[NF], S1[FE], and S1[PF] are prevented from setting. When LBKDE is set, see Overrun operation. LBKDE must be cleared when C7816[ISO7816E] is set.
+;0;Break character detection is disabled.
+;1;Break character is detected at length of 11 bit times if C1[M] = 0 or 12 bits time if C1[M]=1.
+0 RAF;Receiver Active Flag READ ONLY
+;RAF is set when the UART receiver detects a logic 0 during the RT1 time period of the start bit search. RAF is cleared when the receiver detects an idle character when C7816[ISO7816E] is cleared/disabled. When C7816[ISO7816E] is enabled, the RAF is cleared if the C7816[TTYPE] = 0 expires or the C7816[TTYPE] = 1 expires.
+;NOTE: In case C7816[ISO7816E] is set and C7816[TTYPE] = 0, it is possible to configure the guard time to 12. However, if a NACK is required to be transmitted, the data transfer actually takes 13 ETU with the 13th ETU slot being a inactive buffer. Therefore, in this situation, the RAF may deassert one ETU prior to actually being inactive.
+;0;UART receiver idle/inactive waiting for a start bit.
+;1;UART receiver active, RxD input not idle.
+
+UARTx_C3 field descriptions;
+7 R8;Received Bit 8 READ ONLY
+;R8 is the ninth data bit received when the UART is configured for 9-bit data format, that is, if C1[M] = 1 or C4[M10] = 1. The R8 value corresponds to the current data value in the UARTx_D register. To read the 9th bit, read the value of UARTx_C3[R8], then read the UARTx_D register.
+6 T8;Transmit Bit 8
+;T8 is the ninth data bit transmitted when the UART is configured for 9-bit data format, that is, if C1[M] = 1 or C4[M10] = 1.
+;NOTE: If the value of T8 is the same as in the previous transmission, T8 does not have to be rewritten. The same value is transmitted until T8 is rewritten. To correctly transmit the 9th bit, write UARTx_C3[T8] to the desired value, then write the UARTx_D register with the remaining data.
+5 TXDIR;Transmitter Pin Data Direction in Single-Wire mode
+;Determines whether the TXD pin is used as an input or output in the single-wire mode of operation. This field is relevant only to the single wire mode. When C7816[ISO7816E] is set/enabled and C7816[TTYPE] = 1, this field is automatically cleared after the requested block is transmitted. This condition is detected when TL7816[TLEN] = 0 and 4 additional characters are transmitted. Additionally, if C7816[ISO7816E] is set/enabled and C7816[TTYPE] = 0 and a NACK is being transmitted, the hardware automatically overrides this field as needed. In this situation, TXDIR does not reflect the temporary state associated with the NACK.
+;0 ;TXD pin is an input in single wire mode.
+;1; TXD pin is an output in single wire mode.
+4 TXINV;Transmit Data Inversion.
+;Setting this field reverses the polarity of the transmitted data output. In NRZ format, a one is represented by a mark and a zero is represented by a space for normal polarity, and the opposite for inverted polarity. In IrDA format, a zero is represented by short high pulse in the middle of a bit time remaining idle low for a one for normal polarity, and a zero is represented by short low pulse in the middle of a bit time remaining idle high for a one for inverted polarity.This field is automatically set when C7816[INIT] and C7816[ISO7816E] are enabled and an initial character is detected in T = 0 protocol mode.
+;NOTE: Setting TXINV inverts all transmitted values, including idle, break, start, and stop bits. In loop mode, if TXINV is set, the receiver gets the transmit inversion bit when RXINV is disabled. When C7816[ISO7816E] is set/enabled then only the transmitted data bits and parity bit are inverted.
+;0;Transmit data is not inverted.
+;1;Transmit data is inverted.
+3 ORIE;Overrun Error Interrupt Enable
+;Enables the overrun error flag, S1[OR], to generate interrupt requests.
+;0;OR interrupts are disabled.
+;1;OR interrupt requests are enabled.
+2 NEIE;Noise Error Interrupt Enable
+;Enables the noise flag, S1[NF], to generate interrupt requests.
+;0;NF interrupt requests are disabled.
+;1;NF interrupt requests are enabled.
+1 FEIE;Framing Error Interrupt Enable
+;Enables the framing error flag, S1[FE], to generate interrupt requests.
+;0;FE interrupt requests are disabled.
+;1;FE interrupt requests are enabled.
+0 PEIE;Parity Error Interrupt Enable
+;Enables the parity error flag, S1[PF], to generate interrupt requests.
+;0;PF interrupt requests are disabled.
+;1;PF interrupt requests are enabled.
+
+UARTx_D field descriptions;
+RT;Reads return the contents of the read-only receive data register and writes go to the write-only transmit data register.
+;RCFIFO[RXCOUNT] indicates the number of datawords that are in the receive FIFO/buffer. 
+
+UARTx_MA1 field descriptions;
+MA;Match Address
+
+UARTx_MA2 field descriptions;
+MA;Match Address
+
+UARTx_C4 field descriptions;
+7 MAEN1;Match Address Mode Enable 1
+;See Match address operation for more information.
+;0; All data received is transferred to the data buffer if MAEN2 is cleared.
+;1; All data received with the most significant bit cleared, is discarded. All data received with the most significant bit set, is compared with contents of MA1 register. If no match occurs, the data is discarded. If match occurs, data is transferred to the data buffer. This field must be cleared when C7816[ISO7816E] is set/enabled.
+6 MAEN2;Match Address Mode Enable 2
+;See Match address operation for more information.
+;0; All data received is transferred to the data buffer if MAEN1 is cleared.
+;1; All data received with the most significant bit cleared, is discarded. All data received with the most significant bit set, is compared with contents of MA2 register. If no match occurs, the data is discarded. If a match occurs, data is transferred to the data buffer. This field must be cleared when C7816[ISO7816E] is set/enabled.
+5 M10;10-bit Mode select
+;Causes a tenth, non-memory mapped bit to be part of the serial transmission. This tenth bit is generated and interpreted as a parity bit. The M10 field does not affect the LIN send or detect break behavior. If M10 is set, then both C1[M] and C1[PE] must also be set. This field must be cleared when C7816[ISO7816E] is set/enabled.
+;See Data format (non ISO-7816) for more information.
+;0;The parity bit is the ninth bit in the serial transmission.
+;1;The parity bit is the tenth bit in the serial transmission.
+BRFA;Baud Rate Fine Adjust
+;This bit field is used to add more timing resolution to the average baud frequency, in increments of 1/32. See Baud rate generation for more information.
+
+UARTx_C5 field descriptions;
+7 TDMAS;Transmitter DMA Select
+;Configures the transmit data register empty flag, S1[TDRE], to generate interrupt or DMA requests if C2[TIE] is set.
+;NOTE: •If C2[TIE] is cleared, TDRE DMA and TDRE interrupt request signals are not asserted when the TDRE flag is set, regardless of the state of TDMAS. •If C2[TIE] and TDMAS are both set, then C2[TCIE] must be cleared, and D must not be written unless a DMA request is being serviced.
+;0;If C2[TIE] is set and the S1[TDRE] flag is set, the TDRE interrupt request signal is asserted to request interrupt service.
+;1;If C2[TIE] is set and the S1[TDRE] flag is set, the TDRE DMA request signal is asserted to request a DMA transfer.
+6 TCDMAS;Transmission Complete DMA Select
+;Configures the transmission complete flag, S1[TC], to generate interrupt or DMA requests if C2[TCIE] is set.
+;NOTE: • If C2[TCIE] is cleared, the TC DMA and TC interrupt request signals are not asserted when the S1[TC] flag is set, regardless of the state of TCDMAS.• If C2[TCIE] and TCDMAS are both set, then C2[TIE] must be cleared, and D must not be written unless a DMA request is being serviced.
+;0;If C2[TCIE] is set and the S1[TC] flag is set, the TC interrupt request signal is asserted to request an interrupt service.
+;1;If C2[TCIE] is set and the S1[TC] flag is set, the TC DMA request signal is asserted to request a DMA transfer.
+5 RDMAS;Receiver Full DMA Select
+;Configures the receiver data register full flag, S1[RDRF], to generate interrupt or DMA requests if C2[RIE] is set.
+;NOTE: If C2[RIE] is cleared, and S1[RDRF] is set, the RDRF DMA and RDFR interrupt request signals are not asserted, regardless of the state of RDMAS.
+;0;If C2[RIE] and S1[RDRF] are set, the RDFR interrupt request signal is asserted to request an interrupt service.
+;1;If C2[RIE] and S1[RDRF] are set, the RDRF DMA request signal is asserted to request a DMA transfer.
+4 ILDMAS;Idle Line DMA Select
+;Configures the idle line flag, S1[IDLE], to generate interrupt or DMA requests if C2[ILIE] is set.
+;If C2[ILIE] is cleared, and S1[IDLE] is set, the IDLE DMA and IDLE interrupt request signals are not asserted, regardless of the state of ILDMAS.
+;0; If C2[ILIE] and S1[IDLE] are set, the IDLE interrupt request signal is asserted to request an interrupt service.
+;1; If C2[ILIE] and S1[IDLE] are set, the IDLE DMA request signal is asserted to request a DMA transfer.
+3 LBKDDMAS;LIN Break Detect DMA Select Bit
+;Configures the LIN break detect flag, S2[LBKDIF], to generate interrupt or DMA requests if BDH[LBKDIE] is set.
+;If C2[ILIE] is cleared, and S1[IDLE] is set, the IDLE DMA and IDLE interrupt request signals are not asserted, regardless of the state of ILDMAS.
+;NOTE: If BDH[LBKDIE] is cleared, and S2[LBKDIF] is set, the LBKDIF DMA and LBKDIF interrupt signals are not asserted, regardless of the state of LBKDDMAS.
+;0; If BDH[LBKDIE] and S2[LBKDIF] are set, the LBKDIF interrupt signal is asserted to request an interrupt service.
+;1; If BDH[LBKDIE] and S2[LBKDIF] are set, the LBKDIF DMA request signal is asserted to request a DMA transfer.
+2-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+UARTx_ED field descriptions;
+7 NOISY;The current received dataword contained in D and C3[R8] was received with noise.
+;0;The dataword was received without noise.
+;1;The data was received with noise.
+6 PARITYE;The current received dataword contained in D and C3[R8] was received with a parity error.
+;0;The dataword was received without a parity error.
+;1;The dataword was received with a parity error.
+5-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+UARTx_MODEM field descriptions,
+7-4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 RXRTSE;Receiver request-to-send enable
+;Allows the RTS output to control the CTS input of the transmitting device to prevent receiver overrun.
+;NOTE: Do not set both RXRTSE and TXRTSE.
+;0;The receiver has no effect on RTS.
+;1;RTS is deasserted if the number of characters in the receiver data register (FIFO) is equal to or greater than RWFIFO[RXWATER]. RTS is asserted when the number of characters in the receiver data register (FIFO) is less than RWFIFO[RXWATER]. See Hardware flow control"
+2 TXRTSPOL;Transmitter request-to-send polarity
+;Controls the polarity of the transmitter RTS. TXRTSPOL does not affect the polarity of the receiver RTS. RTS will remain negated in the active low state unless TXRTSE is set.
+;0;Transmitter RTS is active low.
+;1;Transmitter RTS is active high.
+1 TXRTSE;Transmitter request-to-send enable
+;Controls RTS before and after a transmission.
+;0;The transmitter has no effect on RTS.
+;1;When a character is placed into an empty transmitter data buffer , RTS asserts one bit time before the start bit is transmitted. RTS deasserts one bit time after all characters in the transmitter data buffer and shift register are completely sent, including the last stop bit. (FIFO)
+0 TXCTSE;Transmitter clear-to-send enable
+;TXCTSE controls the operation of the transmitter. TXCTSE can be set independently from the state of TXRTSE and RXRTSE.
+;0 ;CTS has no effect on the transmitter.
+;1 ;Enables clear-to-send operation. The transmitter checks the state of CTS each time it is ready to send a character. If CTS is asserted, the character is sent. If CTS is deasserted, the signal TXD remains in the mark state and transmission is delayed until CTS is asserted. Changes in CTS as a character is being sent do not affect its transmission.
+
+UARTx_IR field descriptions;
+7-3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 IREN;Infrared enable
+;Enables/disables the infrared modulation/demodulation.
+;0;IR disabled.
+;1;IR enabled.
+TNP;Transmitter narrow pulse
+;Enables whether the UART transmits a 1/16, 3/16, 1/32, or 1/4 narrow pulse.
+;00;3/16.
+;01;1/16.
+;10;1/32.
+;11;1/4.
+
+UARTx_PFIFO field descriptions;
+7 TXFE;Transmit FIFO Enable
+;When this field is set, the built in FIFO structure for the transmit buffer is enabled. The size of the FIFO structure is indicated by TXFIFOSIZE. If this field is not set, the transmit buffer operates as a FIFO of depth one dataword regardless of the value in TXFIFOSIZE. Both C2[TE] and C2[RE] must be cleared prior to changing this field. Additionally, TXFLUSH and RXFLUSH commands must be issued immediately after changing this field.
+;0;Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support).
+;1;Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE.
+6-4 TXFIFOSIZE;Transmit FIFO. Buffer Depth READ ONLY
+;The maximum number of transmit datawords that can be stored in the transmit buffer. This field is read only.
+;000;Transmit FIFO/Buffer depth = 1 dataword.
+;001;Transmit FIFO/Buffer depth = 4 datawords.
+;010;Transmit FIFO/Buffer depth = 8 datawords.
+;011;Transmit FIFO/Buffer depth = 16 datawords.
+;100;Transmit FIFO/Buffer depth = 32;datawords.
+;101;Transmit FIFO/Buffer depth = 64 datawords.
+;110;Transmit FIFO/Buffer depth = 128 datawords.
+;111;Reserved.
+3 RXFE;Receive FIFO Enable,
+;When this field is set, the built in FIFO structure for the receive buffer is enabled. The size of the FIFO structure is indicated by the RXFIFOSIZE field. If this field is not set, the receive buffer operates as a FIFO of depth one dataword regardless of the value in RXFIFOSIZE. Both C2[TE] and C2[RE] must be cleared prior to changing this field. Additionally, TXFLUSH and RXFLUSH commands must be issued immediately after changing this field.
+;0; Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)
+;1; Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE.
+2-0 RXFIFOSIZE;Receive FIFO. Buffer Depth READ ONLY
+;The maximum number of receive datawords that can be stored in the receive buffer before an overrun occurs. This field is read only.
+;000; Receive FIFO/Buffer depth = 1 dataword.
+;001; Receive FIFO/Buffer depth = 4 datawords.
+;010; Receive FIFO/Buffer depth = 8 datawords.
+;011; Receive FIFO/Buffer depth = 16 datawords.
+;100; Receive FIFO/Buffer depth = 32;datawords.
+;101; Receive FIFO/Buffer depth = 64 datawords.
+;110; Receive FIFO/Buffer depth = 128 datawords.
+;111; Reserved.
+
+UARTx_CFIFO field descriptions;
+7 TXFLUSH;Transmit FIFO/Buffer Flush
+;Writing to this field causes all data that is stored in the transmit FIFO/buffer to be flushed. This does not affect data that is in the transmit shift register.
+;0; No flush operation occurs.
+;1; All data in the transmit FIFO/Buffer is cleared out.
+6 RXFLUSH;Receive FIFO/Buffer Flush,
+;Writing to this field causes all data that is stored in the receive FIFO/buffer to be flushed. This does not affect data that is in the receive shift register.
+;0; No flush operation occurs.
+;1; All data in the receive FIFO/buffer is cleared out.
+5-3 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+2 RXOFE;Receive FIFO Overflow Interrupt Enable,
+;When this field is set, the RXOF flag generates an interrupt to the host.
+;0; RXOF flag does not generate an interrupt to the host.
+;1; RXOF flag generates an interrupt to the host.
+1 TXOFE;Transmit FIFO Overflow Interrupt Enable
+;When this field is set, the TXOF flag generates an interrupt to the host.
+;0; TXOF flag does not generate an interrupt to the host.
+;1; TXOF flag generates an interrupt to the host.
+0 RXUFE;Receive FIFO Underflow Interrupt Enable,
+;When this field is set, the RXUF flag generates an interrupt to the host.
+;0 ;RXUF flag does not generate an interrupt to the host.
+;1; RXUF flag generates an interrupt to the host.
+
+UARTx_SFIFO field descriptions;
+7 TXEMPT;Transmit Buffer/FIFO Empty READ ONLY
+;Asserts when there is no data in the Transmit FIFO/buffer. This field does not take into account data that is in the transmit shift register.
+;0;Transmit buffer is not empty.
+;1;Transmit buffer is empty.
+6 RXEMPT;Receive Buffer/FIFO Empty READ ONLY
+;Asserts when there is no data in the receive FIFO/Buffer. This field does not take into account data that is in the receive shift register.
+;0;Receive buffer is not empty.
+;1;Receive buffer is empty.
+5-3 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+2 RXOF;Receiver Buffer Overflow Flag
+;Indicates that more data has been written to the receive buffer than it can hold. This field will assert regardless of the value of CFIFO[RXOFE]. However, an interrupt will be issued to the host only if CFIFO[RXOFE] is set. This flag is cleared by writing a 1.
+;0;No receive buffer overflow has occurred since the last time the flag was cleared.
+;1;At least one receive buffer overflow has occurred since the last time the flag was cleared.
+1 TXOF;Transmitter Buffer Overflow Flag
+;Indicates that more data has been written to the transmit buffer than it can hold. This field will assert regardless of the value of CFIFO[TXOFE]. However, an interrupt will be issued to the host only if CFIFO[TXOFE] is set. This flag is cleared by writing a 1.
+;0;No transmit buffer overflow has occurred since the last time the flag was cleared.
+;1;At least one transmit buffer overflow has occurred since the last time the flag was cleared.
+0 RXUF;Receiver Buffer Underflow Flag
+;Indicates that more data has been read from the receive buffer than was present. This field will assert regardless of the value of CFIFO[RXUFE]. However, an interrupt will be issued to the host only if CFIFO[RXUFE] is set. This flag is cleared by writing a 1.
+;0; No receive buffer underflow has occurred since the last time the flag was cleared.
+;1; At least one receive buffer underflow has occurred since the last time the flag was cleared.
+
+UARTx_TWFIFO field descriptions;
+TXWATER;Transmit Watermark
+;When the number of datawords in the transmit FIFO/buffer is equal to or less than the value in this register field, an interrupt via S1[TDRE] or a DMA request via C5[TDMAS] is generated as determined by C5[TDMAS] and C2[TIE]. For proper operation, the value in TXWATER must be set to be less than the size of the transmit buffer/FIFO size as indicated by PFIFO[TXFIFOSIZE] and PFIFO[TXFE].
+
+UARTx_TCFIFO field descriptions;
+TXCOUNT;Transmit Counter
+;The value in this register indicates the number of datawords that are in the transmit FIFO/buffer. If a dataword is being transmitted, that is, in the transmit shift register, it is not included in the count. This value may be used in conjunction with PFIFO[TXFIFOSIZE] to calculate how much room is left in the transmit FIFO/buffer.
+
+UARTx_RWFIFO field descriptions;
+RXWATER;Receive Watermark
+;When the number of datawords in the receive FIFO/buffer is equal to or greater than the value in this register field, an interrupt via S1[RDRF] or a DMA request via C5[RDMAS] is generated as determined by C5[RDMAS] and C2[RIE]. For proper operation, the value in RXWATER must be set to be less than the receive FIFO/buffer size as indicated by PFIFO[RXFIFOSIZE] and PFIFO[RXFE] and must be greater than 0.
+
+UARTx_RCFIFO field descriptions;
+RXCOUNT;Receive Counter
+;The value in this register indicates the number of datawords that are in the receive FIFO/buffer. If a dataword is being received, that is, in the receive shift register, it is not included in the count. This value may be used in conjunction with PFIFO[RXFIFOSIZE] to calculate how much room is left in the receive FIFO/buffer.
+
+UARTx_C7816 field descriptions;
+7-5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4 ONACK;Generate NACK on Overflow
+;When this field is set, the receiver automatically generates a NACK response if a receive buffer overrun occurs, as indicated by S1[OR]. In many systems, this results in the transmitter resending the packet that overflowed until the retransmit threshold for that transmitter is reached. A NACK is generated only if TTYPE=0. This field operates independently of ANACK. See . Overrun NACK considerations
+;0;The received data does not generate a NACK when the receipt of the data results in an overflow event.
+;1;If the receiver buffer overflows, a NACK is automatically sent on a received character.
+3 ANACK;Generate NACK on Error
+;When this field is set, the receiver automatically generates a NACK response if a parity error occurs or if INIT is set and an invalid initial character is detected. A NACK is generated only if TTYPE = 0. If ANACK is set, the UART attempts to retransmit the data indefinitely. To stop retransmission attempts, clear C2[TE] or ISO_7816E and do not set until S1[TC] sets C2[TE] again.
+;0;No NACK is automatically generated.
+;1;A NACK is automatically generated if a parity error is detected or if an invalid initial character is detected.
+2 INIT;Detect Initial Character
+;When this field is set, all received characters are searched for a valid initial character. If an invalid initial character is identified, and ANACK is set, a NACK is sent. All received data is discarded and error flags blocked (S1[NF], S1[OR], S1[FE], S1[PF], IS7816[WT], IS7816[CWT], IS7816[BWT], IS7816[GTV]) until a valid initial character is detected. Upon detecting a valid initial character, the configuration values S2[MSBF], C3[TXINV], and S2[RXINV] are automatically updated to reflect the initial character that was received. The actual INIT data value is not stored in the receive buffer. Additionally, upon detection of a valid initial character, IS7816[INITD] is set and an interrupt issued as programmed by IE7816[INITDE]. When a valid initial character is detected, INIT is automatically cleared. This Initial Character Detect feature is supported only in T = 0 protocol mode.
+;0;Normal operating mode. Receiver does not seek to identify initial character.
+;1;Receiver searches for initial character.
+1 TTYPE;Transfer Type
+;Indicates the transfer protocol being used.
+;See ISO-7816 / smartcard support for more details.
+;0;T = 0 per the ISO-7816 specification.
+;1;T = 1 per the ISO-7816 specification.
+0 ISO_7816E;ISO-7816 Functionality Enabled
+;Indicates that the UART is operating according to the ISO-7816 protocol.
+;NOTE: This field must be modified only when no transmit or receive is occurring. If this field is changed during a data transfer, the data being transmitted or received may be transferred incorrectly.
+;0;ISO-7816 functionality is turned off/not enabled.
+;1;ISO-7816 functionality is turned on/enabled.
+
+UARTx_IE7816 field descriptions;
+7 WTE;Wait Timer Interrupt Enable
+;0; The assertion of IS7816[WT] does not result in the generation of an interrupt.
+;1; The assertion of IS7816[WT] results in the generation of an interrupt.
+6 CWTE;Character Wait Timer Interrupt Enable
+;0; The assertion of IS7816[CWT] does not result in the generation of an interrupt.
+;1; The assertion of IS7816[CWT] results in the generation of an interrupt.
+5 BWTE;Block Wait Timer Interrupt Enable
+;0; The assertion of IS7816[BWT] does not result in the generation of an interrupt.
+;1; The assertion of IS7816[BWT] results in the generation of an interrupt.
+4 INITDE;Initial Character Detected Interrupt Enable
+;0; The assertion of IS7816[INITD] does not result in the generation of an interrupt.
+;1; The assertion of IS7816[INITD] results in the generation of an interrupt.
+3 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+2 GTVE;Guard Timer Violated Interrupt Enable
+;0; The assertion of IS7816[GTV] does not result in the generation of an interrupt.
+;1; The assertion of IS7816[GTV] results in the generation of an interrupt.
+1 TXTE;Transmit Threshold Exceeded Interrupt Enable
+;0; The assertion of IS7816[TXT] does not result in the generation of an interrupt.
+;1; The assertion of IS7816[TXT] results in the generation of an interrupt.
+0 RXTE;Receive Threshold Exceeded Interrupt Enable
+;0; The assertion of IS7816[RXT] does not result in the generation of an interrupt.
+;1; The assertion of IS7816[RXT] results in the generation of an interrupt.
+
+UARTx_IS7816 field descriptions;
+7 WT;Wait Timer Interrupt
+;Indicates that the wait time, the time between the leading edge of a character being transmitted and the leading edge of the next response character, has exceeded the programmed value. This flag asserts only when C7816[TTYPE] = 0. This interrupt is cleared by writing 1.
+;0; Wait time (WT) has not been violated.
+;1; Wait time (WT) has been violated.
+6 CWT;Character Wait Timer Interrupt
+;Indicates that the character wait time, the time between the leading edges of two consecutive characters in a block, has exceeded the programmed value. This flag asserts only when C7816[TTYPE] = 1. This interrupt is cleared by writing 1.
+;0; Character wait time (CWT) has not been violated.
+;1; Character wait time (CWT) has been violated.
+5 BWT;Block Wait Timer Interrupt
+;Indicates that the block wait time, the time between the leading edge of first received character of a block and the leading edge of the last character the previously transmitted block, has exceeded the programmed value. This flag asserts only when C7816[TTYPE] = 1.This interrupt is cleared by writing 1.
+;0; Block wait time (BWT) has not been violated.
+;1; Block wait time (BWT) has been violated.
+4 INITD;Initial Character Detected Interrupt,
+;Indicates that a valid initial character is received. This interrupt is cleared by writing 1.
+;0;A valid initial character has not been received.
+;1;A valid initial character has been received.
+3 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+2 GTV;Guard Timer Violated Interrupt
+;Indicates that one or more of the character guard time, block guard time, or guard time are violated. This interrupt is cleared by writing 1.
+;0;A guard time (GT, CGT, or BGT) has not been violated.
+;1;A guard time (GT, CGT, or BGT) has been violated.
+1 TXT;Transmit Threshold Exceeded Interrupt
+;Indicates that the transmit NACK threshold has been exceeded as indicated by ET7816[TXTHRESHOLD]. Regardless of whether this flag is set, the UART continues to retransmit indefinitely. This flag asserts only when C7816[TTYPE] = 0. If 7816E is cleared/disabled, ANACK is cleared/disabled, C2[TE] is cleared/ disabled, C7816[TTYPE] = 1, or packet is transferred without receiving a NACK, the internal NACK detection counter is cleared and the count restarts from zero on the next received NACK. This interrupt is cleared by writing 1.
+;0;The number of retries and corresponding NACKS does not exceed the value in ET7816[TXTHRESHOLD].
+;1;The number of retries and corresponding NACKS exceeds the value in ET7816[TXTHRESHOLD].
+0 RXT;Receive Threshold Exceeded Interrupt
+;Indicates that there are more than ET7816[RXTHRESHOLD] consecutive NACKS generated in response to parity errors on received data. This flag requires ANACK to be set. Additionally, this flag asserts only when C7816[TTYPE] = 0. Clearing this field also resets the counter keeping track of consecutive NACKS. The UART will continue to attempt to receive data regardless of whether this flag is set. If 7816E is cleared/disabled, RE is cleared/disabled, C7816[TTYPE] = 1, or packet is received without needing to issue a NACK, the internal NACK detection counter is cleared and the count restarts from zero on the next transmitted NACK. This interrupt is cleared by writing 1.
+;0;The number of consecutive NACKS generated as a result of parity errors and buffer overruns is less than or equal to the value in ET7816[RXTHRESHOLD].
+;1;The number of consecutive NACKS generated as a result of parity errors and buffer overruns is greater than the value in ET7816[RXTHRESHOLD].
+
+UARTx_WP7816T0 field descriptions;
+7-0 WI;Wait Time Multiplier (C7816[TTYPE] = 1)
+;Used to calculate the value used for the BWT counter. It represents a value between 0 and 255. This value is used only when C7816[TTYPE] = 1. See Wait time and guard time parameters.
+
+UARTx_WP7816T1 field descriptions;
+7-4 CWI;Character Wait Time Integer (C7816[TTYPE] = 1)
+;Used to calculate the value used for the CWT counter. It represents a value between 0 and 15. This value is used only when C7816[TTYPE] = 1. See Wait time and guard time parameters .
+3-0 BWI;Block Wait Time Integer(C7816[TTYPE] = 1)
+;Used to calculate the value used for the BWT counter. It represent a value between 0 and 15. This value is used only when C7816[TTYPE] = 1. See Wait time and guard time parameters .
+
+UARTx_WN7816 field descriptions;
+GTN;Guard Band N
+;Defines a parameter used in the calculation of GT, CGT, and BGT counters. The value represents an integer number between 0 and 255. See Wait time and guard time parameters.
+
+UARTx_WF7816 field descriptions;
+GTFD; FD Multiplier
+;Used as another multiplier in the calculation of BWT. This value represents a number between 1 and 255. The value of 0 is invalid. This value is not used in baud rate generation. See Wait time and guard time parameters and Baud rate generation .
+
+UARTx_ET7816 field descriptions;
+7-4 TXTHRESHOLD;Transmit NACK Threshold
+;The value written to this field indicates the maximum number of failed attempts (NACKs) a transmitted character can have before the host processor is notified. This field is meaningful only when C7816[TTYPE] = 0 and C7816[ANACK] = 1. The value read from this field represents the number of consecutive NACKs that have been received since the last successful transmission. This counter saturates at 4'hF and does not wrap around. Regardless of how many NACKs that are received, the UART continues to retransmit indefinitely. This flag only asserts when C7816[TTYPE] = 0. For additional information see the IS7816[TXT] field description.
+;0;TXT asserts on the first NACK that is received.
+;1;TXT asserts on the second NACK that is received.
+RXTHRESHOLD;Receive NACK Threshold
+;The value written to this field indicates the maximum number of consecutive NACKs generated as a result of a parity error or receiver buffer overruns before the host processor is notified. After the counter exceeds that value in the field, the IS7816[RXT] is asserted. This field is meaningful only when C7816[TTYPE] = 0. The value read from this field represents the number of consecutive NACKs that have been transmitted since the last successful reception. This counter saturates at 4'hF and does not wrap around. Regardless of the number of NACKs sent, the UART continues to receive valid packets indefinitely. For additional information, see IS7816[RXT] field description.
+
+UARTx_TL7816 field descriptions;
+TLEN;Transmit Length
+;This value plus four indicates the number of characters contained in the block being transmitted. This register is automatically decremented by 1 for each character in the information field portion of the block. Additionally, this register is automatically decremented by 1 for the first character of a CRC in the epilogue field. Therefore, this register must be programmed with the number of bytes in the data packet if an LRC is being transmitted, and the number of bytes + 1 if a CRC is being transmitted. This register is not decremented for characters that are assumed to be part of the Prologue field, that is, the first three characters transmitted in a block, or the LRC or last CRC character in the Epilogue field, that is, the last character transmitted. This field must be programed or adjusted only when C2[TE] is cleared.
+
+
+====
+Transmitter; TDRE; TIE; TDMAS = 0
+Transmitter; TC; TCIE; TCDMAS = 0
+Receiver; IDLE; ILIE; ILDMAS = 0
+Receiver; RDRF; RIE; RDMAS = 0
+Receiver; LBKDIF; LBKDIE; LBKDDMAS = 0
+Receiver; RXEDGIF; RXEDGIE; -
+Receiver; OR; ORIE; -
+Receiver; NF; NEIE; -
+Receiver; FE; FEIE; -
+Receiver; PF; PEIE; -
+Receiver; RXUF; RXUFE; -
+Transmitter; TXOF; TXOFE; -
+Receiver; WT; WTWE; -
+Receiver; CWT; CWTE; -
+Receiver; BWT; BWTE; -
+Receiver; INITD; INITDE; -
+Receiver; TXT; TXTE; -
+Receiver; RXT; RXTE; -
+Receiver; GTV; GTVE; -
+====

@@ -1,0 +1,68 @@
+400F_F000;Port Data Output Register (GPIOA_PDOR); 32; R/W; 0000_0000h;55.2.1/1761
+400F_F004;Port Set Output Register (GPIOA_PSOR); 32; W (always reads 0); 0000_0000h; 55.2.2/1761
+400F_F008;Port Clear Output Register (GPIOA_PCOR); 32;  W (always reads 0); 0000_0000h; 55.2.3/1762
+400F_F00C;Port Toggle Output Register (GPIOA_PTOR); 32; W (always reads 0); 0000_0000h; 55.2.4/1762
+400F_F010; Port Data Input Register (GPIOA_PDIR); 32; R; 0000_0000h; 55.2.5/1763
+400F_F014; Port Data Direction Register (GPIOA_PDDR); 32; R/W; 0000_0000h; 55.2.6/1763
+400F_F040; Port Data Output Register (GPIOB_PDOR); 32; R/W; 0000_0000h; 55.2.1/1761
+400F_F044;Port Set Output Register (GPIOB_PSOR); 32; W (always reads 0); 0000_0000h; 55.2.2/1761
+400F_F048;Port Clear Output Register (GPIOB_PCOR); 32;  W (always reads 0); 0000_0000h; 55.2.3/1762
+400F_F04C;Port Toggle Output Register (GPIOB_PTOR); 32; W (always reads 0); 0000_0000h; 55.2.4/1762
+400F_F050; Port Data Input Register (GPIOB_PDIR); 32; R; 0000_0000h; 55.2.5/1763
+400F_F054; Port Data Direction Register (GPIOB_PDDR); 32; R/W; 0000_0000h; 55.2.6/1763
+400F_F080; Port Data Output Register (GPIOC_PDOR); 32; R/W; 0000_0000h; 55.2.1/1761
+400F_F084;Port Set Output Register (GPIOC_PSOR); 32; W (always reads 0); 0000_0000h; 55.2.2/1761
+400F_F088;Port Clear Output Register (GPIOC_PCOR); 32;  W (always reads 0); 0000_0000h; 55.2.3/1762
+400F_F08C;Port Toggle Output Register (GPIOC_PTOR); 32; W (always reads 0); 0000_0000h; 55.2.4/1762
+400F_F090; Port Data Input Register (GPIOC_PDIR); 32; R; 0000_0000h; 55.2.5/1763
+400F_F094; Port Data Direction Register (GPIOC_PDDR); 32; R/W; 0000_0000h; 55.2.6/1763
+400F_F0C0; Port Data Output Register (GPIOD_PDOR); 32; R/W; 0000_0000h; 55.2.1/1761
+400F_F0C4;Port Set Output Register (GPIOD_PSOR); 32; W (always reads 0); 0000_0000h; 55.2.2/1761
+400F_F0C8;Port Clear Output Register (GPIOD_PCOR); 32;  W (always reads 0); 0000_0000h; 55.2.3/1762
+400F_F0CC;Port Toggle Output Register (GPIOD_PTOR); 32; W (always reads 0); 0000_0000h; 55.2.4/1762
+400F_F0D0; Port Data Input Register (GPIOD_PDIR); 32; R; 0000_0000h; 55.2.5/1763
+400F_F0D4; Port Data Direction Register (GPIOD_PDDR); 32; R/W; 0000_0000h; 55.2.6/1763
+400F_F100; Port Data Output Register (GPIOE_PDOR); 32; R/W; 0000_0000h; 55.2.1/1761
+400F_F104;Port Set Output Register (GPIOE_PSOR); 32; W (always reads 0); 0000_0000h; 55.2.2/1761
+400F_F108;Port Clear Output Register (GPIOE_PCOR); 32;  W (always reads 0); 0000_0000h; 55.2.3/1762
+400F_F10C;Port Toggle Output Register (GPIOE_PTOR); 32; W (always reads 0); 0000_0000h; 55.2.4/1762
+400F_F110; Port Data Input Register (GPIOE_PDIR); 32; R; 0000_0000h; 55.2.5/1763
+400F_F114; Port Data Direction Register (GPIOE_PDDR); 32; R/W; 0000_0000h; 55.2.6/1763
+====
+
+GPIOx_PDOR Field Description;
+31-0 PDO;Port Data Output
+;Register bits for unbonded pins return a undefined value when read.
+;0; Logic level 0 is driven on pin, provided pin is configured for general-purpose output.
+;1; Logic level 1 is driven on pin, provided pin is configured for general-purpose output.
+
+GPIOx_PSOR Field Description;
+31-0 PTSO;Port Set Output
+;Writing to this register will update the contents of the corresponding bit in the PDOR as follows:
+;0; Corresponding bit in PDORn does not change.
+;1; Corresponding bit in PDORn is set to logic 1.
+
+GPIOx_PCOR Field Description;
+31-0 PTCO;Port Clear Output
+;Writing to this register will update the contents of the corresponding bit in the Port Data Output Register (PDOR) as follows:
+;0; Corresponding bit in PDORn does not change.
+;1; Corresponding bit in PDORn is cleared to logic 0.
+
+GPIOx_PTOR Field Description
+31-0 PTTO; Port Toggle Output
+;Writing to this register will update the contents of the corresponding bit in the PDOR as follows:
+;0; Corresponding bit in PDORn does not change.
+;1; Corresponding bit in PDORn is set to the inverse of its existing logic state.
+
+GPIOx_PDIR Field Description
+31-0 PDI;Port Data Input
+;Reads 0 at the unimplemented pins for a particular device. Pins that are not configured for a digital function read 0. If the Port Control and Interrupt module is disabled, then the corresponding bit in PDIR does not update.
+;0; Pin logic level is logic 0, or is not configured for use by digital function.
+;1; Pin logic level is logic 1.
+
+GPIOx_PDDR Field Description
+31-0 PDD;Port Data Direction
+;Configures individual port pins for input or output.
+;0; Pin is configured as general-purpose input, for the GPIO function.
+;1; Pin is configured as general-purpose output, for the GPIO function.
+====

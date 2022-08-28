@@ -1,0 +1,274 @@
+4006_6000;I2C Address Register 1 (I2C0_A1);8; R/W; 00h; 51.3.1/1499
+4006_6001;I2C Frequency Divider register (I2C0_F);8; R/W; 00h; 51.3.2/1499
+4006_6002;I2C Control Register 1 (I2C0_C1);8; R/W; 00h; 51.3.3/1500
+4006_6003;I2C Status register (I2C0_S);8;R/W; 80h; MUST CHECK
+4006_6004;I2C Data I/O register (I2C0_D); 8; R/W; 00h; 
+4006_6005;I2C Control Register 2 (I2C0_C2); 8; R/W; 00h;
+4006_6006;I2C Programmable Input Glitch Filter register (I2C0_FLT); 8; R/W; 00h;
+4006_6007;I2C Range Address register (I2C0_RA); 8; R/W; 00h; 
+4006_6008;I2C SMBus Control and Status register (I2C0_SMB); 8; R/W; 00h;
+4006_6009;I2C Address Register 2 (I2C0_A2); 8; R/W; C2h; 
+4006_600A;I2C SCL Low Timeout Register High (I2C0_SLTH); 8; R/W; 00h;
+4006_600B;I2C SCL Low Timeout Register Low (I2C0_SLTL); 8; R/W; 00h;
+4006_7000;I2C Address Register 1 (I2C1_A1);8;R/W;00h;
+4006_7001;I2C Frequency Divider register (I2C1_F);8;R/W;00h;
+4006_7002;I2C Control Register 1 (I2C1_C1);8;R/W;00h;
+4006_7003;I2C Status register (I2C1_S);8;R/W;80h; MUST CHECK
+4006_7004;I2C Data I/O register (I2C1_D);8;R/W;00h;
+4006_7005;I2C Control Register 2 (I2C1_C2);8;R/W;00h;
+4006_7006;I2C Programmable Input Glitch Filter register (I2C1_FLT);8;R/W;00h;
+4006_7007;I2C Range Address register (I2C1_RA);8;R/W;00h;
+4006_7008;I2C SMBus Control and Status register (I2C1_SMB);8;R/W;00h;
+4006_7009;I2C Address Register 2 (I2C1_A2);8;R/W;C2h; 
+4006_700A;I2C SCL Low Timeout Register High (I2C1_SLTH);8;R/W;00h;
+4006_700B;I2C SCL Low Timeout Register Low (I2C1_SLTL);8;R/W;00h;
+400E_6000;I2C Address Register 1 (I2C2_A1);8;R/W;00h;
+400E_6001;I2C Frequency Divider register (I2C2_F);8;R/W;00h;
+400E_6002;I2C Control Register 1 (I2C2_C1);8;R/W;00h;
+400E_6003;I2C Status register (I2C2_S);8;R/W;80h; MUST CHECK
+400E_6004;I2C Data I/O register (I2C2_D);8;R/W;00h;
+400E_6005;I2C Control Register 2 (I2C2_C2);8;R/W;00h;
+400E_6006;I2C Programmable Input Glitch Filter register (I2C2_FLT);8;R/W;00h;
+400E_6007;I2C Range Address register (I2C2_RA);8;R/W;00h;
+400E_6008;I2C SMBus Control and Status register (I2C2_SMB);8;R/W;00h;
+400E_6009;I2C Address Register 2 (I2C2_A2); 8; R/W; C2h;51.3.10/ 1509
+400E_600A;I2C SCL Low Timeout Register High (I2C2_SLTH); 8; R/W; 00h;51.3.11/ 1509
+400E_600B;I2C SCL Low Timeout Register Low (I2C2_SLTL); 8; R/W; 00h;51.3.12/ 
+====
+I2Cx_A1 field descriptions;
+7-1 AD[7:1];Address
+;Contains the primary slave address used by the I2C module when it is addressed as a slave. This field is used in the 7-bit address scheme and the lower seven bits in the 10-bit address scheme.
+0 Reserved; This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+I2Cx_F field descriptions;
+7-6 MULT;Multiplier Factor
+;Defines the multiplier factor (mul). This factor is used along with the SCL divider to generate the I2C baud rate.
+;00; mul = 1
+;01; mul = 2 
+;10; mul = 4 
+;11; Reserved
+5-0 ICR;ClockRate
+;Prescales the I2C module clock for bit rate selection. This field and the MULT field determine the I2C baud rate, the SDA hold time, the SCL start hold time, and the SCL stop hold time. For a list of values corresponding to each ICR setting, see I2C divider and hold values.
+;The SCL divider multiplied by multiplier factor (mul) determines the I2C baud rate.
+;I2C baud rate = I2C module clock speed (Hz)/(mul × SCL divider)
+;The SDA hold time is the delay from the falling edge of SCL (I2C clock) to the changing of SDA (I2C data).
+;SDA hold time = I2C module clock period (s) × mul × SDA hold value
+;The SCL start hold time is the delay from the falling edge of SDA (I2C data) while SCL is high (start condition) to the falling edge of SCL (I2C clock).
+;SCL start hold time = I2C module clock period (s) × mul × SCL start hold value
+;The SCL stop hold time is the delay from the rising edge of SCL (I2C clock) to the rising edge of SDA (I2C data) while SCL is high (stop condition).
+;SCL stop hold time = I2C module clock period (s) × mul × SCL stop hold value
+;For example, if the I2C module clock speed is 8 MHz, the following table shows the possible hold time values with different ICR and MULT selections to achieve an I2C baud rate of 100 kbit/s.
+
+I2Cx_C1 field descriptions;
+7 IICEN;I2C Enable
+;Enables I2C module operation.
+;0; Disabled 
+;1; Enabled
+6 IICIE;I2C Interrupt Enable
+;Enables I2C interrupt requests.
+;0; Disabled 
+;1; Enabled
+5 MST;Master Mode Select
+;When MST is changed from 0 to 1, a START signal is generated on the bus and master mode is selected. When this bit changes from 1 to 0, a STOP signal is generated and the mode of operation changes from master to slave.
+;0; Slave mode
+;1; Master mode
+4 TX; Mode Select
+;0; Receive 
+;1; Transmit
+3 TXAK;Transmit Acknowledge Enable
+;Specifies the value driven onto the SDA during data acknowledge cycles for both master and slave receivers. The value of SMB[FACK] affects NACK/ACK generation.
+;NOTE: SCL is held low until TXAK is written.
+;0; An acknowledge signal is sent to the bus on the following receiving byte (if FACK is cleared) or the current receiving byte (if FACK is set).
+;1; No acknowledge signal is sent to the bus on the following receiving data byte (if FACK is cleared) or the current receiving data byte (if FACK is set).
+2 RSTA;Repeat START
+;Writing 1 to this bit generates a repeated START condition provided it is the current master. This bit will always be read as 0. Attempting a repeat at the wrong time results in loss of arbitration.
+1 WUEN;Wakeup Enable
+;The I2C module can wake the MCU from low power mode with no peripheral bus running when slave address matching occurs.
+;0; Normal operation. No interrupt generated when address matching in low power mode.
+;1; Enables the wakeup function in low power mode.
+0 DMAEN;DMA Enable
+;Enables or disables the DMA function.
+;0; All DMA signalling disabled.
+;1;DMA transfer is enabled. While SMB[FACK] = 0, the following conditions trigger the DMA request:• a data byte is received, and either address or data is transmitted. (ACK/NACK is automatic)• the first byte received matches the A1 register or is a general call address.If any address matching occurs, S[IAAS] and S[TCF] are set. If the direction of transfer is known from master to slave, then it is not required to check S[SRW]. With this assumption, DMA can also be used in this case. In other cases, if the master reads data from the slave, then it is required to rewrite the C1 register operation. With this assumption, DMA cannot be used.When FACK = 1, an address or a data byte is transmitted.
+
+I2Cx_S field descriptions;
+7 TCF;Transfer Complete Flag
+;Acknowledges a byte transfer, TCF sets on the completion of a byte transfer. This bit is valid only during or immediately following a transfer to or from the I2C module. TCF is cleared by reading the I2C data register in receive mode or by writing to the I2C data register in transmit mode.
+;0; Transfer in progress
+;1; Transfer complete
+6 IAAS;Addressed As A Slave
+;This bit is set by one of the following conditions:
+;• The calling address matches the programmed primary slave address in the A1 register, or matches the range address in the RA register (which must be set to a nonzero value and under the condition I2C_C2[RMEN] = 1).
+;• C2[GCAEN] is set and a general call is received.
+;• SMB[SIICAEN] is set and the calling address matches the second programmed slave address.
+;• ALERTEN is set and an SMBus alert response address is received
+;• RMEN is set and an address is received that is within the range between the values of the A1 and RA registers.
+;IAAS sets before the ACK bit. The CPU must check the SRW bit and set TX/RX accordingly. Writing the C1 register with any value clears this bit.
+;0; Not addressed
+;1; Addressed as a slave
+5 BUSY;Bus Busy
+;Indicates the status of the bus regardless of slave or master mode. This bit is set when a START signal is detected and cleared when a STOP signal is detected.
+;0; Bus is idle
+;1; Bus is busy
+4 ARBL;Arbitration Lost
+;This bit is set by hardware when the arbitration procedure is lost. The ARBL bit must be cleared by software, by writing 1 to it.
+;0; Standard bus operation.
+;1; Loss of arbitration.
+3 RAM;Range Address Match
+;This bit is set to 1 by any of the following conditions, if I2C_C2[RMEN] = 1:
+;• Any nonzero calling address is received that matches the address in the RA register.
+;• The calling address is within the range of values of the A1 and RA registers.
+;NOTE: For the RAM bit to be set to 1 correctly, C1[IICIE] must be set to 1. Writing the C1 register with any value clears this bit to 0.
+;0; Not addressed
+;1; Addressed as a slave
+2 SRW;Slave Read/Write
+;When addressed as a slave, SRW indicates the value of the R/W command bit of the calling address sent to the master.
+;0; Slave receive, master writing to slave
+;1; Slave transmit, master reading from slave
+1 IICIF;RX empty Interrupt Flag
+;This bit sets when an interrupt is pending. This bit must be cleared by software by writing 1 to it, such as in the interrupt routine. One of the following events can set this bit:
+;• One byte transfer, including ACK/NACK bit, completes if FACK is 0. An ACK or NACK is sent on the bus by writing 0 or 1 to TXAK after this bit is set in receive mode.
+;• One byte transfer, excluding ACK/NACK bit, completes if FACK is 1.
+;• Match of slave address to calling address including primary slave address, range slave address, alert response address, second slave address, or general call address.
+;• Arbitration lost
+;• In SMBus mode, any timeouts except SCL and SDA high timeouts
+;• I2C bus stop or start detection if the SSIE bit in the Input Glitch Filter register is 1
+;NOTE:To clear the I2C bus stop or start detection interrupt: In the interrupt service routine, first clear the STOPF or STARTF bit in the Input Glitch Filter register by writing 1 to it, and then clear the IICIF bit. If this sequence is reversed, the IICIF bit is asserted again.
+;0; No interrupt pending 
+;1; Interrupt pending
+0 RXAK; Acknowledge
+;0; Acknowledge signal was received after the completion of one byte of data transmission on the bus
+;1; No acknowledge signal detected
+
+I2Cx_D field descriptions;
+7-0 DATA;Data
+;In master transmit mode, when data is written to this register, a data transfer is initiated. The most significant bit is sent first. In master receive mode, reading this register initiates receiving of the next byte of data.
+;NOTE: When making the transition out of master receive mode, switch the I2C mode before reading the Data register to prevent an inadvertent initiation of a master receive data transfer.
+;In slave mode, the same functions are available after an address match occurs.
+;The C1[TX] bit must correctly reflect the desired direction of transfer in master and slave modes for the transmission to begin. For example, if the I2C module is configured for master transmit but a master receive is desired, reading the Data register does not initiate the receive.
+;Reading the Data register returns the last byte received while the I2C module is configured in master receive or slave receive mode. The Data register does not reflect every byte that is transmitted on the I2C bus, and neither can software verify that a byte has been written to the Data register correctly by reading it back.
+;In master transmit mode, the first byte of data written to the Data register following assertion of MST (start bit) or assertion of RSTA (repeated start bit) is used for the address transfer and must consist of the calling address (in bits 7-1) concatenated with the required R/W bit (in position bit 0).
+
+I2Cx_C2 field descriptions;
+7 GCAEN;General Call Address Enable
+;Enables general call address.
+;0; Disabled 
+;1; Enabled
+6 ADEXT;Address Extension
+;Controls the number of bits used for the slave address.
+;0; 7-bit address scheme
+;1; 10-bit address scheme
+5 HDRS;High Drive Select
+;Controls the drive capability of the I2C pads.
+;0; Normal drive mode
+;1; High drive mode
+4 SBRC;Slave Baud Rate Control
+;Enables independent slave mode baud rate at maximum frequency, which forces clock stretching on SCL in very fast I2C modes. To a slave, an example of a "very fast" mode is when the master transfers at 40 kbit/s but the slave can capture the master's data at only 10 kbit/s.
+;0; The slave baud rate follows the master baud rate and clock stretching may occur
+;1; Slave baud rate is independent of the master baud rate
+3 RMEN;Range Address Matching Enable
+;This bit controls the slave address matching for addresses between the values of the A1 and RA registers. When this bit is set, a slave address matching occurs for any address greater than the value of the A1 register and less than or equal to the value of the RA register.
+;0; Range mode disabled. No address matching occurs for an address within the range of values of the A1 and RA registers.
+;1; Range mode enabled. Address matching occurs when a slave receives an address within the range of values of the A1 and RA registers.
+2-0 AD[10:8];Slave Address
+;Contains the upper three bits of the slave address in the 10-bit address scheme. This field is valid only while the ADEXT bit is set.
+
+I2Cx_FLT field descriptions;
+7 SHEN;Stop Hold Enable
+;Set this bit to hold off entry to stop mode when any data transmission or reception is occurring. The following scenario explains the holdoff functionality:
+;1. The I2C module is configured for a basic transfer, and the SHEN bit is set to 1.
+;2. A transfer begins.
+;3. The MCU signals the I2C module to enter stop mode.
+;4. The byte currently being transferred, including both address and data, completes its transfer.
+;5. The I2C slave or master acknowledges that the in-transfer byte completed its transfer and acknowledges the request to enter stop mode.
+;6. After receiving the I2C module's acknowledgment of the request to enter stop mode, the MCU determines whether to shut off the I2C module's clock.
+;If the SHEN bit is set to 1 and the I2C module is in an idle or disabled state when the MCU signals to enter stop mode, the module immediately acknowledges the request to enter stop mode.
+;If SHEN is cleared to 0 and the overall data transmission or reception that was suspended by stop mode entry was incomplete: To resume the overall transmission or reception after the MCU exits stop mode, software must reinitialize the transfer by resending the address of the slave.
+;If the I2C Control Register 1's IICIE bit was set to 1 before the MCU entered stop mode, system software will receive the interrupt triggered by the I2C Status Register's TCF bit after the MCU wakes from the stop mode.
+;0; Stop holdoff is disabled. The MCU's entry to stop mode is not gated.
+;1; Stop holdoff is enabled.
+6 STOPF;I2C Bus Stop Detect Flag
+;Hardware sets this bit when the I2C bus's stop status is detected. The STOPF bit must be cleared by writing 1 to it.
+;0; No stop happens on I2C bus
+;1; Stop detected on I2C bus
+5 SSIE;I2C Bus Stop or Start Interrupt Enable
+;This bit enables the interrupt for I2C bus stop or start detection.
+;NOTE: To clear the I2C bus stop or start detection interrupt: In the interrupt service routine, first clear the STOPF or STARTF bit by writing 1 to it, and then clear the IICIF bit in the status register. If this sequence is reversed, the IICIF bit is asserted again.
+;0; Stop or start detection interrupt is disabled
+;1; Stop or start detection interrupt is enabled
+4 STARTF;I2C Bus Start Detect Flag
+;Hardware sets this bit when the I2C bus's start status is detected. The STARTF bit must be cleared by writing 1 to it.
+;0; No start happens on I2C bus
+;1; Start detected on I2C bus
+3-0 FLT;I2C Programmable Filter Factor
+;Controls the width of the glitch, in terms of I2C module clock cycles, that the filter must absorb. For any glitch whose size is less than or equal to this width setting, the filter does not allow the glitch to pass.
+;0h; No filter/bypass
+;1-Fh; Filter glitches up to width of n I2C module clock cycles, where n=1-15d
+
+I2Cx_RA field descriptions;
+7-1 RAD;Range Slave Address
+;This field contains the slave address to be used by the I2C module. The field is used in the 7-bit address scheme. If I2C_C2[RMEN] is set to 1, any nonzero value write enables this register. This register value can be considered as a maximum boundary in the range matching mode.
+0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+I2Cx_SMB field descriptions;
+7 FACK;Fast NACK/ACK Enable
+;For SMBus packet error checking, the CPU must be able to issue an ACK or NACK according to the result of receiving data byte.
+;0; An ACK or NACK is sent on the following receiving data byte
+;1; Writing 0 to TXAK after receiving a data byte generates an ACK. Writing 1 to TXAK after receiving a data byte generates a NACK.
+6 ALERTEN;SMBus Alert Response Address Enable
+;Enables or disables SMBus alert response address matching.
+;NOTE: After the host responds to a device that used the alert response address, you must use software to put the device's address on the bus. The alert protocol is described in the SMBus specification.
+;0; SMBus alert response address matching is disabled
+;1; SMBus alert response address matching is enabled
+5 SIICAEN;Second I2C Address Enable
+;Enables or disables SMBus device default address.
+;0; I2C address register 2 matching is disabled
+;1; I2C address register 2 matching is enabled
+4 TCKSEL;Timeout Counter Clock Select
+;Selects the clock source of the timeout counter.
+;0; Timeout counter counts at the frequency of the I2C module clock / 64
+;1; Timeout counter counts at the frequency of the I2C module clock
+3 SLTF;SCL Low Timeout Flag
+;This bit is set when the SLT register (consisting of the SLTH and SLTL registers) is loaded with a non-zero value (LoValue) and an SCL low timeout occurs. Software clears this bit by writing a logic 1 to it.
+;NOTE: The low timeout function is disabled when the SLT register's value is 0.
+;0; No low timeout occurs
+;1; Low timeout occurs
+2 SHTF1;SCL High Timeout Flag 1
+;This read-only bit sets when SCL and SDA are held high more than clock × LoValue / 512, which indicates the bus is free. This bit is cleared automatically.
+;0; No SCL high and SDA high timeout occurs
+;1; SCL high and SDA high timeout occurs
+1 SHTF2;SCL High Timeout Flag 2
+;This bit sets when SCL is held high and SDA is held low more than clock × LoValue / 512. Software clears this bit by writing 1 to it.
+;0; No SCL high and SDA low timeout occurs
+;1; SCL high and SDA low timeout occurs
+0 SHTF2IE;SHTF2 Interrupt Enable
+;Enables SCL high and SDA low timeout interrupt.
+;0; SHTF2 interrupt is disabled
+;1; SHTF2 interrupt is enabled
+
+I2Cx_A2 field descriptions;
+7-1 SAD;SMBus Address
+;Contains the slave address used by the SMBus. This field is used on the device default address or other related addresses.
+0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+I2Cx_SLTH field descriptions;
+7-0 SSLT[15:8];
+;Most significant byte of SCL low timeout value that determines the timeout period of SCL low. 
+
+I2Cx_SLTL field descriptions;
+7-0 SSLT[7:0];
+;Least significant byte of SCL low timeout value that determines the timeout period of SCL low. 
+
+====
+Complete 1-byte transfer; TCF; IICIF; DMAEN & IICIE 
+Match of received calling address; IAAS; IICIF; IICIE
+Arbitration lost; ARBL; IICIF; IICIE
+I2C bus stop detection; STOPF; IICIF; IICIE & SSIE
+I2C bus start detection; STARTF; IICIF; IICIE & SSIE
+SMBus SCL low timeout; SLTF; IICIF; IICIE
+SMBus SCL high SDA low timeout; SHTF2; IICIF; IICIE & SHTF2IE
+Wakeup from stop or wait mode; IAAS; IICIF; IICIE & WUEN
+====

@@ -1,0 +1,19 @@
+entry_point: 0x99d
+fork_points:
+- 0x8001e8e
+include:
+- ./syms.yml
+- ../../../../.local/lib/python3.10/site-packages/semu_fuzz/helper/configs/hw/cortexm_memory.yml
+initial_sp: 0x1fff0200
+isr_vector: 0x99d
+memory_map:
+  bss:
+    base_addr: 0x1ffe0000
+    permissions: rWx
+    size: 0x20000
+  flash:
+    base_addr: 0x0
+    file: Console.bin
+    permissions: r-x
+    size: 0x2000000
+rules: ../../../rules/k64.txt

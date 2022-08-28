@@ -1,0 +1,137 @@
+400C_0184;linkk transmit descriptor  (descriptors_TDES);256;R/W;0;
+400C_0180;linkk receive descriptor   (descriptors_RDES);256;R/W;0;
+====
+descriptors_RDES field descriptions;
+15-0 Data Length;Data length. 
+;Written by the MAC. Data length is the number of octets written by the MAC into this BD's data buffer if L is cleared (the value is equal to EMRBR), or the length of the frame including CRC if L is set. It is written by the MAC once as the BD is closed.
+31 E;Empty 
+;Written by the MAC (= 0) and user (= 1).
+;0;The data buffer associated with this BD is filled with received data, or data reception has aborted due to an error condition. The status and length fields have been updated as required.
+;1;The data buffer associated with this BD is empty, or reception is currently in progress.
+30 RO1;Receive software ownership. 
+;This field is reserved for use by software. This read/write field is not modified by hardware, nor does its value affect hardware.
+29 W;Wrap.Written by user.
+;0; The next buffer descriptor is found in the consecutive location.
+;1; The next buffer descriptor is found at the location defined in ENETn_RDSR.
+28 RO2;Receive software ownership. 
+;This field is reserved for use by software. This read/write field is not modified by hardware, nor does its value affect hardware.
+27 L;Last in frame. Written by the uDMA.
+;0; The buffer is not the last in a frame.
+;1; The buffer is the last in a frame.
+26-25 Reserved; must be cleared.
+24 M;Miss. Written by the MAC. 
+;This field is set by the MAC for frames accepted in promiscuous mode, but flagged as a miss by the internal address recognition. Therefore, while in promiscuous mode, you can use the this field to quickly determine whether the frame was destined to this station. This field is valid only if the L and PROM bits are set.
+;0; The frame was received because of an address recognition hit. 
+;1; The frame was received because of promiscuous mode.
+23 BC;Set if the DA is broadcast (FFFF_FFFF_FFFF).
+22 MC;Set if the DA is multicast and not BC.
+21 LG;Receive frame length violation. 
+;Written by the MAC. A frame length greater than RCR[MAX_FL] was recognized. This field is valid only if the L field is set. The receive data is not altered in any way unless the length exceeds TRUNC_FL bytes.
+20 NO;Receive non-octet aligned frame. 
+;Written by the MAC. A frame that contained a number of bits not divisible by 8 was received, and the CRC check that occurred at the preceding byte boundary generated an error or a PHY error occurred. This field is valid only if the L field is set. If this field is set, the CR field is not set.
+19 Reserved; must be cleared.
+18 CR;Receive CRC or frame error. 
+;Written by the MAC. This frame contains a PHY or CRC error and is an integral number of octets in length. This field is valid only if the L field is set.
+17 OV;Overrun. 
+;Written by the MAC. A receive FIFO overrun occurred during frame reception. If this field is set, the other status fields, M, LG, NO, CR, and CL, lose their normal meaning and are zero. This field is valid only if the L field is set.
+16 TR;Set if the receive frame is truncated (frame length >TRUNC_FL). 
+;If the TR field is set, the frame must be discarded and the other error fields must be ignored because they may be incorrect.
+47-32 DB1;Receive data buffer pointer, low halfword
+63-48 DB2;Receive data buffer pointer, high halfword1
+64 FRAG;IPv4 Fragment.
+;This is an accelerator option.This field is written by the uDMA. It indicates that the frame is an IPv4 fragment frame. This field is only valid when the L field is set.
+65 IPV6;IPV6 Frame. 
+;This field is written by the uDMA. This field indicates that the frame has an IPv6 frame type. If this field is not set it means that an IPv4 or other protocol frame was received. This field is valid only if the L field is set.
+66 VLAN;VLAN. 
+;This is an accelerator option. This field is written by the uDMA. It means that the frame has a VLAN tag. This field is valid only if the L field is set.
+67 Reserved; must be cleared.
+68 PCR;Protocol checksum error. 
+;This is an accelerator option. This field is written by the uDMA. Set when the checksum of the protocol is invalid or an unknown protocol is found and checksumming could not be performed. This field is only valid if the L field is set.
+69 ICE;IP header checksum error. 
+;This is an accelerator option. This field is written by the uDMA. Set when either a non-IP frame is received or the IP header checksum was invalid. An IP frame with less than 3 bytes of payload is considered to be an invalid IP frame. This field is only valid if the L field is set.
+76-70 Reserved; must be cleared.
+79-77 VPCP;VLAN priority code point. 
+;This field is written by the uDMA to indicate the frame priority level. Valid values are from 0 (best effort) to 7 (highest). This value can be used to prioritize different classes of traffic (e.g., voice, video, data). This field is only valid if the L field is set.
+86-80 Reserved; must be cleared.
+87 INT;Generate RXB/RXF interrupt. 
+;This field is set by the user to indicate that the uDMA is to generate an interrupt on the dma_int_rxb / dma_int_rxfevent.
+88 UC;Unicast. 
+;This field is written by the uDMA, and means that the frame is unicast. This field is valid regardless of whether the L field is set.
+89 CE;Collision. 
+;This field is written by the uDMA. Set when the frame was received with a collision detected during reception. The frame is invalid and sent to the user application. This field is valid only when the L field is set.
+90 PE;PHY Error. 
+;This field is written by the uDMA. Set to "1"when the frame was received with an Error character on the PHY interface. The frame is invalid. This field is valid only when the L field is set.
+94-91 Reserved; must be cleared.
+95 ME;MAC error. 
+;This field is written by the uDMA. This field means that the frame stored in the system memory was received with an error (typically, a receive FIFO overflow). This field is only valid when the L field is set.
+111-96 checksum;Internet payload checksum. 
+;This is an accelerator option. It is the one's complement sum of the payload section of the IP frame. The sum is calculated over all data following the IP header until the end of the IP payload. This field is valid only when the L field is set.
+119-112 Protocol;Protocol type. 
+;This is an accelerator option. The 8-bit protocol field found within the IP header of the frame. It is valid only when ICE is cleared. This field is valid only when the L field is set.
+122-120 Reserved; must be cleared.
+127-123 Header;Header length. 
+;This is an accelerator option. This field is written by the uDMA. This field is the sum of 32-bit words found within the IP and its following protocol headers. If an IP datagram with an unknown protocol is found, then the value is the length of the IP header. If no IP frame or an erroneous IP header is found, the value is 0. 
+143-128 Reserved; must be cleared.
+158-144 Reserved; must be cleared.
+159 BDU;Last buffer descriptor update done. 
+;Indicates that the last BD data has been updated by uDMA. This field is written by the user (=0) and uDMA (=1).
+255-160 Reserved; must be cleared.
+
+descriptors_TDES field descriptions;
+15-0 Data Length;Data length. 
+;Written by the MAC. Data length is the number of octets written by the MAC into this BD's data buffer if L is cleared (the value is equal to EMRBR), or the length of the frame including CRC if L is set. It is written by the MAC once as the BD is closed.
+31 R;Empty 
+;Ready. Written by the MAC and you.
+;0;The data buffer associated with this BD is not ready for transmission. You are free to manipulate this BD or its associated data buffer. The MAC clears this field after the buffer has been transmitted or after an error condition is encountered.
+;1;The data buffer, prepared for transmission by you, has not been transmitted or currently transmits. You may write no fields of this BD after this field is set.
+30 TO1;Transmit software ownership. 
+;This field is reserved for software use. This read/ write field is not modified by hardware and its value does not affect hardware.
+29 W;Wrap.Written by user.
+;0; The next buffer descriptor is found in the consecutive location.
+;1; The next buffer descriptor is found at the location defined in ENETn_RDSR.
+28 TO2;Transmit software ownership. 
+;Transmit software ownership. This field is reserved for use by software. This read/write field is not modified by hardware and its value does not affect hardware.
+27 L;Last in frame. Written by user.
+;0; The buffer is not the last in a frame.
+;1; The buffer is the last in a frame.
+26 TC;Transmit CRC. Written by user, and valid only when L is set.
+;0;End transmission immediately after the last data byte
+;1;Transmit the CRC sequence after the last data byte
+25 ABC; Append bad CRC.
+24-16 Reserved; must be cleared.
+47-32 DB1;Tx data buffer pointer, low halfword
+63-48 DB2;Tx data buffer pointer, high halfword1
+71-64 Reserved; must be cleared.
+72 TSE;Timestamp error. 
+;This field is written by the uDMA. This field indicates that the MAC reported a different frame type then a timestamp frame. This field is valid only when the L field is set.
+73 OE;Overflow error. 
+;This field is written by the uDMA. This field indicates that the MAC reported that there was a FIFO overflow condition on transmit. This field is only valid when the L field is set.67 Reserved; must be cleared.
+74 LCE;Late collision error. 
+;This field is written by the uDMA. This field indicates that the MAC reported that there was a Late Collision on transmit. This field is valid only when the L field is set.
+75 FE;Frame with error. 
+;This field is written by the uDMA. This field indicates that the MAC reported that the uDMA reported an error when providing the packet. This field is valid only when the L field is set.
+76 EE;Excess Collision error. 
+;This field is written by the uDMA. This field indicates that the MAC reported an excess collision error on transmit. This field is valid only when the L field is set.
+77 UE;Underflow error. 
+;This field is written by the uDMA. This field indicates that the MAC reported an underflow error on transmit. This field is valid only when the L field is set.
+78 Reserved; must be cleared.
+79 TXE;Transmit error occurred. 
+;This field is written by the uDMA. This field indicates that there was a transmit error of some sort reported with the frame. Effectively this field is an OR of the other error fields including UE, EE, FE, LCE, OE, and TSE. This field is valid only when the L field is set.
+90-80 Reserved; must be cleared.
+91 IINS;Insert IP header checksum. 
+;This field is written by the user. If set, the MAC's IP accelerator calculates the IP header checksum and overwrites the corresponding header field with the calculated value. The checksum field must be cleared by the application generating the frame. The uDMA does not update this value. This field is valid regardless of the L field and must be the same for all EBD for a given frame.
+92 PINS;Insert protocol specific checksum. 
+;This field is written by the user. If set, the MAC's IP accelerator calculates the protocol checksum and overwrites the corresponding checksum field with the calculated value. The checksum field must be cleared by the application generating the frame. The uDMA does not update this value. This field is valid regardless of the L field and must be the same for all EBD for a given frame.
+93 TS;Timestamp. 
+;This field is written by the user. This indicates that the uDMA is to generate a timestamp frame to the MAC. This field is valid regardless of the L field and must be the same for all EBD for the given frame. The uDMA does not update this value.
+94 INT;Generate interrupt flags. 
+;This field is written by the user. This field is valid regardless of the L field and must be the same for all EBD for a given frame. The uDMA does not update this value.
+95 Reserved; must be cleared.
+111-96 Reserved; must be cleared.
+127-112 Reserved; must be cleared.
+143-128 Reserved; must be cleared.
+158-144 Reserved; must be cleared.
+159 BDU;Last buffer descriptor update done. 
+;Indicates that the last BD data has been updated by uDMA. This field is written by the user (=0) and uDMA (=1).
+255-160 Reserved; must be cleared.
+====

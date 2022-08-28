@@ -1,0 +1,64 @@
+4003_7000;PIT Module Control Register (PIT_MCR);32;R/W;0000_0006h;This register enables or disables the PIT timer clocks and controls the timers when the PIT enters the Debug mode.
+4003_7100;Timer Load Value Register (PIT_LDVAL0);32;R/W;0000_0000h;41.3.2/1087
+4003_7104;Current Timer Value Register (PIT_CVAL0);32;R;0000_0000h;41.3.3/1087
+4003_7108;Timer Control Register (PIT_TCTRL0);32;R/W;0000_0000h;41.3.4/1088
+4003_710C;Timer Flag Register (PIT_TFLG0);32;R/W;0000_0000h;41.3.5/1089
+4003_7110;Timer Load Value Register (PIT_LDVAL1);32;R/W;0000_0000h;41.3.2/1087
+4003_7114;Current Timer Value Register (PIT_CVAL1);32;R;0000_0000h;41.3.3/1087
+4003_7118;Timer Control Register (PIT_TCTRL1);32;R/W;0000_0000h;41.3.4/1088
+4003_711C;Timer Flag Register (PIT_TFLG1);32;R/W;0000_0000h;41.3.5/1089
+4003_7120;Timer Load Value Register (PIT_LDVAL2);32;R/W;0000_0000h;41.3.2/1087
+4003_7124;Current Timer Value Register (PIT_CVAL2);32;R;0000_0000h;41.3.3/1087
+4003_7128;Timer Control Register (PIT_TCTRL2);32;R/W;0000_0000h;41.3.4/1088
+4003_712C;Timer Flag Register (PIT_TFLG2);32;R/W;0000_0000h;41.3.5/1089
+4003_7130;Timer Load Value Register (PIT_LDVAL3);32;R/W;0000_0000h;41.3.2/1087
+4003_7134;Current Timer Value Register (PIT_CVAL3);32;R;0000_0000h;41.3.3/1087
+4003_7138;Timer Control Register (PIT_TCTRL3);32;R/W;0000_0000h;41.3.4/1088
+4003_713C;Timer Flag Register (PIT_TFLG3);32;R/W;0000_0000h;41.3.5/1089
+====
+PIT_MCR Field Description;
+31-3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 Reserved;This field is reserved.
+1 MDIS;Module Disable - (PIT section)
+;Disables the standard timers. This field must be enabled before any other setup is done.
+;0; Clock for standard PIT timers is enabled.
+;1; Clock for standard PIT timers is disabled.
+0 FRZ;Freeze
+;Allows the timers to be stopped when the device enters the Debug mode.
+;0;Timers continue to run in Debug mode.
+;1;Timers are stopped in Debug mode.
+
+PIT_LDVALn Field Description;
+31-0 TSV;Timer Start Value
+;Sets the timer start value. The timer will count down until it reaches 0, then it will generate an interrupt and load this register value again. Writing a new value to this register will not restart the timer; instead the value will be loaded after the timer expires. To abort the current cycle and start a timer period with the new value, the timer must be disabled and enabled again.
+
+PIT_CVALn Field Description;
+31-0 TVL;Current Timer Value
+;Represents the current timer value, if the timer is enabled. if CVALn[TVL] is zero, then PIT_TFLGn[TIF] is 1 and CVALn[TVL] is equal to LDVALn[TSV].
+;NOTE: • If the timer is disabled, do not use this field as its value is unreliable.• The timer uses a downcounter. The timer values are frozen in Debug mode if MCR[FRZ] is set.
+
+PIT_TCTRLn Field Description
+31-3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 CHN;Chain Mode
+;When activated, Timer n-1 needs to expire before timer n can decrement by 1. Timer 0 cannot be chained.,
+;0; Timer is not chained.,
+;1; Timer is chained to previous timer. For example, for Channel 2, if this field is set, Timer 2 is chained to Timer 1.,
+1 TIE;Timer Interrupt Enable
+;When an interrupt is pending, or, TFLGn[TIF] is set, enabling the interrupt will immediately cause an interrupt event. To avoid this, the associated TFLGn[TIF] must be cleared first.
+;0; Interrupt requests from Timer n are disabled.,
+;1; Interrupt will be requested whenever TIF is set.,
+0 TEN;Timer Enable
+;Enables or disables the timer. 
+;0; Timer n is disabled.
+;1; Timer n is enabled.
+
+PIT_TFLGn Field Description
+31-1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.,
+0 TIF;Timer Interrupt Flag SSpecific
+;Sets to 1 at the end of the timer period.  Writing 0 has no effect. If enabled or, when TCTRLn[TIE] = 1, TIF causes an interrupt request.
+;0; Timeout has not yet occurred.
+;1; Timeout has occurred.
+====

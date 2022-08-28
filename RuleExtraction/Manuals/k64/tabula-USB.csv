@@ -1,0 +1,451 @@
+4007_2000;Peripheral ID register(USB0_PERID);8;R;04h; 
+4007_2004;Peripheral ID Complement register(USB0_IDCOMP);8;R;FBh; 
+4007_2008;Peripheral Revision register(USB0_REV);8;R;33h; 
+4007_200C;Peripheral Additional Info register(USB0_ADDINFO);8;R;01h; 
+4007_2010;OTG Interrupt Status register(USB0_OTGISTAT);8;R/W;00h; 
+4007_2014;OTG Interrupt Control register(USB0_OTGICR);8;R/W;00h; 
+4007_2018;OTG Status register(USB0_OTGSTAT);8;R/W;00h; 
+4007_201C;OTG Control register(USB0_OTGCTL);8;R/W;00h; 
+4007_2080;Interrupt Status register(USB0_ISTAT);8;R/W;00h; 
+4007_2084;Interrupt Enable register(USB0_INTEN);8;R\W;00h; 
+4007_2088;Error Interrupt Status register(USB0_ERRSTAT);8;R\W;00h; 
+4007_208C;Error Interrupt Enable register(USB0_ERREN);8;R\W;00h; 
+4007_2090;Status register(USB0_STAT);8;R;00h; 
+4007_2094;Control register(USB0_CTL);8;R\W;00h; 
+4007_2098;Address register(USB0_ADDR);8;R\W;00h; 
+4007_209C;BDT Page register 1(USB0_BDTPAGE1);8;R\W;00h; 
+4007_20A0;Frame Number register Low(USB0_FRMNUML);8;R\W;00h; 
+4007_20A4;Frame Number register High (USB0_FRMNUMH);8;R\W;00h; 
+4007_20A8;Token register (USB0_TOKEN);8;R/W;00h; 
+4007_20AC;SOF Threshold register (USB0_SOFTHLD);8;R/W;00h; 
+4007_20B0;BDT Page Register 2 (USB0_BDTPAGE2);8;R/W;00h; 
+4007_20B4;BDT Page Register 3 (USB0_BDTPAGE3);8;R/W;00h; 
+4007_20C0;Endpoint Control register (USB0_ENDPT0);8;R/W;00h; 
+4007_20C4;Endpoint Control register (USB0_ENDPT1);8;R/W;00h; 
+4007_20C8;Endpoint Control register (USB0_ENDPT2);8;R/W;00h; 
+4007_20CC ;Endpoint Control register (USB0_ENDPT3)  ;8;R/W;00h; 
+4007_20D0 ;Endpoint Control register (USB0_ENDPT4) ;8;R/W;00h; 
+4007_20D4 ;Endpoint Control register (USB0_ENDPT5);8;R/W;00h; 
+4007_20D8 ;Endpoint Control register (USB0_ENDPT6) ;8;R/W;00h; 
+4007_20DC ;Endpoint Control register (USB0_ENDPT7) ;8;R/W;00h; 
+4007_20E0;Endpoint Control register (USB0_ENDPT8) ;8;R/W;00h; 
+4007_20E4;Endpoint Control register (USB0_ENDPT9);8;R/W;00h; 
+4007_20E8;Endpoint Control register (USB0_ENDPT10);8;R/W;00h; 
+4007_20EC;Endpoint Control register (USB0_ENDPT11);8;R/W;00h; 
+4007_20F0;Endpoint Control register (USB0_ENDPT12);8;R/W;00h; 
+4007_20F4;Endpoint Control register (USB0_ENDPT13);8;R/W;00h; 
+4007_20F8;Endpoint Control register (USB0_ENDPT14);8;R/W;00h; 
+4007_20FC;Endpoint Control register (USB0_ENDPT15);8;R/W;00h; 
+4007_2100;USB Control register (USB0_USBCTRL);8;R/W;C0h; 
+4007_2104;USB OTG Observe register (USB0_OBSERVE);8;R;50h; 
+4007_2108;USB OTG Control register (USB0_CONTROL);8;R/W;00h; 
+4007_210C;USB Transceiver Control register 0 (USB0_USBTRC0);8;R/W;00h; 
+4007_2114;Frame Adjust Register (USB0_USBFRMADJUST);8;R/W;00h; 
+4007_2140;USB Clock recovery control (USB0_CLK_RECOVER_CTRL);8;R/W;00h; 
+4007_2144;IRC48M oscillator enable register (USB0_CLK_RECOVER_IRC_EN);8;R/W;01h; 
+4007_215C;Clock recovery separated interrupt status (USB0_CLK_RECOVER_INT_STATUS);8;w1c;00h; 
+
+====
+USBx_PERID field descriptions;
+7-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+ID;Peripheral Identification
+;This field always reads 0x4h.
+
+USBx_IDCOMP field descriptions;
+7-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+NID; Ones' complement of PERID[ID] bits.
+
+USBx_REV field descriptions;
+7-0 REV;Revision
+;Indicates the revision number of the USB Core.
+
+USBx_ADDINFO field descriptions;
+7-3 IRQNUM;
+;Assigned Interrupt Request Number
+2-1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+0 IEHOST;This bit is set if host mode is enabled.
+
+USBx_OTGISTAT field descriptions;
+7 IDCHG;
+;This bit is set when a change in the ID Signal from the USB connector is sensed.
+6 ONEMSEC;
+;This bit is set when the 1 millisecond timer expires. This bit stays asserted until cleared by software. The interrupt must be serviced every millisecond to avoid losing 1msec counts.
+5 LINE_STATE_CHG;
+;This interrupt is set when the USB line state (CTL[SE0] and CTL[JSTATE] bits) are stable without change for 1 millisecond, and the value of the line state is different from the last time when the line state was stable. It is set on transitions between SE0 and J-state, SE0 and K-state, and J-state and K-state. Changes in J-state while SE0 is true do not cause an interrupt. This interrupt can be used in detecting Reset, Resume, Connect, and Data Line Pulse signaling.
+4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 SESSVLDCHG;
+;This bit is set when a change in VBUS is detected indicating a session valid or a session no longer valid.
+2 B_SESS_CHG;
+;This bit is set when a change in VBUS is detected on a B device.
+1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+0 AVBUSCHG;
+;This bit is set when a change in VBUS is detected on an A device.
+
+USBx_OTGICR field descriptions;
+7 IDEN;ID Interrupt Enable
+;0; The ID interrupt is disabled
+;1; The ID interrupt is enabled
+6 ONEMSECEN;One Millisecond Interrupt Enable
+;0; Diables the 1ms timer interrupt.
+;1; Enables the 1ms timer interrupt.
+5 LINESTATEEN;Line State Change Interrupt Enable
+;0; Disables the LINE_STAT_CHG interrupt.
+;1; Enables the LINE_STAT_CHG interrupt.
+4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 SESSVLDEN;Session Valid Interrupt Enable
+;0; Disables the SESSVLDCHG interrupt.
+;1; Enables the SESSVLDCHG interrupt.
+2 BSESSEN;B Session END Interrupt Enable
+;0; Disables the B_SESS_CHG interrupt.
+;1; Enables the B_SESS_CHG interrupt.
+1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+0 AVBUSEN;A VBUS Valid Interrupt Enable
+;0; Disables the AVBUSCHG interrupt.
+;1; Enables the AVBUSCHG interrupt.
+
+USBx_OTGSTAT field descriptions;
+7 ID;Indicates the current state of the ID pin on the USB connector
+;0; Indicates a Type A cable is plugged into the USB connector.
+;1; Indicates no cable is attached or a Type B cable is plugged into the USB connector.
+6 ONEMSECEN;
+;This bit is reserved for the 1ms count, but it is not useful to software.
+5 LINESTATESTABLE;
+;Indicates that the internal signals that control the LINE_STATE_CHG field of OTGISTAT are stable for at least 1 ms. This bit is used to provide a hardware debounce of the linestate in detection of Connect, Disconnect and Resume signaling. First read LINE_STATE_CHG field and then read this field. If this field reads as 1, then the value of LINE_STATE_CHG can be considered stable.
+;0; The LINE_STAT_CHG bit is not yet stable.
+;1; The LINE_STAT_CHG bit has been debounced and is stable.
+4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 SESS_VLD;Session Valid
+;0; The VBUS voltage is below the B session valid threshold
+;1; The VBUS voltage is above the B session valid threshold.
+2 BSESSEND;B Session End
+;0; The VBUS voltage is above the B session end threshold.
+;1; The VBUS voltage is below the B session end threshold.
+1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+0 AVBUSVLD;A VBUS Valid
+;0; The VBUS voltage is below the A VBUS Valid threshold.
+;1; The VBUS voltage is above the A VBUS Valid threshold.
+
+USBx_OTGCTL field descriptions;
+7 DPHIGH;D+ Data Line pullup resistor enable
+;0; D+ pullup resistor is not enabled
+;1; D+ pullup resistor is enabled
+6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5 DPLOW;D+ Data Line pull-down resistor enable
+;This bit should always be enabled together with bit 4 (DMLOW)
+;0; D+ pulldown resistor is not enabled.
+;1; D+ pulldown resistor is enabled.
+4 DMLOW;D- Data Line pull-down resistor enable
+;0; D- pulldown resistor is not enabled.
+;1; D- pulldown resistor is enabled.
+3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 OTGEN;On-The-Go pullup/pulldown resistor enable
+;0; If USB_EN is 1 and HOST_MODE is 0 in the Control Register (CTL), then the D+ Data Line pull-up resistors are enabled. If HOST_MODE is 1 the D+ and D- Data Line pull-down resistors are engaged.
+;1; The pull-up and pull-down controls in this register are used.
+Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+USBx_ISTAT field descriptions;
+7 STALL;Stall Interrupt
+;In Target mode this bit is asserted when a STALL handshake is sent by the SIE.
+;In Host mode this bit is set when the USB Module detects a STALL acknowledge during the handshake phase of a USB transaction.This interrupt can be used to determine whether the last USB transaction was completed successfully or stalled.
+6 ATTACH;Attach Interrupt
+;This field is set when the USB Module detects an attach of a USB device. This field is only valid if CTL[HOSTMODEEN]=1. This interrupt signifies that a peripheral is now present and must be configured; it is asserted if there have been no transitions on the USB for 2.5 μs and the current bus state is not SE0."
+;0; No Attach is detected since the last time the ATTACH bit was cleared.
+;1; A peripheral is now present and must be configured (a stable non-SE0 state is detected for more than 2.5 μs).
+5 RESUME;
+;This bit is set when a K-state is observed on the DP/DM signals for 2.5 μs. When not in suspend mode this interrupt must be disabled.
+4 SLEEP;
+;This bit is set when the USB Module detects a constant idle on the USB bus for 3 ms. The sleep timer is reset by activity on the USB bus.
+3 TOKDNE;
+;This bit is set when the current token being processed has completed. The processor must immediately read the STATUS (STAT) register to determine the EndPoint and BD used for this token. Clearing this bit (by writing a one) causes STAT to be cleared or the STAT holding register to be loaded into the STAT register.
+2 SOFTOK;
+;This bit is set when the USB Module receives a Start Of Frame (SOF) token.
+;In Host mode this field is set when the SOF threshold is reached, so that software can prepare for the next SOF.
+1 ERROR;
+;This bit is set when any of the error conditions within Error Interrupt Status (ERRSTAT) register occur. The processor must then read the ERRSTAT register to determine the source of the error.
+0 USBRST;
+;This bit is set when the USB Module has decoded a valid USB reset. This informs the processor that it should write 0x00 into the address register and enable endpoint 0. USBRST is set after a USB reset has been detected for 2.5 microseconds. It is not asserted again until the USB reset condition has been removed and then reasserted.
+
+USBx_INTEN field descriptions;
+7 STALLEN;STALL Interrupt Enable
+;0; Diasbles the STALL interrupt.
+;1; Enables the STALL interrupt.
+6 ATTACHEN;ATTACH Interrupt Enable
+;0; Disables the ATTACH interrupt.
+;1; Enables the ATTACH interrupt.
+5 RESUMEEN;RESUME Interrupt Enable
+;0; Disables the RESUME interrupt.
+;1; Enables the RESUME interrupt.
+4 SLEEPEN;SLEEP Interrupt Enable
+;0; Disables the SLEEP interrupt.
+;1; Enables the SLEEP interrupt.
+3 TOKDNEEN;TOKDNE Interrupt Enable
+;0; Disables the TOKDNE interrupt.
+;1; Enables the TOKDNE interrupt.
+2 SOFTOKEN;SOFTOK Interrupt Enable
+;0; Disbles the SOFTOK interrupt.
+;1; Enables the SOFTOK interrupt.
+1 ERROREN;ERROR Interrupt Enable
+;0; Disables the ERROR interrupt.
+;1; Enables the ERROR interrupt.
+0 USBRSTEN;USBRST Interrupt Enable
+;0; Disables the USBRST interrupt.
+;1; Enables the USBRST interrupt.
+
+USBx_ERRSTAT field descriptions;
+7 BTSERR;
+;This bit is set when a bit stuff error is detected. If set, the corresponding packet is rejected due to the error.
+6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5 DMAERR;
+;This bit is set if the USB Module has requested a DMA access to read a new BDT but has not been given the bus before it needs to receive or transmit data. If processing a TX transfer this would cause a transmit data underflow condition. If processing a RX transfer this would cause a receive data overflow condition. This interrupt is useful when developing device arbitration hardware for the microprocessor and the USB module to minimize bus request and bus grant latency. This bit is also set if a data packet to or from the host is larger than the buffer size allocated in the BDT. In this case the data packet is truncated as it is put in buffer memory.
+4 BTOERR;
+;This bit is set when a bus turnaround timeout error occurs. The USB module contains a bus turnaround timer that keeps track of the amount of time elapsed between the token and data phases of a SETUP or OUT TOKEN or the data and handshake phases of a IN TOKEN. If more than 16 bit times are counted from the previous EOP before a transition from IDLE, a bus turnaround timeout error occurs.
+3 DFN8;
+;This bit is set if the data field received was not 8 bits in length. USB Specification 1.0 requires that data fields be an integral number of bytes. If the data field was not an integral number of bytes, this bit is set.
+2 CRC16;
+;This bit is set when a data packet is rejected due to a CRC16 error.
+1 CRC5EOF;
+;This error interrupt has two functions. When the USB Module is operating in peripheral mode (HOSTMODEEN=0), this interrupt detects CRC5 errors in the token packets generated by the host. If set the token packet was rejected due to a CRC5 error.
+;When the USB Module is operating in host mode (HOSTMODEEN=1), this interrupt detects End Of Frame (EOF) error conditions. This occurs when the USB Module is transmitting or receiving data and the SOF counter reaches zero. This interrupt is useful when developing USB packet scheduling software to ensure that no USB transactions cross the start of the next frame.
+0 PIDERR;
+;This bit is set when the PID check field fails.
+
+USBx_ERREN field descriptions;
+7 BTSERREN;BTSERR Interrupt Enable
+;0; Disables the BTSERR interrupt.
+;1; Enables the BTSERR interrupt.
+6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5 DMAERREN;DMAERR Interrupt Enable
+;0; Disables the DMAERR interrupt.
+;1; Enables the DMAERR interrupt.
+4 BTOERREN;BTOERR Interrupt Enable
+;0; Disables the BTOERR interrupt.
+;1; Enables the BTOERR interrupt.
+3 DFN8EN;DFN8 Interrupt Enable
+;0; Disables the DFN8 interrupt.
+;1; Enables the DFN8 interrupt.
+2 CRC16EN;CRC16 Interrupt Enable
+;0; Disables the CRC16 interrupt.
+;1; Enables the CRC16 interrupt.
+1 CRC5EOFEN;CRC5/EOF Interrupt Enable
+;0; Disables the CRC5/EOF interrupt.
+;1; Enables the CRC5/EOF interrupt.
+0 PIDERREN;PIDERR Interrupt Enable
+;0; Disables the PIDERR interrupt.
+;1; Enters the PIDERR interrupt.
+
+USBx_STAT field descriptions;
+7-4 ENDP;
+;This four-bit field encodes the endpoint address that received or transmitted the previous token. This allows the processor core to determine the BDT entry that was updated by the last USB transaction.
+3 TX;Transmit Indicator
+;0; The most recent transaction was a receive operation.
+;1; The most recent transaction was a transmit operation.
+2 ODD;
+;This bit is set if the last buffer descriptor updated was in the odd bank of the BDT.
+Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+USBx_CTL field descriptions;
+7 JSTATE;Live USB differential receiver JSTATE signal
+;The polarity of this signal is affected by the current state of LSEN .
+6 SE0;
+;Live USB Single Ended Zero signal
+5 TXSUSPENDTOKENBUSY;
+;In Host mode, TOKEN_BUSY is set when the USB module is busy executing a USB token. Software must not write more token commands to the Token Register when TOKEN_BUSY is set. Software should check this field before writing any tokens to the Token Register to ensure that token commands are not lost.
+;In Target mode, TXD_SUSPEND is set when the SIE has disabled packet transmission and reception. Clearing this bit allows the SIE to continue token processing. This bit is set by the SIE when a SETUP Token is received allowing software to dequeue any pending packet transactions in the BDT before resuming token processing.
+4 RESET;
+;Setting this bit enables the USB Module to generate USB reset signaling. This allows the USB Module to reset USB peripherals. This control signal is only valid in Host mode (HOSTMODEEN=1). Software must set RESET to 1 for the required amount of time and then clear it to 0 to end reset signaling. For more information on reset signaling see Section 7.1.4.3 of the USB specification version 1.0.
+3 HOSTMODEEN;
+;When set to 1, this bit enables the USB Module to operate in Host mode. In host mode, the USB module performs USB transactions under the programmed control of the host processor.
+2 RESUME;
+;When set to 1 this bit enables the USB Module to execute resume signaling. This allows the USB Module to perform remote wake-up. Software must set RESUME to 1 for the required amount of time and then clear it to 0. If the HOSTMODEEN bit is set, the USB module appends a Low Speed End of Packet to the Resume signaling when the RESUME bit is cleared. For more information on RESUME signaling see Section 7.1.4.5 of the USB specification version 1.0.
+1 ODDRST;
+;Setting this bit to 1 resets all the BDT ODD ping/pong fields to 0, which then specifies the EVEN BDT bank.
+0 USBENSOFEN;USB Enable;
+;Setting this bit enables the USB-FS to operate; clearing it disables the USB-FS. Setting the bit causes the SIE to reset all of its ODD bits to the BDTs. Therefore, setting this bit resets much of the logic in the SIE.
+;When host mode is enabled, clearing this bit causes the SIE to stop sending SOF tokens.
+;0; Disables the USB Module.
+;1; Enables the USB Module.
+
+USBx_ADDR field descriptions;
+7 LSEN;Low Speed Enable bit
+;Informs the USB module that the next token command written to the token register must be performed at low speed. This enables the USB module to perform the necessary preamble required for low-speed data transmissions.
+ADDR;USB Address
+;Defines the USB address that the USB module decodes in peripheral mode, or transmits when in host mode.
+
+USBx_BDTPAGE1 field descriptions;
+7-1 BDTBA;Provides address bits 15 through 9 of the BDT base address.
+0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+USBx_FRMNUML field descriptions;
+7-0 FRM;This 8-bit field and the 3-bit field in the Frame Number Register High are used to compute the address where the current Buffer Descriptor Table (BDT) resides in system memory.
+
+USBx_FRMNUMH field descriptions;
+7-3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+FRM;This 3-bit field and the 8-bit field in the Frame Number Register Low are used to compute the address where the current Buffer Descriptor Table (BDT) resides in system memory.
+
+USBx_TOKEN field descriptions;
+7-4 TOKENPID;Contains the token type executed by the USB module.
+;0001; OUT Token. USB Module performs an OUT (TX) transaction. 
+;1001; IN Token. USB Module performs an In (RX) transaction.
+;1101; SETUP Token. USB Module performs a SETUP (TX) transaction
+TOKENENDPT;
+; Holds the Endpoint address for the token command. The four bit value written must be a valid endpoint.
+
+USBx_SOFTHLD field descriptions;
+CNT; Represents the SOF count threshold in byte times.
+
+USBx_BDTPAGE2 field descriptions;
+BDTBA;
+;Provides address bits 23 through 16 of the BDT base address that defines the location of Buffer Descriptor Table resides in system memory.
+
+USBx_BDTPAGE3 field descriptions;
+BDTBA;
+;Provides address bits 31 through 24 of the BDT base address that defines the location of Buffer Descriptor Table resides in system memory.
+
+USBx_ENDPTn field descriptions;
+7 HOSTWOHUB; 
+;Host without a hub This is a Host mode only field and is present in the control register for endpoint 0  (ENDPT0) only.
+;0; Low-speed device connected to Host through a hub. PRE_PID will be generated as required.
+;1; Low-speed device directly connected. No hub, or no low-speed device attached.
+6 RETRYDIS;This is a Host mode only bit and is present in the control register for endpoint 0 (ENDPT0) only. When set this bit causes the host to not retry NAK'ed (Negative Acknowledgement) transactions. When a transaction is NAKed, the BDT PID field is updated with the NAK PID, and the TOKEN_DNE interrupt is set. When this bit is cleared, NAKed transactions are retried in hardware. This bit must be set when the host is attempting to poll an interrupt endpoint.
+5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4 EPCTLDIS;
+;This bit, when set, disables control (SETUP) transfers. When cleared, control transfers are enabled. This applies if and only if the EPRXEN and EPTXEN bits are also set. See Table 51-7
+3 EPRXEN;
+;This bit, when set, enables the endpoint for RX transfers. See Table 51-7
+2 EPTXEN;
+;This bit, when set, enables the endpoint for TX transfers. See Table 51-7
+1 EPSTALL;
+;When set this bit indicates that the endpoint is called. This bit has priority over all other control bits in the EndPoint Enable Register, but it is only valid if EPTXEN=1 or EPRXEN=1. Any access to this endpoint causes the USB Module to return a STALL handshake. After an endpoint is stalled it requires intervention from the Host Controller.
+0 EPHSHK;
+;When set this bit enables an endpoint to perform handshaking during a transaction to this endpoint. This bit is generally 1 unless the endpoint is Isochronous.
+
+USBx_USBCTRL field descriptions;
+7 SUSP;Places the USB transceiver into the suspend state.
+;0; USB transceiver is not in suspend state.
+;1; USB transceiver is in suspend state.
+6 PDE;
+;Enables the weak pulldowns on the USB transceiver.
+;0; Weak pulldowns are disabled on D+ and D-.
+;1; Weak pulldowns are enabled on D+ and D-.
+Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+USBx_OBSERVE field descriptions;
+7 DPPU;Provides observability of the D+ Pullup enable at the USB transceiver.
+;0; D+ pullup disabled.
+;1; D+ pullup enabled.
+6 DPPD;Provides observability of the D+ Pulldown enable at the USB transceiver.
+;0; D+ pulldown disabled.
+;1; D+ pulldown enabled.
+5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4 DMPD;Provides observability of the D- Pulldown enable at the USB transceiver.
+;0; D- pulldown disabled.
+;1; D- pulldown enabled.
+3-1 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+USBx_CONTROL field descriptions;
+7-5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4 DPPULLUPNONOTG;
+;Provides control of the DP Pullup in USBOTG, if USB is configured in non-OTG device mode.
+;0; DP Pullup in non-OTG device mode is not enabled.
+;1; DP Pullup in non-OTG device mode is enabled.
+Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+USBx_USBTRC0 field descriptions;
+7 USBRESET;USB Reset
+;Generates a hard reset to USBOTG. After this bit is set and the reset occurs, this bit is automatically cleared.
+;NOTE: This bit is always read as zero. Wait two USB clock cycles after setting this bit.
+;0; Normal USB module operation.
+;1; Returns the USB module to its reset state.
+6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5 USBRESMEN;Asynchronous Resume Interrupt Enable
+;This bit, when set, allows the USB module to send an asynchronous wakeup event to the MCU upon detection of resume signaling on the USB bus. The MCU then re-enables clocks to the USB module. It is used for low-power suspend mode when USB module clocks are stopped or the USB transceiver is in Suspend mode. Async wakeup only works in device mode.
+;0; USB asynchronous wakeup from suspend mode disabled.
+;1; USB asynchronous wakeup from suspend mode enabled. The asynchronous resume interrupt differs from the synchronous resume interrupt in that it asynchronously detects K-state using the unfiltered state of the D+ and D- pins. This interrupt should only be enabled when the Transceiver is suspended.
+4-3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 USB_CLK_RECOVERY_INT;Combined USB Clock Recovery interrupt status
+;This read-only field will be set to value high at 1'b1 when any of USB clock recovery interrupt conditions are detected and those interrupts are unmasked.
+;For customer use the only unmasked USB clock recovery interrupt condition results from an overflow of the frequency trim setting values indicating that the frequency trim calculated is out of the adjustment range of the IRC48M output clock.
+;To clear this bit after it has been set, Write 0xFF to register USB_CLK_RECOVER_INT_STATUS.
+1 SYNC_DET;Synchronous USB Interrupt Detect
+;0; Synchronous interrupt has not been detected.
+;1; Synchronous interrupt has been detected.
+0 USB_RESUME_INT;USB Asynchronous Interrupt
+;0; No interrupt was generated.
+;1; Interrupt was generated because of the USB asynchronous interrupt.
+
+USBx_USBFRMADJUST field descriptions;
+ADJ;Frame Adjustment
+;In Host mode, the frame adjustment is a twos complement number that adjusts the period of each USB frame in 12-MHz clock periods. A SOF is normally generated every 12,000 12-MHz clock cycles. The Frame Adjust Register can adjust this by -128 to +127 to compensate for inaccuracies in the USB 48-MHz clock. Changes to the ADJ bit take effect at the next start of the next frame.
+
+USBx_CLK_RECOVER_CTRL field descriptions;
+7 CLOCK_RECOVER_EN;Crystal-less USB enable
+;This bit must be enabled if user wants to use the crystal-less USB mode for the Full Speed USB controller and transceiver.
+;NOTE: This bit should not be set for USB host mode or OTG.
+;0; Disable clock recovery block (default)
+;1; Enable clock recovery block
+6 RESET_RESUME_ROUGH_EN;Reset/resume to rough phase enable
+;The clock recovery block tracks the IRC48Mhz to get an accurate 48Mhz clock. It has two phases after user enables clock_recover_en bit, rough phase and tracking phase. The step to fine tune the IRC 48Mhz by adjusting the trim fine value is different during these two phases. The step in rough phase is larger than that in tracking phase. Switch back to rough stage whenever USB bus reset or bus resume occurs.
+;0; Always works in tracking phase after the 1st time rough to track transition (default)
+;1; Go back to rough stage whenever bus reset or bus resume occurs
+5 RESTART_IFRTRIM_EN;Restart from IFR trim value
+;IRC48 has a default trim fine value whose default value is factory trimmed (the IFR trim value). Clock recover block tracks the accuracy of the clock 48Mhz and keeps updating the trim fine value accordingly
+;0; Trim fine adjustment always works based on the previous updated trim fine value (default)
+;1; Trim fine restarts from the IFR trim value whenever bus_reset/bus_resume is detected or module enable is desasserted
+4-3 Reserved;This field is reserved.
+2 Reserved;This field is reserved.
+;This bit is for Freescale use only. Customers should not change this bit from its default state.
+1 Reserved;This field is reserved.
+;This bit is for Freescale use only. Customers should not change this bit from its default state.
+0 Reserved;This field is reserved.
+;Default should not be changed
+
+USBx_CLK_RECOVER_IRC_EN field descriptions;
+7-2 Reserved;This field is reserved.
+1 IRC_EN;IRC48M enable
+;This bit is used to enable the on-chip IRC48Mhz module to generate clocks for crystal-less USB. It can be used for FS USB device mode operation. This bit must be set before using the crystal-less USB clock configuration.
+;0; Disable the IRC48M module (default)
+;1; Enable the IRC48M module
+0 REG_EN;IRC48M regulator enable
+;This bit is used to enable the local analog regulator for IRC48Mhz module. This bit must be set if user wants to use the crystal-less USB clock configuration.
+;0; IRC48M local regulator is disabled
+;1; IRC48M local regulator is enabled (default)
+
+
+USBx_CLK_RECOVER_INT_STATUS field descriptions;
+7-5 Reserved;This field is reserved.
+;Should always be written as 0.
+4 OVF_ERROR;
+;Indicates that the USB clock recovery algorithm has detected that the frequency trim adjustment needed for the IRC48M output clock is outside the available TRIM_FINE adjustment range for the IRC48M module.
+;0; No interrupt is reported
+;1; Unmasked interrupt has been generated
+Reserved;This field is reserved.
+;Should always be written as 0.
+
+====

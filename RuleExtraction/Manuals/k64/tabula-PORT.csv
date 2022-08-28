@@ -1,0 +1,1379 @@
+4004_9000;Pin Control Register n (PORTA_PCR0);32;R/W ;0;
+4004_9004;Pin Control Register n (PORTA_PCR1);32;R/W ;0;
+4004_9008;Pin Control Register n (PORTA_PCR2);32;R/W ;0;
+4004_900C;Pin Control Register n (PORTA_PCR3);32;R/W ;0;
+4004_9010;Pin Control Register n (PORTA_PCR4);32;R/W ;0;
+4004_9014;Pin Control Register n (PORTA_PCR5);32;R/W ;0;
+4004_9018;Pin Control Register n (PORTA_PCR6);32;R/W ;0;
+4004_901C;Pin Control Register n (PORTA_PCR7);32;R/W ;0;
+4004_9020;Pin Control Register n (PORTA_PCR8);32;R/W ;0;
+4004_9024;Pin Control Register n (PORTA_PCR9);32;R/W ;0;
+4004_9028;Pin Control Register n (PORTA_PCR10);32;R/W ;0;
+4004_902C;Pin Control Register n (PORTA_PCR11);32;R/W ;0;
+4004_9030;Pin Control Register n (PORTA_PCR12);32;R/W ;0;
+4004_9034;Pin Control Register n (PORTA_PCR13);32;R/W ;0;
+4004_9038;Pin Control Register n (PORTA_PCR14);32;R/W ;0;
+4004_903C;Pin Control Register n (PORTA_PCR15);32;R/W ;0;
+4004_9040;Pin Control Register n (PORTA_PCR16);32;R/W ;0;
+4004_9044;Pin Control Register n (PORTA_PCR17);32;R/W ;0;
+4004_9048;Pin Control Register n (PORTA_PCR18);32;R/W ;0;
+4004_904C;Pin Control Register n (PORTA_PCR19);32;R/W ;0;
+4004_9050;Pin Control Register n (PORTA_PCR20);32;R/W ;0;
+4004_9054;Pin Control Register n (PORTA_PCR21);32;R/W ;0;
+4004_9058;Pin Control Register n (PORTA_PCR22);32;R/W ;0;
+4004_905C;Pin Control Register n (PORTA_PCR23);32;R/W ;0;
+4004_9060;Pin Control Register n (PORTA_PCR24);32;R/W ;0;
+4004_9064;Pin Control Register n (PORTA_PCR25);32;R/W ;0;
+4004_9068;Pin Control Register n (PORTA_PCR26);32;R/W ;0;
+4004_906C;Pin Control Register n (PORTA_PCR27);32;R/W ;0;
+4004_9070;Pin Control Register n (PORTA_PCR28);32;R/W ;0;
+4004_9074;Pin Control Register n (PORTA_PCR29);32;R/W ;0;
+4004_9078;Pin Control Register n (PORTA_PCR30);32;R/W ;0;
+4004_907C;Pin Control Register n (PORTA_PCR31);32;R/W ;0;
+4004_9080;Global Pin Control Low Register (PORTA_GPCLR);32;W ;0;
+4004_9084;Global Pin Control High Register (PORTA_GPCHR);32;W ;0;
+4004_90A0;Interrupt Status Flag Register (PORTA_ISFR);32;R/W ;0;
+4004_90C0;Digital Filter Enable Register (PORTA_DFER);32;R/W ;0;
+4004_90C4;Digital Filter Clock Register (PORTA_DFCR);32;R/W ;0;
+4004_90C8;Digital Filter Width Register (PORTA_DFWR);32;R/W ;0;
+4004_A000;Pin Control Register n (PORTB_PCR0);32;R/W ;0;
+4004_A004;Pin Control Register n (PORTB_PCR1);32;R/W ;0;
+4004_A008;Pin Control Register n (PORTB_PCR2);32;R/W ;0;
+4004_A00C;Pin Control Register n (PORTB_PCR3);32;R/W ;0;
+4004_A010;Pin Control Register n (PORTB_PCR4);32;R/W ;0;
+4004_A014;Pin Control Register n (PORTB_PCR5);32;R/W ;0;
+4004_A018;Pin Control Register n (PORTB_PCR6);32;R/W ;0;
+4004_A01C;Pin Control Register n (PORTB_PCR7);32;R/W ;0;
+4004_A020;Pin Control Register n (PORTB_PCR8);32;R/W ;0;
+4004_A024;Pin Control Register n (PORTB_PCR9);32;R/W ;0;
+4004_A028;Pin Control Register n (PORTB_PCR10);32;R/W ;0;
+4004_A02C;Pin Control Register n (PORTB_PCR11);32;R/W ;0;
+4004_A030;Pin Control Register n (PORTB_PCR12);32;R/W ;0;
+4004_A034;Pin Control Register n (PORTB_PCR13);32;R/W ;0;
+4004_A038;Pin Control Register n (PORTB_PCR14);32;R/W ;0;
+4004_A03C;Pin Control Register n (PORTB_PCR15);32;R/W ;0;
+4004_A040;Pin Control Register n (PORTB_PCR16);32;R/W ;0;
+4004_A044;Pin Control Register n (PORTB_PCR17);32;R/W ;0;
+4004_A048;Pin Control Register n (PORTB_PCR18);32;R/W ;0;
+4004_A04C;Pin Control Register n (PORTB_PCR19);32;R/W ;0;
+4004_A050;Pin Control Register n (PORTB_PCR20);32;R/W ;0;
+4004_A054;Pin Control Register n (PORTB_PCR21);32;R/W ;0;
+4004_A058;Pin Control Register n (PORTB_PCR22);32;R/W ;0;
+4004_A05C;Pin Control Register n (PORTB_PCR23);32;R/W ;0;
+4004_A060;Pin Control Register n (PORTB_PCR24);32;R/W ;0;
+4004_A064;Pin Control Register n (PORTB_PCR25);32;R/W ;0;
+4004_A068;Pin Control Register n (PORTB_PCR26);32;R/W ;0;
+4004_A06C;Pin Control Register n (PORTB_PCR27);32;R/W ;0;
+4004_A070;Pin Control Register n (PORTB_PCR28);32;R/W ;0;
+4004_A074;Pin Control Register n (PORTB_PCR29);32;R/W ;0;
+4004_A078;Pin Control Register n (PORTB_PCR30);32;R/W ;0;
+4004_A07C;Pin Control Register n (PORTB_PCR31);32;R/W ;0;
+4004_A080;Global Pin Control Low Register (PORTB_GPCLR);32;W ;0;
+4004_A084;Global Pin Control High Register (PORTB_GPCHR);32;W ;0;
+4004_A0A0;Interrupt Status Flag Register (PORTB_ISFR);32;R/W ;0;
+4004_A0C0;Digital Filter Enable Register (PORTB_DFER);32;R/W ;0;
+4004_A0C4;Digital Filter Clock Register (PORTB_DFCR);32;R/W ;0;
+4004_A0C8;Digital Filter Width Register (PORTB_DFWR);32;R/W ;0;
+4004_B000;Pin Control Register n (PORTC_PCR0);32;R/W ;0;
+4004_B004;Pin Control Register n (PORTC_PCR1);32;R/W ;0;
+4004_B008;Pin Control Register n (PORTC_PCR2);32;R/W ;0;
+4004_B00C;Pin Control Register n (PORTC_PCR3);32;R/W ;0;
+4004_B010;Pin Control Register n (PORTC_PCR4);32;R/W ;0;
+4004_B014;Pin Control Register n (PORTC_PCR5);32;R/W ;0;
+4004_B018;Pin Control Register n (PORTC_PCR6);32;R/W ;0;
+4004_B01C;Pin Control Register n (PORTC_PCR7);32;R/W ;0;
+4004_B020;Pin Control Register n (PORTC_PCR8);32;R/W ;0;
+4004_B024;Pin Control Register n (PORTC_PCR9);32;R/W ;0;
+4004_B028;Pin Control Register n (PORTC_PCR10);32;R/W ;0;
+4004_B02C;Pin Control Register n (PORTC_PCR11);32;R/W ;0;
+4004_B030;Pin Control Register n (PORTC_PCR12);32;R/W ;0;
+4004_B034;Pin Control Register n (PORTC_PCR13);32;R/W ;0;
+4004_B038;Pin Control Register n (PORTC_PCR14);32;R/W ;0;
+4004_B03C;Pin Control Register n (PORTC_PCR15);32;R/W ;0;
+4004_B040;Pin Control Register n (PORTC_PCR16);32;R/W ;0;
+4004_B044;Pin Control Register n (PORTC_PCR17);32;R/W ;0;
+4004_B048;Pin Control Register n (PORTC_PCR18);32;R/W ;0;
+4004_B04C;Pin Control Register n (PORTC_PCR19);32;R/W ;0;
+4004_B050;Pin Control Register n (PORTC_PCR20);32;R/W ;0;
+4004_B054;Pin Control Register n (PORTC_PCR21);32;R/W ;0;
+4004_B058;Pin Control Register n (PORTC_PCR22);32;R/W ;0;
+4004_B05C;Pin Control Register n (PORTC_PCR23);32;R/W ;0;
+4004_B060;Pin Control Register n (PORTC_PCR24);32;R/W ;0;
+4004_B064;Pin Control Register n (PORTC_PCR25);32;R/W ;0;
+4004_B068;Pin Control Register n (PORTC_PCR26);32;R/W ;0;
+4004_B06C;Pin Control Register n (PORTC_PCR27);32;R/W ;0;
+4004_B070;Pin Control Register n (PORTC_PCR28);32;R/W ;0;
+4004_B074;Pin Control Register n (PORTC_PCR29);32;R/W ;0;
+4004_B078;Pin Control Register n (PORTC_PCR30);32;R/W ;0;
+4004_B07C;Pin Control Register n (PORTC_PCR31);32;R/W;0;
+4004_B080;Global Pin Control Low Register (PORTC_GPCLR);32;W;0;
+4004_B084;Global Pin Control High Register (PORTC_GPCHR);32;W;0;
+4004_B0A0;Interrupt Status Flag Register (PORTC_ISFR);32;R/W;0;
+4004_B0C0;Digital Filter Enable Register (PORTC_DFER);32;R/W;0;
+4004_B0C4;Digital Filter Clock Register (PORTC_DFCR);32;R/W;0;
+4004_B0C8;Digital Filter Width Register (PORTC_DFWR);32;R/W;0;
+4004_C000;Pin Control Register n (PORTD_PCR0);32;R/W;0;
+4004_C004;Pin Control Register n (PORTD_PCR1);32;R/W;0;
+4004_C008;Pin Control Register n (PORTD_PCR2);32;R/W;0;
+4004_C00C;Pin Control Register n (PORTD_PCR3);32;R/W;0;
+4004_C010;Pin Control Register n (PORTD_PCR4);32;R/W;0;
+4004_C014;Pin Control Register n (PORTD_PCR5);32;R/W;0;
+4004_C018;Pin Control Register n (PORTD_PCR6);32;R/W;0;
+4004_C01C;Pin Control Register n (PORTD_PCR7);32;R/W;0;
+4004_C020;Pin Control Register n (PORTD_PCR8);32;R/W;0;
+4004_C024;Pin Control Register n (PORTD_PCR9);32;R/W;0;
+4004_C028;Pin Control Register n (PORTD_PCR10);32;R/W;0;
+4004_C02C;Pin Control Register n (PORTD_PCR11);32;R/W;0;
+4004_C030;Pin Control Register n (PORTD_PCR12);32;R/W;0;
+4004_C034;Pin Control Register n (PORTD_PCR13);32;R/W;0;
+4004_C038;Pin Control Register n (PORTD_PCR14);32;R/W;0;
+4004_C03C;Pin Control Register n (PORTD_PCR15);32;R/W;0;
+4004_C040;Pin Control Register n (PORTD_PCR16);32;R/W;0;
+4004_C044;Pin Control Register n (PORTD_PCR17);32;R/W;0;
+4004_C048;Pin Control Register n (PORTD_PCR18);32;R/W;0;
+4004_C04C;Pin Control Register n (PORTD_PCR19);32;R/W;0;
+4004_C050;Pin Control Register n (PORTD_PCR20);32;R/W;0;
+4004_C054;Pin Control Register n (PORTD_PCR21);32;R/W;0;
+4004_C058;Pin Control Register n (PORTD_PCR22);32;R/W;0;
+4004_C05C;Pin Control Register n (PORTD_PCR23);32;R/W;0;
+4004_C060;Pin Control Register n (PORTD_PCR24);32;R/W;0;
+4004_C064;Pin Control Register n (PORTD_PCR25);32;R/W;0;
+4004_C068;Pin Control Register n (PORTD_PCR26);32;R/W;0;
+4004_C06C;Pin Control Register n (PORTD_PCR27);32;R/W;0;
+4004_C070;Pin Control Register n (PORTD_PCR28);32;R/W;0;
+4004_C074;Pin Control Register n (PORTD_PCR29);32;R/W;0;
+4004_C078;Pin Control Register n (PORTD_PCR30);32;R/W;0;
+4004_C07C;Pin Control Register n (PORTD_PCR31);32;R/W;0;
+4004_C080;Global Pin Control Low Register (PORTD_GPCLR);32;W;0;
+4004_C084;Global Pin Control High Register (PORTD_GPCHR);32;W;0;
+4004_C0A0;Interrupt Status Flag Register (PORTD_ISFR);32;R/W;0;
+4004_C0C0;Digital Filter Enable Register (PORTD_DFER);32;R/W;0;
+4004_C0C4;Digital Filter Clock Register (PORTD_DFCR);32;R/W;0;
+4004_C0C8;Digital Filter Width Register (PORTD_DFWR);32;R/W;0;
+4004_D000;Pin Control Register n (PORTE_PCR0);32;R/W;0;
+4004_D004;Pin Control Register n (PORTE_PCR1);32;R/W;0;
+4004_D008;Pin Control Register n (PORTE_PCR2);32;R/W;0;
+4004_D00C;Pin Control Register n (PORTE_PCR3);32;R/W;0;
+4004_D010;Pin Control Register n (PORTE_PCR4);32;R/W;0;
+4004_D014;Pin Control Register n (PORTE_PCR5);32;R/W;0;
+4004_D018;Pin Control Register n (PORTE_PCR6);32;R/W;0;
+4004_D01C;Pin Control Register n (PORTE_PCR7);32;R/W;0;
+4004_D020;Pin Control Register n (PORTE_PCR8);32;R/W;0;
+4004_D024;Pin Control Register n (PORTE_PCR9);32;R/W;0;
+4004_D028;Pin Control Register n (PORTE_PCR10);32;R/W;0;
+4004_D02C;Pin Control Register n (PORTE_PCR11);32;R/W;0;
+4004_D030;Pin Control Register n (PORTE_PCR12);32;R/W;0;
+4004_D034;Pin Control Register n (PORTE_PCR13);32;R/W;0;
+4004_D038;Pin Control Register n (PORTE_PCR14);32;R/W;0;
+4004_D03C;Pin Control Register n (PORTE_PCR15);32;R/W;0;
+4004_D040;Pin Control Register n (PORTE_PCR16);32;R/W;0;
+4004_D044;Pin Control Register n (PORTE_PCR17);32;R/W;0;
+4004_D048;Pin Control Register n (PORTE_PCR18);32;R/W;0;
+4004_D04C;Pin Control Register n (PORTE_PCR19);32;R/W;0;
+4004_D050;Pin Control Register n (PORTE_PCR20);32;R/W;0;
+4004_D054;Pin Control Register n (PORTE_PCR21);32;R/W;0;
+4004_D058;Pin Control Register n (PORTE_PCR22);32;R/W;0;
+4004_D05C;Pin Control Register n (PORTE_PCR23);32;R/W;0;
+4004_D060;Pin Control Register n (PORTE_PCR24);32;R/W;0;
+4004_D064;Pin Control Register n (PORTE_PCR25);32;R/W;0;
+4004_D068;Pin Control Register n (PORTE_PCR26);32;R/W;0;
+4004_D06C;Pin Control Register n (PORTE_PCR27);32;R/W;0;
+4004_D070;Pin Control Register n (PORTE_PCR28);32;R/W;0;
+4004_D074;Pin Control Register n (PORTE_PCR29);32;R/W;0;
+4004_D078;Pin Control Register n (PORTE_PCR30);32;R/W;0;
+4004_D07C;Pin Control Register n (PORTE_PCR31);32;R/W;0;
+4004_D080;Global Pin Control Low Register (PORTE_GPCLR);32;W;0000_0000h;
+4004_D084;Global Pin Control High Register (PORTE_GPCHR);32;W;0000_0000h;
+4004_D0A0;Interrupt Status Flag Register (PORTE_ISFR);32;R/W;0000_0000h;
+4004_D0C0;Digital Filter Enable Register (PORTE_DFER);32;R/W;0000_0000h;
+4004_D0C4;Digital Filter Clock Register (PORTE_DFCR);32;R/W;0000_0000h;
+4004_D0C8;Digital Filter Width Register (PORTE_DFWR);32;R/W;0000_0000h;
+
+====
+
+
+PORTx_PCR0 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR1 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR2 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR3 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR4 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR5 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR6 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR7 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR8 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR9 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR10 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR11 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR12 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR13 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR14 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR15 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR16 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR17 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR18 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR19 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR20 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR21 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR22 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR23 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR24 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR25 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR26 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR27 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR28 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR29 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR30 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+PORTx_PCR31 field descriptions;
+24 ISF;Interrupt Status Flag SSpecific
+;The pin interrupt configuration is valid in all digital pin muxing modes.
+19-16 IRQC;Interrupt enable
+;The pin interrupt configuration is valid in all digital pin muxing modes. The corresponding pin is configured to generate interrupt/DMA request as follows:
+15 LK;Lock Register
+;0; Pin Control Register fields [15:0] are not locked.
+;1; Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.
+10-8 MUX;Pin Mux Control
+6 DSE;Drive Strength Enable
+5 ODE;Open Drain Enable
+;Open drain configuration is valid in all digital pin muxing modes.
+;0; Open drain output is disabled on the corresponding pin.
+;1; Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
+4 PFE;Passive Filter Enable
+;Passive filter configuration is valid in all digital pin muxing modes.
+;0; Passive input filter is disabled on the corresponding pin.
+;1; Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
+2 SRE;Slew Rate Enable
+;Slew rate configuration is valid in all digital pin muxing modes.
+;0; Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+;1; Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
+1 PE;Pull Enable
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pullup or pulldown resistor is not enabled on the corresponding pin.
+;1; Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
+0 PS;Pull Select
+;Pull configuration is valid in all digital pin muxing modes.
+;0; Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+;1; Internal pullup resistor is enabled on the corresponding pin, if the corresponding PE field is set.
+
+
+
+PORTx_GPCLR field descriptions;
+31-16 GPWE;Global Pin Write Enable
+;Selects which Pin Control Registers (15 through 0) bits [15:0] update with the value in GPWD. If a selected Pin Control Register is locked then the write to that register is ignored.
+;0; Corresponding Pin Control Register is not updated with the value in GPWD.
+;1; Corresponding Pin Control Register is updated with the value in GPWD.
+15-0 GPWD;Global Pin Write Data
+;Write value that is written to all Pin Control Registers bits [15:0] that are selected by GPWE.
+
+PORTx_GPCHR field descriptions;
+31-16 GPWE;Global Pin Write Enable
+;Selects which Pin Control Registers (31 through 16) bits [15:0] update with the value in GPWD. If a selected Pin Control Register is locked then the write to that register is ignored.
+;0; Corresponding Pin Control Register is not updated with the value in GPWD.
+;1; Corresponding Pin Control Register is updated with the value in GPWD.
+15-0 GPWD;Global Pin Write Data
+;Write value that is written to all Pin Control Registers bits [15:0] that are selected by GPWE.
+
+PORTx_ISFR field descriptions;
+0 ISF0;Interrupt Status Flag 
+;when PCR0[MUX] is equal to 1, ISF0 is 1.
+;when PCR0[MUX] is equal to 0, ISF0 is 0
+1 ISF1;Interrupt Status Flag 
+;when PCR1[MUX] is equal to 1, ISF1 is 1.
+;when PCR1[MUX] is equal to 0, ISF1 is 0
+2 ISF2;Interrupt Status Flag 
+;when PCR2[MUX] is equal to 1, ISF2 is 1.
+;when PCR2[MUX] is equal to 0, ISF2 is 0
+3 ISF3;Interrupt Status Flag 
+;when PCR3[MUX] is equal to 1, ISF3 is 1.
+;when PCR3[MUX] is equal to 0, ISF3 is 0
+4 ISF4;Interrupt Status Flag 
+;when PCR4[MUX] is equal to 1, ISF4 is 1.
+;when PCR4[MUX] is equal to 0, ISF4 is 0
+5 ISF5;Interrupt Status Flag 
+;when PCR5[MUX] is equal to 1, ISF5 is 1.
+;when PCR5[MUX] is equal to 0, ISF5 is 0
+6 ISF6;Interrupt Status Flag 
+;when PCR6[MUX] is equal to 1, ISF6 is 1.
+;when PCR6[MUX] is equal to 0, ISF6 is 0
+7 ISF7;Interrupt Status Flag 
+;when PCR7[MUX] is equal to 1, ISF7 is 1.
+;when PCR7[MUX] is equal to 0, ISF7 is 0
+8 ISF8;Interrupt Status Flag 
+;when PCR8[MUX] is equal to 1, ISF8 is 1.
+;when PCR8[MUX] is equal to 0, ISF8 is 0
+9 ISF9;Interrupt Status Flag 
+;when PCR9[MUX] is equal to 1, ISF9 is 1.
+;when PCR9[MUX] is equal to 0, ISF9 is 0
+10 ISF10;Interrupt Status Flag 
+;when PCR10[MUX] is equal to 1, ISF10 is 1.
+;when PCR10[MUX] is equal to 0, ISF10 is 0
+11 ISF11;Interrupt Status Flag 
+;when PCR11[MUX] is equal to 1, ISF11 is 1.
+;when PCR11[MUX] is equal to 0, ISF11 is 0
+12 ISF12;Interrupt Status Flag 
+;when PCR12[MUX] is equal to 1, ISF12 is 1.
+;when PCR12[MUX] is equal to 0, ISF12 is 0
+13 ISF13;Interrupt Status Flag 
+;when PCR13[MUX] is equal to 1, ISF13 is 1.
+;when PCR13[MUX] is equal to 0, ISF13 is 0
+14 ISF14;Interrupt Status Flag 
+;when PCR14[MUX] is equal to 1, ISF14 is 1.
+;when PCR14[MUX] is equal to 0, ISF14 is 0
+15 ISF15;Interrupt Status Flag 
+;when PCR15[MUX] is equal to 1, ISF15 is 1.
+;when PCR15[MUX] is equal to 0, ISF15 is 0
+16 ISF16;Interrupt Status Flag 
+;when PCR16[MUX] is equal to 1, ISF16 is 1.
+;when PCR16[MUX] is equal to 0, ISF16 is 0
+17 ISF17;Interrupt Status Flag 
+;when PCR17[MUX] is equal to 1, ISF17 is 1.
+;when PCR17[MUX] is equal to 0, ISF17 is 0
+18 ISF18;Interrupt Status Flag 
+;when PCR18[MUX] is equal to 1, ISF18 is 1.
+;when PCR18[MUX] is equal to 0, ISF18 is 0
+19 ISF19;Interrupt Status Flag 
+;when PCR19[MUX] is equal to 1, ISF19 is 1.
+;when PCR19[MUX] is equal to 0, ISF19 is 0
+20 ISF20;Interrupt Status Flag 
+;when PCR20[MUX] is equal to 1, ISF20 is 1.
+;when PCR20[MUX] is equal to 0, ISF20 is 0
+21 ISF21;Interrupt Status Flag 
+;when PCR21[MUX] is equal to 1, ISF21 is 1.
+;when PCR21[MUX] is equal to 0, ISF21 is 0
+22 ISF22;Interrupt Status Flag 
+;when PCR22[MUX] is equal to 1, ISF22 is 1.
+;when PCR22[MUX] is equal to 0, ISF22 is 0
+23 ISF23;Interrupt Status Flag 
+;when PCR23[MUX] is equal to 1, ISF23 is 1.
+;when PCR23[MUX] is equal to 0, ISF23 is 0
+24 ISF24;Interrupt Status Flag 
+;when PCR24[MUX] is equal to 1, ISF24 is 1.
+;when PCR24[MUX] is equal to 0, ISF24 is 0
+25 ISF25;Interrupt Status Flag 
+;when PCR25[MUX] is equal to 1, ISF25 is 1.
+;when PCR25[MUX] is equal to 0, ISF25 is 0
+26 ISF26;Interrupt Status Flag 
+;when PCR26[MUX] is equal to 1, ISF26 is 1.
+;when PCR26[MUX] is equal to 0, ISF26 is 0
+27 ISF27;Interrupt Status Flag 
+;when PCR27[MUX] is equal to 1, ISF27 is 1.
+;when PCR27[MUX] is equal to 0, ISF27 is 0
+28 ISF28;Interrupt Status Flag 
+;when PCR28[MUX] is equal to 1, ISF28 is 1.
+;when PCR28[MUX] is equal to 0, ISF28 is 0
+29 ISF29;Interrupt Status Flag 
+;when PCR29[MUX] is equal to 1, ISF29 is 1.
+;when PCR29[MUX] is equal to 0, ISF29 is 0
+30 ISF30;Interrupt Status Flag 
+;when PCR30[MUX] is equal to 1, ISF30 is 1.
+;when PCR30[MUX] is equal to 0, ISF30 is 0
+31 ISF31;Interrupt Status Flag 
+;when PCR31[MUX] is equal to 1, ISF31 is 1.
+;when PCR31[MUX] is equal to 0, ISF31 is 0
+
+PORTx_DFER field descriptions;
+31-0 DFE;Digital Filter Enable 
+
+PORTx_DFCR field descriptions;
+0 CS;Clock Source
+;The digital filter configuration is valid in all digital pin muxing modes. Configures the clock source for the digital input filters. Changing the filter clock source must be done only when all digital filters are disabled.
+
+PORTx_DFWR field descriptions;
+4-0 FILT;Filter Length
+;The digital filter configuration is valid in all digital pin muxing modes. Configures the maximum size of the glitches, in clock cycles, that the digital filter absorbs for the enabled digital filters. Glitches that are longer than this register setting will pass through the digital filter, and glitches that are equal to or less than this register setting are filtered. Changing the filter length must be done only after all filters are disabled.
+
+====
+
+; PCR0[ISF];PCR0[IRQC] >= 1000; -
+; PCR1[ISF];PCR1[IRQC] >= 1000; -
+; PCR2[ISF];PCR2[IRQC] >= 1000; -
+; PCR3[ISF];PCR3[IRQC] >= 1000; -
+; PCR4[ISF];PCR4[IRQC] >= 1000; -
+; PCR5[ISF];PCR5[IRQC] >= 1000; -
+; PCR6[ISF];PCR6[IRQC] >= 1000; -
+; PCR7[ISF];PCR7[IRQC] >= 1000; -
+; PCR8[ISF];PCR8[IRQC] >= 1000; -
+; PCR9[ISF];PCR9[IRQC] >= 1000; -
+; PCR10[ISF];PCR10[IRQC] >= 1000; -
+; PCR11[ISF];PCR11[IRQC] >= 1000; -
+; PCR12[ISF];PCR12[IRQC] >= 1000; -
+; PCR13[ISF];PCR13[IRQC] >= 1000; -
+; PCR14[ISF];PCR14[IRQC] >= 1000; -
+; PCR15[ISF];PCR15[IRQC] >= 1000; -
+; PCR16[ISF];PCR16[IRQC] >= 1000; -
+; PCR17[ISF];PCR17[IRQC] >= 1000; -
+; PCR18[ISF];PCR18[IRQC] >= 1000; -
+; PCR19[ISF];PCR19[IRQC] >= 1000; -
+; PCR20[ISF];PCR20[IRQC] >= 1000; -
+; PCR21[ISF];PCR21[IRQC] >= 1000; -
+; PCR22[ISF];PCR22[IRQC] >= 1000; -
+; PCR23[ISF];PCR23[IRQC] >= 1000; -
+; PCR24[ISF];PCR24[IRQC] >= 1000; -
+; PCR25[ISF];PCR25[IRQC] >= 1000; -
+; PCR26[ISF];PCR26[IRQC] >= 1000; -
+; PCR27[ISF];PCR27[IRQC] >= 1000; -
+; PCR28[ISF];PCR28[IRQC] >= 1000; -
+; PCR29[ISF];PCR29[IRQC] >= 1000; -
+; PCR30[ISF];PCR30[IRQC] >= 1000; -
+; PCR31[ISF];PCR31[IRQC] >= 1000; -
+====

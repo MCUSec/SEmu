@@ -1,0 +1,33 @@
+4007_E000;Power Mode Protection register (SMC_PMPROT);8;R/W; 00h;
+4007_E001;Power Mode Control register (SMC_PMCTRL);8;R/W; 00h;
+4007_E002;VLLS Control register (SMC_VLLSCTRL);8;R/W; 03h;
+4007_E003;Power Mode Status register (SMC_PMSTAT);8;R;01h;
+
+====
+SMC_PMPROT field descriptions;
+5 AVLP;Allow Very-Low-Power Modes
+;Provided the appropriate control bits are set up in PMCTRL, this write-once field allows the MCU to enter any very-low-power mode (VLPR, VLPW, and VLPS).
+3 ALLS;Allow Low-Leakage Stop Mode
+;Provided the appropriate control bits are set up in PMCTRL, this write-once field allows the MCU to enter any low-leakage stop mode (LLS).
+1 AVLLS;Allow Very-Low-Leakage Stop Mode
+;Provided the appropriate control bits are set up in PMCTRL, this write once bit allows the MCU to enter any very-low-leakage stop mode (VLLSx).
+;0;Any VLLSx mode is not allowed
+;1;Any VLLSx mode is allowed
+
+SMC_PMCTRL field descriptions;
+7 LPWUI;Low-Power Wake Up On Interrupt
+6-5 RUNM;Run Mode Control
+;When written, causes entry into the selected run mode. Writes to this field are blocked if the protection level has not been enabled using the PMPROT register.
+3 STOPA;Stop Aborted READ ONLY
+;When set, this read-only status bit indicates an interrupt or reset occured during the previous stop mode entry sequence, preventing the system from entering that mode. This field is cleared by hardware at the beginning of any stop mode entry sequence and is set if the sequence was aborted.
+2-0 STOPM;Stop Mode Contro
+
+SMC_VLLSCTRL field descriptions;
+5 PORPO;POR Power Option
+;Controls whether the POR detect circuit (for brown-out detection) is enabled in VLLS0 mode.
+2-0 VLLSM;VLLS Mode Control
+;Controls which VLLS sub-mode to enter if STOPM=VLLS.
+SMC_PMSTAT field descriptions;
+6-0 PMSTAT;
+;NOTE: When debug is enabled, the PMSTAT will not update to STOP or VLPS
+====

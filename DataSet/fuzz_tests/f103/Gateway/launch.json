@@ -1,0 +1,35 @@
+{
+  "name": "Afl-Gateway.elf",
+  "type": "cppdbg",
+  "request": "launch",
+  "program": "afl-fuzz",
+  "args": [
+    "-U",
+    "-m",
+    "none",
+    "-i",
+    "/home/shandian/.virtualenvs/semu/lib/python3.10/site-packages/semu_fuzz/helper/_inputs",
+    "-o",
+    "/home/shandian/EmuWP/unit_tests/f103/Gateway/output",
+    "-t",
+    "100000",
+    "--",
+    "~/.local/bin/semu-fuzz",
+    "@@",
+    "-c",
+    "/home/shandian/EmuWP/unit_tests/f103/Gateway/semu_config.yml"
+  ],
+  "stopAtEntry": false,
+  "cwd": "${workspaceFolder}",
+  "environment": [],
+  "externalConsole": false,
+  "MIMode": "gdb",
+  "setupCommands": [
+    {
+      "description": "Enable pretty-printing for gdb",
+      "text": "-enable-pretty-printing",
+      "ignoreFailures": true
+    }
+  ],
+  "miDebuggerPath": "/usr/bin/gdb"
+}

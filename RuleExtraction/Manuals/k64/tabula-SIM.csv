@@ -1,0 +1,481 @@
+4004_7000;System Options Register 1 (SIM_SOPT1);32; R/W;0000_0000h;
+4004_7004;SOPT1 Configuration Register (SIM_SOPT1CFG);32; R/W; 0000_0000h;
+4004_8004;System Options Register 2 (SIM_SOPT2);32; R/W; 0000_1000h;
+4004_800C;System Options Register 4 (SIM_SOPT4);32; R/W; 0000_0000h;
+4004_8010;System Options Register 5 (SIM_SOPT5);32; R/W; 0000_0000h;
+4004_8018;System Options Register 7 (SIM_SOPT7);32; R/W; 0000_0000h;
+4004_8024;System Device Identification Register (SIM_SDID);32; R ;0000_0000h;
+4004_8028;System Clock Gating Control Register 1 (SIM_SCGC1);32; R/W; 0000_0000h;
+4004_802C;System Clock Gating Control Register 2 (SIM_SCGC2);32; R/W; 0000_0000h;
+4004_8030;System Clock Gating Control Register 3 (SIM_SCGC3);32; R/W; 0000_0000h;
+4004_8034;System Clock Gating Control Register 4 (SIM_SCGC4);32; R/W; F010_0030h;
+4004_8038;System Clock Gating Control Register 5 (SIM_SCGC5);32; R/W; 0004_0182h;
+4004_803C;System Clock Gating Control Register 6 (SIM_SCGC6);32; R/W; 4000_0001h;
+4004_8040;System Clock Gating Control Register 7 (SIM_SCGC7);32; R/W; 0000_0006h;
+4004_8044;System Clock Divider Register 1 (SIM_CLKDIV1);32; R/W; 0000_0000h;
+4004_8048;System Clock Divider Register 2 (SIM_CLKDIV2);32; R/W; 0000_0000h;
+4004_804C;Flash Configuration Register 1 (SIM_FCFG1);32; R; 0000_0000h;
+4004_8050;Flash Configuration Register 2 (SIM_FCFG2);32; R; 0000_0000h;
+4004_8054;Unique Identification Register High (SIM_UIDH);32; R; 0000_0000h;
+4004_8058;Unique Identification Register Mid-High (SIM_UIDMH);32; R; 0000_0000h;
+4004_805C;Unique Identification Register Mid Low (SIM_UIDML);32; R; 0000_0000h;
+4004_8060;Unique Identification Register Low (SIM_UIDL);32; R; 0000_0000h;
+
+====
+SIM_SOPT1 field descriptions;
+31 USBREGEN;USB voltage regulator enable
+;Controls whether the USB voltage regulator is enabled.
+;0;USB voltage regulator is disabled.
+;1;USB voltage regulator is enabled.
+30 USBSSTBY;USB voltage regulator in standby mode during Stop, VLPS, LLS and VLLS modes.
+;0;USB voltage regulator not in standby during Stop, VLPS, LLS and VLLS modes.
+;1;USB voltage regulator in standby during Stop, VLPS, LLS and VLLS modes.
+29 USBVSTBY;USB voltage regulator in standby mode during VLPR and VLPW modes
+;Controls whether the USB voltage regulator is placed in standby mode during VLPR and VLPW modes.
+;0;USB voltage regulator not in standby during VLPR and VLPW modes.
+;1;USB voltage regulator in standby during VLPR and VLPW modes.
+19-18 OSC32KSEL;32K oscillator clock select
+;Selects the 32;kHz clock source (ERCLK32K) for LPTMR. This field is reset only on POR/LVD.
+;00; System oscillator (OSC32KCLK) 
+;01; Reserved
+;10; RTC 32.768kHz oscillator
+;11; LPO 1 kHz
+15-12 RAMSIZE;RAM size
+;This field specifies the amount of system RAM available on the device.
+
+SIM_SOPT1CFG field descriptions;
+26 USSWE;USB voltage regulator stop standby write enable
+;Writing one to the USSWE bit allows the SOPT1 USBSSTBY bit to be written. This register bit clears after a write to USBSSTBY.
+;0;SOPT1 USBSSTBY cannot be written.
+;1;SOPT1 USBSSTBY can be written.
+25 UVSWE;USB voltage regulator VLP standby write enable
+;Writing one to the UVSWE bit allows the SOPT1 USBVSTBY bit to be written. This register bit clears after a write to USBVSTBY.
+;0;SOPT1 USBVSTBY cannot be written.
+;1;SOPT1 USBVSTBY can be written.
+24 URWE;USB voltage regulator enable write enable
+;Writing one to the URWE bit allows the SOPT1 USBREGEN bit to be written. This register bit clears after a write to USBREGEN.
+;0;SOPT1 USBREGEN cannot be written.
+;1;SOPT1 USBREGEN can be written.
+
+
+SIM_SOPT2 field descriptions;
+29-28 SDHCSRC;SDHC clock source select
+;Selects the clock source for the SDHC clock .
+;00; Core/system clock.
+;01; MCGFLLCLK, or MCGPLLCLK, or IRC48M clock as selected by SOPT2[PLLFLLSEL].
+;10; OSCERCLK clock
+;11; External bypass clock (SDHC0_CLKIN)
+21-20 TIMESRC;IEEE 1588 timestamp clock source select
+;Selects the clock source for the Ethernet timestamp clock.
+;00; Core/system clock.
+;01; MCGFLLCLK , or MCGPLLCLK, or IRC48M clock as selected by SOPT2[PLLFLLSEL].
+;10; OSCERCLK clock
+;11; External bypass clock (ENET_1588_CLKIN).
+19 RMIISRC;RMII clock source select
+;Selects the clock source for the Ethernet RMII interface
+;0;EXTAL clock
+;1;External bypass clock (ENET_1588_CLKIN).
+18 USBSRC;USB clock source select
+;Selects the clock source for the USB 48 MHz clock.
+;0;External bypass clock (USB_CLKIN).
+;1;MCGFLLCLK , or MCGPLLCLK, or IRC48M clock as selected by SOPT2[PLLFLLSEL], and then divided by the USB fractional divider as configured by SIM_CLKDIV2[USBFRAC, USBDIV].
+17-16 PLLFLLSEL;PLL/FLL clock select
+;Selects the high frequency clock for various peripheral clocking options.
+;00; MCGFLLCLK clock
+;01; MCGPLLCLK clock
+;10; Reserved
+;11; IRC48 MHz clock
+12 TRACECLKSEL;Debug trace clock select
+;Selects the core/system clock or MCG output clock (MCGOUTCLK) as the trace clock source.
+;0;MCGOUTCLK
+;1;Core/system clock
+11 PTD7PAD;PTD7 pad drive strength
+;Controls the output drive strength of the PTD7 pin by selecting either one or two pads to drive it.
+;0;Single-pad drive strength for PTD7.
+;1;Double pad drive strength for PTD7.
+9-8 FBSL;FlexBus security level
+;If flash security is enabled, then this field affects what CPU operations can access off-chip via the FlexBus interface. This field has no effect if flash security is not enabled.
+7-5 CLKOUTSEL;CLKOUT select
+;Selects the clock to output on the CLKOUT pin.
+4 RTCCLKOUTSEL;RTC clock out select
+;Selects either the RTC 1 Hz clock or the 32.768kHz clock to be output on the RTC_CLKOUT pin.
+;0;RTC 1 Hz clock is output on the RTC_CLKOUT pin.
+;1;RTC 32.768kHz clock is output on the RTC_CLKOUT pin.
+
+SIM_SOPT4 field descriptions;
+31 FTM3TRG1SRC;FlexTimer 3 Hardware Trigger 1 Source Select 
+;Selects the source of FTM3 hardware trigger 1.
+;0;Reserved
+;1;FTM2 channel match drives FTM3 hardware trigger 1
+30 FTM3TRG0SRC;FlexTimer 3 Hardware Trigger 0 Source Select 
+;Selects the source of FTM3 hardware trigger 0.
+;0;Reserved
+;1;FTM1 channel match drives FTM3 hardware trigger 0
+29 FTM0TRG1SRC;FlexTimer 0 Hardware Trigger 1 Source Select
+;Selects the source of FTM0 hardware trigger 1.
+;0;PDB output trigger 1 drives FTM0 hardware trigger 1
+;1;FTM2 channel match drives FTM0 hardware trigger 1
+28 FTM0TRG0SRC;FlexTimer 0 Hardware Trigger 0 Source Select 
+;Selects the source of FTM0 hardware trigger 0.
+;0;HSCMP0 output drives FTM0 hardware trigger 0
+;1;FTM1 channel match drives FTM0 hardware trigger 0
+27 FTM3CLKSEL;FlexTimer 3 External Clock Pin Select
+;Selects the external pin used to drive the clock to the FTM3 module.
+;NOTE: The selected pin must also be configured for the FTM3 module external clock function through the appropriate pin control register in the port control module.
+;0;FTM3 external clock driven by FTM_CLK0 pin.
+;1;FTM3 external clock driven by FTM_CLK1 pin.
+26 FTM2CLKSEL;FlexTimer 2 External Clock Pin Select
+;Selects the external pin used to drive the clock to the FTM2 module.
+;NOTE: The selected pin must also be configured for the FTM2 module external clock function through the appropriate pin control register in the port control module.
+;0;FTM2 external clock driven by FTM_CLK0 pin.
+;1;FTM2 external clock driven by FTM_CLK1 pin.
+25 FTM1CLKSEL;FTM1 External Clock Pin Select
+;Selects the external pin used to drive the clock to the FTM1 module.
+;NOTE: The selected pin must also be configured for the FTM external clock function through the appropriate pin control register in the port control module.
+;0;FTM_CLK0 pin
+;1;FTM_CLK1 pin
+24 FTM0CLKSEL;FlexTimer 0 External Clock Pin Select
+;Selects the external pin used to drive the clock to the FTM0 module.
+;NOTE: The selected pin must also be configured for the FTM external clock function through the appropriate pin control register in the port control module.
+;0;FTM_CLK0 pin
+;1;FTM_CLK1 pin
+21-20 FTM2CH0SRC;FTM2 channel 0 input capture source select
+;Selects the source for FTM2 channel 0 input capture.
+;NOTE: When the FTM is not in input capture mode, clear this field.
+;00; FTM2_CH0 signal
+;01; CMP0 output
+;10; CMP1 output 
+;11; Reserved
+19-18 FTM1CH0SRC;FTM1 channel 0 input capture source select
+;Selects the source for FTM1 channel 0 input capture.
+;NOTE: When the FTM is not in input capture mode, clear this field. 
+;00; FTM1_CH0 signal
+;01; CMP0 output
+;10; CMP1 output
+;11; USB start of frame pulse
+12 FTM3FLT0;FTM3 Fault 0 Select
+;Selects the source of FTM3 fault 0.
+;NOTE: The pin source for fault 0 must be configured for the FTM module fault function through the appropriate PORTx pin control register.
+;0;FTM3_FLT0 pin
+;1;CMP0 out
+8 FTM2FLT0;FTM2 Fault 0 Select
+;Selects the source of FTM2 fault 0.
+;NOTE: The pin source for fault 0 must be configured for the FTM module fault function through the appropriate PORTx pin control register.
+;0;FTM2_FLT0 pin
+;1;CMP0 out
+4 FTM1FLT0;FTM1 Fault 0 Select
+;Selects the source of FTM1 fault 0.
+;NOTE: The pin source for fault 0 must be configured for the FTM module fault function through the appropriate pin control register in the port control module.
+;0;FTM1_FLT0 pin
+;1;CMP0 out
+2 FTM0FLT2;FTM0 Fault 2 Select
+;Selects the source of FTM0 fault 2.
+;NOTE: The pin source for fault 2 must be configured for the FTM module fault function through the appropriate pin control register in the port control module.
+;0;FTM0_FLT2 pin
+;1;CMP2 out
+1 FTM0FLT1;FTM0 Fault 1 Select
+;Selects the source of FTM0 fault 1.
+;NOTE: The pin source for fault 1 must be configured for the FTM module fault function through the appropriate pin control register in the port control module.
+;0;CMP1 out
+;1;CMP1 out
+0 FTM0FLT0;FTM0 Fault 0 Select
+;Selects the source of FTM0 fault 0.
+;NOTE: The pin source for fault 0 must be configured for the FTM module fault function through the appropriate pin control register in the port control module.
+;0;FTM0_FLT0 pin
+;1;CMP0 out
+
+SIM_SOPT5 field descriptions;
+7-6 UART1RXSRC;UART 1 receive data source select
+;Selects the source for the UART 1 receive data.
+;00; UART1_RX pin 
+;01; CMP0
+;10; CMP1
+;11; Reserved
+5-4 UART1TXSRC;UART 1 transmit data source select
+;Selects the source for the UART 1 transmit data.
+3-2 UART0RXSRC;UART 0 receive data source select
+;Selects the source for the UART 0 receive data.
+1-0 UART0TXSRC;UART 0 transmit data source select
+;Selects the source for the UART 0 transmit data.
+
+SIM_SOPT7 field descriptions;
+15 ADC1ALTTRGEN;ADC1 alternate trigger enable
+;Enable alternative conversion triggers for ADC1.
+;0;PDB trigger selected for ADC1
+;1;Alternate trigger selected for ADC1 as defined by ADC1TRGSEL.
+12 ADC1PRETRGSEL;ADC1 pre-trigger select
+;Selects the ADC1 pre-trigger source when alternative triggers are enabled through ADC1ALTTRGEN.
+;0;Pre-trigger A selected for ADC1.
+;1;Pre-trigger B selected for ADC1.
+11-8 ADC1TRGSEL;ADC1 trigger select
+;Selects the ADC1 trigger source when alternative triggers are functional in stop and VLPS modes.
+7 ADC0ALTTRGEN;ADC0 alternate trigger enable
+;Enable alternative conversion triggers for ADC0.
+;0;PDB trigger selected for ADC0.
+;1;Alternate trigger selected for ADC0.
+4 ADC0PRETRGSEL;ADC0 pretrigger select
+;Selects the ADC0 pre-trigger source when alternative triggers are enabled through ADC0ALTTRGEN.
+;0;Pre-trigger A
+;1;Pre-trigger B
+3-0 ADC0TRGSEL;ADC0 trigger select 
+
+SIM_SDID field descriptions;
+31-28 FAMILYID;Kinetis Family ID
+27-24 SUBFAMID;Kinetis Sub-Family ID 
+23-20 SERIESID;Kinetis Series ID
+15-12 REVID;Device revision number
+11-7 DIEID;Device Die ID
+6-4 FAMID;Kinetis family identification
+3-0 PINID;Pincount identification
+
+SIM_SCGC1 field descriptions;
+11 UART5;UART5 Clock Gate Control
+10 UART4;UART4 Clock Gate Control
+6 I2C2;I2C2 Clock Gate Control
+
+SIM_SCGC2 field descriptions;
+13 DAC1;DAC1 Clock Gate Control
+;This bit controls the clock gate to the DAC1 module.
+;0;Clock disabled
+;1;Clock enabled
+12 DAC0;DAC0 Clock Gate Control
+;This bit controls the clock gate to the DAC0 module.
+;0;Clock disabled
+;1;Clock enabled
+;0;ENET;ENET Clock Gate Control
+;This bit controls the clock gate to the ENET module.
+;0;Clock disabled
+;1;Clock enabled
+
+SIM_SCGC3 field descriptions;
+27 ADC1;ADC1 Clock Gate Control
+;This bit controls the clock gate to the ADC1 module.
+;0;Clock disabled
+;1;Clock enabled
+25 FTM3;FTM3 Clock Gate Control
+;This bit controls the clock gate to the FTM3 module.
+;0;Clock disabled
+;1;Clock enabled
+24 FTM2;FTM2 Clock Gate Control
+17 SDHC;SDHC Clock Gate Control
+;This bit controls the clock gate to the SDHC module.
+;0;Clock disabled
+;1;Clock enabled
+12 SPI2;SPI2 Clock Gate Control
+;This bit controls the clock gate to the SPI2 module.
+;0;Clock disabled
+;1;Clock enabled
+0 RNGA;RNGA Clock Gate Control
+;This bit controls the clock gate to the RNGA module.
+;0;Clock disabled
+;1;Clock enabled
+
+SIM_SCGC4 field descriptions;
+20 VREF;VREF Clock Gate Control
+;This bit controls the clock gate to the VREF module.
+;0;Clock disabled
+;1;Clock enabled
+19 CMP;Comparator Clock Gate Control
+;This bit controls the clock gate to the comparator module.
+;0;Clock disabled
+;1;Clock enabled
+18 USBOTG;USB Clock Gate Control
+;This bit controls the clock gate to the USB module.
+;0;Clock disabled
+;1;Clock enabled
+13 UART3; UART3 Clock Gate Control
+;This bit controls the clock gate to the UART3 module.
+;0;Clock disabled
+;1;Clock enabled
+12 UART2;UART2 Clock Gate Control
+;This bit controls the clock gate to the UART2 module.
+;0;Clock disabled
+;1;Clock enabled
+11 UART1;UART1 Clock Gate Control
+;This bit controls the clock gate to the UART1 module.
+;0;Clock disabled
+;1;Clock enabled
+10 UART0;UART0 Clock Gate Control
+;This bit controls the clock gate to the UART0 module.
+;0;Clock disabled
+;1;Clock enabled
+7 I2C1;I2C1 Clock Gate Control
+;This bit controls the clock gate to the I 2 C1 module.
+;0;Clock disabled
+;1;Clock enabled
+6 I2C0;I2C0 Clock Gate Control
+;This bit controls the clock gate to the I 2 C0 module.
+;0;Clock disabled
+;1;Clock enabled
+2 CMT;CMT Clock Gate Control
+;This bit controls the clock gate to the CMT module.
+;0;Clock disabled
+;1;Clock enabled
+1 EWM;EWM Clock Gate Control
+;This bit controls the clock gate to the EWM module.
+;0;Clock disabled
+;1;Clock enabled
+
+SIM_SCGC5 field descriptions;
+13 PORTE;Port E Clock Gate Control
+;This bit controls the clock gate to the Port E module.
+;0;Clock disabled
+;1;Clock enabled
+12 PORTD;Port D Clock Gate Control
+;This bit controls the clock gate to the Port D module.
+;0;Clock disabled
+;1;Clock enabled
+11 PORTC;Port C Clock Gate Control
+;This bit controls the clock gate to the Port C module.
+;0;Clock disabled
+;1;Clock enabled
+10 PORTB;Port B Clock Gate Control
+;This bit controls the clock gate to the Port B module.
+;0;Clock disabled
+;1;Clock enabled
+9 PORTA;Port A Clock Gate Control
+;This bit controls the clock gate to the Port A module.
+;0;Clock disabled
+;1;Clock enabled
+0 LPTMR;Low Power Timer Access Control
+;This bit controls software access to the Low Power Timer module.
+;0;Access disabled
+;1;Access enabled
+
+SIM_SCGC6 field descriptions;
+31 DAC0;DAC0 Clock Gate Control
+;This bit controls the clock gate to the DAC0 module.
+;0;Clock disabled
+;1;Clock enabled
+29 RTC;RTC Access Control
+;This bit controls software access and interrupts to the RTC module.
+;0;Access and interrupts disabled
+;1;Access and interrupts enabled
+27 ADC0;ADC0 Clock Gate Control
+;This bit controls the clock gate to the ADC0 module.
+;0;Clock disabled
+;1;Clock enabled
+26 FTM2;FTM2 Clock Gate Control
+;This bit controls the clock gate to the FTM2 module.
+;0;Clock disabled
+;1;Clock enabled
+25 FTM1;FTM1 Clock Gate Control
+;This bit controls the clock gate to the FTM1 module.
+;0;Clock disabled
+;1;Clock enabled
+24 FTM0;FTM0 Clock Gate Control
+;This bit controls the clock gate to the FTM0 module.
+;0;Clock disabled
+;1;Clock enabled
+23 PIT;PIT Clock Gate Control
+;This bit controls the clock gate to the PIT module.
+;0;Clock disabled
+;1;Clock enabled
+22 PDB;PDB Clock Gate Control
+;This bit controls the clock gate to the PDB module.
+;0;Clock disabled
+;1;Clock enabled
+21 USBDCD;USB DCD Clock Gate Control
+;This bit controls the clock gate to the USB DCD module.
+;0;Clock disabled
+;1;Clock enabled
+18 CRC;CRC Clock Gate Control
+;This bit controls the clock gate to the CRC module.
+;0;Clock disabled
+;1;Clock enabled
+15 I2S;I2S Clock Gate Control
+;This bit controls the clock gate to the I 2 S module.
+;0;Clock disabled
+;1;Clock enabled
+13 SPI1;SPI1 Clock Gate Control
+;This bit controls the clock gate to the SPI1 module.
+;0;Clock disabled
+;1;Clock enabled
+12 SPI0;SPI0 Clock Gate Control
+;This bit controls the clock gate to the SPI0 module.
+;0;Clock disabled
+;1;Clock enabled
+9 RNGA;RNGA Clock Gate Control
+;This bit controls the clock gate to the RNGA module.
+4 FLEXCAN0;FlexCAN0 Clock Gate Control
+;This bit controls the clock gate to the FlexCAN0 module.
+;0;Clock disabled
+;1;Clock enabled
+1 DMAMUX;DMA Mux Clock Gate Control
+;This bit controls the clock gate to the DMA Mux module.
+;0;Clock disabled
+;1;Clock enabled
+0 FTF;Flash Memory Clock Gate Control
+;This bit controls the clock gate to the flash memory. Flash reads are still supported while the flash memory is clock gated, but entry into low power modes is blocked.
+;0;Clock disabled
+;1;Clock enabled
+
+SIM_SCGC7 field descriptions;
+2 MPU;MPU Clock Gate Control
+;This bit controls the clock gate to the MPU module.
+;0;Clock disabled
+;1;Clock enabled
+1 DMA;DMA Clock Gate Control
+;This bit controls the clock gate to the DMA module.
+;0;Clock disabled
+;1;Clock enabled
+0 FLEXBUS;FlexBus Clock Gate Control
+;This bit controls the clock gate to the FlexBus module.
+;0;Clock disabled
+;1;Clock enabled
+
+SIM_CLKDIV1 field descriptions;
+31-28 OUTDIV1;Clock 1 output divider value
+;This field sets the divide value for the core/system clock from MCGOUTCLK. At the end of reset, it is loaded with either 0000 or 0111 depending on FTF_FOPT[LPBOOT].
+27-24 OUTDIV2;Clock 2 output divider value 
+23-20 OUTDIV3;Clock 3 output divider value
+19-16 OUTDIV4;Clock 4 output divider value
+
+SIM_CLKDIV2 field descriptions;
+3-1 USBDIV;USB clock divider divisor
+;This field sets the divide value for the fractional clock divider when the MCGFLLCLK/MCGPLLCLK clock is the USB clock source (SOPT2[USBSRC] = 1).
+0 USBFRAC;USB clock divider fraction
+
+SIM_FCFG1 field descriptions;
+31-28 NVMSIZE;FlexNVM size
+;This field specifies the amount of FlexNVM memory available on the device . Undefined values are reserved.
+27-24 PFSIZE;Program flash size
+;This field specifies the amount of program flash memory available on the device . Undefined values are reserved.
+19-16 EESIZE;EEPROM size EEPROM data size .
+11-8 DEPART;FlexNVM partition
+;For devices with FlexNVM: Data flash / EEPROM backup split . See DEPART bit description in FTFE chapter.
+1 FLASHDOZE;Flash Doze
+;When set, Flash memory is disabled for the duration of Wait mode. An attempt by the DMA or other bus master to access the Flash when the Flash is disabled will result in a bus error. This bit should be clear during VLP modes. The Flash will be automatically enabled again at the end of Wait mode so interrupt vectors do not need to be relocated out of Flash memory. The wakeup time from Wait mode is extended when this bit is set.
+;0;Flash remains enabled during Wait mode
+;1;Flash is disabled for the duration of Wait mode
+0 FLASHDIS;Flash Disable
+;Flash accesses are disabled (and generate a bus error) and the Flash memory is placed in a low power state. This bit should not be changed during VLP modes. Relocate the interrupt vectors out of Flash memory before disabling the Flash.
+;0;Flash is enabled
+;1;Flash is disabled
+
+SIM_FCFG2 field descriptions;
+30-24 MAXADDR0;Max address block 0
+;This field concatenated with 13 trailing zeros indicates the first invalid address of each program flash block.
+;For example, if MAXADDR0 = 0x20 the first invalid address of flash block 0 is 0x0004_0000. This would be the MAXADDR0 value for a device with 256 KB program flash in flash block 0.
+23 PFLSH;Program flash only
+;For devices with FlexNVM, this bit is always clear. For devices without FlexNVM, this bit is always set.
+;0;Device supports FlexNVM
+;1;Program Flash only, device does not support FlexNVM
+22-16 MAXADDR1;Max address block 1
+
+SIM_UIDH field descriptions;
+31-0 UID;Unique Identification
+;Unique identification for the device.
+
+SIM_UIDMH field descriptions;
+31-0 UID;Unique Identification
+;Unique identification for the device.
+
+SIM_UIDML field descriptions;
+31-0 UID;Unique Identification
+;Unique identification for the device.
+
+SIM_UIDL field descriptions;
+31-0 UID;Unique Identification
+;Unique identification for the device.
+====

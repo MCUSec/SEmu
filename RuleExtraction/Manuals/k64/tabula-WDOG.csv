@@ -1,0 +1,94 @@
+4005_2000;Watchdog Status and Control Register High (WDOG_STCTRLH);16;R/W;01D3h;
+4005_2002;Watchdog Status and Control Register Low (WDOG_STCTRLL);16;R/W;0001h;
+4005_2004;Watchdog Time-out Value Register High (WDOG_TOVALH);16;R/W;004Ch;
+4005_2006;Watchdog Time-out Value Register Low (WDOG_TOVALL);16;R/W;4B4Ch;
+4005_2008;Watchdog Window Register High (WDOG_WINH);16;R/W;0000h;
+4005_200A;Watchdog Window Register Low (WDOG_WINL);16;R/W;0010h;
+4005_200C;Watchdog Refresh register (WDOG_REFRESH);16;R/W;B480h;
+4005_200E;Watchdog Unlock register (WDOG_UNLOCK);16;R/W;D928h;
+4005_2010;Watchdog Timer Output Register High (WDOG_TMROUTH);16;R/W;0000h;
+4005_2012;Watchdog Timer Output Register Low (WDOG_TMROUTL);16;R/W;0000h;
+4005_2014;Watchdog Reset Count register (WDOG_RSTCNT);16;R/W;0000h;
+4005_2016;Watchdog Prescaler register (WDOG_PRESC);16;R/W;0400h;
+
+====
+WDOG_STCTRLH field descriptions;
+14 DISTESTWDOG;
+;Allows the WDOG’s functional test mode to be disabled permanently. After it is set, it can only be cleared by a reset. It cannot be unlocked for editing after it is set.
+;0;WDOG functional test mode is not disabled.
+;1;WDOG functional test mode is disabled permanently until reset.
+13-12 BYTESEL;
+;This 2-bit field selects the byte to be tested when the watchdog is in the byte test mode.
+11 TESTSEL;
+;Effective only if TESTWDOG is set. Selects the test to be run on the watchdog timer.
+10 TESTWDOG;
+;Puts the watchdog in the functional test mode. In this mode, the watchdog timer and the associated compare and reset generation logic is tested for correct operation. The clock for the timer is switched from the main watchdog clock to the fast clock input for watchdog functional test. The TESTSEL bit selects the test to be run.
+7 WAITEN;Enables or disables WDOG in Wait mode.
+;0;WDOG is disabled in CPU Wait mode.
+;1;WDOG is enabled in CPU Wait mode.
+6 STOPEN;Enables or disables WDOG in Stop mode. 
+5 DBGEN;Enables or disables WDOG in Debug mode.
+;0;WDOG is disabled in CPU Debug mode.
+;1;WDOG is enabled in CPU Debug mode.
+4 ALLOWUPDATE;
+;Enables updates to watchdog write-once registers, after the reset-triggered initial configuration window (WCT) closes, through unlock sequence.
+;0;No further updates allowed to WDOG write-once registers.
+;1;WDOG write-once registers can be unlocked for updating.
+3 WINEN;Enables Windowing mode.
+;0;Windowing mode is disabled.
+;1;Windowing mode is enabled.
+2 IRQRSTEN;
+;Used to enable the debug breadcrumbs feature. A change in this bit is updated immediately, as opposed to updating after WCT.
+;0;WDOG time-out generates reset only.
+;1;WDOG time-out initially generates an interrupt. After WCT, it generates a reset.
+1 CLKSRC;
+;Selects clock source for the WDOG timer and other internal timing operations.
+;0;WDOG clock sourced from LPO .
+;1;WDOG clock sourced from alternate clock source.
+0 WDOGEN;
+;Enables or disables the WDOG’s operation. In the disabled state, the watchdog timer is kept in the reset state, but the other exception conditions can still trigger a reset/interrupt. A change in the value of this bit must be held for more than one WDOG_CLK cycle for the WDOG to be enabled or disabled.
+;0;WDOG is disabled.
+;1;WDOG is enabled.
+
+WDOG_STCTRLL field descriptions;
+15 INTFLG; Interrupt flag. 
+;It is set when an exception occurs. IRQRSTEN = 1 is a precondition to set this flag.  INTFLG = 1 results in an interrupt being issued followed by a reset, WCT later. The interrupt can be cleared by writing 1 to this bit. It also gets cleared on a system reset.
+
+WDOG_TOVALH field descriptions;
+15-0 TOVALHIGH;
+;Defines the upper 16 bits of the 32-bit time-out value for the watchdog timer. It is defined in terms of cycles  of the watchdog clock.
+
+WDOG_TOVALL field descriptions;
+15-0 TOVALLOW;
+;Defines the lower 16 bits of the 32-bit time-out value for the watchdog timer. It is defined in terms of cycles  of the watchdog clock.
+
+WDOG_WINH field descriptions;
+15-0 WINHIGH;
+;Defines the upper 16 bits of the 32-bit window for the windowed mode of operation of the watchdog. It is defined in terms of cycles of the watchdog clock. In this mode, the watchdog can be refreshed only when the timer has reached a value greater than or equal to this window length. A refresh outside this window resets the system or if IRQRSTEN is set, it interrupts and then resets the system.
+
+WDOG_WINL field descriptions;
+15-0 WINLOW;
+;Defines the lower 16 bits of the 32-bit window for the windowed mode of operation of the watchdog. It is defined in terms of cycles of the pre-scaled watchdog clock. In this mode, the watchdog can be refreshed only when the timer reaches a value greater than or equal to this window length value. A refresh outside of this window resets the system or if IRQRSTEN is set, it interrupts and then resets the system.
+
+WDOG_REFRESH field descriptions;
+15-0 WDOGREFRESH;
+;Watchdog refresh register. A sequence of 0xA602 followed by 0xB480 within 20 bus clock cycles written to this register refreshes the WDOG and prevents it from resetting the system. Writing a value other than the above mentioned sequence or if the sequence is longer than 20 bus cycles, resets the system, or if IRQRSTEN is set, it interrupts and then resets the system.
+
+WDOG_UNLOCK field descriptions;
+15-0 WDOGUNLOCK;
+;Writing the unlock sequence values to this register to makes the watchdog write-once registers writable again. The required unlock sequence is 0xC520 followed by 0xD928 within 20 bus clock cycles. A valid unlock sequence opens a window equal in length to the WCT within which you can update the registers. Writing a value other than the above mentioned sequence or if the sequence is longer than 20 bus cycles, resets the system or if IRQRSTEN is set, it interrupts and then resets the system. The unlock sequence is effective only if ALLOWUPDATE is set.
+
+WDOG_TMROUTH field descriptions;
+15-0 TIMEROUTHIGH;Shows the value of the upper 16 bits of the watchdog timer. 
+
+WDOG_TMROUTL field descriptions;
+15-0 TIMEROUTLOW;
+;Shows the value of the lower 16 bits of the watchdog timer. 
+
+WDOG_RSTCNT field descriptions;
+15-0 RSTCNT;
+;Counts the number of times the watchdog resets the system. This register is reset only on a POR. Writing 1 to the bit to be cleared enables you to clear the contents of this register.
+
+WDOG_PRESC field descriptions;
+10-8 PRESCVAL;3-bit prescaler for the watchdog clock source. A value of zero indicates no division of the input WDOG  clock. The watchdog clock is divided by (PRESCVAL + 1) to provide the prescaled WDOG_CLK.
+====

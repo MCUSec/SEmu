@@ -1,0 +1,16 @@
+begin_point: 0x816e4
+entry_point: 0x80f35
+fork_points:
+- 0x816e4
+include:
+- ./syms.yml
+- ../../../../.local/lib/python3.10/site-packages/semu_fuzz/helper/configs/hw/cortexm_memory.yml
+initial_sp: 0x20088000
+isr_vector: 0x80f35
+memory_map:
+  flash:
+    base_addr: 0x80000
+    file: Heat_Press.bin
+    permissions: r-x
+    size: 0x2000000
+rules: ../../../rules/sam3x.txt

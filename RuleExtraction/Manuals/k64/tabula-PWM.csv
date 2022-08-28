@@ -1,0 +1,591 @@
+4003_8000;Status And Control (FTM0_SC);32;R/W;0000_0000h;40.3.3/961
+4003_8004;Counter (FTM0_CNT);32;R/W;0000_0000h;40.3.4/962
+4003_8008;Modulo (FTM0_MOD);32;R/W;0000_0000h;40.3.5/963
+4003_800C;Channel n Status And Control (FTM0_C0SC);32;R/W;0000_0000h;40.3.6/964
+4003_8010;Channel n Value (FTM0_C0V);32;R/W;0000_0000h;40.3.7/966
+4003_8014;Channel n Status And Control (FTM0_C1SC);32;R/W;0000_0000h;40.3.6/964
+4003_8018;Channel n Value (FTM0_C1V);32;R/W;0000_0000h;40.3.7/966
+4003_801C;Channel n Status And Control (FTM0_C2SC);32;R/W;0000_0000h;40.3.6/964
+4003_8020;Channel n Value (FTM0_C2V);32;R/W;0000_0000h;40.3.7/966
+4003_8024;Channel n Status And Control (FTM0_C3SC);32;R/W;0000_0000h;40.3.6/964
+4003_8028;Channel n Value (FTM0_C3V);32;R/W;0000_0000h;40.3.7/966
+4003_802C;Channel n Status And Control (FTM0_C4SC);32;R/W;0000_0000h;
+4003_8030;Channel n Value (FTM0_C4V);32;R/W;0000_0000h;
+4003_8034;Channel n Status And Control (FTM0_C5SC);32;R/W;0000_0000h;
+4003_8038;Channel n Value (FTM0_C5V);32;R/W;0000_0000h;
+4003_803C;Channel n Status And Control (FTM0_C6SC);32;R/W;0000_0000h;
+4003_8040;Channel n Value (FTM0_C6V);32;R/W;0000_0000h;
+4003_8044;Channel n Status And Control (FTM0_C7SC);32;R/W;0000_0000h;
+4003_8048;Channel n Value (FTM0_C7V);32;R/W;0000_0000h;
+4003_804C;Counter Initial Value (FTM0_CNTIN);32;R/W;0000_0000h;
+4003_8050;Capture And Compare Status (FTM0_STATUS);32;R/W;0000_0000h;
+4003_8054;Features Mode Selection (FTM0_MODE);32;R/W;0000_0004h;
+4003_8058;Synchronization (FTM0_SYNC);32;R/W;0000_0000h;
+4003_805C;Initial State For Channels Output (FTM0_OUTINIT);32;R/W;0000_0000h;
+4003_8060;Output Mask (FTM0_OUTMASK);32;R/W;0000_0000h;
+4003_8064;Function For Linked Channels (FTM0_COMBINE);32;R/W;0000_0000h;
+4003_8068;Deadtime Insertion Control (FTM0_DEADTIME);32;R/W;0000_0000h;
+4003_806C;FTM External Trigger (FTM0_EXTTRIG);32;R/W;0000_0000h;
+4003_8070;Channels Polarity (FTM0_POL);32;R/W;0000_0000h;
+4003_8074;Fault Mode Status (FTM0_FMS);32;R/W;0000_0000h;
+4003_8078;Input Capture Filter Control (FTM0_FILTER);32;R/W;0000_0000h;
+4003_807C;Fault Control (FTM0_FLTCTRL);32;R/W;0000_0000h;
+4003_8080;Quadrature Decoder Control And Status (FTM0_QDCTRL);32;R/W;0000_0000h;
+4003_8084;Configuration (FTM0_CONF);32;R/W;0000_0000h;
+4003_8088;FTM Fault Input Polarity (FTM0_FLTPOL);32;R/W;0000_0000h;
+4003_808C;Synchronization Configuration (FTM0_SYNCONF);32;R/W;0000_0000h;
+4003_8090;FTM Inverting Control (FTM0_INVCTRL);32;R/W;0000_0000h;
+4003_8094;FTM Software Output Control (FTM0_SWOCTRL);32;R/W;0000_0000h;
+4003_8098;FTM PWM Load (FTM0_PWMLOAD);32;R/W;0000_0000h;
+4003_9000;Status And Control (FTM1_SC);32;R/W;0000_0000h;
+4003_9004;Counter (FTM1_CNT);32;R/W;0000_0000h;
+4003_9008;Modulo (FTM1_MOD);32;R/W;0000_0000h;
+4003_900C;Channel n Status And Control (FTM1_C0SC);32;R/W;0000_0000h;
+4003_9010;Channel n Value (FTM1_C0V);32;R/W;0000_0000h;
+4003_9014;Channel n Status And Control (FTM1_C1SC);32;R/W;0000_0000h;
+4003_9018;Channel n Value (FTM1_C1V);32;R/W;0000_0000h;
+4003_901C;Channel n Status And Control (FTM1_C2SC);32;R/W;0000_0000h;
+4003_9020;Channel n Value (FTM1_C2V);32;R/W;0000_0000h;
+4003_9024;Channel n Status And Control (FTM1_C3SC);32;R/W;0000_0000h;
+4003_9028;Channel n Value (FTM1_C3V);32;R/W;0000_0000h;
+4003_902C;Channel n Status And Control (FTM1_C4SC);32;R/W;0000_0000h;
+4003_9030;Channel n Value (FTM1_C4V);32;R/W;0000_0000h;
+4003_9034;Channel n Status And Control (FTM1_C5SC);32;R/W;0000_0000h;
+4003_9038;Channel n Value (FTM1_C5V);32;R/W;0000_0000h; 40.3.7/966
+4003_903C;Channel n Status And Control (FTM1_C6SC);32;R/W;0000_0000h; 40.3.6/964
+4003_9040;Channel n Value (FTM1_C6V);32;R/W;0000_0000h; 40.3.7/966
+4003_9044;Channel n Status And Control (FTM1_C7SC);32;R/W;0000_0000h; 40.3.6/964
+4003_9048;Channel n Value (FTM1_C7V);32;R/W;0000_0000h; 40.3.7/966
+4003_904C;Counter Initial Value (FTM1_CNTIN);32;R/W;0000_0000h; 40.3.8/967
+4003_9050;Capture And Compare Status (FTM1_STATUS);32;R/W;0000_0000h; 40.3.9/967
+4003_9054;Features Mode Selection (FTM1_MODE);32;R/W;0000_0004h;
+4003_9058;Synchronization (FTM1_SYNC);32;R/W;0000_0000h;
+4003_905C;Initial State For Channels Output (FTM1_OUTINIT);32;R/W;0000_0000h;
+4003_9060;Output Mask (FTM1_OUTMASK);32;R/W;0000_0000h;
+4003_9064;Function For Linked Channels (FTM1_COMBINE);32;R/W;0000_0000h;
+4003_9068;Deadtime Insertion Control (FTM1_DEADTIME);32;R/W;0000_0000h;
+4003_906C; FTM External Trigger (FTM1_EXTTRIG);32;R/W;0000_0000h;
+4003_9070; Channels Polarity (FTM1_POL);32;R/W;0000_0000h;
+4003_9074;Fault Mode Status (FTM1_FMS);32;R/W;0000_0000h;
+4003_9078;Input Capture Filter Control (FTM1_FILTER);32;R/W;0000_0000h;
+4003_907C;Fault Control (FTM1_FLTCTRL);32;R/W;0000_0000h;
+4003_9080;Quadrature Decoder Control And Status (FTM1_QDCTRL);32;R/W;0000_0000h;
+4003_9084; Configuration (FTM1_CONF);32;R/W;0000_0000h;
+4003_9088;FTM Fault Input Polarity (FTM1_FLTPOL);32;R/W;0000_0000h;
+4003_908C;Synchronization Configuration (FTM1_SYNCONF);32;R/W;0000_0000h;
+4003_9090;FTM Inverting Control (FTM1_INVCTRL);32;R/W;0000_0000h;
+4003_9094;FTM Software Output Control (FTM1_SWOCTRL);32;R/W;0000_0000h;
+4003_9098;FTM PWM Load (FTM1_PWMLOAD);32;R/W;0000_0000h;
+4003_A000;Status And Control (FTM2_SC);32;R/W;0000_0000h;40.3.3/961
+4003_A004;Counter (FTM2_CNT);32;R/W;0000_0000h;40.3.4/962
+4003_A008;Modulo (FTM2_MOD);32;R/W;0000_0000h;40.3.5/963
+4003_A00C;Channel n Status And Control (FTM2_C0SC);32;R/W;0000_0000h;40.3.6/964
+4003_A010;Channel n Value (FTM2_C0V);32;R/W;0000_0000h;40.3.7/966
+4003_A014;Channel n Status And Control (FTM2_C1SC);32;R/W;0000_0000h;
+4003_A018;Channel n Value (FTM2_C1V);32;R/W;0000_0000h;
+4003_A01C;Channel n Status And Control (FTM2_C2SC);32;R/W;0000_0000h;
+4003_A020;Channel n Value (FTM2_C2V);32;R/W;0000_0000h;
+4003_A024;Channel n Status And Control (FTM2_C3SC);32;R/W;0000_0000h;
+4003_A028;Channel n Value (FTM2_C3V);32;R/W;0000_0000h;
+4003_A02C;Channel n Status And Control (FTM2_C4SC);32;R/W;0000_0000h;
+4003_A030;Channel n Value (FTM2_C4V);32;R/W;0000_0000h;
+4003_A034;Channel n Status And Control (FTM2_C5SC);32;R/W;0000_0000h;
+4003_A038;Channel n Value (FTM2_C5V);32;R/W;0000_0000h;
+4003_A03C;Channel n Status And Control (FTM2_C6SC);32;R/W;0000_0000h;
+4003_A040;Channel n Value (FTM2_C6V);32;R/W;0000_0000h;
+4003_A044;Channel n Status And Control (FTM2_C7SC);32;R/W;0000_0000h;
+4003_A048;Channel n Value (FTM2_C7V);32;R/W;0000_0000h;
+4003_A04C;Counter Initial Value (FTM2_CNTIN);32;R/W;0000_0000h;
+4003_A050;Capture And Compare Status (FTM2_STATUS);32;R/W;0000_0000h;
+4003_A054;Features Mode Selection (FTM2_MODE);32;R/W;0000_0004h;
+4003_A058;Synchronization (FTM2_SYNC);32;R/W;0000_0000h;
+4003_A05C;Initial State For Channels Output (FTM2_OUTINIT);32;R/W;0000_0000h;
+4003_A060;Output Mask (FTM2_OUTMASK);32;R/W;0000_0000h;
+4003_A064;Function For Linked Channels (FTM2_COMBINE);32;R/W;0000_0000h;
+4003_A068;Deadtime Insertion Control (FTM2_DEADTIME);32;R/W;0000_0000h;
+4003_A06C;FTM External Trigger (FTM2_EXTTRIG);32;R/W;0000_0000h;
+4003_A070;Channels Polarity (FTM2_POL);32;R/W;0000_0000h;
+4003_A074;Fault Mode Status (FTM2_FMS);32;R/W;0000_0000h;
+4003_A078;Input Capture Filter Control (FTM2_FILTER);32;R/W;0000_0000h;
+4003_A07C;Fault Control (FTM2_FLTCTRL);32;R/W;0000_0000h;
+4003_A080;Quadrature Decoder Control And Status (FTM2_QDCTRL);32;R/W;0000_0000h;
+4003_A084;Configuration (FTM2_CONF);32;R/W;0000_0000h;
+4003_A088;FTM Fault Input Polarity (FTM2_FLTPOL);32;R/W;0000_0000h;
+4003_A08C;Synchronization Configuration (FTM2_SYNCONF);32;R/W;0000_0000h;
+4003_A090;FTM Inverting Control (FTM2_INVCTRL);32;R/W;0000_0000h;
+4003_A094;FTM Software Output Control (FTM2_SWOCTRL);32;R/W;0000_0000h;
+4003_A098;FTM PWM Load (FTM2_PWMLOAD);32;R/W;0000_0000h;
+400B_9000;Status And Control (FTM3_SC);32;R/W;0000_0000h;
+400B_9004;Counter (FTM3_CNT);32;R/W;0000_0000h;
+400B_9008;Modulo (FTM3_MOD);32;R/W;0000_0000h;
+400B_900C;Channel n Status And Control (FTM3_C0SC);32;R/W;0000_0000h;
+400B_9010;Channel n Value (FTM3_C0V);32;R/W;0000_0000h;
+400B_9014;Channel n Status And Control (FTM3_C1SC);32;R/W;0000_0000h;
+400B_9018;Channel n Value (FTM3_C1V);32;R/W;0000_0000h;
+400B_901C;Channel n Status And Control (FTM3_C2SC);32;R/W;0000_0000h;
+400B_9020;Channel n Value (FTM3_C2V);32;R/W;0000_0000h;
+400B_9024;Channel n Status And Control (FTM3_C3SC);32;R/W;0000_0000h;
+400B_9028;Channel n Value (FTM3_C3V);32;R/W;0000_0000h;
+400B_902C;Channel n Status And Control (FTM3_C4SC);32;R/W;0000_0000h;
+400B_9030;Channel n Value (FTM3_C4V);32;R/W;0000_0000h;
+400B_9034;Channel n Status And Control (FTM3_C5SC);32;R/W;0000_0000h;
+400B_9038;Channel n Value (FTM3_C5V);32;R/W;0000_0000h;
+400B_903C;Channel n Status And Control (FTM3_C6SC);32;R/W;0000_0000h;
+400B_9040;Channel n Value (FTM3_C6V);32;R/W;0000_0000h;
+400B_9044;Channel n Status And Control (FTM3_C7SC);32;R/W;0000_0000h;
+400B_9048;Channel n Value (FTM3_C7V);32;R/W;0000_0000h;
+400B_904C;Counter Initial Value (FTM3_CNTIN);32;R/W;0000_0000h;
+400B_9050;Capture And Compare Status (FTM3_STATUS);32;R/W;0000_0000h;
+400B_9054;Features Mode Selection (FTM3_MODE);32;R/W;0000_0000h;
+400B_9058;Synchronization (FTM3_SYNC);32;R/W;0000_0000h;
+400B_905C;Initial State For Channels Output (FTM3_OUTINIT);32;R/W;0000_0000h;
+400B_9060;Output Mask (FTM3_OUTMASK);32;R/W;0000_0000h;
+400B_9064;Function For Linked Channels (FTM3_COMBINE);32;R/W;0000_0000h;
+400B_9068;Deadtime Insertion Control (FTM3_DEADTIME);32;R/W;0000_0000h;
+400B_906C;FTM External Trigger (FTM3_EXTTRIG);32;R/W;0000_0000h;
+400B_9070;Channels Polarity (FTM3_POL);32;R/W;0000_0000h;
+400B_9074;Fault Mode Status (FTM3_FMS);32;R/W;0000_0000h;
+400B_9078;Input Capture Filter Control (FTM3_FILTER);32;R/W;0000_0000h;
+400B_907C;Fault Control (FTM3_FLTCTRL);32;R/W;0000_0000h;
+400B_9080;Quadrature Decoder Control And Status (FTM3_QDCTRL);32;R/W;0000_0000h;
+400B_9084;Configuration (FTM3_CONF);32;R/W;0000_0000h;
+400B_9088;FTM Fault Input Polarity (FTM3_FLTPOL);32;R/W;0000_0000h;
+400B_908C;Synchronization Configuration (FTM3_SYNCONF);32;R/W;0000_0000h;
+400B_9090;FTM Inverting Control (FTM3_INVCTRL);32;R/W;0000_0000h;
+400B_9094;FTM Software Output Control (FTM3_SWOCTRL);32;R/W;0000_0000h;
+400B_9098;FTM PWM Load (FTM3_PWMLOAD);32;R/W;0000_0000h;
+
+
+====
+FTMx_SC field descriptions;
+7 TOF;Timer Overflow Flag
+;Set by hardware when the FTM counter passes the value in the MOD register. The TOF bit is cleared by reading the SC register while TOF is set and then writing a 0 to TOF bit. Writing a 1 to TOF has no effect.
+;If another FTM overflow occurs between the read and write operations. the write operation has no effect. therefore, TOF remains set indicating an overflow has occurred. In this case, a TOF interrupt request is not lost due to the clearing sequence for a previous TOF.
+6 TOIE;Timer Overflow Interrupt Enable 
+;Enables FTM overflow interrupts.
+5 CPWMS;Center-Aligned PWM Select
+;Selects CPWM mode. This mode configures the FTM to operate in Up-Down Counting mode. This field is write protected. It can be written only when MODE[WPDIS] = 1.
+4-3 CLKS;Clock Source Selection
+;Selects one of the three FTM counter clock sources.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+2-0 PS;Prescale Factor Selection
+;Selects one of 8 division factors for the clock source selected by CLKS. The new prescaler factor affects the clock source on the next system clock cycle after the new value is updated into the register bits.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+
+FTMx_CNT field descriptions;
+15-0 COUNT; Counter Value 
+
+FTMx_MOD field descriptions;
+15-0 MOD; Modulo Value 
+
+FTMx_CnSC field descriptions;
+7 CHF;Channel Flag
+;Set by hardware when an event occurs on the channel. CHF is cleared by reading the CSC register while CHnF is set and then writing a 0 to the CHF bit. Writing a 1 to CHF has no effect.
+;If another event occurs between the read and write operations; the write operation has no effect; therefore; CHF remains set indicating an event has occurred. In this case a CHF interrupt request is not lost due to the clearing sequence for a previous CHF.
+6 CHIE;Channel Interrupt Enable
+;Enables channel interrupts.
+5 MSB;Channel Mode Select
+;Used for further selections in the channel logic. Its functionality is dependent on the channel mode. See Table 40-7.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+4 MSA;Channel Mode Select
+;Used for further selections in the channel logic. Its functionality is dependent on the channel mode. See Table 40-7.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+3 ELSB;Edge or Level Select
+;The functionality of ELSB and ELSA depends on the channel mode. See Table 40-7. This field is write protected. It can be written only when MODE[WPDIS] = 1.
+2 ELSA;Edge or Level Select
+;The functionality of ELSB and ELSA depends on the channel mode. See Table 40-7. This field is write protected. It can be written only when MODE[WPDIS] = 1.
+0 DMA;DMA Enable
+;Enables DMA transfers for the channel.
+
+FTMx_CnV field descriptions;
+15-0 VAL;Channel Value
+;Captured FTM counter value of the input modes or the match value for the output modes
+
+FTMx_CNTIN field descriptions;
+15-0 INIT;Initial Value Of The FTM Counter 
+
+FTMx_STATUS field descriptions;
+7 CH7F;Channel 7 Flag
+;See the register description.
+6 CH6F;Channel 6 Flag
+;See the register description.
+;0; No channel event has occurred.
+;1; A channel event has occurred.
+5 CH5F;Channel 5 Flag
+;See the register description.
+4 CH4F;Channel 4 Flag
+;See the register description.
+3 CH3F;Channel 3 Flag
+;See the register description.
+2 CH2F;Channel 2 Flag
+;See the register description.
+1 CH1F;Channel 1 Flag
+0 CH0F;Channel 0 Flag
+
+FTMx_MODE field descriptions;
+7 FAULTIE;Fault Interrupt Enable
+;Enables the generation of an interrupt when a fault is detected by FTM and the FTM fault control is enabled.
+;0;Fault control interrupt is disabled.
+;1;Fault control interrupt is enabled.
+6-5 FAULTM;Fault Control Mode
+;Defines the FTM fault control mode.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+4 CAPTEST;Capture Test Mode Enable
+;Enables the capture test mode.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+3 PWMSYNC;PWM Synchronization Mode
+;PWM synchronization. The PWMSYNC bit configures the synchronization when SYNCMODE is 0.
+2 WPDIS;Write Protection Disable
+;When write protection is enabled (WPDIS = 0), write protected bits cannot be written. When write protection is disabled (WPDIS = 1); write protected bits can be written. The WPDIS bit is the negation of the WPEN bit. WPDIS is cleared when 1 is written to WPEN. WPDIS is set when WPEN bit is read as a 1 and then 1 is written to WPDIS. Writing 0 to WPDIS has no effect.
+1 INIT;Initialize The Channels Output
+;When a 1 is written to INIT bit the channels output is initialized according to the state of their corresponding bit in the OUTINIT register. Writing a 0 to INIT bit has no effect.
+;The INIT bit is always read as 0.
+0 FTMEN;FTM Enable
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+;0; Only the TPM-compatible registers (first set of registers) can be used without any restriction. Do not use the FTM-specific registers.
+;1; All registers including the FTM-specific registers (second set of registers) are available for use with no restrictions.
+
+FTMx_SYNC field descriptions;
+7 SWSYNC;PWM Synchronization Software Trigger
+;Selects the software trigger as the PWM synchronization trigger. The software trigger happens when a 1 is written to SWSYNC bit.
+6 TRIG2;PWM Synchronization Hardware Trigger 2 
+5 TRIG1;PWM Synchronization Hardware Trigger 1
+;Enables hardware trigger 1 to the PWM synchronization. Hardware trigger 1 happens when a rising edge is detected at the trigger 1 input signal.
+4 TRIG0;PWM Synchronization Hardware Trigger 0
+;Enables hardware trigger 0 to the PWM synchronization. Hardware trigger 0 occurs when a rising edge is detected at the trigger 0 input signal.
+3 SYNCHOM;Output Mask Synchronization
+;Selects when the OUTMASK register is updated with the value of its buffer.
+2 REINIT;FTM Counter Reinitialization By Synchronization (FTM counter synchronization)
+;Determines if the FTM counter is reinitialized when the selected trigger for the synchronization is detected.
+;The REINIT bit configures the synchronization when SYNCMODE is zero.
+1 CNTMAX;Maximum Loading Point Enable
+;Selects the maximum loading point to PWM synchronization. See Boundary cycle and loading points. If CNTMAX is 1; the selected loading point is when the FTM counter reaches its maximum value (MOD register).
+0 CNTMIN;Minimum Loading Point Enable
+;Selects the minimum loading point to PWM synchronization. See Boundary cycle and loading points. If CNTMIN is one; the selected loading point is when the FTM counter reaches its minimum value (CNTIN register).
+
+FTMx_OUTINIT field descriptions;
+7 CH7OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+6 CH6OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+5 CH5OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+4 CH4OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+3 CH3OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+2 CH2OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+1 CH1OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+0 CH0OI;Channel 7 Output Initialization Value
+;Selects the value that is forced into the channel output when the initialization occurs.
+
+FTMx_OUTMASK field descriptions;
+7 CH7OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+6 CH6OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+5 CH5OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+4 CH4OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+3 CH3OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+2 CH2OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+1 CH1OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+0 CH0OM;Channel 7 Output Mask
+;Defines if the channel output is masked or unmasked.
+
+FTMx_COMBINE field descriptions;
+30 FAULTEN3;Fault Control Enable For n = 6
+;Enables the fault control in channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+29 SYNCEN3;Synchronization Enable For n = 6
+;Enables PWM synchronization of registers C(n)V and C(n+1)V.
+28 DTEN3;Deadtime Enable For n = 6
+;Enables the deadtime insertion in the channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+27 DECAP3;Dual Edge Capture Mode Captures For n = 6
+;Enables the capture of the FTM counter value according to the channel (n) input event and the configuration of the dual edge capture bits.
+26 DECAPEN3;Dual Edge Capture Mode Enable For n = 6
+;Enables the Dual Edge Capture mode in the channels (n) and (n+1). This bit reconfigures the function of MSnA; ELSnB:ELSnA and ELS(n+1)B:ELS(n+1)A bits in Dual Edge Capture mode according to Table 40-7.
+25 COMP3;Complement Of Channel (n) for n = 6
+;Enables Complementary mode for the combined channels. In Complementary mode the channel (n+1) output is the inverse of the channel (n) output.
+24 COMBINE3;Combine Channels For n = 6
+;Enables the combine feature for channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+22 FAULTEN2;Fault Control Enable For n = 4
+;Enables the fault control in channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+21 SYNCEN2;Synchronization Enable For n = 4
+;Enables PWM synchronization of registers C(n)V and C(n+1)V.
+20 DTEN2;Deadtime Enable For n = 4
+;Enables the deadtime insertion in the channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+19 DECAP2;Dual Edge Capture Mode Captures For n = 4
+;Enables the capture of the FTM counter value according to the channel (n) input event and the configuration of the dual edge capture bits.
+;This field applies only when FTMEN = 1 and DECAPEN = 1.
+;DECAP bit is cleared automatically by hardware if dual edge capture - one-shot mode is selected and when the capture of channel (n+1) event is made.
+18 DECAPEN2;Dual Edge Capture Mode Enable For n = 4
+;Enables the Dual Edge Capture mode in the channels (n) and (n+1). This bit reconfigures the function of MSnA; ELSnB:ELSnA and ELS(n+1)B:ELS(n+1)A bits in Dual Edge Capture mode according to Table 40-7.
+;This field applies only when FTMEN = 1.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+17 COMP2;Complement Of Channel (n) For n = 4
+;Enables Complementary mode for the combined channels. In Complementary mode the channel (n+1) output is the inverse of the channel (n) output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+16 COMBINE2;Combine Channels For n = 4
+;Enables the combine feature for channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+14 FAULTEN1;Fault Control Enable For n = 2
+;Enables the fault control in channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+13 SYNCEN1;Synchronization Enable For n = 2
+;Enables PWM synchronization of registers C(n)V and C(n+1)V.
+12 DTEN1;Deadtime Enable For n = 2
+;Enables the deadtime insertion in the channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+11 DECAP1;Dual Edge Capture Mode Captures For n = 2
+;Enables the capture of the FTM counter value according to the channel (n) input event and the configuration of the dual edge capture bits.
+;This field applies only when FTMEN = 1 and DECAPEN = 1.
+;DECAP bit is cleared automatically by hardware if Dual Edge Capture - One-Shot mode is selected and when the capture of channel (n+1) event is made.
+10 DECAPEN1;Dual Edge Capture Mode Enable For n = 2
+;Enables the Dual Edge Capture mode in the channels (n) and (n+1). This bit reconfigures the function of MSnA; ELSnB:ELSnA and ELS(n+1)B:ELS(n+1)A bits in Dual Edge Capture mode according to Table 40-7.
+;This field applies only when FTMEN = 1.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+9 COMP1;Complement Of Channel (n) For n = 2
+;Enables Complementary mode for the combined channels. In Complementary mode the channel (n+1) output is the inverse of the channel (n) output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+8 COMBINE1;Combine Channels For n = 2
+;Enables the combine feature for channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+6 FAULTEN0;Fault Control Enable For n = 0
+;Enables the fault control in channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+5 SYNCEN0;Synchronization Enable For n = 0
+;Enables PWM synchronization of registers C(n)V and C(n+1)V.
+4 DTEN0;Deadtime Enable For n = 0
+;Enables the deadtime insertion in the channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+3 DECAP0;Dual Edge Capture Mode Captures For n = 0
+;Enables the capture of the FTM counter value according to the channel (n) input event and the configuration of the dual edge capture bits.
+;This field applies only when FTMEN = 1 and DECAPEN = 1.
+;DECAP bit is cleared automatically by hardware if dual edge capture - one-shot mode is selected and when the capture of channel (n+1) event is made.
+2 DECAPEN0;Dual Edge Capture Mode Enable For n = 0
+;Enables the Dual Edge Capture mode in the channels (n) and (n+1). This bit reconfigures the function of MSnA; ELSnB:ELSnA and ELS(n+1)B:ELS(n+1)A bits in Dual Edge Capture mode according to Table 40-7.
+;This field applies only when FTMEN = 1.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+1 COMP0;Complement Of Channel (n) For n = 0
+;Enables Complementary mode for the combined channels. In Complementary mode the channel (n+1) output is the inverse of the channel (n) output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+0 COMBINE0;Combine Channels For n = 0
+;Enables the combine feature for channels (n) and (n+1).
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+
+FTMx_DEADTIME field descriptions;
+7-6 DTPS;Deadtime Prescaler Value
+;Selects the division factor of the system clock. This prescaled clock is used by the deadtime counter. This field is write protected. It can be written only when MODE[WPDIS] = 1.
+5-0 DTVAL;Deadtime Value
+;Selects the deadtime insertion value for the deadtime counter. The deadtime counter is clocked by a scaled version of the system clock. See the description of DTPS.
+
+FTMx_EXTTRIG field descriptions;
+7 TRIGF;Channel Trigger Flag
+;Set by hardware when a channel trigger is generated. Clear TRIGF by reading EXTTRIG while TRIGF is set and then writing a 0 to TRIGF. Writing a 1 to TRIGF has no effect.
+;If another channel trigger is generated before the clearing sequence is completed; the sequence is reset so TRIGF remains set after the clear sequence is completed for the earlier TRIGF.
+6 INITTRIGEN;Initialization Trigger Enable
+;Enables the generation of the trigger when the FTM counter is equal to the CNTIN register.
+5 CH1TRIG;Channel 1 Trigger Enable
+;Enables the generation of the channel trigger when the FTM counter is equal to the CnV register.
+4 CH0TRIG;Channel 0 Trigger Enable
+;Enables the generation of the channel trigger when the FTM counter is equal to the CnV register.
+3 CH5TRIG;Channel 5 Trigger Enable
+;Enables the generation of the channel trigger when the FTM counter is equal to the CnV register.
+2 CH4TRIG;Channel 4 Trigger Enable
+;Enables the generation of the channel trigger when the FTM counter is equal to the CnV register.
+1 CH3TRIG;Channel 3 Trigger Enable
+;Enables the generation of the channel trigger when the FTM counter is equal to the CnV register.
+0 CH2TRIG;Channel 2 Trigger Enable
+;Enables the generation of the channel trigger when the FTM counter is equal to the CnV register.
+
+FTMx_POL field descriptions;
+7 POL7;Channel 7 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+6 POL6;Channel 6 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+5 POL5;Channel 5 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+4 POL4;Channel 4 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+3 POL3;Channel 3 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+2 POL2;Channel 2 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+1 POL1;Channel 1 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+0 POL0;Channel 0 Polarity
+;Defines the polarity of the channel output.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+
+FTMx_FMS field descriptions;
+7 FAULTF;Fault Detection Flag
+;Represents the logic OR of the individual FAULTFj bits where j = 3; 2; 1; 0. Clear FAULTF by reading the FMS register while FAULTF is set and then writing a 0 to FAULTF while there is no existing fault condition at the enabled fault inputs. Writing a 1 to FAULTF has no effect.
+6 WPEN;Write Protection Enable
+;The WPEN bit is the negation of the WPDIS bit. WPEN is set when 1 is written to it. WPEN is cleared when WPEN bit is read as a 1 and then 1 is written to WPDIS. Writing 0 to WPEN has no effect.
+5 FAULTIN;Fault Inputs
+;Represents the logic OR of the enabled fault inputs after their filter (if their filter is enabled) when fault control is enabled.
+3 FAULTF3;Fault Detection Flag 3
+;Set by hardware when fault control is enabled; the corresponding fault input is enabled and a fault condition is detected at the fault input.
+2 FAULTF2;Fault Detection Flag 2
+;Set by hardware when fault control is enabled; the corresponding fault input is enabled and a fault condition is detected at the fault input.
+1 FAULTF1;Fault Detection Flag 1
+;Set by hardware when fault control is enabled; the corresponding fault input is enabled and a fault condition is detected at the fault input.
+0 FAULTF0;Fault Detection Flag 0
+;Set by hardware when fault control is enabled; the corresponding fault input is enabled and a fault condition is detected at the fault input.
+
+FTMx_FILTER field descriptions;
+15-12 CH3FVAL;Channel 3 Input Filter
+;Selects the filter value for the channel input. The filter is disabled when the value is zero.
+11-8 CH2FVAL;Channel 2 Input Filter
+;Selects the filter value for the channel input. The filter is disabled when the value is zero.
+7-4 CH1FVAL;Channel 1 Input Filter
+;Selects the filter value for the channel input. The filter is disabled when the value is zero.
+3-0 CH0FVAL;Channel 0 Input Filter
+;Selects the filter value for the channel input. The filter is disabled when the value is zero.
+
+FTMx_FLTCTRL field descriptions;
+11-8 FFVAL;Fault Input Filter
+;Selects the filter value for the fault inputs.
+;The fault filter is disabled when the value is zero.
+7 FFLTR3EN;Fault Input 3 Filter Enable
+;Enables the filter for the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+6 FFLTR2EN;Fault Input 2 Filter Enable
+;Enables the filter for the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+5 FFLTR1EN;Fault Input 1 Filter Enable
+;Enables the filter for the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+4 FFLTR0EN;Fault Input 0 Filter Enable
+;Enables the filter for the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+3 FAULT3EN;Fault Input 3 Enable
+;Enables the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+2 FAULT2EN;Fault Input 2 Enable
+;Enables the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+1 FAULT1EN;Fault Input 1 Enable
+;Enables the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+0 FAULT0EN;Fault Input 0 Enable
+;Enables the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+
+FTMx_QDCTRL field descriptions;
+7 PHAFLTREN;Phase A Input Filter Enable
+;Enables the filter for the quadrature decoder phase A input. The filter value for the phase A input is defined by the CH0FVAL field of FILTER. The phase A filter is also disabled when CH0FVAL is zero.
+6 PHBFLTREN;Phase B Input Filter Enable
+;Enables the filter for the quadrature decoder phase B input. The filter value for the phase B input is defined by the CH1FVAL field of FILTER. The phase B filter is also disabled when CH1FVAL is zero.
+5 PHAPOL;Phase A Input Polarity
+;Selects the polarity for the quadrature decoder phase A input.
+4 PHBPOL;Phase B Input Polarity
+;Selects the polarity for the quadrature decoder phase B input.
+3 QUADMODE;Quadrature Decoder Mode
+;Selects the encoding mode used in the Quadrature Decoder mode.
+2 QUADIR;FTM Counter Direction In Quadrature Decoder Mode 
+;Indicates the counting direction
+1 TOFDIR;Timer Overflow Direction In Quadrature Decoder Mode
+;Indicates if the TOF bit was set on the top or the bottom of counting.
+0 QUADEN;Quadrature Decoder Mode Enable
+;Enables the Quadrature Decoder mode. In this mode; the phase A and B input signals control the FTM
+;counter direction. The Quadrature Decoder mode has precedence over the other modes. See Table 40-7. This field is write protected. It can be written only when MODE[WPDIS] = 1.
+
+FTMx_CONF field descriptions;
+10 GTBEOUT;Global Time Base Output
+;Enables the global time base signal generation to other FTMs.
+9 GTBEEN;Global Time Base Enable 
+7-6 BDMMODE;BDM Mode
+4-0 NUMTOF;TOF Frequency
+;Selects the ratio between the number of counter overflows to the number of times the TOF bit is set. 
+
+FTMx_FLTPOL field descriptions;
+3 FLT3POL;Fault Input 3 Polarity
+;Defines the polarity of the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+2 FLT2POL;Fault Input 2 Polarity
+;Defines the polarity of the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+1 FLT1POL;Fault Input 1 Polarity
+;Defines the polarity of the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+0 FLT0POL;Fault Input 0 Polarity
+;Defines the polarity of the fault input.
+;This field is write protected. It can be written only when MODE[WPDIS] = 1.
+
+FTMx_SYNCONF field descriptions;
+20 HWSOC;Software output control synchronization is activated by a hardware trigger.
+19 HWINVC;Inverting control synchronization is activated by a hardware trigger.
+18 HWOM;Output mask synchronization is activated by a hardware trigger.
+17 HWWRBUF;MOD, CNTIN, and CV registers synchronization is activated by a hardware trigger.
+16 HWRSTCNT;FTM counter synchronization is activated by a hardware trigger.
+12 SWSOC;Software output control synchronization is activated by the software trigger.
+11 SWINVC;Inverting control synchronization is activated by the software trigger.
+10 SWOM;Output mask synchronization is activated by the software trigger.
+9 SWWRBUF;MOD, CNTIN, and CV registers synchronization is activated by the software trigger.
+8 SWRSTCNT;FTM counter synchronization is activated by the software trigger.
+7 SYNCMODE;Synchronization Mode
+;Selects the PWM Synchronization mode.
+5 SWOC;SWOCTRL Register Synchronization
+4 INVC;INVCTRL Register Synchronization
+2 CNTINC;CNTIN Register Synchronization
+0 HWTRIGMODE;Hardware Trigger Mode 
+
+FTMx_INVCTRL field descriptions;
+3 INV3EN;Pair Channels 3 Inverting Enable
+2 INV2EN;Pair Channels 2 Inverting Enable
+1 INV1EN;Pair Channels 1 Inverting Enable
+0 INV0EN;Pair Channels 0 Inverting Enable
+
+FTMx_SWOCTRL field descriptions;
+15 CH7OCV;Channel 7 Software Output Control Value
+14 CH6OCV;Channel 6 Software Output Control Value 
+13 CH5OCV;Channel 5 Software Output Control Value
+12 CH4OCV;Channel 4 Software Output Control Value
+11 CH3OCV;Channel 3 Software Output Control Value
+10 CH2OCV;Channel 2 Software Output Control Value
+9 CH1OCV;Channel 1 Software Output Control Value
+8 CH0OCV;Channel 0 Software Output Control Value
+7 CH7OC;Channel 7 Software Output Control Enable
+6 CH6OC;Channel 6 Software Output Control Enable
+5 CH5OC;Channel 5 Software Output Control Enable
+4 CH4OC;Channel 4 Software Output Control Enable
+3 CH3OC;Channel 3 Software Output Control Enable
+2 CH2OC;Channel 2 Software Output Control Enable 
+1 CH1OC;Channel 1 Software Output Control Enable
+0 CH0OC;Channel 0 Software Output Control Enable
+
+FTMx_PWMLOAD field descriptions;
+7 CH7SEL;Channel 7 Select
+6 CH6SEL;Channel 6 Select
+5 CH5SEL;Channel 5 Select
+4 CH4SEL;Channel 4 Select
+3 CH3SEL;Channel 3 Select
+2 CH2SEL;Channel 2 Select
+1 CH1SEL;Channel 1 Select
+0 CH0SEL;Channel 0 Select
+
+
+====
+Timer Overflow Interrupt;TOIE;TOF;-
+Channel (n) Interrupt;CHnIE;CHnF;-
+Fault Interrupt;FAULTIE;FAULTF;-
+====

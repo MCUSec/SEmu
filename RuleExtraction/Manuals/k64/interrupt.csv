@@ -1,0 +1,102 @@
+0x0000_0000;-;0;-;-;ARM core;Initial Stack Pointer
+0x0000_0004;-;1;-;-;ARM core;Initial Program Counter
+0x0000_0008;-;2;-;-;ARM core;Non-maskable Interrupt(NMI)
+0x0000_000C;-;3;-;-;ARM core;Hard Fault
+0x0000_0010;-;4;-;-;ARM core;MemManage Fault
+0x0000_0014;-;5;-;-;ARM core;Bus Fault
+0x0000_0018;-;6;-;-;ARM core;Usage Fault
+0x0000_001C;-;7;-;-;-;-
+0x0000_0020;-;8;-;-;-;-
+0x0000_0024;-;9;-;-;-;-
+0x0000_0028;-;10;-;-;-;-
+0x0000_002C;-;11;-;-;ARM core;Supervisor call (SVCall)
+0x0000_0030;-;12;-;-;ARM core;Debug Monitor
+0x0000_0034;-;13;-;-;-;-
+0x0000_0038;-;14;-;-;ARM core;Pendable request for system service (PendableSrvReq)
+0x0000_003C;-;15;-;-;ARM core;System tick timer (SysTick)
+0x0000_0040;0;16;0;0;DMA;DMA channel 0 transfer complete 
+0x0000_0044;1;17;0;0;DMA;DMA channel 1 transfer complete 
+0x0000_0048;2;18;0;0;DMA;DMA channel 2 transfer complete 
+0x0000_004C;3;19;0;0;DMA;DMA channel 3 transfer complete 
+0x0000_0050;4;20;0;1;DMA;DMA channel 4 transfer complete 
+0x0000_0054;5;21;0;1;DMA;DMA channel 5 transfer complete 
+0x0000_0058;6;22;0;1;DMA;DMA channel 6 transfer complete 
+0x0000_005C;7;23;0;1;DMA;DMA channel 7 transfer complete 
+0x0000_0060;8;24;0;2;DMA;DMA channel 8 transfer complete 
+0x0000_0064;9;25;0;2;DMA;DMA channel 9 transfer complete
+0x0000_0068;10;26;0;2;DMA;DMA channel 10 transfer complete
+0x0000_006C;11;27;0;2;DMA;DMA channel 11 transfer complete
+0x0000_0070;12;28;0;3;DMA;DMA channel 12 transfer complete
+0x0000_0074;13;29;0;3;DMA;DMA channel 13 transfer complete
+0x0000_0078;14;30;0;3;DMA;DMA channel 14 transfer complete
+0x0000_007C;15;31;0;3;DMA;DMA channel 15 transfer complete
+0x0000_0080;16;32;0;4;DMA;DMA error interrupt channels 0-15 
+0x0000_0084;17;33;0;4;MCM;MCM interrupt 
+0x0000_0088;18;34;0;4;Flash memory;Command complete
+0x0000_008C;19;35;0;4;Flash memory;Read collision
+0x0000_0090;20;36;0;5;Mode Controller;"Low-voltage detect; low-voltage warning "
+0x0000_0094;21;37;0;5;LLWU;Low Leakage Wakeup 
+0x0000_0098;22;38;0;5;WDOG or EWM;Both watchdog modules share this interrupt 
+0x0000_009C;23;39;0;5;RNG;Randon Number Generator
+0x0000_00A0;24;40;0;6;I2C0;-
+0x0000_00A4;25;41;0;6;I2C1;-
+0x0000_00A8;26;42;0;6;SPI0;Single interrupt vector for all sources 
+0x0000_00AC;27;43;0;6;SPI1;Single interrupt vector for all sources 
+0x0000_00B0;28;44;0;7;I2S0;Transmit 
+0x0000_00B4;29;45;0;7; I2S0;Receive 
+0x0000_00B8;30;46;0;7;-;-
+0x0000_00BC;31;47;0;7;UART0;Single interrupt vector for UART status sources 
+0x0000_00C0;32;48;1;8;UART0;Single interrupt vector for UART error sources 
+0x0000_00C4;33;49;1;8;UART1;Single interrupt vector for UART status sources 
+0x0000_00C8;34;50;1;8;UART1;Single interrupt vector for UART error sources 
+0x0000_00CC;35;51;1;8;UART2;Single interrupt vector for UART status sources 
+0x0000_00D0;36;52;1;9;UART2;Single interrupt vector for UART error sources 
+0x0000_00D4;37;53;1;9;UART3;Single interrupt vector for UART status sources 
+0x0000_00D8;38;54;1;9;UART3;Single interrupt vector for UART error sources 
+0x0000_00DC;39;55;1;9;ADC0;-
+0x0000_00E0;40;56;1;10;CMP0;-
+0x0000_00E4;41;57;1;10;CMP1;-
+0x0000_00E8;42;58;1;10;FTM0;Single interrupt vector for all sources 
+0x0000_00EC;43;59;1;10;FTM1;Single interrupt vector for all sources 
+0x0000_00F0;44;60;1;11;FTM2;Single interrupt vector for all sources 
+0x0000_00F4;45;61;1;11;CMT;-
+0x0000_00F8;46;62;1;11;RTC;Alarm interrupt 
+0x0000_00FC;47;63;1;11;RTC;Seconds interrupt 
+0x0000_0100;48;64;1;12;PIT;Channel 0 
+0x0000_0104;49;65;1;12;PIT;Channel 1 
+0x0000_0108;50;66;1;12;PIT;Channel 2 
+0x0000_010C;51;67;1;12;PIT;Channel 3 
+0x0000_0110;52;68;1;13;PDB;-
+0x0000_0114;53;69;1;13;USB OTG;-
+0x0000_0118;54;70;1;13;USB Charger Detect;-
+0x0000_011C;55;71;1;13;-;-
+0x0000_0120;56;72;1;14;DAC0;-
+0x0000_0124;57;73;1;14;MCG;-
+0x0000_0128;58;74;1;14;Low Power Timer;-
+0x0000_012C;59;75;1;14;PORTA;Pin detect (PORT A) 
+0x0000_0130;60;76;1;15;PORTB;Pin detect (PORT B) 
+0x0000_0134;61;77;1;15;PORTC;Pin detect (PORT C) 
+0x0000_0138;62;78;1;15;PORTD;Pin detect (PORT D) 
+0x0000_013C;63;79;1;15;PORTE;Pin detect (PORT E) 
+0x0000_0140;64;80;2;16;Software;Software interrupt 
+0x0000_0144;65;81;2;16;SPI2;Single interrupt vector for all sources 
+0x0000_0148;66;82;2;16;UART4;Single interrupt vector for UART status sources 
+0x0000_014C;67;83;2;16;UART4;Single interrupt vector for UART error sources 
+0x0000_0150;68;84;2;17;UART5;Single interrupt vector for UART status sources 
+0x0000_0154;69;85;2;17;UART5;Single interrupt vector for UART error sources 
+0x0000_0158;70;86;2;17;CMP2;-
+0x0000_015C;71;87;2;17;FTM3;Single interrupt vector for all sources
+0x0000_0160;72;88;2;18;DAC1;-
+0x0000_0164;73;89;2;18;ADC1;-
+0x0000_0168;74;90;2;18;I2C2;-
+0x0000_016C;75;91;2;18;CAN0;OR'ed Message buffer (0-15)
+0x0000_0170;76;92;2;19;CAN0;Bus Off
+0x0000_0174;77;93;2;19;CAN0;Error
+0x0000_0178;78;94;2;19;CAN0;Transmit Warning
+0x0000_017C;79;95;2;19;CAN0;Receive Warning
+0x0000_0180;80;96;2;20;CAN0;Wake Up
+0x0000_0184;81;97;2;20;SDHC;-
+0x0000_0188;82;98;2;20;ENET MAC;IEEE 1588 Timer Interrupt
+0x0000_018C;83;99;2;20;ENET MAC;Transmit interrupt
+0x0000_0190;84;100;2;21;ENET MAC;Receive interrupt
+0x0000_0194;85;101;2;21;ENET MAC;Error and miscellaneous interrupt 

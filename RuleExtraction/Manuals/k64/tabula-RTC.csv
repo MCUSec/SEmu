@@ -1,0 +1,195 @@
+4003_D000;RTC Time Seconds Register (RTC_TSR);32;R/W;0000_0000h;
+4003_D004;RTC Time Prescaler Register (RTC_TPR);32;R/W;0000_0000h;
+4003_D008;RTC Time Alarm Register (RTC_TAR);32;R/W;0000_0000h;
+4003_D00C;RTC Time Compensation Register (RTC_TCR);32;R/W;0000_0000h;
+4003_D010;RTC Control Register (RTC_CR);32;R/W;0000_0000h;
+4003_D014;RTC Status Register (RTC_SR);32;R/W;0000_0000h;
+4003_D018;RTC Lock Register (RTC_LR);32;R/W;0000_00FFh;
+4003_D01C;RTC Interrupt Enable Register (RTC_IER);32;R/W;0000_0007h;
+4003_D800;RTC Write Access Register (RTC_WAR);32;R/W;0000_00FFh;
+4003_D804;RTC Read Access Register (RTC_RAR);32;R/W;0000_00FFh;
+
+====
+RTC_TSR field descriptions;
+31-0 TSR;Time Seconds Register
+;When the time counter is enabled, the TSR is read only and increments once a second provided SR[TOF] or SR[TIF] are not set. The time counter will read as zero when SR[TOF] or SR[TIF] are set. When the time counter is disabled, the TSR can be read or written. Writing to the TSR when the time counter is disabled will clear the SR[TOF] and/or the SR[TIF]. Writing to TSR with zero is supported, but not recommended because TSR will read as zero when SR[TIF] or SR[TOF] are set (indicating the time is invalid).
+
+RTC_TPR field descriptions;
+15-0 TPR;Time Prescaler Register
+;When the time counter is enabled, the TPR is read only and increments every 32.768 kHz clock cycle. The time counter will read as zero when SR[TOF] or SR[TIF] are set. When the time counter is disabled, the TPR can be read or written. The TSR[TSR] increments when bit 14 of the TPR transitions from a logic one to a logic zero.
+
+RTC_TAR field descriptions;
+31-0 TAR;Time Alarm Register
+;When the time counter is enabled, the SR[TAF] is set whenever the TAR[TAR] equals the TSR[TSR] and the TSR[TSR] increments. Writing to the TAR clears the SR[TAF].
+
+RTC_TCR field descriptions;
+31-24 CIC;Compensation Interval Counter
+;Current value of the compensation interval counter. If the compensation interval counter equals zero then it is loaded with the contents of the CIR. If the CIC does not equal zero then it is decremented once a second.
+23-16 TCV;Time Compensation Value
+;Current value used by the compensation logic for the present second interval. Updated once a second if the CIC equals 0 with the contents of the TCR field. If the CIC does not equal zero then it is loaded with zero (compensation is not enabled for that second increment).
+15-8 CIR;Compensation Interval Register
+;Configures the compensation interval in seconds from 1 to 256 to control how frequently the TCR should adjust the number of 32.768 kHz cycles in each second. The value written should be one less than the number of seconds. For example, write zero to configure for a compensation interval of one second. This register is double buffered and writes do not take affect until the end of the current compensation interval.
+7-0 TCR;Time Compensation Register
+;Configures the number of 32.768 kHz clock cycles in each second. This register is double buffered and writes do not take affect until the end of the current compensation interval.
+
+RTC_CR field descriptions;
+13 SC2P;Oscillator 2pF Load Configure
+;0;Disable the load.
+;1;Enable the additional load.
+12 SC4P;Oscillator 4pF Load Configure
+;0;Disable the load.
+;1;Enable the additional load.
+11 SC8P;Oscillator 8pF Load Configure 
+;0;Disable the load.
+;1;Enable the additional load.
+10 SC16P;Oscillator 16pF Load Configure
+;0;Disable the load.
+;1;Enable the additional load.
+9 CLKO;Clock Output
+;0;The 32;kHz clock is output to other peripherals.
+;1;The 32;kHz clock is not output to other peripherals.
+8 OSCE;Oscillator Enable
+;0;32.768 kHz oscillator is disabled.
+;1;32.768 kHz oscillator is enabled. After setting this bit, wait the oscillator startup time before enabling the time counter to allow the 32.768 kHz clock time to stabilize.
+4 WPS;Wakeup Pin Select
+;The wakeup pin is optional and not available on all devices.
+;0;Wakeup pin asserts (active low, open drain) if the RTC interrupt asserts or the wakeup pin is turned on.
+;1;Wakeup pin instead outputs the RTC 32kHz clock, provided the wakeup pin is turned on and the 32kHz clock is output to other peripherals.
+3 UM;Update Mode
+;Allows SR[TCE] to be written even when the Status Register is locked. When set, the SR[TCE] can always be written if the SR[TIF] or SR[TOF] are set or if the SR[TCE] is clear.
+;0;Registers cannot be written when locked.
+;1;Registers can be written when locked under limited conditions.
+2 SUP;Supervisor Access
+;0;Non-supervisor mode write accesses are not supported and generate a bus error.
+;1;Non-supervisor mode write accesses are supported.
+1 WPE;Wakeup Pin Enable
+;The wakeup pin is optional and not available on all devices.
+;0;Wakeup pin is disabled.
+;1;Wakeup pin is enabled and wakeup pin asserts if the RTC interrupt asserts or the wakeup pin is turned on.
+0 SWR;Software Reset
+;0;No effect.
+;1;Resets all RTC registers except for the SWR bit and the RTC_WAR and RTC_RAR registers . The SWR bit is cleared by VBAT POR and by software explicitly clearing it.
+
+RTC_SR field descriptions;
+4 TCE;Time Counter Enable
+;When time counter is disabled the TSR register and TPR register are writeable, but do not increment. When time counter is enabled the TSR register and TPR register are not writeable, but increment.
+;0; Time counter is disabled.
+;1; Time counter is enabled.
+2 TAF;Time Alarm Flag
+;Time alarm flag is set when the TAR[TAR] equals the TSR[TSR] and the TSR[TSR] increments. This bit is cleared by writing the TAR register.
+;0; Time alarm has not occurred.
+;1; Time alarm has occurred.
+1 TOF;Time Overflow Flag
+;Time overflow flag is set when the time counter is enabled and overflows. The TSR and TPR do not increment and read as zero when this bit is set. This bit is cleared by writing the TSR register when the time counter is disabled.
+;0; Time overflow has not occurred.
+;1; Time overflow has occurred and time counter is read as zero.
+0 TIF;Time Invalid Flag
+;The time invalid flag is set on VBAT POR or software reset. The TSR and TPR do not increment and read as zero when this bit is set. This bit is cleared by writing the TSR register when the time counter is disabled.
+;0; Time is valid.
+;1; Time is invalid and time counter is read as zero.
+
+RTC_LR field descriptions;
+6 LRL;Lock Register Lock
+;After being cleared, this bit can be set only by VBAT POR or software reset.
+;0; Lock Register is locked and writes are ignored.
+;1; Lock Register is not locked and writes complete as normal.
+5 SRL;Status Register Lock
+;After being cleared, this bit can be set only by VBAT POR or software reset.
+;0; Status Register is locked and writes are ignored.
+;1; Status Register is not locked and writes complete as normal.
+4 CRL;Control Register Lock
+;After being cleared, this bit can only be set by VBAT POR.
+;0; Control Register is locked and writes are ignored.
+;1; Control Register is not locked and writes complete as normal.
+3 TCL;Time Compensation Lock
+;After being cleared, this bit can be set only by VBAT POR or software reset.
+;0; Time Compensation Register is locked and writes are ignored.
+;1; Time Compensation Register is not locked and writes complete as normal.
+
+RTC_IER field descriptions;
+7 WPON;Wakeup Pin On
+;The wakeup pin is optional and not available on all devices. Whenever the wakeup pin is enabled and this bit is set, the wakeup pin will assert.
+;0; No effect.
+;1; If the wakeup pin is enabled, then the wakeup pin will assert.
+4 TSIE;Time Seconds Interrupt Enable
+;The seconds interrupt is an edge-sensitive interrupt with a dedicated interrupt vector. It is generated once a second and requires no software overhead (there is no corresponding status flag to clear).
+;0; Seconds interrupt is disabled.
+;1; Seconds interrupt is enabled.
+2 TAIE;Time Alarm Interrupt Enable
+;0; Time alarm flag does not generate an interrupt.
+;1; Time alarm flag does generate an interrupt.
+1 TOIE;Time Overflow Interrupt Enable
+;0; Time overflow flag does not generate an interrupt.
+;1; Time overflow flag does generate an interrupt.
+0 TIIE;Time Invalid Interrupt Enable
+;0; Time invalid flag does not generate an interrupt.
+;1; Time invalid flag does generate an interrupt.
+
+RTC_WAR field descriptions;
+7 IERW;Interrupt Enable Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Interupt Enable Register are ignored.
+;1; Writes to the Interrupt Enable Register complete as normal.
+6 LRW;Lock Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Lock Register are ignored.
+;1; Writes to the Lock Register complete as normal.
+5 SRW;Status Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Status Register are ignored.
+;1; Writes to the Status Register complete as normal.
+4 CRW;Control Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Control Register are ignored.
+;1; Writes to the Control Register complete as normal.
+3 TCRW;Time Compensation Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Time Compensation Register are ignored.
+;1; Writes to the Time Compensation Register complete as normal.
+2 TARW;Time Alarm Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Time Alarm Register are ignored.
+;1; Writes to the Time Alarm Register complete as normal.
+1 TPRW;Time Prescaler Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Time Prescaler Register are ignored.
+;1; Writes to the Time Prescaler Register complete as normal.
+0 TSRW;Time Seconds Register Write
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Writes to the Time Seconds Register are ignored.
+;1; Writes to the Time Seconds Register complete as normal.
+
+RTC_RAR field descriptions;
+7 IERR;Interrupt Enable Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Interrupt Enable Register are ignored.
+;1; Reads to the Interrupt Enable Register complete as normal.
+6 LRR;Lock Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Lock Register are ignored.
+;1; Reads to the Lock Register complete as normal.
+5 SRR;Status Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Status Register are ignored.
+;1; Reads to the Status Register complete as normal.
+4 CRR;Control Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Control Register are ignored.
+;1; Reads to the Control Register complete as normal.
+3 TCRR;Time Compensation Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Time Compensation Register are ignored.
+;1; Reads to the Time Compensation Register complete as normal.
+2 TARR;Time Alarm Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Time Alarm Register are ignored.
+;1; Reads to the Time Alarm Register complete as normal.
+1 TPRR;Time Prescaler Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Time Pprescaler Register are ignored.
+;1; Reads to the Time Prescaler Register complete as normal.
+0 TSRR;Time Seconds Register Read
+;After being cleared, this bit is set only by system reset. It is not affected by VBAT POR or software reset.
+;0; Reads to the Time Seconds Register are ignored.
+;1; Reads to the Time Seconds Register complete as normal.
+====
