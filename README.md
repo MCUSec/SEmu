@@ -16,8 +16,6 @@ Unlike exsiting firmware emulator which finds out how to respond to peripheral r
 }
 ```
 
-
-
 ## Directory structure of the repo
 
 ## Cleaning Code .... (expected to be public before March)
