@@ -80,7 +80,7 @@ pluginsConfig.InvalidStatesDetection = {
 	}
 }
 
-add_plugin("SymbolicPeripherals")
+add_plugin("SymbolicHardware")
 add_plugin("FailureAnalysis")
 
 
