@@ -10,9 +10,10 @@ import struct
 import configparser
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
-testcase_length = 8;
+testcase_length = 8
 DEFAULT_TEMPLATES_DIR = os.getcwd()
-def read_config(cfg_f, nlpfilename, firmwarename, debug):
+def read_config(cfg_f, nlpfilename, signalfilename, ccfilename, firmwarename, debug):
+#def read_config(cfg_f, nlpfilename, firmwarename, debug):
     global testcase_length
     if not os.path.isfile(cfg_f):
         sys.exit("Cannot find the specified configuration file: %s" % cfg_f)
@@ -27,6 +28,8 @@ def read_config(cfg_f, nlpfilename, firmwarename, debug):
         'pwd': str(os.getcwd()),
         'klee_debug': "true",
         'nlp_file_name': nlpfilename,
+        'signal_file_name': signalfilename,
+        'CC_file_name': ccfilename,
     }
 
     # MEM
@@ -105,23 +108,32 @@ def main(argv):
                             help="In debug mode, SEmu will output huge log, please ensure you have enough space (e.g., more than 100M)")	
     parser.add_argument("-nlp", "--nlpfilename", type=str, default="",
                             help="Configure the NLP Model filename used for SEmu")
+    parser.add_argument("-signal", "--signalfilename", type=str, default="",
+                            help="Configure the signal Model filename used for CC")
+    parser.add_argument("-cc", "--ccfilename", type=str, default="",
+                            help="Configure the cc Model filename used for CC")
 
     args = parser.parse_args()
 
     if args.config != "":
-        args.config = os.path.abspath(args.config)
+        args.config = os.environ['SEmuDS'] + args.config
     else:
         sys.exit("Please set .cfg configuration file!")
 
     if args.nlpfilename == "":
         sys.exit("Please set .txt NLP peripheral model file!")
-
+    args.nlpfilename = os.environ['SEmuDS'] + args.nlpfilename
+    args.signalfilename = os.environ['SEmuDS'] + args.signalfilename
+    args.ccfilename = os.environ['SEmuDS'] + args.ccfilename
+    args.firmware = os.environ['SEmuDS'] + args.firmware
     if args.debug:
         print("SEmu will dignose %s with debug level log" % (args.firmware))
     else:
         print("SEmu will dignose %s with warning level log" % (args.firmware))
 
-    config = read_config(args.config, args.nlpfilename, args.firmware, args.debug)
+    config = read_config(args.config, args.nlpfilename, args.signalfilename, args.ccfilename, args.firmware, args.debug)
+    #config = read_config(args.config, args.nlpfilename, args.firmware, args.debug)
+    
     render_template(config, "SEmu-config-template.lua", "SEmu-config.lua")
 
     launch = {

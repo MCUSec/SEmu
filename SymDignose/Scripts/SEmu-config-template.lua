@@ -56,6 +56,16 @@ pluginsConfig.NLPPeripheralModel= {
     },
 }
 
+add_plugin("ExternalHardwareSignal")
+pluginsConfig.ExternalHardwareSignal= {
+	SignalfileName = "{{ signal_file_name }}",
+}
+
+add_plugin("ComplianceCheck")
+pluginsConfig.ComplianceCheck= {
+	CCfileName = "{{ CC_file_name }}",
+}
+
 add_plugin("ExternalInterrupt")
 pluginsConfig.ExternalInterrupt ={
 	disableSystickInterrupt = {{ disable_systick }},
@@ -80,7 +90,10 @@ pluginsConfig.InvalidStatesDetection = {
 	}
 }
 
-add_plugin("SymbolicPeripherals")
+
+
+
+add_plugin("SymbolicHardware")
 add_plugin("FailureAnalysis")
 
 
