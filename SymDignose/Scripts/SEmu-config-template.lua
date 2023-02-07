@@ -90,9 +90,12 @@ pluginsConfig.InvalidStatesDetection = {
 	}
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> bb37982f944d2541865f552fc1650e6e869e9be2
 add_plugin("SymbolicHardware")
 add_plugin("FailureAnalysis")
 
