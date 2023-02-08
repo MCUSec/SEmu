@@ -50,7 +50,6 @@ dofile('library.lua')
 add_plugin("NLPPeripheralModel")
 pluginsConfig.NLPPeripheralModel= {
 	NLPfileName = "{{ nlp_file_name }}",
-    forkPoint = {{ fork_point }},
     nlp_mmio = {
 		{% for nlp_mmio in nlp_mmio_range %} {{ '{' }}{{ nlp_mmio }}{{ '}' }}, {% endfor %}
     },
@@ -64,6 +63,7 @@ pluginsConfig.ExternalHardwareSignal= {
 add_plugin("ComplianceCheck")
 pluginsConfig.ComplianceCheck= {
 	CCfileName = "{{ CC_file_name }}",
+    forkPoint = {{ fork_point }},
 }
 
 add_plugin("ExternalInterrupt")
@@ -76,27 +76,7 @@ pluginsConfig.ExternalInterrupt ={
 	},
 }
 
-add_plugin("InvalidStatesDetection")
-pluginsConfig.InvalidStatesDetection = {
-	bb_inv1 = {{ bb_inv1 }},
-	bb_inv2 = {{ bb_inv2 }},
-	killPoints = {
-        {% for k in kill_points %}
-        {{ k }},{% endfor %}
-	},
-	alivePoints = {
-        {% for a in alive_points %}
-        {{ a }},{% endfor %}
-	}
-}
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> bb37982f944d2541865f552fc1650e6e869e9be2
 add_plugin("SymbolicHardware")
-add_plugin("FailureAnalysis")
+
 
 
