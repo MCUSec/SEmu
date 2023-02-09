@@ -50,6 +50,7 @@ dofile('library.lua')
 add_plugin("NLPPeripheralModel")
 pluginsConfig.NLPPeripheralModel= {
 	NLPfileName = "{{ nlp_file_name }}",
+	forkPoint = {{ fork_point }},
     nlp_mmio = {
 		{% for nlp_mmio in nlp_mmio_range %} {{ '{' }}{{ nlp_mmio }}{{ '}' }}, {% endfor %}
     },
@@ -63,7 +64,6 @@ pluginsConfig.ExternalHardwareSignal= {
 add_plugin("ComplianceCheck")
 pluginsConfig.ComplianceCheck= {
 	CCfileName = "{{ CC_file_name }}",
-    forkPoint = {{ fork_point }},
 }
 
 add_plugin("ExternalInterrupt")
