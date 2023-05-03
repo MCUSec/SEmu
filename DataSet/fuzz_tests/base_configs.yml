@@ -1,52 +1,53 @@
 f103/Drone/Drone.elf:
-  rules: 'rules/f103.txt'
+  rules: '../../RuleExtraction/extractedRules/f103.txt'
   fork_points: 
   - 0x8004198 # "the start point of loop in main"
 
 f103/Gateway/Gateway.elf:
-  rules: 'rules/f103.txt'
+  rules: '../../RuleExtraction/extractedRules/f103.txt'
   fork_points: 
   - 0x8008f72 # "the start point of loop in main"
 
 f103/Reflow_Oven/Reflow_Oven.elf:
-  rules: 'rules/f103.txt'
+  rules: '../../RuleExtraction/extractedRules/f103.txt'
   begin_point: 0x8006046
   fork_points: 
   - 0x8006046 # "the start point of loop in main"
 
 f103/Robot/Robot.elf:
-  rules: 'rules/f103.txt'
+  rules: '../../RuleExtraction/extractedRules/f103.txt'
   fork_points: [] # no fork_points, just exit while data empty.
 
 f103/Soldering_Iron/Soldering_Iron.elf:
-  rules: 'rules/f103.txt'
+  rules: '../../RuleExtraction/extractedRules/f103.txt'
   fork_points: [] # no fork_points, just exit while data empty.
 
 f429/CNC/CNC.elf:
-  rules: 'rules/f429.txt'
+  rules: '../../RuleExtraction/extractedRules/f429.txt'
   fork_points: 
   - 0x8001E8E # "the start point of loop in main"
 
 f429/PLC/PLC.elf:
-  rules: 'rules/f429.txt'
+  rules: '../../RuleExtraction/extractedRules/f429.txt'
   begin_point: 0x800463E
   fork_points: 
   - 0x800463E # "the start point of loop in main"
 
 f429/LwIP_TCP_Echo_Client/LwIP_TCP_Echo_Client.elf:
-  rules: 'rules/f429.txt'
+  rules: '../../RuleExtraction/extractedRules/f429.txt'
   fork_points: 
   - 0x8000D2C # "the start point of loop in main"
 
 f429/LwIP_TCP_Echo_Server/LwIP_TCP_Echo_Server.elf:
-  rules: 'rules/f429.txt'
+  rules: '../../RuleExtraction/extractedRules/f429.txt'
   fork_points: 
   - 0x8000D2C # "the start point of loop in main"
 
 k64/Console/Console.elf:
-  rules: 'rules/k64.txt'
+  rules: '../../RuleExtraction/extractedRules/k64.txt'
   fork_points: 
-  - 0x8001E8E # "the start point of loop in main"
+  - 0x2e9c # "the start point of loop in main"
+  - 0xf80 # "the unexpected point of main"
   memory_map:
     bss:
       base_addr: 0x1ffe0000
@@ -54,13 +55,13 @@ k64/Console/Console.elf:
       size: 0x20000
 
 sam3x/Heat_Press/Heat_Press.elf:
-  rules: 'rules/sam3x.txt'
+  rules: '../../RuleExtraction/extractedRules/sam3x.txt'
   begin_point: 0x816E4
   fork_points: 
   - 0x816E4 # "the start point of loop in main"
 
 sam3x/Steering_Control/Steering_Control.elf:
-  rules: 'rules/sam3x.txt'
+  rules: '../../RuleExtraction/extractedRules/sam3x.txt'
   fork_points: 
   - 0x81276 # the start point of loop when no data
   - 0x815E0 # "the start point of loop in main"
