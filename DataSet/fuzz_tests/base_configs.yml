@@ -6,13 +6,14 @@ f103/Drone/Drone.elf:
 f103/Gateway/Gateway.elf:
   rules: '../../RuleExtraction/extractedRules/f103.txt'
   fork_points: 
-  - 0x8008f72 # "the start point of loop in main"
+  - 0x8008f6A # "the start point of loop in main"
 
 f103/Reflow_Oven/Reflow_Oven.elf:
   rules: '../../RuleExtraction/extractedRules/f103.txt'
   begin_point: 0x8006046
   fork_points: 
   - 0x8006046 # "the start point of loop in main"
+  systick_reload: 500 # its init parse is too long, so we need to decrease the interval
 
 f103/Robot/Robot.elf:
   rules: '../../RuleExtraction/extractedRules/f103.txt'
@@ -37,11 +38,13 @@ f429/LwIP_TCP_Echo_Client/LwIP_TCP_Echo_Client.elf:
   rules: '../../RuleExtraction/extractedRules/f429.txt'
   fork_points: 
   - 0x8000D2C # "the start point of loop in main"
+  systick_reload: 500 # there is a random eth start, check depends on systick, so recommend decreasing systick interval
 
 f429/LwIP_TCP_Echo_Server/LwIP_TCP_Echo_Server.elf:
   rules: '../../RuleExtraction/extractedRules/f429.txt'
   fork_points: 
-  - 0x8000D2C # "the start point of loop in main"
+  - 0x8000D0C # "the start point of loop in main"
+  systick_reload: 500 # there is a random eth start, check depends on systick, so recommend decreasing systick interval
 
 k64/Console/Console.elf:
   rules: '../../RuleExtraction/extractedRules/k64.txt'
