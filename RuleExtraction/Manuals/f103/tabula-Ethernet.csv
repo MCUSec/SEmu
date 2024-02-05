@@ -1,0 +1,738 @@
+0x40028000;Ethernet MAC configuration register (ETH_MACCR);32;R/W;8000;
+0x40028004;Ethernet MAC frame filter register (ETH_MACFFR);32;R/W;0000;
+0x40028008;Ethernet MAC hash table high register (ETH_MACHTHR);32;R/W;0000;
+0x4002800C;Ethernet MAC hash table low register (ETH_MACHTLR);32;R/W;0000;
+0x40028010;Ethernet MAC MII address register (ETH_MACMIIAR);32;R/W;0000;
+0x40028014;Ethernet MAC MII data register (ETH_MACMIIDR);32;R/W;0000;
+0x40028018;Ethernet MAC flow control register (ETH_MACFCR);32;R/W;0000;
+0x4002801C;Ethernet MAC VLAN tag register (ETH_MACVLANTR);32;R/W;0000;
+0x40028028;Ethernet MAC remote wakeup frame filter register (ETH_MACRWUFFR);32;R/W;0000;
+0x4002802C;Ethernet MAC PMT control and status register (ETH_MACPMTCSR);32;R/W;0000;
+0x40028038;Ethernet MAC interrupt status register (ETH_MACSR);16;R;0000;
+0x4002803C;Ethernet MAC interrupt mask register (ETH_MACIMR);16;R/W;0000;
+0x40028040;Ethernet MAC address 0 high register (ETH_MACA0HR);32;R/W;8000FFFF;
+0x40028044;Ethernet MAC address 0 low register (ETH_MACA0LR);32;R/W;FFFFFFFF;
+0x40028048;Ethernet MAC address 1 high register (ETH_MACA1HR);32;R/W;0000FFFF;
+0x4002804C;Ethernet MAC address 1 low register (ETH_MACA1LR);32;R/W;FFFFFFFF;
+0x40028050;Ethernet MAC address 2 high register (ETH_MACA2HR);32;R/W;0000FFFF;
+0x40028054;Ethernet MAC address 2 low register (ETH_MACA2LR);32;R/W;FFFFFFFF;
+0x40028058;Ethernet MAC address 2 high register (ETH_MACA3HR);32;R/W;0000FFFF;
+0x4002805C;Ethernet MAC address 2 low register (ETH_MACA3LR);32;R/W;FFFFFFFF;
+0x40028100;Ethernet MMC control register (ETH_MMCCR);32;R/W;0000;
+0x40028104;Ethernet MMC receive interrupt register (ETH_MMCRIR);32;R;0000;
+0x40028108;Ethernet MMC transmit interrupt register (ETH_MMCTIR);32;R/W;0000;
+0x4002810C;Ethernet MMC receive interrupt mask register (ETH_MMCRIMR);32;R/W;0000;
+0x40028110;Ethernet MMC transmit interrupt mask register (ETH_MMCTIMR);32;R/W;0000;
+0x4002814C;Ethernet MMC transmitted good frames after a single collision counter register (ETH_MMCTGFSCCR);32;R;0000;
+0x40028150;Ethernet MMC transmitted good frames after more than a single collision counter register (ETH_MMCTGFMSCCR);32;R;0000;
+0x40028168;Ethernet MMC transmitted good frames counter register (ETH_MMCTGFCR);32;R;0000;
+0x40028194;Ethernet MMC received frames with CRC error counter register(ETH_MMCRFCECR);32;R;0000;
+0x40028198;Ethernet MMC received frames with alignment error counter register (ETH_MMCRFAECR);32;R;0000;
+0x400281C4;Ethernet MMC received good unicast frames counter register (ETH_MMCRGUFCR);32;R;0000;
+0x40028700;Ethernet PTP time stamp control register (ETH_PTPTSCR);32;R/W;0000;
+0x40028704;Ethernet PTP subsecond increment register (ETH_PTPSSIR);32;R/W;0000;
+0x40028708;Ethernet PTP time stamp high register (ETH_PTPTSHR);32;R;0000;
+0x4002870C;Ethernet PTP time stamp low register (ETH_PTPTSLR);32;R;0000;
+0x40028710;Ethernet PTP time stamp high update register (ETH_PTPTSHUR);32;R/W;0000;
+0x40028714;Ethernet PTP time stamp low update register (ETH_PTPTSLUR);32;R/W;0000;
+0x40028718;Ethernet PTP time stamp addend register (ETH_PTPTSAR);32;R/W;0000;
+0x4002871C;Ethernet PTP target time high register (ETH_PTPTTHR);32;R/W;0000;
+0x40028720;Ethernet PTP target time low register (ETH_PTPTTLR);32;R/W;0000;
+0x40029000;Ethernet DMA bus mode register (ETH_DMABMR);32;R/W;0;
+0x40029004;Ethernet DMA transmit poll demand register (ETH_DMATPDR);32;R/W;0;
+0x40029008;Ethernet DMA receive poll demand register (ETH_DMARPDR);32;R/W;0;
+0x4002900C;Ethernet DMA receive descriptor list address register (ETH_DMARDLAR);32;R/W;0;
+0x40029010;Ethernet DMA transmit descriptor list address register (ETH_DMATDLAR);32;R/W;0;
+0x40029014;Ethernet DMA status register (ETH_DMASR);32;R/W;0;
+0x40029018;Ethernet DMA operation mode register (ETH_DMAOMR);32;R/W;0;
+0x4002901C;Ethernet DMA interrupt enable register (ETH_DMAIER);32;R/W;0;
+0x40029020;Ethernet DMA missed frame and buffer overflow counter register (ETH_DMAMFBOCR);32;R/W;0;
+0x40029048;Ethernet DMA current host transmit descriptor register (ETH_DMACHTDR);32;R/W;0;
+0x4002904C;Ethernet DMA current host receive descriptor register (ETH_DMACHRDR);32;R/W;0;
+0x40029050;Ethernet DMA current host transmit buffer address register (ETH_DMACHTBAR);32;R/W;0;
+0x40029054;Ethernet DMA current host receive buffer address register (ETH_DMACHRBAR);32;R/W;0;
+
+ETH_DMACHRBAR field descriptions;
+31-0 HRBAP;Hostreceivebufferaddresspointer
+;Cleared On Reset. Pointer updated by DMA during operation.
+
+
+ETH_DMACHTBAR field descriptions;
+31-0 HTBAP;Hosttransmitbufferaddresspointer
+;Cleared On Reset. Pointer updated by DMA during operation.
+
+
+ETH_DMACHRDR field descriptions;
+31-0 HRDAP;Hostreceivedescriptoraddresspointer
+;Cleared On Reset. Pointer updated by DMA during operation.
+
+ETH_DMACHTDR field descriptions;
+31-0 HTDAP;Hosttransmitdescriptoraddresspointer Cleared . Pointer updated by DMA during operation.
+
+
+ETH_DMAMFBOCR field descriptions;
+31-29 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+28 OFOC;Overflow bit for FIFO overflow counter
+27-17 MFA; Missed frames by the application
+;Indicates the number of frames missed by the application
+16 OMFC;Overflow bit for missed frame counter 
+15-0 MFC;Missed frames by the controller
+;Indicates the number of frames missed by the Controller due to the host receive buffer being unavailable. This counter is incremented each time the DMA discards an incoming frame.
+
+ETH_DMAIER field descriptions;
+31-17 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+16 NISE;Normal interrupt summary enable
+;When this bit is set, a interrupt is enabled. When this bit is cleared, a normal interrupt is disabled. This bit enables the following bits:
+15 AISE;Abnormal interrupt summary enable
+;When this bit is set, an interrupt is enabled. When this bit is cleared, an abnormal interrupt is disabled. This bit enables the following bits:
+14 ERIE;Early receive interrupt enable
+;When this bit is set with the normal interrupt summary enable bit (NISE), the ERS is enabled.
+;When this bit is cleared, the early receive interrupt is disabled.
+13 FBEIE;Fatalbuserror interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the FBES is enabled.
+;When this bit is cleared, the fatal bus error enable interrupt is disabled.
+12-11 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+10 ETIE;Earlytransmit interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the ETS is enabled.
+;When this bit is cleared, the early transmit interrupt is disabled.
+9 RWTIE;receivewatchdogtimeout interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the RWTS interrupt is enabled.
+;When this bit is cleared, the receive watchdog timeout interrupt is disabled.
+8 RPSIE;Receiveprocessstopped interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the RPSS is enabled. When this bit is cleared, the receive stopped interrupt is disabled.
+7 RBUIE;Receivebufferunavailable interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the RBUS interrupt is enabled.
+;When this bit is cleared, the receive buffer unavailable interrupt is disabled.
+6 RIE;Receive interrupt enable
+;When this bit is set with the normal interrupt summary enable bit (NISE), the RS interrupt is enabled.
+;When this bit is cleared, the receive interrupt is disabled.
+5 TUIE;Underflow interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the TUS interrupt is enabled.
+;When this bit is cleared, the underflow interrupt is disabled.
+4 ROIE; Overflow interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the ROS interrupt is enabled.
+;When this bit is cleared, the overflow interrupt is disabled.
+3 TJTIE;Transmitjabbertimeout interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the TJTS interrupt is enabled.
+;When this bit is cleared, the transmit jabber timeout interrupt is disabled.
+2 TBUIE;Transmitbufferunavailable interrupt enable
+;When this bit is set with the normal interrupt summary enable bit (NISE), the TBUS interrupt is enabled.
+;When this bit is cleared, the transmit buffer unavailable interrupt is disabled.
+1 TPSIE;Transmitprocessstopped interrupt enable
+;When this bit is set with the abnormal interrupt summary enable bit (AISE), the TPSS interrupt is enabled.
+;When this bit is cleared, the transmission stopped interrupt is disabled.
+0 TIE;Transmit interrupt enable
+;When this bit is set with the normal interrupt summary enable bit (NISE), the TS interrupt is enabled.
+;When this bit is cleared, the transmit interrupt is disabled.
+
+ETH_DMAOMR field descriptions;
+31-27 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+26 DTCEFD;DroppingofTCP/IPchecksumerrorframesdisable
+;When this bit is set, the core does not drop frames that only have errors detected by the receive checksum offload engine. Such frames do not have any errors (including FCS error) in the Ethernet frame received by the MAC but have errors in the encapsulated payload only. When this bit is cleared, all error frames are dropped if the FEF bit is reset.
+25 RSF;Receivestoreandforward
+;When this bit is set, a frame is read from the Rx FIFO after the complete frame has been written to it, ignoring RTC bits. When this bit is cleared, the Rx FIFO operates in Cut-through mode, subject to the threshold specified by the RTC bits.
+24 DFRF;Disableflushingofreceivedframes
+;When this bit is set, the RxDMA does not flush any frames due to the unavailability of receive descriptors/buffers as it does normally when this bit is cleared (see Receive process suspended).
+23-22 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+21 TSF;Transmitstoreandforward
+;When this bit is set, transmission starts when a full frame resides in the Transmit FIFO. When this bit is set, the TTC values specified by the ETH_DMAOMR register bits [16:14] are ignored.
+20 FTF;FlushtransmitFIFO
+;When this bit is set, the transmit FIFO controller logic is reset to its default values and thus all data in the Tx FIFO are lost/flushed. This bit is cleared internally when the flushing operation is complete. The Operation mode register should not be written to until this bit is cleared.
+19-17 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+16-14 TTC;Transmit threshold control
+;These three bits control the threshold level of the Transmit FIFO. Transmission starts when the frame size within the Transmit FIFO is larger than the threshold. In addition, full frames with a length less than the threshold are also transmitted. These bits are used only when the TSF bit (Bit 21) is cleared.
+13 ST;Start/stoptransmission
+;When this bit is set, transmission is placed in the Running state, and the DMA checks the transmit list at the current position for a frame to be transmitted. Descriptor acquisition is attempted either from the current position in the list, which is the transmit list base address set by the ETH_DMATDLAR register, or from the position retained when transmission was stopped previously. If the current descriptor is not owned by the DMA, transmission enters the Suspended state and the transmit buffer unavailable bit (ETH_DMASR [2]) is set. The Start Transmission command is effective only when transmission is stopped. If the command is issued before setting the DMA ETH_DMATDLAR register, the DMA behavior is unpredictable.
+;When this bit is cleared, the transmission process is placed in the Stopped state after completing the transmission of the current frame. The next descriptor position in the transmit list is saved, and becomes the current position when transmission is restarted. The Stop Transmission command is effective only when the transmission of the current frame is complete or when the transmission is in the Suspended state.
+12-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 FEF;Forward error frames
+;When this bit is set, all frames except runt error frames are forwarded to the DMA.
+;When this bit is cleared, the Rx FIFO drops frames with error status (CRC error, collision error, giant frame, watchdog timeout, overflow). However, if the frame’s start byte (write) pointer is already transferred to the read controller side (in Threshold mode), then the frames are not dropped. The Rx FIFO drops the error frames if that frame's start byte is not transferred (output) on the ARI bus.
+6 FUGF;Forward under sized good frames
+;When this bit is set, the Rx FIFO forwards undersized frames (frames with no error and length less than 64 bytes) including pad-bytes and CRC).
+;When this bit is cleared, the Rx FIFO drops all frames of less than 64 bytes, unless such a frame has already been transferred due to lower value of receive threshold (e.g., RTC = 01).
+5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4-3 RTC;Receivethresholdcontrol
+;These two bits control the threshold level of the Receive FIFO. Transfer (request) to DMA starts when the frame size within the Receive FIFO is larger than the threshold. In addition, full frames with a length less than the threshold are transferred automatically.
+2 OSF;Operate on second frame
+;When this bit is set, this bit instructs the DMA to process a second frame of Transmit data even before status for first frame is obtained.
+1 SR;Start/stopreceive
+;When this bit is set, the receive process is placed in the Running state. The DMA attempts to acquire the descriptor from the receive list and processes incoming frames. Descriptor acquisition is attempted from the current position in the list, which is the address set by the DMA ETH_DMARDLAR register or the position retained when the receive process was previously stopped. If no descriptor is owned by the DMA, reception is suspended and the receive buffer unavailable bit (ETH_DMASR [7]) is set. The Start Receive command is effective only when reception has stopped. If the command was issued before setting the DMA ETH_DMARDLAR register, the DMA behavior is unpredictable.
+;When this bit is cleared, RxDMA operation is stopped after the transfer of the current frame. The next descriptor position in the receive list is saved and becomes the current position when the receive process is restarted. The Stop Receive command is effective only when the Receive process is in either the Running (waiting for receive packet) or the Suspended state.
+0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ETH_DMASR field descriptions;
+31-30 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+29 TSTS;Timestamp trigger status
+;This bit indicates an interrupt event in the MAC core's Time stamp generator block. The software must read the MAC core’s status register, clearing its source (bit 9), to reset this bit to 0. When this bit is high an interrupt is generated if enabled.
+28 PMTS;PMT status
+;This bit indicates an event in the MAC core’s PMT. The software must read the corresponding registers in the MAC core to get the exact cause of interrupt and clear its source to reset this bit to 0. The interrupt is generated when this bit is high if enabled.
+27 MMCS;MMC status
+;This bit reflects an event in the MMC of the MAC core. The software must read the corresponding registers in the MAC core to get the exact cause of interrupt and clear the source of interrupt to make this bit as 0. The interrupt is generated when this bit is high if enabled.
+26 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+25-23 EBS;Error bits status
+;These bits indicate the type of error that caused a bus error (error response on the AHB interface). Valid only with the fatal bus error bit (ETH_DMASR register [13]) set. This field does not generate an interrupt.
+22-20 TPS;Transmit process state
+;These bits indicate the Transmit DMA FSM state. This field does not generate an interrupt.
+19-17 RPS;Receive process state
+;These bits indicate the Receive DMA FSM state. This field does not generate an interrupt.
+16 NIS;Normal interrupt summary
+;if TS is 1,  NIS is 1.
+;if TBUS is 1,  NIS is 1.
+;if RS is 1,  NIS is 1.
+;if ERS is 1,  NIS is 1.
+;if TS is 0 and TBUS is 0 and RS is 0 and ERS is 0, NIS is zero.
+;The normal interrupt summary bit value is the logical OR of the following when the corresponding interrupt bits are enabled in the ETH_DMAIER register:
+;- ETH_DMASR [0]: Transmit interrupt
+;- ETH_DMASR [2]: Transmit buffer unavailable
+;- ETH_DMASR [6]: Receive interrupt
+;- ETH_DMASR [14]: Early receive interrupt
+;Only unmasked bits affect the normal interrupt summary bit.
+;This is a sticky bit and it must be cleared (by writing a 1 to this bit) each time a corresponding bit that causes NIS to be set is cleared.
+15 AIS;Abnormal interrupt summary
+;if TPSS is 1,  NIS is 1.
+;if TJTS is 1,  NIS is 1.
+;if TUS is 1,  NIS is 1.
+;if ROS is 1,  NIS is 1.
+;if RBUS is 1,  NIS is 1.
+;if RPSS is 1,  NIS is 1.
+;if RWTS is 1,  NIS is 1.
+;if ETS is 1,  NIS is 1.
+;if FBES is 1,  NIS is 1.
+;if TPSS is 0 and TJTS is 0 and TUS is 0 and ROS is 0 and RBUS is 0 and RPSS is 0 and RWTS is 0 and ETS is 0 and FBES is 0, NIS is zero.
+;The abnormal interrupt summary bit value is the logical OR of the following when the
+;corresponding interrupt bits are enabled in the ETH_DMAIER register:
+;- ETH_DMASR [1]:Transmit process stopped
+;- ETH_DMASR [3]:Transmit jabber timeout
+;- ETH_DMASR [4]: Receive FIFO overflow
+;- ETH_DMASR [5]: Transmit underflow
+;- ETH_DMASR [7]: Receive buffer unavailable
+;- ETH_DMASR [8]: Receive process stopped
+;- ETH_DMASR [9]: Receive watchdog timeout
+;- ETH_DMASR [10]: Early transmit interrupt
+;- ETH_DMASR [13]: Fatal bus error
+;Only unmasked bits affect the abnormal interrupt summary bit.
+;This is a sticky bit and it must be cleared each time a corresponding bit that causes AIS to be set is cleared.
+14 ERS;Early receive status
+;This bit indicates that the DMA had filled the first data buffer of the packet. Receive Interrupt ETH_DMASR [6] automatically clears this bit.
+13 FBES;Fatal bus error status
+;This bit indicates that a bus error occurred, as detailed in [25:23]. When this bit is set, the corresponding DMA engine disables all its bus accesses.
+12-11 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+10 ETS;Early transmit status
+;This bit indicates that the frame to be transmitted was fully transferred to the Transmit FIFO.
+9 RWTS; Receive watchdog timeout status
+;This bit is asserted when a frame with a length greater than 2 048 bytes is received.
+8 RPSS;Receive process stopped status
+;This bit is asserted when the receive process enters the Stopped state.
+7 RBUS;Receive buffer unavailable status
+;This bit indicates that the next descriptor in the receive list is owned by the host and cannot be acquired by the DMA. Receive process is suspended. To resume processing receive descriptors, the host should change the ownership of the descriptor and issue a Receive Poll Demand command. If no Receive Poll Demand is issued, receive process resumes when the next recognized incoming frame is received. ETH_DMASR [7] is set only when the previous receive descriptor was owned by the DMA.
+6 RS;Receive status
+;This bit indicates the completion of the frame reception. Specific frame status information has been posted in the descriptor. Reception remains in the Running state.
+5 TUS;Transmit underflow status
+4 ROS;Receive overflow status
+3 TJTS;Transmit jabber timeout status
+;This bit indicates that the transmit jabber timer expired, meaning that the transmitter had been excessively active. The transmission process is aborted and placed in the Stopped state. This causes the transmit jabber timeout TDES0[14] flag to be asserted.
+2 TBUS;Transmit buffer unavailable status
+;This bit indicates that the next descriptor in the transmit list is owned by the host and cannot be acquired by the DMA. Transmission is suspended. Bits [22:20] explain the transmit process state transitions. To resume processing transmit descriptors, the host should change the ownership of the bit of the descriptor and then issue a Transmit Poll Demand command.
+1 TPSS; Transmit process stopped status
+;This bit is set when the transmission is stopped.
+0 TS;Transmit status
+
+ETH_DMATDLAR field descriptions;
+31-0 STL;Start of transmit list
+;This field contains the base address of the first descriptor in the transmit descriptor list. The LSB bits [1/2/3:0] for 32/64/128-bit bus width) are internally ignored and taken as all-zero by the DMA. Hence these LSB bits are read-only.
+
+
+ETH_DMARDLAR field descriptions;
+31-0 SRL;Start of receive list
+;This field contains the base address of the first descriptor in the receive descriptor list. The LSB bits [1/2/3:0] for 32/64/128-bit bus width) are internally ignored and taken as all-zero by the DMA. Hence these LSB bits are read only.
+
+
+ETH_DMARPDR field descriptions;
+31-0 RPD;Receive poll demand
+;When these bits are written with any value, the DMA reads the current descriptor pointed to by the ETH_DMACHRDR register. If that descriptor is not available (owned by Host), reception returns to the Suspended state and ETH_DMASR register bit 7 is not asserted. If the descriptor is available, the Receive DMA returns to active state.
+
+
+ETH_DMATPDR field descriptions;
+31-0 TPD;Transmit poll demand
+;When these bits are written with any value, the DMA reads the current descriptor pointed to by the ETH_DMACHTDR register. If that descriptor is not available (owned by Host), transmission returns to the Suspend state and ETH_DMASR register bit 2 is asserted. If the descriptor is available, transmission resumes.
+
+ETH_DMABMR field descriptions;
+31-26 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+25 AAB;Address-alignedbeats
+;When this bit is set high and the FB bit equals 1, the AHB interface generates all bursts aligned to the start address LS bits. If the FB bit equals 0, the first burst (accessing the data buffer’s start address) is not aligned, but subsequent bursts are aligned to the address.
+24 FPM;4xPBLmode
+;When set high, this bit multiplies the PBL value programmed (bits [22:17] and bits [13:8]) four times. Thus the DMA transfers data in a maximum of 4, 8, 16, 32, 64 and 128 beats depending on the PBL value.
+23 USP;UseseparatePBL
+;When set high, it configures the RxDMA to use the value configured in bits [22:17] as PBL while the PBL value in bits [13:8] is applicable to TxDMA operations only. When this bit is cleared, the PBL value in bits [13:8] is applicable for both DMA engines.
+27-21 RDP;RxDMA PBL
+;These bits indicate the maximum number of beats to be transferred in one RxDMA transaction. This is the maximum value that is used in a single block read/write operation. The RxDMA always attempts to burst as specified in RDP each time it starts a burst transfer on the host bus. RDP can be programmed with permissible values of 1, 2, 4, 8, 16, and 32. Any other value results in undefined behavior.
+;These bits are valid and applicable only when USP is set high.
+16 FB;Fixedburst
+;This bit controls whether the AHB Master interface performs fixed burst transfers or not. When set, the AHB uses only SINGLE, INCR4, INCR8 or INCR16 during start of normal burst transfers. When reset, the AHB uses SINGLE and INCR burst transfer operations.
+15-14 PM;RxTxpriorityratio
+;RxDMA requests are given priority over TxDMA requests in the following ratio
+13-8 BL;Programmableburstlength
+;These bits indicate the maximum number of beats to be transferred in one DMA transaction.
+;This is the maximum value that is used in a single block read/write operation. The DMA always attempts to burst as specified in PBL each time it starts a burst transfer on the host bus. PBL can be programmed with permissible values of 1, 2, 4, 8, 16, and 32. Any other value results in undefined behavior. When USP is set, this PBL value is applicable for TxDMA transactions only.
+7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6-2 DSL;Descriptorskiplength
+;This bit specifies the number of words to skip between two unchained descriptors. The address skipping starts from the end of current descriptor to the start of next descriptor. When DSL value equals zero, the descriptor table is taken as contiguous by the DMA, in Ring mode.
+1 DA;DMAArbitration
+;0; Round-robin with Rx:Tx priority given in bits [15:14] 
+;1; Rx has priority over Tx
+0 SR;Software reset
+;When this bit is set, the MAC DMA controller resets all MAC Subsystem internal registers and logic. It is cleared automatically after the reset operation has completed in all of the core clock domains. Read a 0 value in this bit before re-programming any register of the core.
+
+
+ETH_PTPTTLR field descriptions;
+31-0 TTSL;Targettimestamplow
+;This register stores the time in (signed) nanoseconds. When the value of the time stamp matches or exceeds both Target time stamp registers, the MAC, if enabled, generates an interrupt.
+
+ETH_PTPTTHR field descriptions;
+31-0 TTSH;Targettimestamphigh
+;This register stores the time in seconds. When the time stamp value matches or exceeds both Target time stamp registers, the MAC, if enabled, generates an interrupt.
+
+ETH_PTPTSAR field descriptions;
+31-0 TSA;Time stamp addend
+;This register indicates the 32-bit time value to be added to the Accumulator register to achieve time synchronization.
+
+ETH_PTPTSLUR field descriptions;
+31 TSUPNS;Timestamp update positive or negative sign
+;This bit indicates positive or negative time value. When set, the bit indicates that time representation is negative. When cleared, it indicates that time representation is positive. When TSSTI is set (system time initialization) this bit should be zero. If this bit is set when TSSTU is set, the value in the Time stamp update registers is subtracted from the system time. Otherwise it is added to the system time.
+30-0 TSUSS;Timestamp update subseconds
+;The value in this field indicates the subsecond time to be initialized or added to the system time. This value has an accuracy of 0.46 ns (in other words, a value of 0x0000_0001 is 0.46 ns).
+
+ETH_PTPTSHUR field descriptions;
+31-0 TSUS;Timestamp update second
+;The value in this field indicates the time, in seconds, to be initialized or added to the system time.
+
+ETH_PTPTSLR field descriptions;
+31 STPNS;Systemtimepositiveornegativesign
+;This bit indicates a positive or negative time value. When set, the bit indicates that time representation is negative. When cleared, it indicates that time representation is positive. Because the system time should always be positive, this bit is normally zero.
+30-0 STSS;System time subseconds
+;The value in this field has the subsecond time representation, with 0.46 ns accuracy.
+
+
+ETH_PTPTSHR field descriptions;
+31-0 STS;System time second
+;The value in this field indicates the current value in seconds of the System Time maintained by the core.
+
+ETH_PTPSSIR field descriptions;
+31-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 STSSI;System time subsecond increment
+;The value programmed in this register is added to the contents of the subsecond value of the system time in every update.
+
+ETH_PTPTSCR field descriptions;
+31-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5 TSARU;Timestamp addend register update
+;When this bit is set, the Time stamp addend register’s contents are updated to the PTP block for fine correction. This bit is cleared when the update is completed. This register bit must be read as zero before you can set it.
+4 TSITE;Timestamp interrupt trigger enable 
+;When this bit is set, a time stamp interrupt is generated when the system time becomes greater than the value written in Target Time register. When the Time Stamp Trigger interrupt is generated, this bit is cleared.
+3 TSSTU;Timestamp system time update
+;When this bit is set, the system time is updated (added to or subtracted from) with the value specified in the Time stamp high update and Time stamp low update registers. Both the TSSTU and TSSTI bits must be read as zero before you can set this bit. Once the update is completed in hardware, this bit is cleared.
+2 TSSTI;Timestamp system time initialize
+;When this bit is set, the system time is initialized (overwritten) with the value specified in the Time stamp high update and Time stamp low update registers. This bit must be read as zero before you can set it. When initialization is complete, this bit is cleared.
+1 TSFCU;Timestamp fine or coarse update
+;When set, this bit indicates that the system time stamp is to be updated using the Fine Update method. When cleared, it indicates the system time stamp is to be updated using the Coarse method.
+0 TSE;Timestamp enable
+;When this bit is set, time stamping is enabled for transmit and receive frames. When this bit is cleared, the time stamp function is suspended and time stamps are not added for transmit and receive frames. Because the maintained system time is suspended, you must always initialize the time stamp feature (system time) after setting this bit high.
+
+
+ETH_MMCRGUFCR field descriptions;
+31-0 RGUFC;Received good unicast frames counter
+
+
+ETH_MMCRFAECR field descriptions;
+31-0 RFAEC;Received frames alignment error counter 
+;Received frames with alignment error counter
+
+ETH_MMCRFCECR field descriptions;
+31-0 RFCEC;Received frames CRC error counter 
+;Received frames with CRC error counter
+
+
+ETH_MMCTGFCR field descriptions;
+31-0 TGFC;Transmitted good frames counter
+
+ETH_MMCTGFMSCCR field descriptions;
+31-0 TGFMSCC;Transmitted good frames more single collision counter 
+;Transmitted good frames after more than a single collision counter
+
+
+ETH_MMCTGFSCCR field descriptions;
+31-0 TGFSCC;Transmitted good frames single collision counter
+;Transmitted good frames after a single collision counter.
+
+ETH_MMCTIMR field descriptions;
+31-22 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+21 TGFM;Transmitted good frames interrupt mask
+;Setting this bit masks the TGFS interrupt when the transmitted, good frames, counter reaches half the maximum value.
+20-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15 TGFMSCM;Transmitted good frames more single collision interrupt mask
+;Setting this bit masks the TGFMSCS interrupt when the transmitted good frames after more than a single collision counter reaches half the maximum value.
+14 TGFSCM;Transmitted good frames single collision interrupt mask
+;Setting this bit masks the TGFSCS interrupt when the transmitted good frames after a single collision counter reaches half the maximum value.
+13-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ETH_MMCRIMR field descriptions;
+31-18 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+17 RGUFM;Received good unicast frames interrupt mask 
+;Setting this bit masks the RGUFS interrupt when the received, good unicast frames, counter reaches half the maximum value.
+16-7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6 RFAEM;Received frames alignment error interrupt mask
+;Setting this bit masks the RFAES interrupt when the received frames, with alignment error, counter reaches half the maximum value.
+5 RFCEM;Received frame CRC error interrupt mask
+;Setting this bit masks the RFCES interrupt when the received frames, with CRC error, counter reaches half the maximum value.
+4-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ETH_MMCTIR field descriptions;
+31-22 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+21 TGFS;Transmitted good frames status SSpecific
+;This bit is set when the transmitted, good frames, counter reaches half the maximum value.
+20-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15 TGFMSCS;Transmitted good frames more single collision status
+;This bit is set when the transmitted, good frames after more than a single collision, counter reaches half the maximum value.
+14 TGFSCS;Transmitted good frames single collision status
+;This bit is set when the transmitted, good frames after a single collision, counter reaches half the maximum value.
+13-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ETH_MMCRIR field descriptions;
+31-18 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+17 RGUFS;Received Good Unicast Frames Status SSpecific
+;This bit is set when the received, good unicast frames, counter reaches half the maximum value.
+16-7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6 RFAES;Received frames alignment error status
+;This bit is set when the received frames, with alignment error, counter reaches half the maximum value.
+5 RFCES;Received frames CRC error status
+;This bit is set when the received frames, with CRC error, counter reaches half the maximum value.
+4-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ETH_MMCCR field descriptions;
+31-4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 MCF;MMC counter freeze
+;When set, this bit freezes all the MMC counters to their current value. (None of the MMC counters are updated due to any transmitted or received frame until this bit is cleared to 0. If any MMC counter is read with the Reset on Read bit set, then that counter is also cleared in this mode.)
+2 ROR;Resetonread
+;When this bit is set, the MMC counters is reset to zero after read (self-clearing after reset).
+;The counters are cleared when the least significant byte lane (bits [7:0]) is read.
+1 CSR;Counter stop rollover
+;When this bit is set, the counter does not roll over to zero after it reaches the maximum value.
+0 CR;Counter reset
+;When it is set, all counters are reset. This bit is cleared automatically after 1 clock cycle.
+
+
+ETH_MACA3LR field descriptions;
+31-0 MACA3L;MACaddress3low[31:0]
+;This field contains the lower 32;bits of the 6-byte second MAC address3. The content of this field is undefined until loaded by the application after the initialization process.
+
+ETH_MACA3HR field descriptions;
+31 AE;Addressenable
+;When this bit is set, the address filters use the MAC address1 for perfect filtering. When this bit is cleared, the address filters ignore the address for filtering.
+30 SA;Sourceaddress
+;When this bit is set, the MAC address1[47:0] is used for comparison with the SA fields of the received frame.
+;When this bit is cleared, the MAC address1[47:0] is used for comparison with the DA fields of the received frame.
+29-24 MBC;Maskbytecontrol
+;These bits are mask control bits for comparison of each of the MAC address1 bytes. When they are set high, the MAC core does not compare the corresponding byte of received DA/SA with the contents of the MAC address1 registers. Each bit controls the masking of the bytes as follows:
+23-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 MACA3H;MACaddress1high[47:32]
+;This field contains the upper 16 bits (47:32) of the 6-byte second MAC address.
+
+
+ETH_MACA2LR field descriptions;
+31-0 MACA2L;MACaddress2low[31:0]
+;This field contains the lower 32;bits of the 6-byte second MAC address2. The content of this field is undefined until loaded by the application after the initialization process.
+
+ETH_MACA2HR field descriptions;
+31 AE;Addressenable
+;When this bit is set, the address filters use the MAC address1 for perfect filtering. When this bit is cleared, the address filters ignore the address for filtering.
+30 SA;Sourceaddress
+;When this bit is set, the MAC address1[47:0] is used for comparison with the SA fields of the received frame.
+;When this bit is cleared, the MAC address1[47:0] is used for comparison with the DA fields of the received frame.
+29-24 MBC;Maskbytecontrol
+;These bits are mask control bits for comparison of each of the MAC address1 bytes. When they are set high, the MAC core does not compare the corresponding byte of received DA/SA with the contents of the MAC address1 registers. Each bit controls the masking of the bytes as follows:
+23-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 MACA2H;MACaddress1high[47:32]
+;This field contains the upper 16 bits (47:32) of the 6-byte second MAC address.
+
+
+ETH_MACA1LR field descriptions;
+31-0 MACA1L;MACaddress1low[31:0]
+;This field contains the lower 32;bits of the 6-byte MAC address1. The content of this field is undefined until loaded by the application after the initialization process.
+
+ETH_MACA1HR field descriptions;
+31 AE;Addressenable
+;When this bit is set, the address filters use the MAC address1 for perfect filtering. When this bit is cleared, the address filters ignore the address for filtering.
+30 SA;Sourceaddress
+;When this bit is set, the MAC address1[47:0] is used for comparison with the SA fields of the received frame.
+;When this bit is cleared, the MAC address1[47:0] is used for comparison with the DA fields of the received frame.
+29-24 MBC;Maskbytecontrol
+;These bits are mask control bits for comparison of each of the MAC address1 bytes. When they are set high, the MAC core does not compare the corresponding byte of received DA/SA with the contents of the MAC address1 registers. Each bit controls the masking of the bytes as follows:
+23-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 MACA1H;MACaddress1high[47:32]
+;This field contains the upper 16 bits (47:32) of the 6-byte second MAC address.
+
+
+ETH_MACA0LR field descriptions;
+31-0 MACA0L;MACaddress0low[31:0]
+;This field contains the lower 32;bits of the 6-byte MAC address0. This is used by the MAC for filtering for received frames and for inserting the MAC address in the transmit flow control (Pause) frames.
+
+
+ETH_MACA0HR field descriptions;
+31 MO;Always1. READ ONLY
+30-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 MACA0H;MACaddress0high[47:32]
+;This field contains the upper 16 bits (47:32) of the 6-byte MAC address0. This is used by the MAC for filtering for received frames and for inserting the MAC address in the transmit flow control (Pause) frames.
+
+
+
+ETH_MACIMR field descriptions;
+15-10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9 TSTIM;Timestamp trigger interrupt mask
+;When set, this bit disables the MACSR[TSTS] interrupt generation.
+8-4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 PMTIM;PMT interrupt mask
+;When set, this bit disables the assertion of the interrupt signal due to the setting of the MACSR[PMTS] Status bit.
+2-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ETH_MACSR field descriptions;
+15-10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9 TSTS;Timestamp trigger status
+;This bit is set high when the system time value equals or exceeds the value specified in the Target time high and low registers. This bit is cleared by reading the ETH_PTPTSSR register.
+8-7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6 MMCTS;MMC transmit status
+;If MMCTIR is more than 0, MMCTS is 1.
+;If MMCTIR is 0, MMCTS is 0.
+;This bit is set high whenever an interrupt is generated in the ETH_MMCTIR register. This bit is cleared when all the bits in this interrupt register (ETH_MMCTIR) are cleared.
+5 MMCRS;MMC receive status
+;If MMCRIR is more than 0, MMCRS is 1.
+;If MMCRIR is 0, MMCRS is 0.
+;This bit is set high whenever an interrupt is generated in the ETH_MMCRIR register. This bit is cleared when all the bits in this interrupt register (ETH_MMCRIR) are cleared
+4 MMCS;MMC status
+;if MMCTS is 1, MMCS is 1.
+;if MMCRS is 1, MMCS is 1.
+;if MMCRS is 0 and MMCTS is 0, MMCS is 0.
+;This bit is set high whenever any of bits 6:5 is set high. It is cleared only when both bits are low.
+3 PMTS;PMT status
+;This bit is set whenever a Magic packet or Wake-on-LAN frame is received in Power-down mode (see bits 5 and 6 in the ETH_MACPMTCSR register Ethernet MAC PMT control and status register (ETH_MACPMTCSR)). This bit is cleared when both bits[6:5], of this last register, are cleared due to a read operation to the ETH_MACPMTCSR register.
+2-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+
+ETH_MACPMTCSR field descriptions;
+31 WFFRPR;Wakeupframefilterregisterpointerreset
+;When set, it resets the Remote wakeup frame filter register pointer to 0b000. It is automatically cleared after 1 clock cycle.
+30-10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9 GU;Globalunicast
+;When set, it enables any unicast packet filtered by the MAC (DAF) address recognition to be a wakeup frame.
+8-7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6 WFR;Wakeup frame received
+;When set, this bit indicates the power management event was generated due to reception of a wakeup frame. This bit is cleared by a read into this register.
+5 MPR;Magic packet received
+;When set, this bit indicates the power management event was generated by the reception of a Magic Packet. This bit is cleared by a read into this register.
+4-3  Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 WFE;Wakeupframeenable
+;When set, this bit enables the generation of a power management event due to wakeup frame reception.
+1 MPE;MagicPacketenable
+;When set, this bit enables the generation of a power management event due to Magic Packet reception.
+0 PD;Powerdown
+;When this bit is set, all received frames will be dropped. This bit is cleared automatically when a magic packet or wakeup frame is received, and Power-down mode is disabled. Frames received after this bit is cleared are forwarded to the application. This bit must only be set when either the Magic Packet Enable or Wakeup Frame Enable bit is set high.
+
+ETH_MACRWUFFR field descriptions;
+
+
+ETH_MACVLANTR field descriptions;
+31-17 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+16 VLANTC;12-bitVLANtagcomparison
+;When this bit is set, a 12-bit VLAN identifier, rather than the complete 16-bit VLAN tag, is used for comparison and filtering. Bits[11:0] of the VLAN tag are compared with the corresponding field in the received VLAN-tagged frame.
+;When this bit is reset, all 16 bits of the received VLAN frame’s fifteenth and sixteenth bytes are used for comparison.
+15-0 VLANTI;VLANtagidentifier(forreceiveframes)
+;This contains the 802.1Q VLAN tag to identify VLAN frames, and is compared to the fifteenth and sixteenth bytes of the frames being received for VLAN frames. Bits[15:13] are the user priority, Bit[12] is the canonical format indicator (CFI) and bits[11:0] are the VLAN tag’s VLAN identifier (VID) field. When the VLANTC bit is set, only the VID (bits[11:0]) is used for comparison.
+;If VLANTI (VLANTI[11:0] if VLANTC is set) is all zeros, the MAC does not check the fifteenth and sixteenth bytes for VLAN tag comparison, and declares all frames with a Type field value of 0x8100 as VLAN frames.
+
+
+ETH_MACFCR field descriptions;
+31-16 PT;Pause time
+;This field holds the value to be used in the Pause Time field in the transmit control frame. If the Pause Time bits is configured to be double-synchronized to the MII clock domain, then consecutive write operations to this register should be performed only after at least 4 clock cycles in the destination clock domain.
+15-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 ZQPD;Zero-quantapausedisable
+;When set, this bit disables the automatic generation of Zero-quanta pause control frames on the deassertion of the flow-control signal from the FIFO layer.
+;When this bit is reset, normal operation with automatic Zero-quanta pause control frame generation is enabled.
+6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-4 PLT;Pauselowthreshold
+;This field configures the threshold of the Pause timer at which the Pause frame is automatically retransmitted. The threshold values should always be less than the Pause Time configured in bits[31:16]. For example, if PT = 100H (256 slot-times), and PLT = 01, then a second PAUSE frame is automatically transmitted if initiated at 228 (256 - 28) slot- times after the first PAUSE frame is transmitted.
+3 UPFD;Unicastpauseframedetect
+;When this bit is set, the MAC detects the Pause frames with the station’s unicast address specified in the ETH_MACA0HR and ETH_MACA0LR registers, in addition to detecting Pause frames with the unique multicast address.
+;When this bit is reset, the MAC detects only a Pause frame with the unique multicast address specified in the 802.3x standard.
+2 RFCE;Receive flow control enable
+;When this bit is set, the MAC decodes the received Pause frame and disables its transmitter for a specified (Pause Time) time.
+;When this bit is reset, the decode function of the Pause frame is disabled.
+1 TFCE;Transmit flow control enable
+;In Full-duplex mode, when this bit is set, the MAC enables the flow control operation to transmit Pause frames. When this bit is reset, the flow control operation in the MAC is disabled, and the MAC does not transmit any Pause frames.
+;In Half-duplex mode, when this bit is set, the MAC enables the back-pressure operation. When this bit is reset, the back pressure feature is disabled.
+0 FCB/BPA;Flowcontrolbusy/backpressureactivate
+;This bit initiates a Pause Control frame in Full-duplex mode and activates the back pressure function in Half-duplex mode if TFCE bit is set.
+;In Full-duplex mode, this bit should be read as 0 before writing to the Flow control register. To initiate a Pause control frame, the Application must set this bit to 1. During a transfer of the Control frame, this bit continues to be set to signify that a frame transmission is in progress. After completion of the Pause control frame transmission, the MAC resets this bit to 0. The Flow control register should not be written to until this bit is cleared.
+;In Half-duplex mode, when this bit is set (and TFCE is set), back pressure is asserted by the MAC core. During back pressure, when the MAC receives a new frame, the transmitter starts sending a JAM pattern resulting in a collision. When the MAC is configured to Full- duplex mode, the BPA is automatically disabled.
+
+
+ETH_MACMIIDR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 MD;MII data
+;This contains the 16-bit data value read from the PHY after a Management Read operation, or the 16-bit data value to be written to the PHY before a Management Write operation.
+
+
+ETH_MACMIIAR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-11 PA;PHY address
+;This field tells which of the 32;possible PHY devices are being accessed.
+10-6 MR;MII register
+;These bits select the desired MII register in the selected PHY device.
+5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4-2 CR;Clock range
+;The CR clock range selection determines the HCLK frequency and is used to decide the frequency of the MDC clock:
+1 MW;MII write
+;When set, this bit tells the PHY that this will be a Write operation using the MII Data register. If this bit is not set, this will be a Read operation, placing the data in the MII Data register.
+0 MB;MII busy
+;This bit should read a logic 0 before writing to ETH_MACMIIAR and ETH_MACMIIDR. This bit must also be reset to 0 during a Write to ETH_MACMIIAR. During a PHY register access, this bit is set to 0b1 by the application to indicate that a read or write access is in progress. ETH_MACMIIDR (MII Data) should be kept valid until this bit is cleared by the MAC during a PHY Write operation. The ETH_MACMIIDR is invalid until this bit is cleared by the MAC during a PHY Read operation. The ETH_MACMIIAR (MII Address) should not be written to until this bit is cleared.
+
+ETH_MACHTLR field descriptions;
+31-0 HTL;Hashtablelow
+;This field contains the lower 32;bits of the Hash table.
+
+ETH_MACHTHR field descriptions;
+31-0 HTH;Hashtablehigh
+;This field contains the upper 32;bits of Hash table.
+
+ETH_MACCR field descriptions;
+31-24 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+23 WD;Watchdog disable
+;When this bit is set, the MAC disables the watchdog timer on the receiver, and can receive frames of up to 16 384 bytes.
+;When this bit is reset, the MAC allows no more than 2 048 bytes of the frame being received and cuts off any bytes received after that.
+22 JD;Jabber disable
+;When this bit is set, the MAC disables the jabber timer on the transmitter, and can transfer frames of up to 16 384 bytes.
+;When this bit is reset, the MAC cuts off the transmitter if the application sends out more than 2 048 bytes of data during transmission.
+21-20 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+19-17 IFG;Interframegap
+;These bits control the minimum interframe gap between frames during transmission.
+16 CSD;Carriersense disable
+;When set high, this bit makes the MAC transmitter ignore the MII CRS signal during frame transmission in Half-duplex mode. No error is generated due to Loss of Carrier or No Carrier during such transmission.
+;When this bit is low, the MAC transmitter generates such errors due to Carrier Sense and even aborts the transmissions.
+15 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+14 FES;FastEthernetspeed
+;Indicates the speed in Fast Ethernet (MII) mode
+13 ROD;Receiveowndisable
+;When this bit is set, the MAC disables the reception of frames in Half-duplex mode.
+;When this bit is reset, the MAC receives all packets that are given by the PHY while transmitting.
+;This bit is not applicable if the MAC is operating in Full-duplex mode.
+12 LM;Loopbackmode
+;When this bit is set, the MAC operates in loopback mode at the MII. The MII receive clock input (RX_CLK) is required for the loopback to work properly, as the transmit clock is not looped-back internally.
+11 DM;Duplexmode
+;When this bit is set, the MAC operates in a Full-duplex mode where it can transmit and receive simultaneously.
+10 IPCO;IPv4checksumoffload
+;When set, this bit enables IPv4 checksum checking for received frame payloads' TCP/UDP/ICMP headers. When this bit is reset, the checksum offload function in the receiver is disabled and the corresponding PCE and IP HCE status bits (see Table 214) are always cleared.
+9 RD;Retrydisable
+;When this bit is set, the MAC attempts only 1 transmission. When a collision occurs on the MII, the MAC ignores the current frame transmission and reports a Frame Abort with excessive collision error in the transmit frame status.
+;When this bit is reset, the MAC attempts retries based on the settings of BL.
+8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 APCS;Automaticpad/CRCstripping
+;When this bit is set, the MAC strips the Pad/FCS field on incoming frames only if the length’s field value is less than or equal to 1 500 bytes. All received frames with length field greater than or equal to 1 501 bytes are passed on to the application without stripping the Pad/FCS field.
+;When this bit is reset, the MAC passes all incoming frames unmodified.
+6-5 BL;Back-offlimit
+;The Back-off limit determines the random integer number (r) of slot time delays (4 096 bit times for 1000 Mbit/s and 512 bit times for 10/100 Mbit/s) the MAC waits before rescheduling a transmission attempt during retries after a collision.
+4 DC;Deferralcheck
+;When this bit is set, the deferral check function is enabled in the MAC. The MAC issues a Frame Abort status, along with the excessive deferral error bit set in the transmit frame status when the transmit state machine is deferred for more than 24 288 bit times in 10/100- Mbit/s mode. Deferral begins when the transmitter is ready to transmit, but is prevented because of an active CRS (carrier sense) signal on the MII. Defer time is not cumulative. If the transmitter defers for 10 000 bit times, then transmits, collides, backs off, and then has to defer again after completion of back-off, the deferral timer resets to 0 and restarts.
+;When this bit is reset, the deferral check function is disabled and the MAC defers until the CRS signal goes inactive. This bit is applicable only in Half-duplex mode.
+3 TE;Transmitterenable
+;When this bit is set, the transmit state machine of the MAC is enabled for transmission on the MII. When this bit is reset, the MAC transmit state machine is disabled after the completion of the transmission of the current frame, and does not transmit any further frames.
+2 RE;Receiverenable
+;When this bit is set, the receiver state machine of the MAC is enabled for receiving frames from the MII. When this bit is reset, the MAC receive state machine is disabled after the completion of the reception of the current frame, and will not receive any further frames from the MII.
+1-0 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+
+ETH_MACFFR field descriptions;
+31 RA;Receiveall
+;When this bit is set, the MAC receiver passes all received frames on to the application, irrespective of whether they have passed the address filter. The result of the SA/DA filtering is updated (pass or fail) in the corresponding bits in the receive status word. When this bit is reset, the MAC receiver passes on to the application only those frames that have passed the SA/DA address filter.
+30-11 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+10 HPF;Hash or perfectfilter
+;When this bit is set and if the HM or HU bit is set, the address filter passes frames that match either the perfect filtering or the hash filtering.
+;When this bit is cleared and if the HU or HM bit is set, only frames that match the Hash filter are passed.
+9 SAF;Source address filter
+;The MAC core compares the SA field of the received frames with the values programmed in the enabled SA registers. If the comparison matches, then the SAMatch bit in the RxStatus word is set high. When this bit is set high and the SA filter fails, the MAC drops the frame. When this bit is reset, the MAC core forwards the received frame to the application. It also forwards the updated SA Match bit in RxStatus depending on the SA address comparison.
+8 SAIF;Source address inverse filtering
+;When this bit is set, the address check block operates in inverse filtering mode for the SA address comparison. The frames whose SA matches the SA registers are marked as failing the SA address filter.
+;When this bit is reset, frames whose SA does not match the SA registers are marked as failing the SA address filter.
+7-6 PCF;Pass control frames
+;These bits control the forwarding of all control frames (including unicast and multicast PAUSE frames). Note that the processing of PAUSE control frames depends only on RFCE in Flow Control register[2].
+;00; MAC prevents all control frames from reaching the application
+;01; MAC prevents all control frames from reaching the application
+;10; MAC forwards all control frames to application even if they fail the address filter
+;11; MAC forwards control frames that pass the address filter.
+5 BFD;Broadcast frames disable
+;When this bit is set, the address filters filter all incoming broadcast frames.
+;When this bit is reset, the address filters pass all received broadcast frames.
+4 PAM;Pass all multicast
+;When set, this bit indicates that all received frames with a multicast destination address (first bit in the destination address field is '1') are passed.
+;When reset, filtering of multicast frame depends on the HM bit.
+3 DAIF;Destination address inverse filtering
+;When this bit is set, the address check block operates in inverse filtering mode for the DA address comparison for both unicast and multicast frames.
+;When reset, normal filtering of frames is performed.
+2 HM;Hash multicast
+;When set, MAC performs destination address filtering of received multicast frames according to the hash table.
+;When reset, the MAC performs a perfect destination address filtering for multicast frames, that is, it compares the DA field with the values programmed in DA registers.
+1 HU;Hash unicast
+;When set, MAC performs destination address filtering of unicast frames according to the hash table.
+;When reset, the MAC performs a perfect destination address filtering for unicast frames, that is, it compares the DA field with the values programmed in DA registers.
+0 PM;Promiscuousmode
+;When this bit is set, the address filters pass all incoming frames regardless of their destination or source address. The SA/DA filter fails status bits in the receive status word are always cleared when PM is set.

@@ -1,0 +1,307 @@
+4001_3C00;ADC status register (ADC3_SR);32;R/W;0h;MUST CHECK
+4001_3C04;ADC control register 1 (ADC3_CR1);32;R/W;0h;
+4001_3C08;ADC control register 2 (ADC3_CR2);32;R/W;0h;
+4001_3C0C;ADC sample time register 1 (ADC3_SMPR1);32;R/W;0h;
+4001_3C10;ADC sample time register 2 (ADC3_SMPR2);32;R/W;0h;
+4001_3C14;ADC injected channel data offset register 1 (ADC3_JOFR1);32;R/W;0h;
+4001_3C18;ADC injected channel data offset register 2 (ADC3_JOFR2);32;R/W;0h;
+4001_3C1C;ADC injected channel data offset register 3 (ADC3_JOFR3);32;R/W;0h;
+4001_3C20;ADC injected channel data offset register 4 (ADC3_JOFR4);32;R/W;0h;
+4001_3C24;ADC watchdog high threshold register (ADC3_HTR);32;R/W;FFFh;
+4001_3C28;ADC watchdog low threshold register (ADC3_LTR);32;R/W;0h;
+4001_3C2C;ADC regular sequence register 1 (ADC3_SQR1);32;R/W;0h;
+4001_3C30;ADC regular sequence register 2 (ADC3_SQR2);32;R/W;0h;
+4001_3C34;ADC regular sequence register 3 (ADC3_SQR3);32;R/W;0h;
+4001_3C38;ADC injected sequence register (ADC3_JSQR);32;R/W;0h;
+4001_3C3C;ADC injected data register 1 (ADC3_JDR1);32;R;0h;
+4001_3C40;ADC injected data register 2 (ADC3_JDR2);32;R;0h;
+4001_3C44;ADC injected data register 3 (ADC3_JDR3);32;R;0h;
+4001_3C48;ADC injected data register 4 (ADC3_JDR4);32;R;0h;
+4001_3C4C;ADC regular data register (ADC3_DR);32;R;0h;
+4001_2800;ADC status register (ADC2_SR);32;R/W;0h;MUST CHECK
+4001_2804;ADC control register 1 (ADC2_CR1);32;R/W;0h;
+4001_2808;ADC control register 2 (ADC2_CR2);32;R/W;0h;
+4001_280C;ADC sample time register 1 (ADC2_SMPR1);32;R/W;0h;
+4001_2810;ADC sample time register 2 (ADC2_SMPR2);32;R/W;0h;
+4001_2814;ADC injected channel data offset register 1 (ADC2_JOFR1);32;R/W;0h;
+4001_2818;ADC injected channel data offset register 2 (ADC2_JOFR2);32;R/W;0h;
+4001_281C;ADC injected channel data offset register 3 (ADC2_JOFR3);32;R/W;0h;
+4001_2820;ADC injected channel data offset register 4 (ADC2_JOFR4);32;R/W;0h;
+4001_2824;ADC watchdog high threshold register (ADC2_HTR);32;R/W;FFFh;
+4001_2828;ADC watchdog low threshold register (ADC2_LTR);32;R/W;0h;
+4001_282C;ADC regular sequence register 1 (ADC2_SQR1);32;R/W;0h;
+4001_2830;ADC regular sequence register 2 (ADC2_SQR2);32;R/W;0h;
+4001_2834;ADC regular sequence register 3 (ADC2_SQR3);32;R/W;0h;
+4001_2838;ADC injected sequence register (ADC2_JSQR);32;R/W;0h;
+4001_283C;ADC injected data register 1 (ADC2_JDR1);32;R;0h;
+4001_2840;ADC injected data register 2 (ADC2_JDR2);32;R;0h;
+4001_2844;ADC injected data register 3 (ADC2_JDR3);32;R;0h;
+4001_2848;ADC injected data register 4 (ADC2_JDR4);32;R;0h;
+4001_284C;ADC regular data register (ADC2_DR);32;R;0h;
+4001_2400;ADC status register (ADC1_SR);32;R/W;0h;MUST CHECK
+4001_2404;ADC control register 1 (ADC1_CR1);32;R/W;0h;
+4001_2408;ADC control register 2 (ADC1_CR2);32;R/W;0h;
+4001_240C;ADC sample time register 1 (ADC1_SMPR1);32;R/W;0h;
+4001_2410;ADC sample time register 2 (ADC1_SMPR2);32;R/W;0h;
+4001_2414;ADC injected channel data offset register 1 (ADC1_JOFR1);32;R/W;0h;
+4001_2418;ADC injected channel data offset register 2 (ADC1_JOFR2);32;R/W;0h;
+4001_241C;ADC injected channel data offset register 3 (ADC1_JOFR3);32;R/W;0h;
+4001_2420;ADC injected channel data offset register 4 (ADC1_JOFR4);32;R/W;0h;
+4001_2424;ADC watchdog high threshold register (ADC1_HTR);32;R/W;FFFh;
+4001_2428;ADC watchdog low threshold register (ADC1_LTR);32;R/W;0h;
+4001_242C;ADC regular sequence register 1 (ADC1_SQR1);32;R/W;0h;
+4001_2430;ADC regular sequence register 2 (ADC1_SQR2);32;R/W;0h;
+4001_2434;ADC regular sequence register 3 (ADC1_SQR3);32;R/W;0h;
+4001_2438;ADC injected sequence register (ADC1_JSQR);32;R/W;0h;
+4001_243C;ADC injected data register 1 (ADC1_JDR1);32;R;0h;
+4001_2440;ADC injected data register 2 (ADC1_JDR2);32;R;0h;
+4001_2444;ADC injected data register 3 (ADC1_JDR3);32;R;0h;
+4001_2448;ADC injected data register 4 (ADC1_JDR4);32;R;0h;
+4001_244C;ADC regular data register (ADC1_DR);32;R;0h;
+
+;SR[JEOC];CR1[JEOCIE]; - 
+;SR[JEOC];- ;CR2[DMA]
+;SR[EOC];CR1[EOCIE]; -
+;SR[EOC]; -;CR2[DMA]
+
+ADCx_SR field descriptions;
+31-5 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+4 STRT;Regular channel Start flag rc_w0
+;This bit is set by hardware when regular channel conversion starts. It is cleared by software.
+;0; No regular channel conversion started 
+;1; Regular channel conversion has started
+3 JSTRT;Injected channel Start flag rc_w0
+;This bit is set by hardware when injected channel group conversion starts. It is cleared by software.
+;0; No injected group conversion started
+;1; Injected group conversion has started
+2 JEOC;Injected channel end of conversion rc_w0
+;This bit is set by hardware at the end of all injected group channel conversion. It is cleared by software.
+;0; Conversion is not complete
+;1; Conversion complete
+1 EOC;End of conversion rc_w0
+;This bit is set by hardware at the end of a group channel conversion (regular or injected). It is cleared by software or by reading the ADC_DR.
+;0; Conversion is not complete
+;1; Conversion complete
+0 AWD;Analog watchdog flag rc_w0
+;This bit is set by hardware when the converted voltage crosses the values programmed in the ADC_LTR and ADC_HTR registers. It is cleared by software.
+;0; No Analog watchdog event occurred
+;1; Analog watchdog event occurred
+
+ADCx_CR1 field descriptions;
+31-24 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+23 AWDEN;Analogwatchdogenableonregularchannels 
+;This bit is set/reset by software.
+;0; Analog watchdog disabled on regular channels
+;1; Analog watchdog enabled on regular channels
+22 JAWDEN;Analogwatchdogenableoninjectedchannels 
+;This bit is set/reset by software.
+;0; Analog watchdog disabled on injected channels
+;1; Analog watchdog enabled on injected channels
+21-20 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+19-16 DUALMOD;Dualmodeselection
+;These bits are written by software to select the operating mode.
+;0000; Independent mode.
+;0001; Combined regular simultaneous + injected simultaneous mode 
+;0010; Combined regular simultaneous + alternate trigger mode 
+;0011; Combined injected simultaneous + fast interleaved mode 
+;0100; Combined injected simultaneous + slow Interleaved mode 
+;0101; Injected simultaneous mode only
+;0110; Regular simultaneous mode only
+;0111; Fast interleaved mode only
+;1000; Slow interleaved mode only
+;1001; Alternate trigger mode only
+;NOTE: These bits are reserved in ADC2 and ADC3.
+;In dual mode, a change of channel configuration generates a restart that can produce a
+;loss of synchronization. It is recommended to disable dual mode before any configuration change.
+15-13 DISCNUM; Discontinuous mode channel count
+;These bits are written by software to define the number of regular channels to be converted in discontinuous mode, after receiving an external trigger.
+12 JDISCEN;Discontinuousmodeoninjectedchannels
+;This bit set and cleared by software to enable/disable discontinuous mode on injected group channels
+;0; Discontinuous mode on injected channels disabled
+;1; Discontinuous mode on injected channels enabled
+11 DISCEN;Discontinuousmodeonregularchannels
+;This bit set and cleared by software to enable/disable Discontinuous mode on regular channels.
+;0; Discontinuous mode on regular channels disabled
+;1; Discontinuous mode on regular channels enabled
+10 JAUTO;AutomaticInjectedGroupconversion
+;This bit set and cleared by software to enable/disable automatic injected group conversion after regular group conversion.
+;0; Automatic injected group conversion disabled
+;1; Automatic injected group conversion enabled
+9 AWDSGL;Enablethewatchdogonasinglechannelinscanmode
+;This bit set and cleared by software to enable/disable the analog watchdog on the channel identified by the AWDCH bits.
+;0; Analog watchdog enabled on all channels
+;1; Analog watchdog enabled on a single channel
+8 SCAN;Scanmode
+;This bit is set and cleared by software to enable/disable Scan mode. In Scan mode, the inputs selected through the ADC_SQRx or ADC_JSQRx registers are converted.
+;0; Scan mode disabled
+;1; Scan mode enabled
+;NOTE: An EOC or JEOC interrupt is generated only on the end of conversion of the last channel if the corresponding EOCIE or JEOCIE bit is set
+7 JEOCIE;Interrupt enable for injected channels
+;This bit is set and cleared by software to enable/disable the end of conversion interrupt for injected channels.
+;0; JEOC interrupt disabled
+;1; JEOC interrupt enabled. An interrupt is generated when the JEOC bit is set.
+6 AWDIE;Analog watchdog interrupt enable
+;This bit is set and cleared by software to enable/disable the analog watchdog interrupt. 
+;0; Analog watchdog interrupt disabled
+;1; Analog watchdog interrupt enabled
+5 EOCIE;Interrupt enable for EOC
+;This bit is set and cleared by software to enable/disable the End of Conversion interrupt. 
+;0; EOC interrupt disabled
+;1; EOC interrupt enabled. An interrupt is generated when the EOC bit is set.
+4-0 AWDCH;Analogwatchdogchannelselectbits
+;These bits are set and cleared by software. They select the input channel to be guarded by the Analog watchdog.
+
+ADCx_CR2 field descriptions;
+31-24 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+23 TSVREFE;Temperature sensor and VREFINT enable
+;This bit is set and cleared by software to enable/disable the temperature sensor and VREFINT channel. In devices with dual ADCs this bit is present only in ADC1.
+;0; Temperature sensor and VREFINT channel disabled
+;1; Temperature sensor and VREFINT channel enabled
+22 SWSTART;Start conversion of regular channels
+;This bit is set by software to start conversion and cleared by hardware as soon as conversion starts. It starts a conversion of a group of regular channels if SWSTART is selected as trigger event by the EXTSEL bits.
+;0; Reset state
+;1; Starts conversion of regular channels
+21 JSWSTART;Start conversion of injected channels
+;This bit is set and cleared by software and cleared by hardware as soon as the conversion starts. It starts a conversion of a group of injected channels (if JSWSTART is selected as trigger event by the JEXTSEL bits.
+;0; Reset state
+;1; Starts conversion of injected channels
+20 EXTTRIG;External trigger conversion mode for regular channels
+;This bit is set and cleared by software to enable/disable the external trigger used to start conversion of a regular channel group.
+;0; Conversion on external event disabled
+;1; Conversion on external event enabled
+19-17 EXTSEL;Externaleventselectforregulargroup
+;These bits select the external event used to trigger the start of conversion of a regular group;
+16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15 JEXTTRIG;Externaltriggerconversionmodeforinjectedchannels
+;This bit is set and cleared by software to enable/disable the external trigger used to start conversion of an injected channel group.
+;0; Conversion on external event disabled
+;1; Conversion on external event enabled
+14-12 JEXTSEL;Externaleventselectforinjectedgroup
+;These bits select the external event used to trigger the start of conversion of an injected group;
+11 ALIGN;Dataalignment
+;This bit is set and cleared by software. Refer to Figure 27.and Figure 28.
+;0; Right Alignment 
+;1; Left Alignment
+10-9  Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+8 DMA; Direct memory access mode
+;This bit is set and cleared by software. Refer to the DMA controller chapter for more details.
+;0; DMA mode disabled
+;1; DMA mode enabled
+;Only ADC1 and ADC3 can generate a DMA request.
+7-4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3 RSTCAL;Resetcalibration
+;This bit is set by software and cleared by hardware. It is cleared after the calibration registers are initialized.
+;0; Calibration register initialized.
+;1; Initialize calibration register.
+2 CAL;A/DCalibration
+;This bit is set by software to start the calibration. It is reset by hardware after calibration is complete.
+;0; Calibration completed
+;1; Enable calibration
+1 CONT;Continuous conversion
+;This bit is set and cleared by software. If set conversion takes place continuously till this bit is reset.
+;0; Single conversion mode
+;1; Continuous conversion mode
+0 ADON;A/D converter ON/OFF
+;This bit is set and cleared by software. If this bit holds a value of zero and a 1 is written to it then it wakes up the ADC from Power Down state. Conversion starts when this bit holds a value of 1 and a 1 is written to it. The application should allow a delay of tSTAB between power up and start of conversion. Refer to Figure 23. 
+;0; Disable ADC conversion/calibration and go to power down mode.
+;1; Enable ADC and to start conversion
+
+ADCx_SMPR1 field descriptions;
+31-24 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+23-0 SMPx;ChannelxSampletimeselection
+;These bits are written by software to select the sample time individually for each channel. During sample cycles channel selection bits must remain unchanged.
+;000; 1.5 cycles
+;001; 7.5 cycles
+;010; 13.5 cycles 
+
+ADCx_SMPR2 field descriptions;
+31-30 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+29-0 SMPx;ChannelxSampletimeselection
+
+ADCx_JOFRn field descriptions;
+31-12  Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+11-0 JOFFSETx;Data offset for injected channelx
+;These bits are written by software to define the offset to be subtracted from the raw converted data when converting injected channels. The conversion result can be read from in the ADC_JDRn registers.
+
+ADCx_HTR field descriptions;
+31-12 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+11-0 HT;Analogwatchdoghighthreshold
+;These bits are written by software to define the high threshold for the analog watchdog.
+
+ADCx_LTR field descriptions;
+31-12 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+11-0 LT;Analogwatchdoglowthreshold
+;These bits are written by software to define the low threshold for the analog watchdog.
+
+ADCx_SQR1 field descriptions;
+31-24 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+23-20 L; Regular channel sequence length
+;These bits are written by software to define the total number of conversions in the regular channel conversion sequence.
+19-15 SQ16; 16th conversion in regular sequence
+;These bits are written by software with the channel number (0..17) assigned as the 16th in the conversion sequence.
+14-10 SQ15; 15th conversion in regular sequence
+9-5 SQ14;1fourthconversioninregularsequence
+4-0 SQ13;13thconversioninregularsequence
+
+ADCx_SQR2 field descriptions;
+31-30 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+29-26 SQ12;12thconversioninregularsequence
+;These bits are written by software with the channel number (0..17) assigned as the 12th in the sequence to be converted.
+24-20 SQ11;11thconversioninregularsequence
+19-15 SQ10;10thconversioninregularsequence
+14-10 SQ9;9thconversioninregularsequence
+9-5 SQ8;8thconversioninregularsequence
+4-0 SQ7;7thconversioninregularsequence
+
+ADCx_SQR3 field descriptions;
+31-30 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+29-26 SQ6;6th conversion in regular sequence
+;These bits are written by software with the channel number (0..17) assigned as the 6th in the sequence to be converted.
+24-20 SQ5;5th conversion in regular sequence
+19-15 SQ4;fourth conversion in regular sequence
+14-10 SQ3;third conversion in regular sequence
+9-5 SQ2;second conversion in regular sequence
+4-0 SQ1;first conversion in regular sequence
+
+ADCx_JSQR field descriptions;
+31-22 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+21-20 JL;Injectedsequencelength
+;These bits are written by software to define the total number of conversions in the injected channel conversion sequence.
+;00; 1 conversion
+;01; 2 conversions
+;10; 3 conversions 
+;11; 4 conversions
+19-15 JSQ4;fourth conversion in injected sequence(whenJL=3)(1)
+;These bits are written by software with the channel number (0..17) assigned as the fourth in the sequence to be converted.
+;NOTE: Unlike a regular conversion sequence, if JL length is less than four, the channels are converted in a sequence starting from (4-JL). Example ADC_JSQR = 10 00011 00011 00111 00010 means that a scan conversion will convert the following channel sequence; 7, 3, 3. (not 2, 7, 3)
+14-10 JSQ3;third conversion in injected sequence(whenJL=3)
+9-5 JSQ2;second conversion in injected sequence(whenJL=3)
+4-0 JSQ1;first conversion in injected sequence(whenJL=3)
+
+ADCx_JDRn field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 JDATA;Injected data
+;These bits are read only. They contain the conversion result from injected channel x. 
+
+ADCx_DR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 DATA;Regular data
+;These bits are read only. They contain the conversion result from the regular channels. The data is left or right-aligned as shown in Figure 27 and Figure 28. 

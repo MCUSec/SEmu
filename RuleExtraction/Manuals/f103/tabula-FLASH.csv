@@ -1,0 +1,103 @@
+0x40022000; Flash access control register (FLASH_ACR);32;R/W;0;
+0x40022004; Flash key register (FLASH_KEYR);32;R/W;0;
+0x40022008; Flash option key register (FLASH_OPTKEYR);32;R/W;0;
+0x4002200C; Flash status register (FLASH_SR);32;R/W;0;
+0x40022010; Flash control register(FLASH_CR);32;R/W;80000000;
+0x40022014; Flash option control register (FLASH_OPTCR);32;R/W;FFFAAED;
+0x40022018; Flash option control register (FLASH_OPTCR1);32;R/W;FFF0000;
+0x4002201C; (FLASH_OBR);32;R/W;0;
+0x40022020; (FLASH_WRPR);32;R/W;0;
+
+FLASH_ACR field descriptions;
+12 DCRST;Data cache reset
+;0; Data cache is not reset
+;1; Data cache is reset
+11 ICRST;Instruction cache reset
+;0; Instruction cache is not reset
+;1; Instruction cache is reset
+;This bit can be written only when the I cache is disabled.
+10 DCEN;Datacacheenable 
+;0; Data cache is disabled
+;1; Data cache is enabled
+9 ICEN;Instructioncacheenable 
+;0; Instruction cache is disabled
+;1; Instruction cache is enabled
+8 PRFTEN;Prefetchenable 
+;0; Prefetch is disabled 
+;1; Prefetch is enabled
+3-0 LATENCY;Latency
+;These bits represent the ratio of the CPU clock period to the Flash memory access time.
+
+FLASH_KEYR field descriptions;
+31-0 FKEYR;FPECkey
+
+FLASH_OPTKEYR field descriptions;
+31-0 OPTKEYR;Optionbytekey
+
+FLASH_SR field descriptions;
+16 BSY;Busy
+;This bit indicates that a Flash memory operation is in progress to/from one bank. It is set at the beginning of a Flash memory operation and cleared when the operation finishes or an error occurs.
+8 RDERR;Proprietaryreadoutprotection(PCROP)error
+;Set by hardware when a read access through the D-bus is performed to an address belonging to a proprietary readout protected Flash sector.
+7 PGSERR;Programming sequence error
+;Set by hardware when a write access to the Flash memory is performed by the code while the control register has not been correctly configured.
+;Cleared by writing 1.
+6 PGPERR;Programmingparallelismerror
+;Set by hardware when the size of the access (byte, half-word, word, double word) during the program sequence does not correspond to the parallelism configuration PSIZE (x8, x16, x32, x64).
+;Cleared by writing 1.
+5 PGAERR;Programmingalignmenterror
+;Set by hardware when the data to program cannot be contained in the same 128-bit Flash memory row. Cleared by writing 1.
+4 WRPERR;Writeprotectionerror
+;Set by hardware when an address to be erased/programmed belongs to a write-protected part of the Flash memory.
+;Cleared by writing 1.
+1 OPERR;Operationerror
+;Set by hardware when a flash operation (programming/erase/read) request is detected and can not be run because of parallelism, alignment, write or read (PCROP) protection error. This bit is set only if error interrupts are enabled (ERRIE = 1).
+0 EOP;
+;this field is cleared by writing a 1.
+
+FLASH_CR field descriptions;
+31 LOCK;Lock
+;Write to 1 only. When it is set, this bit indicates that the FLASH_CR register is locked. It is cleared by hardware after detecting the unlock sequence.
+;In the event of an unsuccessful unlock operation, this bit remains set until the next reset.
+25 ERRIE;Error interrupt enable
+;This bit enables the interrupt generation when the OPERR bit in the FLASH_SR register is set to 1.
+;0; Error interrupt generation disabled 
+;1; Error interrupt generation enabled
+24 EOPIE;End of operation interrupt enable
+;This bit enables the interrupt generation when the EOP bit in the FLASH_SR register goes to 1.
+;0; Interrupt generation disabled 
+;1; Interrupt generation enabled
+16 STRT;Start
+;This bit triggers an erase operation when set. It is set only by software and cleared when the BSY bit is cleared.
+15 MER1;MassEraseofbank2sectors
+;Erase activated for bank 2 user sectors 12 to 23.
+9-8 PSIZE;Programsize
+;These bits select the program parallelism.
+7-3 SNB;Sectornumber
+;These bits select the sector to erase.
+2 MER;MassEraseofbank1sectors
+1 SER;SectorErase
+0 PG;Programming
+
+FLASH_OPTCR field descriptions;
+31 SPRMOD;SelectionofprotectionmodefornWPRibits
+;0; PCROP disabled. nWPRi bits used for Write protection on sector i. 
+;1; PCROP enabled. nWPRi bits used for PCROP protection on sector i
+30 DB1M;Dual-bankon1MbyteFlashmemorydevices
+27-16 nWRP;Not write protect
+15-8 RDP;Readprotect
+7-5 USER;Useroptionbytes
+4 BFB2;Dual-bankBootoptionbyte
+3-2 BOR_LEV;BORresetLevel
+1 OPTSTRT;Option start
+;This bit triggers a user option operation when set. It is set only by software and cleared when the BSY bit is cleared.
+0 OPTLOCK; Option lock
+;Write to 1 only. When this bit is set, it indicates that the FLASH_OPTCR register is locked. This bit is cleared by hardware after detecting the unlock sequence.
+;In the event of an unsuccessful unlock operation, this bit remains set until the next reset.
+
+FLASH_OPTCR1 field descriptions;
+27-16 nWRP; Not write protect
+
+FLASH_OBR field descriptions;
+
+FLASH_WRPR field descriptions;

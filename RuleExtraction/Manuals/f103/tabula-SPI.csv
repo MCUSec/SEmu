@@ -1,0 +1,258 @@
+4001_3000;SPI control register 1 (SPI1_CR1) (not used in I2S mode);16;R/W;00h;
+4001_3004;SPI control register 2 (SPI1_CR2);16;R/W;00h;
+4001_3008;SPI status register (SPI1_SR);16;R/W;02h;MUST CHECK
+4001_300C;SPI data register (SPI1_DR);16;R/W;00h;
+4001_3010;SPI CRC polynomial register (SPI1_CRCPR) (not used in I2S mode);16;R/W;07h;
+4001_3014;SPI RX CRC register (SPI1_RXCRCR) (not used in I2S mode);16;R;00h;
+4001_3018;SPI TX CRC register (SPI1_TXCRCR) (not used in I2S mode);16;R;00h;
+4001_301C;SPI_I2S configuration register (SPI1_I2SCFGR);16;R/W;00h;
+4001_3020;SPI_I2S prescaler register (SPI1_I2SPR);16;R/W;02h;
+4000_3800;SPI control register 1 (SPI2_CR1) (not used in I2S mode);16;R/W;00h;
+4000_3804;SPI control register 2 (SPI2_CR2);16;R/W;00h;
+4000_3808;SPI status register (SPI2_SR);16;R/W;02h;MUST CHECK
+4000_380C;SPI data register (SPI2_DR);16;R/W;00h;
+4000_3810;SPI CRC polynomial register (SPI2_CRCPR) (not used in I2S mode);16;R/W;07h;
+4000_3814;SPI RX CRC register (SPI2_RXCRCR) (not used in I2S mode);16;R;00h;
+4000_3818;SPI TX CRC register (SPI2_TXCRCR) (not used in I2S mode);16;R;00h;
+4000_381C;SPI_I2S configuration register (SPI2_I2SCFGR);16;R/W;00h;
+4000_3820;SPI_I2S prescaler register (SPI2_I2SPR);16;R/W;02h;
+4000_3C00;SPI control register 1 (SPI3_CR1) (not used in I2S mode);16;R/W;00h;
+4000_3C04;SPI control register 2 (SPI3_CR2);16;R/W;00h;
+4000_3C08;SPI status register (SPI3_SR);16;R/W;02h;MUST CHECK
+4000_3C0C;SPI data register (SPI3_DR);16;R/W;00h;
+4000_3C10;SPI CRC polynomial register (SPI3_CRCPR) (not used in I2S mode);16;R/W;07h;
+4000_3C14;SPI RX CRC register (SPI3_RXCRCR) (not used in I2S mode);16;R;00h;
+4000_3C18;SPI TX CRC register (SPI3_TXCRCR) (not used in I2S mode);16;R;00h;
+4000_3C1C;SPI_I2S configuration register (SPI3_I2SCFGR);16;R/W;00h;
+4000_3C20;SPI_I2S prescaler register (SPI3_I2SPR);16;R/W;02h;
+
+
+; TXE; TXEIE; -
+; TXE; -; TXDMAEN
+; RXNE; RXNEIE; -
+; RXNE; -; RXDMAEN
+; MODF; ERRIE; -
+; OVR; ERRIE; -
+; CRCERR; ERRIE; -
+; FRE; ERRIE; -
+
+SPI_CR1 field descriptions;
+15 BIDIMODE;Bidirectionaldatamodeenable 
+;0; 2-line unidirectional data mode selected 
+;1; 1-line bidirectional data mode selected
+;NOTE: This bit is not used in I2S mode
+14 BIDIOE;Outputenableinbidirectionalmode
+;This bit combined with the BIDImode bit selects the direction of transfer in bidirectional mode
+;0; Output disabled (receive-only mode)
+;1; Output enabled (transmit-only mode)
+;NOTE: This bit is not used in I2S mode.
+;In master mode, the MOSI pin is used while the MISO pin is used in slave mode.
+13 CRCEN;Hardware CRC calculation enable
+;0; CRC calculation disabled
+;1; CRC calculation enabled
+;NOTE: This bit should be written only when SPI is disabled (SPE = ‘0’) for correct operation. It is not used in I2S mode.
+12 CRCNEXT;CRCtransfernext
+;0; Data phase (no CRC phase)
+;1; Next transfer is CRC (CRC phase)
+;NOTE:When the SPI is configured in full duplex or transmitter only modes, CRCNEXT must be written as soon as the last data is written to the SPI_DR register.When the SPI is configured in receiver only mode, CRCNEXT must be set after the second last data reception.This bit should be kept cleared when the transfers are managed by DMA. It is not used in I2S mode.
+11 DFF;Dataframeformat
+;0; 8-bit data frame format is selected for transmission/reception 
+;1; 16-bit data frame format is selected for transmission/reception
+;NOTE: This bit should be written only when SPI is disabled (SPE = ‘0’) for correct operation. It is not used in I2S mode.
+10 RXONLY;Receiveonly
+;This bit combined with the BIDImode bit selects the direction of transfer in 2-line unidirectional mode. This bit is also useful in a multislave system in which this particular slave is not accessed, the output from the accessed slave is not corrupted.
+;0; Full duplex (Transmit and receive)
+;1; Output disabled (Receive-only mode)
+;NOTE: This bit is not used in I2S mode
+9 SSM;Softwareslavemanagement
+;When the SSM bit is set, the NSS pin input is replaced with the value from the SSI bit.
+;0; Software slave management disabled
+;1; Software slave management enabled
+;NOTE: This bit is not used in I2S mode
+8 SSI;Internalslaveselect
+;This bit has an effect only when the SSM bit is set. The value of this bit is forced onto the NSS pin and the IO value of the NSS pin is ignored.
+;NOTE: This bit is not used in I2S mode
+7 LSBFIRST;Frameformat
+;0; MSB transmitted first 
+;1; LSB transmitted first
+;NOTE: This bit should not be changed when communication is ongoing. It is not used in I2S mode
+6 SPE;SPIenable
+;0; Peripheral disabled
+;1; Peripheral enabled
+;NOTE: This bit is not used in I2S mode.
+;When disabling the SPI, follow the procedure described in Section 25.3.8.
+5-3 BR;Baudratecontrol 
+;000; fPCLK/2
+;001; fPCLK/4
+;010; fPCLK/8
+;011; fPCLK/16 100; fPCLK/32;101; fPCLK/64 110; fPCLK/128 111; fPCLK/256
+;NOTE: These bits should not be changed when communication is ongoing. They are not used in I2S mode.
+2 MSTR;Masterselection
+;0; Slave configuration
+;1; Master configuration
+;NOTE: This bit should not be changed when communication is ongoing. It is not used in I2S mode.
+1 CPOL;Clockpolarity
+;0; CK to 0 when idle
+;1; CK to 1 when idle
+;NOTE: This bit should not be changed when communication is ongoing. It is not used in I2S mode
+0 CPHA;Clockphase
+;0; The first clock transition is the first data capture edge
+;1; The second clock transition is the first data capture edge
+;NOTE: This bit should not be changed when communication is ongoing. It is not used in I2S mode
+
+SPI_CR2 field descriptions;
+15-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 TXEIE;Tx buffer empty interrupt enable
+;0; TXE interrupt masked
+;1; TXE interrupt not masked. Used to generate an interrupt request when the TXE flag is set.
+6 RXNEIE;RX buffer not empty interrupt enable
+;0; RXNE interrupt masked
+;1; RXNE interrupt not masked. Used to generate an interrupt request when the RXNE flag is set.
+5 ERRIE;Error interrupt enable
+;This bit controls the generation of an interrupt when an error condition occurs (CRCERR, OVR, MODF in SPI mode and UDR, OVR in I2S mode).
+;0; Error interrupt is masked
+;1; Error interrupt is enabled
+4-3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 SSOE;SS output enable
+;0; SS output is disabled in master mode and the cell can work in multimaster configuration
+;1; SS output is enabled in master mode and when the cell is enabled. The cell cannot work in a multimaster environment.
+;NOTE: This bit is not used in I2S mode
+1 TXDMAEN;Tx buffer DMA enable
+;When this bit is set, the DMA request is made whenever the TXE flag is set.
+;0; Tx buffer DMA disabled
+;1; Tx buffer DMA enabled
+0 RXDMAEN;Rx buffer DMA enable
+;When this bit is set, the DMA request is made whenever the RXNE flag is set. 
+;0; Rx buffer DMA disabled
+;1; Rx buffer DMA enabled
+
+SPI_SR field descriptions;
+15-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7 BSY;Busy flag
+;0; SPI (or I2S) not busy
+;1; SPI (or I2S) is busy in communication or Tx buffer is not empty
+;This flag is set and cleared by hardware.
+;NOTE: BSY flag must be used with caution; refer to Section 25.3.7 and Section 25.3.8.
+6 OVR;Overrun flag
+;0; No overrun occurred
+;1; Overrun occurred
+;This flag is set by hardware and reset by a software sequence. Refer to Section 25.4.7; Error flags for the software sequence.
+5 MODF;Mode fault
+;0; No mode fault occurred
+;1; Mode fault occurred
+;This flag is set by hardware and reset by a software sequence. Refer to Section 25.4.7; Error flags for the software sequence.
+;NOTE: This bit is not used in I2S mode
+4 CRCERR;CRC error flag
+;0; CRC value received matches the SPI_RXCRCR value
+;1; CRC value received does not match the SPI_RXCRCR value 
+;This flag is set by hardware and cleared by software writing 0.
+;NOTE: This bit is not used in I2S mode.
+3 UDR;Underrun flag
+;0; No underrun occurred
+;1; Underrun occurred
+;This flag is set by hardware and reset by a software sequence. Refer to Section 25.4.7;
+;Error flags for the software sequence. 
+;NOTE: This bit is not used in SPI mode.
+2 CHSIDE;Channel side
+;0; Channel Left has to be transmitted or has been received
+;1; Channel Right has to be transmitted or has been received
+;NOTE: This bit is not used for SPI mode and is meaningless in PCM mode.
+1 TXE;Transmit buffer empty
+;0; Tx buffer not empty
+;1; Tx buffer empty
+0 RXNE;Receive buffer not empty
+;0; Rx buffer empty
+;1; Rx buffer not empty
+
+SPI_DR field descriptions;
+15-0 DR[15-0];Dataregister
+;Data received or to be transmitted.
+;The data register is split into 2 buffers - one for writing (Transmit Buffer) and another one for reading (Receive buffer). A write to the data register will write into the Tx buffer and a read from the data register will return the value held in the Rx buffer.
+;NOTE:These notes apply to SPI mode;
+;Depending on the data frame format selection bit (DFF in SPI_CR1 register), the data sent or received is either 8-bit or 16-bit. This selection has to be made before enabling the SPI to ensure correct operation.
+;For an 8-bit data frame, the buffers are 8-bit and only the LSB of the register (SPI_DR[7:0]) is used for transmission/reception. When in reception mode, the MSB of the register (SPI_DR[15;8]) is forced to 0.
+;For a 16-bit data frame, the buffers are 16-bit and the entire register, SPI_DR[15:0] is used for transmission/reception.
+
+SPI_CRCPR field descriptions;
+15-0 CRCPOLY[15-0];CRCpolynomialregister
+;This register contains the polynomial for the CRC calculation.
+;The CRC polynomial (0007h) is the reset value of this register. Another polynomial can be configured as required.
+;NOTE: These bits are not used for the I2S mode.
+
+SPI_RXCRCR field descriptions;
+15-0 RXCRC[15-0];RxCRCregister
+;When CRC calculation is enabled, the RxCRC[15:0] bits contain the computed CRC value of the subsequently received bytes. This register is reset when the CRCEN bit in SPI_CR1 register is written to 1. The CRC is calculated serially using the polynomial programmed in the SPI_CRCPR register.
+;Only the 8 LSB bits are considered when the data frame format is set to be 8-bit data (DFF bit of SPI_CR1 is cleared). CRC calculation is done based on any CRC8 standard.
+;The entire 16-bits of this register are considered when a 16-bit data frame format is selected (DFF bit of the SPI_CR1 register is set). CRC calculation is done based on any CRC16 standard.
+;NOTE: A read to this register when the BSY Flag is set could return an incorrect value. These bits are not used for I2S mode.
+
+SPI_TXCRCR field descriptions;
+15-0 TXCRC[15-0];TxCRCregister
+;When CRC calculation is enabled, the TxCRC[7:0] bits contain the computed CRC value of the subsequently transmitted bytes. This register is reset when the CRCEN bit of SPI_CR1 is written to 1. The CRC is calculated serially using the polynomial programmed in the SPI_CRCPR register.
+;Only the 8 LSB bits are considered when the data frame format is set to be 8-bit data (DFF bit of SPI_CR1 is cleared). CRC calculation is done based on any CRC8 standard.
+;The entire 16-bits of this register are considered when a 16-bit data frame format is selected (DFF bit of the SPI_CR1 register is set). CRC calculation is done based on any CRC16 standard.
+;NOTE: A read to this register when the BSY flag is set could return an incorrect value. These bits are not used for I2S mode.
+
+SPI_I2SCFGR field descriptions;
+15-12 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+11 I2SMOD;I2Smodeselection
+;0; SPI mode is selected
+;1; I2S mode is selected
+10 I2SE;I2SEnable
+;0; I2S peripheral is disabled
+;1; I2S peripheral is enabled
+;NOTE: This bit is not used in SPI mode.
+9-8 I2SCFG;I2Sconfigurationmode
+;00; Slave - transmit
+;01; Slave - receive
+;10; Master - transmit
+;11; Master - receive
+7 PCMSYNC;PCMframesynchronization
+;0; Short frame synchronization
+;1; Long frame synchronization
+;NOTE: This bit has a meaning only if I2SSTD = 11 (PCM standard is used) It is not used in SPI mode.
+6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-4 I2SSTD;I2Sstandardselection 
+;00; I2S Philips standard.
+;01; MSB justified standard (left justified) 
+;10; LSB justified standard (right justified) 
+;11; PCM standard
+;For more details on I2S standards, refer to Section 25.4.2; Supported audio protocols. Not used in SPI mode.
+;NOTE: For correct operation, these bits should be configured when the I2S is disabled.
+3 CKPOL;Steadystateclockpolarity
+;0; I2S clock steady state is low level
+;1; I2S clock steady state is high level
+;NOTE: For correct operation, this bit should be configured when the I2S is disabled. This bit is not used in SPI mode
+2-1 DATLEN;Datalengthtobetransferred 
+;00; 16-bit data length
+;01; 24-bit data length 
+;10; 32-bit data length 
+;11; Not allowed
+;NOTE: For correct operation, these bits should be configured when the I2S is disabled. This bit is not used in SPI mode.
+0 CHLEN;Channellength(numberofbitsperaudiochannel)
+;0; 16-bit wide
+;1; 32-bit wide
+;The bit write operation has a meaning only if DATLEN = 00 otherwise the channel length is fixed to 32-bit by hardware whatever the value filled in. Not used in SPI mode.
+;NOTE: For correct operation, this bit should be configured when the I2S is disabled.
+
+SPI_I2SPR field descriptions;
+15-10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9 MCKOE;Masterclockoutputenable
+;0; Master clock output is disabled
+;1; Master clock output is enabled
+;NOTE: This bit should be configured when the I2S is disabled. It is used only when the I2S is in master mode.
+;This bit is not used in SPI mode.
+8 ODD;Oddfactorfortheprescaler
+;0; real divider value is = I2SDIV *2
+;1; real divider value is = (I2SDIV * 2)+1
+;Refer to Section 25.4.3; Clock generator. Not used in SPI mode.
+;NOTE: This bit should be configured when the I2S is disabled. It is used only when the I2S is in master mode.
+7-0 I2SDIV;I2SLinearprescaler
+;I2SDIV [7:0] = 0 or I2SDIV [7:0] = 1 are forbidden values.
+;NOTE: These bits should be configured when the I2S is disabled. It is used only when the I2S is in master mode.

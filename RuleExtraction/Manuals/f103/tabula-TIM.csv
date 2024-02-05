@@ -1,0 +1,681 @@
+0x40012C00;TIM1 and TIM8 control register 1 (TIM1_CR1);32;R/W;0h;
+0x40012C04;TIM1 and TIM8 control register 2 (TIM1_CR2);32;R/W;0h;
+0x40012C08;TIM1 and TIM8 slave mode control register (TIM1_SMCR);32;R/W;0h;
+0x40012C0C;TIM1 and TIM8 DMA/ interrupt enable register (TIM1_DIER);32;R/W;0h;
+0x40012C10;TIM1 and TIM8 status register (TIM1_SR);32;R/W;0h;
+0x40012C14;TIM1 and TIM8 event generation register (TIM1_EGR);32;R/W;0h;
+0x40012C18;TIM1 and TIM8 capture/compare mode register 1 (TIM1_CCMR1);32;R/W;0h;
+0x40012C1C;TIM1 and TIM8 capture/compare mode register 2 (TIM1_CCMR2);32;R/W;0h;
+0x40012C20;TIM1 and TIM8 capture/compare enable register (TIM1_CCER);32;R/W;0h;
+0x40012C24;TIM1 and TIM8 counter (TIM1_CNT);32;R/W;0h;
+0x40012C28;TIM1 and TIM8 prescaler (TIM1_PSC);32;R/W;0h;
+0x40012C2C;TIM1 and TIM8 auto-reload register (TIM1_ARR);32;R/W;FFFFh;
+0x40012C30;TIM1 and TIM8 repetition counter register (TIM1_RCR);32;R/W;0h;
+0x40012C34;TIM1 and TIM8 capture/compare register 1 (TIM1_CCR1);32;R/W;0h;
+0x40012C38;TIM1 and TIM8 capture/compare register 2 (TIM1_CCR2);32;R/W;0h;
+0x40012C3C;TIM1 and TIM8 capture/compare register 3 (TIM1_CCR3);32;R/W;0h;
+0x40012C40;TIM1 and TIM8 capture/compare register 4 (TIM1_CCR4);32;R/W;0h;
+0x40012C44;TIM1 and TIM8 break and dead-time register (TIM1_BDTR);32;R/W;0h;
+0x40012C48;TIM1 and TIM8 DMA control register (TIM1_DCR);32;R/W;0h;
+0x40012C4C;TIM1 and TIM8 DMA address for full transfer (TIM1_DMAR);32;R/W;0h;
+0x40000000;TIM1 and TIM8 control register 1 (TIM2_CR1);32;R/W;0h;
+0x40000004;TIM1 and TIM8 control register 2 (TIM2_CR2);32;R/W;0h;
+0x40000008;TIM1 and TIM8 slave mode control register (TIM2_SMCR);32;R/W;0h;
+0x4000000C;TIM1 and TIM8 DMA/ interrupt enable register (TIM2_DIER);32;R/W;0h;
+0x40000010;TIM1 and TIM8 status register (TIM2_SR);32;R/W;0h;
+0x40000014;TIM1 and TIM8 event generation register (TIM2_EGR);32;R/W;0h;
+0x40000018;TIM1 and TIM8 capture/compare mode register 1 (TIM2_CCMR1);32;R/W;0h;
+0x4000001C;TIM1 and TIM8 capture/compare mode register 2 (TIM2_CCMR2);32;R/W;0h;
+0x40000020;TIM1 and TIM8 capture/compare enable register (TIM2_CCER);32;R/W;0h;
+0x40000024;TIM1 and TIM8 counter (TIM2_CNT);32;R/W;0h;
+0x40000028;TIM1 and TIM8 prescaler (TIM2_PSC);32;R/W;0h;
+0x4000002C;TIM1 and TIM8 auto-reload register (TIM2_ARR);32;R/W;FFFFh;
+0x40000030;TIM1 and TIM8 repetition counter register (TIM2_RCR);32;R/W;0h;
+0x40000034;TIM1 and TIM8 capture/compare register 1 (TIM2_CCR1);32;R/W;0h;
+0x40000038;TIM1 and TIM8 capture/compare register 2 (TIM2_CCR2);32;R/W;0h;
+0x4000003C;TIM1 and TIM8 capture/compare register 3 (TIM2_CCR3);32;R/W;0h;
+0x40000040;TIM1 and TIM8 capture/compare register 4 (TIM2_CCR4);32;R/W;0h;
+0x40000044;TIM1 and TIM8 break and dead-time register (TIM2_BDTR);32;R/W;0h;
+0x40000048;TIM1 and TIM8 DMA control register (TIM2_DCR);32;R/W;0h;
+0x4000004C;TIM1 and TIM8 DMA address for full transfer (TIM2_DMAR);32;R/W;0h;
+0x40000400;TIM1 and TIM8 control register 1 (TIM3_CR1);32;R/W;0h;
+0x40000404;TIM1 and TIM8 control register 2 (TIM3_CR2);32;R/W;0h;
+0x40000408;TIM1 and TIM8 slave mode control register (TIM3_SMCR);32;R/W;0h;
+0x4000040C;TIM1 and TIM8 DMA/ interrupt enable register (TIM3_DIER);32;R/W;0h;
+0x40000410;TIM1 and TIM8 status register (TIM3_SR);32;R/W;0h;
+0x40000414;TIM1 and TIM8 event generation register (TIM3_EGR);32;R/W;0h;
+0x40000418;TIM1 and TIM8 capture/compare mode register 1 (TIM3_CCMR1);32;R/W;0h;
+0x4000041C;TIM1 and TIM8 capture/compare mode register 2 (TIM3_CCMR2);32;R/W;0h;
+0x40000420;TIM1 and TIM8 capture/compare enable register (TIM3_CCER);32;R/W;0h;
+0x40000424;TIM1 and TIM8 counter (TIM3_CNT);32;R/W;0h;
+0x40000428;TIM1 and TIM8 prescaler (TIM3_PSC);32;R/W;0h;
+0x4000042C;TIM1 and TIM8 auto-reload register (TIM3_ARR);32;R/W;FFFFh;
+0x40000430;TIM1 and TIM8 repetition counter register (TIM3_RCR);32;R/W;0h;
+0x40000434;TIM1 and TIM8 capture/compare register 1 (TIM3_CCR1);32;R/W;0h;
+0x40000438;TIM1 and TIM8 capture/compare register 2 (TIM3_CCR2);32;R/W;0h;
+0x4000043C;TIM1 and TIM8 capture/compare register 3 (TIM3_CCR3);32;R/W;0h;
+0x40000440;TIM1 and TIM8 capture/compare register 4 (TIM3_CCR4);32;R/W;0h;
+0x40000444;TIM1 and TIM8 break and dead-time register (TIM3_BDTR);32;R/W;0h;
+0x40000448;TIM1 and TIM8 DMA control register (TIM3_DCR);32;R/W;0h;
+0x4000044C;TIM1 and TIM8 DMA address for full transfer (TIM3_DMAR);32;R/W;0h;
+0x40000800;TIM1 and TIM8 control register 1 (TIM4_CR1);32;R/W;0h;
+0x40000804;TIM1 and TIM8 control register 2 (TIM4_CR2);32;R/W;0h;
+0x40000808;TIM1 and TIM8 slave mode control register (TIM4_SMCR);32;R/W;0h;
+0x4000080C;TIM1 and TIM8 DMA/ interrupt enable register (TIM4_DIER);32;R/W;0h;
+0x40000810;TIM1 and TIM8 status register (TIM4_SR);32;R/W;0h;
+0x40000814;TIM1 and TIM8 event generation register (TIM4_EGR);32;R/W;0h;
+0x40000818;TIM1 and TIM8 capture/compare mode register 1 (TIM4_CCMR1);32;R/W;0h;
+0x4000081C;TIM1 and TIM8 capture/compare mode register 2 (TIM4_CCMR2);32;R/W;0h;
+0x40000820;TIM1 and TIM8 capture/compare enable register (TIM4_CCER);32;R/W;0h;
+0x40000824;TIM1 and TIM8 counter (TIM4_CNT);32;R/W;0h;
+0x40000828;TIM1 and TIM8 prescaler (TIM4_PSC);32;R/W;0h;
+0x4000082C;TIM1 and TIM8 auto-reload register (TIM4_ARR);32;R/W;FFFFh;
+0x40000830;TIM1 and TIM8 repetition counter register (TIM4_RCR);32;R/W;0h;
+0x40000834;TIM1 and TIM8 capture/compare register 1 (TIM4_CCR1);32;R/W;0h;
+0x40000838;TIM1 and TIM8 capture/compare register 2 (TIM4_CCR2);32;R/W;0h;
+0x4000083C;TIM1 and TIM8 capture/compare register 3 (TIM4_CCR3);32;R/W;0h;
+0x40000840;TIM1 and TIM8 capture/compare register 4 (TIM4_CCR4);32;R/W;0h;
+0x40000844;TIM1 and TIM8 break and dead-time register (TIM4_BDTR);32;R/W;0h;
+0x40000848;TIM1 and TIM8 DMA control register (TIM4_DCR);32;R/W;0h;
+0x4000084C;TIM1 and TIM8 DMA address for full transfer (TIM4_DMAR);32;R/W;0h;
+0x40000C00;TIM1 and TIM8 control register 1 (TIM5_CR1);32;R/W;0h;
+0x40000C04;TIM1 and TIM8 control register 2 (TIM5_CR2);32;R/W;0h;
+0x40000C08;TIM1 and TIM8 slave mode control register (TIM5_SMCR);32;R/W;0h;
+0x40000C0C;TIM1 and TIM8 DMA/ interrupt enable register (TIM5_DIER);32;R/W;0h;
+0x40000C10;TIM1 and TIM8 status register (TIM5_SR);32;R/W;0h;
+0x40000C14;TIM1 and TIM8 event generation register (TIM5_EGR);32;R/W;0h;
+0x40000C18;TIM1 and TIM8 capture/compare mode register 1 (TIM5_CCMR1);32;R/W;0h;
+0x40000C1C;TIM1 and TIM8 capture/compare mode register 2 (TIM5_CCMR2);32;R/W;0h;
+0x40000C20;TIM1 and TIM8 capture/compare enable register (TIM5_CCER);32;R/W;0h;
+0x40000C24;TIM1 and TIM8 counter (TIM5_CNT);32;R/W;0h;
+0x40000C28;TIM1 and TIM8 prescaler (TIM5_PSC);32;R/W;0h;
+0x40000C2C;TIM1 and TIM8 auto-reload register (TIM5_ARR);32;R/W;FFFFh;
+0x40000C30;TIM1 and TIM8 repetition counter register (TIM5_RCR);32;R/W;0h;
+0x40000C34;TIM1 and TIM8 capture/compare register 1 (TIM5_CCR1);32;R/W;0h;
+0x40000C38;TIM1 and TIM8 capture/compare register 2 (TIM5_CCR2);32;R/W;0h;
+0x40000C3C;TIM1 and TIM8 capture/compare register 3 (TIM5_CCR3);32;R/W;0h;
+0x40000C40;TIM1 and TIM8 capture/compare register 4 (TIM5_CCR4);32;R/W;0h;
+0x40000C44;TIM1 and TIM8 break and dead-time register (TIM5_BDTR);32;R/W;0h;
+0x40000C48;TIM1 and TIM8 DMA control register (TIM5_DCR);32;R/W;0h;
+0x40000C4C;TIM1 and TIM8 DMA address for full transfer (TIM5_DMAR);32;R/W;0h;
+0x40001000;TIM1 and TIM8 control register 1 (TIM6_CR1);32;R/W;0h;
+0x40001004;TIM1 and TIM8 control register 2 (TIM6_CR2);32;R/W;0h;
+0x40001008;TIM1 and TIM8 slave mode control register (TIM6_SMCR);32;R/W;0h;
+0x4000100C;TIM1 and TIM8 DMA/ interrupt enable register (TIM6_DIER);32;R/W;0h;
+0x40001010;TIM1 and TIM8 status register (TIM6_SR);32;R/W;0h;
+0x40001014;TIM1 and TIM8 event generation register (TIM6_EGR);32;R/W;0h;
+0x40001018;TIM1 and TIM8 capture/compare mode register 1 (TIM6_CCMR1);32;R/W;0h;
+0x4000101C;TIM1 and TIM8 capture/compare mode register 2 (TIM6_CCMR2);32;R/W;0h;
+0x40001020;TIM1 and TIM8 capture/compare enable register (TIM6_CCER);32;R/W;0h;
+0x40001024;TIM1 and TIM8 counter (TIM6_CNT);32;R/W;0h;
+0x40001028;TIM1 and TIM8 prescaler (TIM6_PSC);32;R/W;0h;
+0x4000102C;TIM1 and TIM8 auto-reload register (TIM6_ARR);32;R/W;FFFFh;
+0x40001030;TIM1 and TIM8 repetition counter register (TIM6_RCR);32;R/W;0h;
+0x40001034;TIM1 and TIM8 capture/compare register 1 (TIM6_CCR1);32;R/W;0h;
+0x40001038;TIM1 and TIM8 capture/compare register 2 (TIM6_CCR2);32;R/W;0h;
+0x4000103C;TIM1 and TIM8 capture/compare register 3 (TIM6_CCR3);32;R/W;0h;
+0x40001040;TIM1 and TIM8 capture/compare register 4 (TIM6_CCR4);32;R/W;0h;
+0x40001044;TIM1 and TIM8 break and dead-time register (TIM6_BDTR);32;R/W;0h;
+0x40001048;TIM1 and TIM8 DMA control register (TIM6_DCR);32;R/W;0h;
+0x4000104C;TIM1 and TIM8 DMA address for full transfer (TIM6_DMAR);32;R/W;0h;
+0x40001400;TIM1 and TIM8 control register 1 (TIM7_CR1);32;R/W;0h;
+0x40001404;TIM1 and TIM8 control register 2 (TIM7_CR2);32;R/W;0h;
+0x40001408;TIM1 and TIM8 slave mode control register (TIM7_SMCR);32;R/W;0h;
+0x4000140C;TIM1 and TIM8 DMA/ interrupt enable register (TIM7_DIER);32;R/W;0h;
+0x40001410;TIM1 and TIM8 status register (TIM7_SR);32;R/W;0h;
+0x40001414;TIM1 and TIM8 event generation register (TIM7_EGR);32;R/W;0h;
+0x40001418;TIM1 and TIM8 capture/compare mode register 1 (TIM7_CCMR1);32;R/W;0h;
+0x4000141C;TIM1 and TIM8 capture/compare mode register 2 (TIM7_CCMR2);32;R/W;0h;
+0x40001420;TIM1 and TIM8 capture/compare enable register (TIM7_CCER);32;R/W;0h;
+0x40001424;TIM1 and TIM8 counter (TIM7_CNT);32;R/W;0h;
+0x40001428;TIM1 and TIM8 prescaler (TIM7_PSC);32;R/W;0h;
+0x4000142C;TIM1 and TIM8 auto-reload register (TIM7_ARR);32;R/W;FFFFh;
+0x40001430;TIM1 and TIM8 repetition counter register (TIM7_RCR);32;R/W;0h;
+0x40001434;TIM1 and TIM8 capture/compare register 1 (TIM7_CCR1);32;R/W;0h;
+0x40001438;TIM1 and TIM8 capture/compare register 2 (TIM7_CCR2);32;R/W;0h;
+0x4000143C;TIM1 and TIM8 capture/compare register 3 (TIM7_CCR3);32;R/W;0h;
+0x40001440;TIM1 and TIM8 capture/compare register 4 (TIM7_CCR4);32;R/W;0h;
+0x40001444;TIM1 and TIM8 break and dead-time register (TIM7_BDTR);32;R/W;0h;
+0x40001448;TIM1 and TIM8 DMA control register (TIM7_DCR);32;R/W;0h;
+0x4000144C;TIM1 and TIM8 DMA address for full transfer (TIM7_DMAR);32;R/W;0h;
+0x40013400;TIM1 and TIM8 control register 1 (TIM8_CR1);32;R/W;0h;
+0x40013404;TIM1 and TIM8 control register 2 (TIM8_CR2);32;R/W;0h;
+0x40013408;TIM1 and TIM8 slave mode control register (TIM8_SMCR);32;R/W;0h;
+0x4001340C;TIM1 and TIM8 DMA/ interrupt enable register (TIM8_DIER);32;R/W;0h;
+0x40013410;TIM1 and TIM8 status register (TIM8_SR);32;R/W;0h;
+0x40013414;TIM1 and TIM8 event generation register (TIM8_EGR);32;R/W;0h;
+0x40013418;TIM1 and TIM8 capture/compare mode register 1 (TIM8_CCMR1);32;R/W;0h;
+0x4001341C;TIM1 and TIM8 capture/compare mode register 2 (TIM8_CCMR2);32;R/W;0h;
+0x40013420;TIM1 and TIM8 capture/compare enable register (TIM8_CCER);32;R/W;0h;
+0x40013424;TIM1 and TIM8 counter (TIM8_CNT);32;R/W;0h;
+0x40013428;TIM1 and TIM8 prescaler (TIM8_PSC);32;R/W;0h;
+0x4001342C;TIM1 and TIM8 auto-reload register (TIM8_ARR);32;R/W;FFFFh;
+0x40013430;TIM1 and TIM8 repetition counter register (TIM8_RCR);32;R/W;0h;
+0x40013434;TIM1 and TIM8 capture/compare register 1 (TIM8_CCR1);32;R/W;0h;
+0x40013438;TIM1 and TIM8 capture/compare register 2 (TIM8_CCR2);32;R/W;0h;
+0x4001343C;TIM1 and TIM8 capture/compare register 3 (TIM8_CCR3);32;R/W;0h;
+0x40013440;TIM1 and TIM8 capture/compare register 4 (TIM8_CCR4);32;R/W;0h;
+0x40013444;TIM1 and TIM8 break and dead-time register (TIM8_BDTR);32;R/W;0h;
+0x40013448;TIM1 and TIM8 DMA control register (TIM8_DCR);32;R/W;0h;
+0x4001344C;TIM1 and TIM8 DMA address for full transfer (TIM8_DMAR);32;R/W;0h;
+0x40014C00;TIM1 and TIM8 control register 1 (TIM9_CR1);32;R/W;0h;
+0x40014C04;TIM1 and TIM8 control register 2 (TIM9_CR2);32;R/W;0h;
+0x40014C08;TIM1 and TIM8 slave mode control register (TIM9_SMCR);32;R/W;0h;
+0x40014C0C;TIM1 and TIM8 DMA/ interrupt enable register (TIM9_DIER);32;R/W;0h;
+0x40014C10;TIM1 and TIM8 status register (TIM9_SR);32;R/W;0h;
+0x40014C14;TIM1 and TIM8 event generation register (TIM9_EGR);32;R/W;0h;
+0x40014C18;TIM1 and TIM8 capture/compare mode register 1 (TIM9_CCMR1);32;R/W;0h;
+0x40014C1C;TIM1 and TIM8 capture/compare mode register 2 (TIM9_CCMR2);32;R/W;0h;
+0x40014C20;TIM1 and TIM8 capture/compare enable register (TIM9_CCER);32;R/W;0h;
+0x40014C24;TIM1 and TIM8 counter (TIM9_CNT);32;R/W;0h;
+0x40014C28;TIM1 and TIM8 prescaler (TIM9_PSC);32;R/W;0h;
+0x40014C2C;TIM1 and TIM8 auto-reload register (TIM9_ARR);32;R/W;FFFFh;
+0x40014C30;TIM1 and TIM8 repetition counter register (TIM9_RCR);32;R/W;0h;
+0x40014C34;TIM1 and TIM8 capture/compare register 1 (TIM9_CCR1);32;R/W;0h;
+0x40014C38;TIM1 and TIM8 capture/compare register 2 (TIM9_CCR2);32;R/W;0h;
+0x40014C3C;TIM1 and TIM8 capture/compare register 3 (TIM9_CCR3);32;R/W;0h;
+0x40014C40;TIM1 and TIM8 capture/compare register 4 (TIM9_CCR4);32;R/W;0h;
+0x40014C44;TIM1 and TIM8 break and dead-time register (TIM9_BDTR);32;R/W;0h;
+0x40014C48;TIM1 and TIM8 DMA control register (TIM9_DCR);32;R/W;0h;
+0x40014C4C;TIM1 and TIM8 DMA address for full transfer (TIM9_DMAR);32;R/W;0h;
+0x40015000;TIM1 and TIM8 control register 1 (TIM10_CR1);32;R/W;0h;
+0x40015004;TIM1 and TIM8 control register 2 (TIM10_CR2);32;R/W;0h;
+0x40015008;TIM1 and TIM8 slave mode control register (TIM10_SMCR);32;R/W;0h;
+0x4001500C;TIM1 and TIM8 DMA/ interrupt enable register (TIM10_DIER);32;R/W;0h;
+0x40015010;TIM1 and TIM8 status register (TIM10_SR);32;R/W;0h;
+0x40015014;TIM1 and TIM8 event generation register (TIM10_EGR);32;R/W;0h;
+0x40015018;TIM1 and TIM8 capture/compare mode register 1 (TIM10_CCMR1);32;R/W;0h;
+0x4001501C;TIM1 and TIM8 capture/compare mode register 2 (TIM10_CCMR2);32;R/W;0h;
+0x40015020;TIM1 and TIM8 capture/compare enable register (TIM10_CCER);32;R/W;0h;
+0x40015024;TIM1 and TIM8 counter (TIM10_CNT);32;R/W;0h;
+0x40015028;TIM1 and TIM8 prescaler (TIM10_PSC);32;R/W;0h;
+0x4001502C;TIM1 and TIM8 auto-reload register (TIM10_ARR);32;R/W;FFFFh;
+0x40015030;TIM1 and TIM8 repetition counter register (TIM10_RCR);32;R/W;0h;
+0x40015034;TIM1 and TIM8 capture/compare register 1 (TIM10_CCR1);32;R/W;0h;
+0x40015038;TIM1 and TIM8 capture/compare register 2 (TIM10_CCR2);32;R/W;0h;
+0x4001503C;TIM1 and TIM8 capture/compare register 3 (TIM10_CCR3);32;R/W;0h;
+0x40015040;TIM1 and TIM8 capture/compare register 4 (TIM10_CCR4);32;R/W;0h;
+0x40015044;TIM1 and TIM8 break and dead-time register (TIM10_BDTR);32;R/W;0h;
+0x40015048;TIM1 and TIM8 DMA control register (TIM10_DCR);32;R/W;0h;
+0x4001504C;TIM1 and TIM8 DMA address for full transfer (TIM10_DMAR);32;R/W;0h;
+0x40015400;TIM1 and TIM8 control register 1 (TIM11_CR1);32;R/W;0h;
+0x40015404;TIM1 and TIM8 control register 2 (TIM11_CR2);32;R/W;0h;
+0x40015408;TIM1 and TIM8 slave mode control register (TIM11_SMCR);32;R/W;0h;
+0x4001540C;TIM1 and TIM8 DMA/ interrupt enable register (TIM11_DIER);32;R/W;0h;
+0x40015410;TIM1 and TIM8 status register (TIM11_SR);32;R/W;0h;
+0x40015414;TIM1 and TIM8 event generation register (TIM11_EGR);32;R/W;0h;
+0x40015418;TIM1 and TIM8 capture/compare mode register 1 (TIM11_CCMR1);32;R/W;0h;
+0x4001541C;TIM1 and TIM8 capture/compare mode register 2 (TIM11_CCMR2);32;R/W;0h;
+0x40015420;TIM1 and TIM8 capture/compare enable register (TIM11_CCER);32;R/W;0h;
+0x40015424;TIM1 and TIM8 counter (TIM11_CNT);32;R/W;0h;
+0x40015428;TIM1 and TIM8 prescaler (TIM11_PSC);32;R/W;0h;
+0x4001542C;TIM1 and TIM8 auto-reload register (TIM11_ARR);32;R/W;FFFFh;
+0x40015430;TIM1 and TIM8 repetition counter register (TIM11_RCR);32;R/W;0h;
+0x40015434;TIM1 and TIM8 capture/compare register 1 (TIM11_CCR1);32;R/W;0h;
+0x40015438;TIM1 and TIM8 capture/compare register 2 (TIM11_CCR2);32;R/W;0h;
+0x4001543C;TIM1 and TIM8 capture/compare register 3 (TIM11_CCR3);32;R/W;0h;
+0x40015440;TIM1 and TIM8 capture/compare register 4 (TIM11_CCR4);32;R/W;0h;
+0x40015444;TIM1 and TIM8 break and dead-time register (TIM11_BDTR);32;R/W;0h;
+0x40015448;TIM1 and TIM8 DMA control register (TIM11_DCR);32;R/W;0h;
+0x4001544C;TIM1 and TIM8 DMA address for full transfer (TIM11_DMAR);32;R/W;0h;
+0x40001800;TIM1 and TIM8 control register 1 (TIM12_CR1);32;R/W;0h;
+0x40001804;TIM1 and TIM8 control register 2 (TIM12_CR2);32;R/W;0h;
+0x40001808;TIM1 and TIM8 slave mode control register (TIM12_SMCR);32;R/W;0h;
+0x4000180C;TIM1 and TIM8 DMA/ interrupt enable register (TIM12_DIER);32;R/W;0h;
+0x40001810;TIM1 and TIM8 status register (TIM12_SR);32;R/W;0h;
+0x40001814;TIM1 and TIM8 event generation register (TIM12_EGR);32;R/W;0h;
+0x40001818;TIM1 and TIM8 capture/compare mode register 1 (TIM12_CCMR1);32;R/W;0h;
+0x4000181C;TIM1 and TIM8 capture/compare mode register 2 (TIM12_CCMR2);32;R/W;0h;
+0x40001820;TIM1 and TIM8 capture/compare enable register (TIM12_CCER);32;R/W;0h;
+0x40001824;TIM1 and TIM8 counter (TIM12_CNT);32;R/W;0h;
+0x40001828;TIM1 and TIM8 prescaler (TIM12_PSC);32;R/W;0h;
+0x4000182C;TIM1 and TIM8 auto-reload register (TIM12_ARR);32;R/W;FFFFh;
+0x40001830;TIM1 and TIM8 repetition counter register (TIM12_RCR);32;R/W;0h;
+0x40001834;TIM1 and TIM8 capture/compare register 1 (TIM12_CCR1);32;R/W;0h;
+0x40001838;TIM1 and TIM8 capture/compare register 2 (TIM12_CCR2);32;R/W;0h;
+0x4000183C;TIM1 and TIM8 capture/compare register 3 (TIM12_CCR3);32;R/W;0h;
+0x40001840;TIM1 and TIM8 capture/compare register 4 (TIM12_CCR4);32;R/W;0h;
+0x40001844;TIM1 and TIM8 break and dead-time register (TIM12_BDTR);32;R/W;0h;
+0x40001848;TIM1 and TIM8 DMA control register (TIM12_DCR);32;R/W;0h;
+0x4000184C;TIM1 and TIM8 DMA address for full transfer (TIM12_DMAR);32;R/W;0h;
+0x40001C00;TIM1 and TIM8 control register 1 (TIM13_CR1);32;R/W;0h;
+0x40001C04;TIM1 and TIM8 control register 2 (TIM13_CR2);32;R/W;0h;
+0x40001C08;TIM1 and TIM8 slave mode control register (TIM13_SMCR);32;R/W;0h;
+0x40001C0C;TIM1 and TIM8 DMA/ interrupt enable register (TIM13_DIER);32;R/W;0h;
+0x40001C10;TIM1 and TIM8 status register (TIM13_SR);32;R/W;0h;
+0x40001C14;TIM1 and TIM8 event generation register (TIM13_EGR);32;R/W;0h;
+0x40001C18;TIM1 and TIM8 capture/compare mode register 1 (TIM13_CCMR1);32;R/W;0h;
+0x40001C1C;TIM1 and TIM8 capture/compare mode register 2 (TIM13_CCMR2);32;R/W;0h;
+0x40001C20;TIM1 and TIM8 capture/compare enable register (TIM13_CCER);32;R/W;0h;
+0x40001C24;TIM1 and TIM8 counter (TIM13_CNT);32;R/W;0h;
+0x40001C28;TIM1 and TIM8 prescaler (TIM13_PSC);32;R/W;0h;
+0x40001C2C;TIM1 and TIM8 auto-reload register (TIM13_ARR);32;R/W;FFFFh;
+0x40001C30;TIM1 and TIM8 repetition counter register (TIM13_RCR);32;R/W;0h;
+0x40001C34;TIM1 and TIM8 capture/compare register 1 (TIM13_CCR1);32;R/W;0h;
+0x40001C38;TIM1 and TIM8 capture/compare register 2 (TIM13_CCR2);32;R/W;0h;
+0x40001C3C;TIM1 and TIM8 capture/compare register 3 (TIM13_CCR3);32;R/W;0h;
+0x40001C40;TIM1 and TIM8 capture/compare register 4 (TIM13_CCR4);32;R/W;0h;
+0x40001C44;TIM1 and TIM8 break and dead-time register (TIM13_BDTR);32;R/W;0h;
+0x40001C48;TIM1 and TIM8 DMA control register (TIM13_DCR);32;R/W;0h;
+0x40001C4C;TIM1 and TIM8 DMA address for full transfer (TIM13_DMAR);32;R/W;0h;
+0x40002000;TIM1 and TIM8 control register 1 (TIM14_CR1);32;R/W;0h;
+0x40002004;TIM1 and TIM8 control register 2 (TIM14_CR2);32;R/W;0h;
+0x40002008;TIM1 and TIM8 slave mode control register (TIM14_SMCR);32;R/W;0h;
+0x4000200C;TIM1 and TIM8 DMA/ interrupt enable register (TIM14_DIER);32;R/W;0h;
+0x40002010;TIM1 and TIM8 status register (TIM14_SR);32;R/W;0h;
+0x40002014;TIM1 and TIM8 event generation register (TIM14_EGR);32;R/W;0h;
+0x40002018;TIM1 and TIM8 capture/compare mode register 1 (TIM14_CCMR1);32;R/W;0h;
+0x4000201C;TIM1 and TIM8 capture/compare mode register 2 (TIM14_CCMR2);32;R/W;0h;
+0x40002020;TIM1 and TIM8 capture/compare enable register (TIM14_CCER);32;R/W;0h;
+0x40002024;TIM1 and TIM8 counter (TIM14_CNT);32;R/W;0h;
+0x40002028;TIM1 and TIM8 prescaler (TIM14_PSC);32;R/W;0h;
+0x4000202C;TIM1 and TIM8 auto-reload register (TIM14_ARR);32;R/W;FFFFh;
+0x40002030;TIM1 and TIM8 repetition counter register (TIM14_RCR);32;R/W;0h;
+0x40002034;TIM1 and TIM8 capture/compare register 1 (TIM14_CCR1);32;R/W;0h;
+0x40002038;TIM1 and TIM8 capture/compare register 2 (TIM14_CCR2);32;R/W;0h;
+0x4000203C;TIM1 and TIM8 capture/compare register 3 (TIM14_CCR3);32;R/W;0h;
+0x40002040;TIM1 and TIM8 capture/compare register 4 (TIM14_CCR4);32;R/W;0h;
+0x40002044;TIM1 and TIM8 break and dead-time register (TIM14_BDTR);32;R/W;0h;
+0x40002048;TIM1 and TIM8 DMA control register (TIM14_DCR);32;R/W;0h;
+0x4000204C;TIM1 and TIM8 DMA address for full transfer (TIM14_DMAR);32;R/W;0h;
+
+TIMx_CR1 field descriptions;
+9-8 CKD;Clock division
+;This bit-field indicates the division ratio between the timer clock (CK_INT) frequency and the dead-time and sampling clock (tDTS)used by the dead-time generators and the digital filters (ETR, TIx),
+7 ARPE;Auto-reloadpreloadenable
+;0; TIMx_ARR register is not buffered 
+;1; TIMx_ARR register is buffered
+6-5 CMS;Center-alignedmodeselection
+;00; Edge-aligned mode. The counter counts up or down depending on the direction bit (DIR).
+;01; Center-aligned mode 1. The counter counts up and down alternatively. Output compare interrupt flags of channels configured in output (CCxS=00 in TIMx_CCMRx register) are set only when the counter is counting down.
+;10; Center-aligned mode 2. The counter counts up and down alternatively. Output compare interrupt flags of channels configured in output (CCxS=00 in TIMx_CCMRx register) are set only when the counter is counting up.
+;11; Center-aligned mode 3. The counter counts up and down alternatively. Output compare interrupt flags of channels configured in output (CCxS=00 in TIMx_CCMRx register) are set both when the counter is counting up or down.
+4 DIR;Direction
+;0; Counter used as upcounter
+;1; Counter used as downcounter
+3 OPM;Onepulsemode
+;0; Counter is not stopped at update event
+;1; Counter stops counting at the next update event (clearing the bit CEN)
+2 URS;Updaterequestsource
+;This bit is set and cleared by software to select the UEV event sources.
+;0; Any of the following events generate an update interrupt or DMA request if enabled. 
+;1; Only counter overflow/underflow generates an update interrupt or DMA request if enabled.
+1 UDIS;Updatedisable
+;This bit is set and cleared by software to enable/disable UEV event generation.
+;0; UEV enabled. The Update (UEV) event is generated by one of the following events
+;1; UEV disabled. The Update event is not generated, shadow registers keep their value
+;(ARR, PSC, CCRx). However the counter and the prescaler are reinitialized if the UG bit is set or if a hardware reset is received from the slave mode controller
+0 CEN;Counterenable 
+;0; Counter disabled
+;1; Counter enabled
+
+TIMx_CR2 field descriptions;
+14 OIS4;OutputIdlestate4(OC4output) refer to OIS1 bit
+13 OIS3N;OutputIdlestate3(OC3Noutput) refer to OIS1N bit
+12 OIS3;OutputIdlestate3(OC3output) refer to OIS1 bit
+11 OIS2N;OutputIdlestate2(OC2Noutput) refer to OIS1N bit
+10 OIS2;OutputIdlestate2(OC2output) refer to OIS1 bit
+9 OIS1N;OutputIdlestate1(OC1Noutput)
+;0; OC1N=0 after a dead-time when MOE=0 
+;1; OC1N=1 after a dead-time when MOE=0
+8 OIS1;OutputIdlestate1(OC1output)
+;0; OC1=0 (after a dead-time if OC1N is implemented) when MOE=0
+;1; OC1=1 (after a dead-time if OC1N is implemented) when MOE=0
+7 TI1S;TI1selection
+;0; The TIMx_CH1 pin is connected to TI1 input
+;1; The TIMx_CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)
+6-4 MMS;Master mode selection
+3 CCDS;Capture/compareDMAselection
+;0; CCx DMA request sent when CCx event occurs
+;1; CCx DMA requests sent when update event occurs
+2 CCUS;Capture/comparecontrolupdateselection
+;0; When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only
+;1; When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an rising edge occurs on TRGI
+0 CCPC;Capture/comparepreloadedcontrol
+;0; CCxE, CCxNE and OCxM bits are not preloaded
+;1; CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a commutation event (COM) occurs (COMG bit set or rising edge detected on TRGI, depending on the CCUS bit).
+
+TIMx_SMCR field descriptions;
+15 ETP;Externaltriggerpolarity
+;This bit selects whether ETR or ETR is used for trigger operations
+;0; ETR is non-inverted, active at high level or rising edge. 
+;1; ETR is inverted, active at low level or falling edge.
+14 ECE;Externalclockenable
+;This bit enables External clock mode 2.
+;0; External clock mode 2 disabled
+;1; External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal.
+13-12 ETPS;Externaltriggerprescaler
+;External trigger signal ETRP frequency must be at most 1/4 of TIMxCLK frequency. A prescaler can be enabled to reduce ETRP frequency. It is useful when inputting fast external clocks.
+;00; Prescaler OFF
+;01; ETRP frequency divided by 2
+;10; ETRP frequency divided by 4 
+;11; ETRP frequency divided by 8
+11-8 ETF;Externaltriggerfilter
+;This bit-field then defines the frequency used to sample ETRP signal and the length of the digital filter applied to ETRP. The digital filter is made of an event counter in which N consecutive events are needed to validate a transition on the output:
+7 MSM;Master/slavemode 
+;0; No action
+;1; The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event.
+6-4 TS;Triggerselection
+;This bit-field selects the trigger input to be used to synchronize the counter. 000: Internal Trigger 0 (ITR0)
+;001; Internal Trigger 1 (ITR1)
+;010; Internal Trigger 2 (ITR2)
+;011; Internal Trigger 3 (ITR3)
+;100; TI1 Edge Detector (TI1F_ED)
+;101; Filtered Timer Input 1 (TI1FP1)
+;110; Filtered Timer Input 2 (TI2FP2)
+;111; External Trigger input (ETRF)
+;See Table 82 for more details on ITRx meaning for each Timer.
+;Note: These bits must be changed only when they are not used (e.g. when SMS=000) to avoid wrong edge detections at the transition.
+2-0 SMS;Slavemodeselection
+;When external signals are selected the active edge of the trigger signal (TRGI) is linked to the polarity selected on the external input (see Input Control register and Control register description.
+
+TIMx_DIER field descriptions;
+14 TDE;Trigger DMA request enable 
+;0; Trigger DMA request disabled 
+;1; Trigger DMA request enabled
+13 COMDE;COM DMA request enable 
+;0; COM DMA request disabled
+;1; COM DMA request enabled
+12 CC4DE;Capture/Compare4 DMA request enable 
+;0; CC4 DMA request disabled
+;1; CC4 DMA request enabled
+11 CC3DE;Capture/Compare3 DMA request enable 
+;0; CC3 DMA request disabled
+;1; CC3 DMA request enabled
+10 CC2DE;Capture/Compare2 DMA request enable 
+;0; CC2 DMA request disabled
+;1; CC2 DMA request enabled
+9 CC1DE;Capture/Compare1 DMA request enable 
+;0; CC1 DMA request disabled
+;1; CC1 DMA request enabled
+8 UDE;Update DMA request enable 
+;0; Update DMA request disabled
+;1; Update DMA request enabled
+7 BIE;Break interrupt enable
+;0; Break interrupt disabled 
+;1; Break interrupt enabled
+6 TIE;Trigger interrupt enable
+;0; Trigger interrupt disabled
+;1; Trigger interrupt enabled
+5 COMIE;COM interrupt enable
+;0; COM interrupt disabled
+;1; COM interrupt enabled
+4 CC4IE;Capture/Compare4 interrupt enable
+;0; CC4 interrupt disabled
+;1; CC4 interrupt enabled
+3 CC3IE;Capture/Compare3 interrupt enable
+;0; CC3 interrupt disabled
+;1; CC3 interrupt enabled
+2 CC2IE;Capture/Compare2 interrupt enable
+;0; CC2 interrupt disabled
+;1; CC2 interrupt enabled
+1 CC1IE;Capture/Compare1 interrupt enable
+;0; CC1 interrupt disabled
+;1; CC1 interrupt enabled
+0 UIE;Update interrupt enable
+;0; Update interrupt disabled
+;1; Update interrupt enabled
+
+TIMx_SR field descriptions;
+12 CC4OF;Capture/Compare4 over capture flag 
+;refer to CC1OF description
+11 CC3OF;Capture/Compare3 over capture flag 
+;refer to CC1OF description
+10 CC2OF;Capture/Compare2 over capture flag 
+;refer to CC1OF description
+9 CC1OF;Capture/Compare1 over capture flag
+;0; No overcapture has been detected.
+;1; The counter value has been captured in TIMx_CCR1 register while CC1IF flag was already set
+7 BIF;Break interrupt flag error
+;This flag is set by hardware as soon as the break input goes active. It can be cleared by software if the break input is not active.
+;0; No break event occurred.
+;1; An active level has been detected on the break input.
+6 TIF;Trigger interrupt flag error
+;This flag is set by hardware on trigger event (active edge detected on TRGI input when the slave mode controller is enabled in all modes but gated mode, both edges in case gated mode is selected). It is cleared by software.
+;0; No trigger event occurred.
+;1; Trigger interrupt pending.
+5 COMIF;COM interrupt flag error
+;This flag is set by hardware on COM event (when Capture/compare Control bits - CCxE, CCxNE, OCxM - have been updated). It is cleared by software.
+;0; No COM event occurred.
+;1; COM interrupt pending.
+4 CC4IF;Capture/Compare4 interrupt flag SSpecific
+;refer to CC1IF description
+3 CC3IF;Capture/Compare3 interrupt flag SSpecific
+;refer to CC1IF description
+2 CC2IF;Capture/Compare2 interrupt flag  SSpecific
+;refer to CC1IF description
+1 CC1IF;Capture/Compare1 interrupt flag SSpecific
+;If channel CC1 is configured as output:
+;This flag is set by hardware when the counter matches the compare value, with some exception in center-aligned mode (refer to the CMS bits in the TIMx_CR1 register description). It is cleared by software.
+;0; No match.
+;1; The content of the counter TIMx_CNT matches the content of the TIMx_CCR1 register. When the contents of TIMx_CCR1 are greater than the contents of TIMx_ARR, the CC1IF bit goes high on the counter overflow (in upcounting and up/down-counting modes) or underflow (in downcounting mode)
+;If channel CC1 is configured as input:
+;This bit is set by hardware on a capture. It is cleared by software or by reading the TIMx_CCR1 register.
+;0; No input capture occurred
+;1; The counter value has been captured in TIMx_CCR1 register (An edge has been detected on IC1 which matches the selected polarity)
+0 UIF;Update interrupt flag SSpecific
+;This bit is set by hardware on an update event. It is cleared by software.
+;0; No update occurred.
+;1; Update interrupt pending. 
+;This bit is set by hardware when the registers are updated:
+;- At overflow or underflow regarding the repetition counter value (update if repetition counter = 0) and if the UDIS=0 in the TIMx_CR1 register.
+;- When CNT is reinitialized by software using the UG bit in TIMx_EGR register, if URS=0 and UDIS=0 in the TIMx_CR1 register.
+;- When CNT is reinitialized by a trigger event (refer to Section 14.4.3: TIM1 and TIM8 slave mode control register (TIMx_SMCR)), if URS=0 and UDIS=0 in the TIMx_CR1 register.
+
+TIMx_EGR field descriptions;
+7 BG;Break generation
+;This bit is set by software in order to generate an event, it is automatically cleared by hardware.
+;0; No action
+;1; A break event is generated. MOE bit is cleared and BIF flag is set. Related interrupt or DMA transfer can occur if enabled.
+6 TG;Triggergeneration
+;This bit is set by software in order to generate an event, it is automatically cleared by hardware.
+;0; No action
+;1; The TIF flag is set in TIMx_SR register. Related interrupt or DMA transfer can occur if enabled.
+5 COMG;Capture/Comparecontrolupdategeneration
+;This bit can be set by software, it is automatically cleared by hardware
+;0; No action
+;1; When CCPC bit is set, it allows to update CCxE, CCxNE and OCxM bits
+4 CC4G;Capture/Compare4generation
+3 CC3G;Capture/Compare3generation
+2 CC2G;Capture/Compare2generation
+1 CC1G;Capture/Compare1generation
+;This bit is set by software in order to generate an event, it is automatically cleared by hardware.
+0 UG;Updategeneration
+;This bit can be set by software, it is automatically cleared by hardware.
+;0; No action
+;1; Reinitialize the counter and generates an update of the registers. Note that the prescaler counter is cleared too (anyway the prescaler ratio is not affected). The counter is cleared if the center-aligned mode is selected or if DIR=0 (upcounting), else it takes the auto-reload value (TIMx_ARR) if DIR=1 (downcounting).
+
+TIMx_CCMR1 field descriptions;
+15 OC2CE;Outputcompare2clearenable 
+14-12 OC2M; Output compare 2 mode OC2PE:Outputcompare2preloadenable 
+11 OC2FE;Outputcompare2fastenable
+10 CC2S;Capture/Compare2selection
+;This bit-field defines the direction of the channel (input/output) as well as the used input.
+;00; CC2 channel is configured as output
+;01; CC2 channel is configured as input, IC2 is mapped on TI2
+;10; CC2 channel is configured as input, IC2 is mapped on TI1
+;11; CC2 channel is configured as input, IC2 is mapped on TRC. This mode is working only if an internal trigger input is selected through the TS bit (TIMx_SMCR register)
+;Note: CC2S bits are writable only when the channel is OFF (CC2E = ‘0’ in TIMx_CCER).
+9-8 OC1CE;Outputcompare1clearenable 
+7 OC1CE; Output compare 1 Clear Enable
+;0; OC1Ref is not affected by the ETRF Input
+;1; OC1Ref is cleared as soon as a High level is detected on ETRF input
+6-4 OC1M;Outputcompare1mode
+;These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
+;000; Frozen - The comparison between the output compare register TIMx_CCR1 and the counter TIMx_CNT has no effect on the outputs.(this mode is used to generate a timing base).
+;001; Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).
+;010; Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).
+;011; Toggle - OC1REF toggles when TIMx_CNT=TIMx_CCR1.
+;100; Force inactive level - OC1REF is forced low.
+;101; Force active level - OC1REF is forced high.
+;110; PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT<TIMx_CCR1 else inactive. In downcounting, channel 1 is inactive (OC1REF=‘0’) as long as TIMx_CNT>TIMx_CCR1 else active (OC1REF=’1’).
+;111; PWM mode 2 - In upcounting, channel 1 is inactive as long as TIMx_CNT<TIMx_CCR1 else active. In downcounting, channel 1 is active as long as TIMx_CNT>TIMx_CCR1 else inactive.
+3 OC1PE;Outputcompare1preloadenable
+;0; Preload register on TIMx_CCR1 disabled. TIMx_CCR1 can be written at anytime, the new value is taken in account immediately.
+;1; Preload register on TIMx_CCR1 enabled. Read/Write operations access the preload register. TIMx_CCR1 preload value is loaded in the active register at each update event.
+;Note: 1: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=’00’ (the channel is configured in output).
+;2 The PWM mode can be used without validating the preload register only in one pulse mode (OPM bit set in TIMx_CR1 register). Else the behavior is not guaranteed.
+2 OC1FE;Outputcompare1fastenable
+;This bit is used to accelerate the effect of an event on the trigger in input on the CC output. 
+;0; CC1 behaves normally depending on counter and CCR1 values even when the trigger is ON. The minimum delay to activate CC1 output when an edge occurs on the trigger input is 5 clock cycles.
+;1; An active edge on the trigger input acts like a compare match on CC1 output. Then, OC is set to the compare level independently from the result of the comparison. Delay to sample the trigger input and to activate CC1 output is reduced to 3 clock cycles. OCFE acts only if the channel is configured in PWM1 or PWM2 mode.
+1-0 CC1S;Capture/Compare1selection
+;This bit-field defines the direction of the channel (input/output) as well as the used input. 00: CC1 channel is configured as output
+;01; CC1 channel is configured as input, IC1 is mapped on TI1
+;10; CC1 channel is configured as input, IC1 is mapped on TI2
+;11; CC1 channel is configured as input, IC1 is mapped on TRC. This mode is working only if an internal trigger input is selected through TS bit (TIMx_SMCR register)
+;Note: CC1S bits are writable only when the channel is OFF (CC1E = ‘0’ in TIMx_CCER).
+
+TIMx_CCMR2 field descriptions;
+15 OC4CE;Outputcompare4clearenable 
+14-12 OC4M;Outputcompare4mode 
+11 OC4PE;Outputcompare4preloadenable 
+10 OC4FE;Outputcompare4fastenable 
+9-8 CC4S;Capture/Compare4selection
+;This bit-field defines the direction of the channel (input/output) as well as the used input. 
+;00; CC4 channel is configured as output
+;01; CC4 channel is configured as input, IC4 is mapped on TI4
+;10; CC4 channel is configured as input, IC4 is mapped on TI3
+;11; CC4 channel is configured as input, IC4 is mapped on TRC. This mode is working only if an internal trigger input is selected through TS bit (TIMx_SMCR register)
+;Note: CC4S bits are writable only when the channel is OFF (CC4E = ‘0’ in TIMx_CCER).
+7 OC3CE;Outputcompare3clearenable 
+6-4 OC3M;Outputcompare3mode 
+3 OC3PE;Outputcompare3preloadenable 
+2 OC3FE;Outputcompare3fastenable
+1-0 CC3S;Capture/Compare3selection
+;This bit-field defines the direction of the channel (input/output) as well as the used input.
+;00; CC3 channel is configured as output
+;01; CC3 channel is configured as input, IC3 is mapped on TI3
+;10; CC3 channel is configured as input, IC3 is mapped on TI4
+;11; CC3 channel is configured as input, IC3 is mapped on TRC. This mode is working only if an internal trigger input is selected through TS bit (TIMx_SMCR register)
+;Note: CC3S bits are writable only when the channel is OFF (CC3E = ‘0’ in TIMx_CCER).
+
+TIMx_CCER field descriptions;
+15 CC4NP;Capture/Compare4complementary output polarity 
+;refer to CC1NP description
+13 CC4P;Capture/Compare4 output polarity 
+;refer to CC1P description
+12 CC4E;Capture/Compare4 output enable 
+;refer to CC1E description
+11 CC3NP;Capture/Compare3complementary output polarity 
+;refer to CC1NP description
+10 CC3NE;Capture/Compare3complementary output enable 
+;refer to CC1NE description
+9 CC3P;Capture/Compare3 output polarity 
+;refer to CC1P description
+8 CC3E;Capture/Compare3 output enable
+7 CC2NP;Capture/Compare2complementary output polarity 
+;refer to CC1NP description
+6 CC2NE;Capture/Compare2complementary output enable 
+;refer to CC1NE description
+5 CC2P;Capture/Compare2 output polarity 
+;refer to CC1P description
+4 CC2E;Capture/Compare2 output enable 
+;refer to CC1E description
+3 CC1NP;Capture/Compare1complementary output polarity 
+;0; OC1N active high.
+;1; OC1N active low.
+2 CC1NE;Capture/Compare1complementary output enable
+;0; Off - OC1N is not active. OC1N level is then function of MOE, OSSI, OSSR, OIS1, OIS1N and CC1E bits.
+;1; On - OC1N signal is output on the corresponding output pin depending on MOE, OSSI, OSSR, OIS1, OIS1N and CC1E bits.
+1 CC1P;Capture/Compare1outputpolarity
+;CC1 channel configured as output:
+;0; OC1 active high
+;1; OC1 active low
+;CC1 channel configured as input:
+;This bit selects whether IC1 or IC1 is used for trigger or capture operations.
+;0; non-inverted: capture is done on a rising edge of IC1. When used as external trigger, IC1 is non-inverted.
+;1; inverted: capture is done on a falling edge of IC1. When used as external trigger, IC1 is inverted.
+;Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register).
+0 CC1E;Capture/Compare1 output enable
+;CC1 channel configured as output:
+;0; Off - OC1 is not active. OC1 level is then function of MOE, OSSI, OSSR, OIS1, OIS1N and CC1NE bits.
+;1; On - OC1 signal is output on the corresponding output pin depending on MOE, OSSI, OSSR, OIS1, OIS1N and CC1NE bits.
+;CC1 channel configured as input:
+;This bit determines if a capture of the counter value can actually be done into the input capture/compare register 1 (TIMx_CCR1) or not.
+;0; Capture disabled.
+;1; Capture enabled.
+
+TIMx_CNT field descriptions;
+15-0 CNT; Counter value
+
+TIMx_PSC field descriptions;
+15-0 PSC;Prescalervalue
+
+TIMx_ARR field descriptions;
+15-0 ARR;Auto-reload value
+;ARR is the value to be loaded in the actual auto-reload register.
+;Refer to Section 14.3.1: Time-base unit for more details about ARR update and behavior. The counter is blocked while the auto-reload value is null.
+
+TIMx_RCR field descriptions;
+7-0 REP;Repetition counter value
+;These bits allow the user to set-up the update rate of the compare registers (i.e. periodic transfers from preload to active registers) when preload registers are enable, as well as the update interrupt generation rate, if this interrupt is enable.
+;Each time the REP_CNT related downcounter reaches zero, an update event is generated and it restarts counting from REP value. As REP_CNT is reloaded with REP value only at the repetition update event U_RC, any write to the TIMx_RCR register is not taken in account until the next repetition update event.
+;It means in PWM mode (REP+1) corresponds to:
+;- the number of PWM periods in edge-aligned mode
+;- the number of half PWM period in center-aligned mode.
+
+TIMx_CCR1 field descriptions;
+15-0 CCR1;Capture/Compare1 value
+;If channel CC1 is configured as output:
+;CCR1 is the value to be loaded in the actual capture/compare 1 register (preload value). It is loaded permanently if the preload feature is not selected in the TIMx_CCMR1 register (bit OC1PE). Else the preload value is copied in the active capture/compare 1 register when an update event occurs.
+;The active capture/compare register contains the value to be compared to the counter TIMx_CNT and signaled on OC1 output.
+;If channel CC1 is configured as input:
+;CCR1 is the counter value transferred by the last input capture 1 event (IC1). The TIMx_CCR1 register is read-only and cannot be programmed.
+
+TIMx_CCR2 field descriptions;
+15-0 CCR2;Capture/Compare2value
+;If channel CC2 is configured as output:
+;CCR2 is the value to be loaded in the actual capture/compare 2 register (preload value). It is loaded permanently if the preload feature is not selected in the TIMx_CCMR2 register (bit OC2PE). Else the preload value is copied in the active capture/compare 2 register when an update event occurs.
+;The active capture/compare register contains the value to be compared to the counter TIMx_CNT and signalled on OC2 output.
+;If channel CC2 is configured as input:
+;CCR2 is the counter value transferred by the last input capture 2 event (IC2). The TIMx_CCR2 register is read-only and cannot be programmed.
+
+TIMx_CCR3 field descriptions;
+15-0 CCR3;Capture/Comparevalue
+;If channel CC3 is configured as output:
+;CCR3 is the value to be loaded in the actual capture/compare 3 register (preload value).
+;It is loaded permanently if the preload feature is not selected in the TIMx_CCMR3 register (bit OC3PE). Else the preload value is copied in the active capture/compare 3 register when an update event occurs.
+;The active capture/compare register contains the value to be compared to the counter TIMx_CNT and signalled on OC3 output.
+;If channel CC3 is configured as input:
+;CCR3 is the counter value transferred by the last input capture 3 event (IC3). The TIMx_CCR3 register is read-only and cannot be programmed.
+
+TIMx_CCR4 field descriptions;
+15-0 CCR4;Capture/Comparevalue
+;If channel CC4 is configured as output:
+;CCR4 is the value to be loaded in the actual capture/compare 4 register (preload value). It is loaded permanently if the preload feature is not selected in the TIMx_CCMR4 register (bit OC4PE). Else the preload value is copied in the active capture/compare 4 register when an update event occurs.
+;The active capture/compare register contains the value to be compared to the counter TIMx_CNT and signalled on OC4 output.
+;If channel CC4 is configured as input:
+;CCR4 is the counter value transferred by the last input capture 4 event (IC4). The TIMx_CCR3 register is read-only and cannot be programmed.
+
+TIMx_BDTR field descriptions;
+15 MOE;Mainoutputenable
+;This bit is cleared asynchronously by hardware as soon as the break input is active. It is set by software or automatically depending on the AOE bit. It is acting only on the channels which are configured in output.
+;0; OC and OCN outputs are disabled or forced to idle state.
+;1; OC and OCN outputs are enabled if their respective enable bits are set (CCxE, CCxNE in TIMx_CCER register).
+14 AOE;Automaticoutputenable
+;0; MOE can be set only by software
+;1; MOE can be set by software or automatically at the next update event (if the break input is not be active)
+13 BKP;Breakpolarity
+;0; Break input BRK is active low 
+;1; Break input BRK is active high
+12 BKE;Breakenable
+;0; Break inputs (BRK and CSS clock failure event) disabled 
+;1; Break inputs (BRK and CSS clock failure event) enabled
+11 OSSR;Off-stateselectionforRunmode
+;This bit is used when MOE=1 on channels having a complementary output which are configured as outputs. OSSR is not implemented if no complementary output is implemented in the timer.
+10 OSSI;Off-stateselectionforIdlemode
+;This bit is used when MOE=0 on channels configured as outputs.
+9-8 LOCK;Lockconfiguration
+;These bits offer a write protection against software errors.
+7-0 DTG;Dead-timegeneratorsetup
+;This bit-field defines the duration of the dead-time inserted between the complementary outputs. DT correspond to this duration.
+
+TIMx_DCR field descriptions;
+12-8 DBL;DMAburstlength
+;This 5-bit vector defines the number of DMA transfers (the timer detects a burst transfer when a read or a write access to the TIMx_DMAR register address is performed). the TIMx_DMAR address)
+4-0 DBA;DMAbaseaddress
+;This 5-bits vector defines the base-address for DMA transfers (when read/write access are done through the TIMx_DMAR address). DBA is defined as an offset starting from the address of the TIMx_CR1 register.
+
+TIMx_DMAR field descriptions;
+31-0 DMAB;DMAregisterforburstaccesses

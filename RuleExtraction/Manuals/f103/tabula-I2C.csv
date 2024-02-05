@@ -1,0 +1,328 @@
+4000_5400;I2C Control register 1 (I2C1_CR1);16;R/W;00h;
+4000_5404;I2C Control register 2 (I2C1_CR2);16;R/W;00h;
+4000_5408;I2C Own address register 1 (I2C1_OAR1);16;R/W;00h;
+4000_540C;I2C Own address register 2 (I2C1_OAR2);16;R/W;00h;
+4000_5410;I2C Data register (I2C1_DR);16;R/W;00h;
+4000_5414;I2C Status register 1 (I2C1_SR1);16;R/W;00h;MUST CHECK
+4000_5418;I2C Status register 2 (I2C1_SR2);16;R;00h;
+4000_541C;I2C Clock control register (I2C1_CCR);16;R/W;00h;
+4000_5420;I2C TRISE register (I2C1_TRISE);16;R/W;00h;
+4000_5800;I2C Control register 1 (I2C2_CR1);16;R/W;00h;
+4000_5804;I2C Control register 2 (I2C2_CR2);16;R/W;00h;
+4000_5808;I2C Own address register 1 (I2C2_OAR1);16;R/W;00h;
+4000_580C;I2C Own address register 2 (I2C2_OAR2);16;R/W;00h;
+4000_5810;I2C Data register (I2C2_DR);16;R/W;00h;
+4000_5814;I2C Status register 1 (I2C2_SR1);16;R/W;00h;MUST CHECK
+4000_5818;I2C Status register 2 (I2C2_SR2);16;R;00h;
+4000_581C;I2C Clock control register (I2C2_CCR);16;R/W;00h;
+4000_5820;I2C TRISE register (I2C2_TRISE);16;R/W;00h;
+
+I2Cx_CR1 field descriptions;
+15 SWRST;Software reset
+;When set, the I2C is under reset state. Before resetting this bit, make sure the I2C lines are released and the bus is free.
+;0; I2C Peripheral not under reset
+;1; I2C Peripheral under reset state
+;Note: This bit can be used to reinitialize the peripheral after an error or a locked state. As an example, if the BUSY bit is set and remains locked due to a glitch on the bus, the SWRST bit can be used to exit from this state.
+14 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+13 ALERT;SM Bus alert
+;This bit is set and cleared by software, and cleared by hardware when PE=0.
+;0; Releases SMBA pin high. Alert Response Address Header followed by NACK. 
+;1; Drives SMBA pin low. Alert Response Address Header followed by ACK.
+12 PEC;Packet error checking
+;This bit is set and cleared by software, and cleared by hardware when PEC is transferred or by a START or Stop condition or when PE=0.
+;0; No PEC transfer
+;1; PEC transfer (in Tx or Rx mode)
+;Note: PEC calculation is corrupted by an arbitration loss.
+11 POS;Acknowledge/PEC Position(for data reception)
+;This bit is set and cleared by software and cleared by hardware when PE=0.
+;0; ACK bit controls the (N)ACK of the current byte being received in the shift register. The PEC bit indicates that current byte in shift register is a PEC.
+;1; ACK bit controls the (N)ACK of the next byte which will be received in the shift register. The PEC bit indicates that the next byte in the shift register is a PEC
+;Note: The POS bit is used when the procedure for reception of 2 bytes (see Method 2; transfer sequence diagram for master receiver when N=2) is followed. It must be configured before data reception starts. In this case, to NACK the 2nd byte, the ACK bit must be cleared just after ADDR is cleared. To check the 2nd byte as PEC, the PEC bit must be set during the ADDR stretch event after configuring the POS bit.
+10 ACK;Acknowledgeb enable
+;This bit is set and cleared by software and cleared by hardware when PE=0. 
+;0; No acknowledge returned
+;1; Acknowledge returned after a byte is received (matched address or data)
+9 STOP;Stop generation
+;The bit is set and cleared by software, cleared by hardware when a Stop condition is detected, set by hardware when a timeout error is detected.
+;In Master Mode;
+;0; No Stop generation.
+;1; Stop generation after the current byte transfer or after the current Start condition is sent. 
+;In Slave mode;
+;0; No Stop generation.
+;1; Release the SCL and SDA lines after the current byte transfer.
+8 START;Start generation
+;This bit is set and cleared by software and cleared by hardware when start is sent or PE=0.
+;In Master Mode;
+;0; No Start generation
+;1; Repeated start generation
+;In Slave mode;
+;0; No Start generation
+;1; Start generation when the bus is free
+7 NOSTRETCH;Clock stretching disable(Slave mode)
+;This bit is used to disable clock stretching in slave mode when ADDR or BTF flag is set, until it is reset by software.
+;0; Clock stretching enabled
+;1; Clock stretching disabled
+6 ENGC;General call enable
+;0; General call disabled. Address 00h is NACKed. 
+;1; General call enabled. Address 00h is ACKed.
+5 ENPEC;PEC enable
+;0; PEC calculation disabled 
+;1; PEC calculation enabled
+4 ENARP;ARP enable
+;0; ARP disable
+;1; ARP enable
+;SMBus Device default address recognized if SMBTYPE=0 
+;SMBus Host address recognized if SMBTYPE=1
+3 SMBTYPE;SM Bus type 
+;0; SMBus Device
+;1; SMBus Host
+2 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+1 SMBUS;SM Bus mode 
+;0; I2C mode
+;1; SMBus mode
+0 PE;Peripheral enable 
+;0; Peripheral disable 
+;1; Peripheral enable
+;NOTE: If this bit is reset while a communication is on going, the peripheral is disabled at the end of the current communication, when back to IDLE state.
+;All bit resets due to PE=0 occur at the end of the communication.
+;In master mode, this bit must not be reset before the end of the communication.
+
+I2Cx_CR2 field descriptions;
+15-13 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+12 LAST;DMA last transfer
+;0; Next DMA EOT is not the last transfer
+;1; Next DMA EOT is the last transfer
+;NOTE: This bit is used in master receiver mode to permit the generation of a NACK on the last received data.
+11 DMAEN;DMA requests interrupt enable 
+;0; DMA requests disabled
+;1; DMA request enabled when TxE = 1 or RxNE = 1
+10 ITBUFEN;Buffer interrupt enable
+;0;  does not generate any interrupt.
+;1;  generates Event Interrupt (whatever the state of )
+9 ITEVTEN;Event interrupt enable 
+;0; Event interrupt disabled
+;1; Event interrupt enabled
+;This interrupt is generated when
+;- SB = 1 (Master)
+;- ADDR = 1 (Master/Slave)
+;- ADD10= 1 (Master)
+;- STOPF = 1 (Slave)
+;- TxE event to 1 if ITBUFEN = 1
+;- RxNE event to 1 if ITBUFEN = 1
+8 ITERREN;Error interrupt enable 
+;0; Error interrupt disabled
+;1; Error interrupt enabled
+;This interrupt is generated when;
+;- BERR=1
+;- ARLO=1
+;- AF=1
+;- OVR=1
+;- PECERR = 1
+;- TIMEOUT = 1
+;- SMBALERT = 1
+7-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 FREQ;Peripheral clock frequency
+
+I2Cx_OAR1 field descriptions;
+15 ADDMODE;Addressing mode(slavemode)
+;0; 7-bit slave address (10-bit address not acknowledged) 
+;1; 10-bit slave address (7-bit address not acknowledged)
+14-10 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+9-8 ADD[9-8];Interface address
+7-1 ADD[7-1];Interface address 
+0 LSB;
+
+I2Cx_OAR2 field descriptions;
+15-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-1 ADD2[7-1];Interface address
+;bits 7-1 of address in dual addressing mode
+0 ENDUAL;Dual addressing mode enable
+;0; Only OAR1 is recognized in 7-bit addressing mode
+;1; Both OAR1 and OAR2 are recognized in 7-bit addressing mode
+
+I2Cx_DR field descriptions;
+15-8 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+7-0 DR;8-bitdataregister
+;Byte received or to be transmitted to the bus.
+;- Transmitter mode; Byte transmission starts automatically when a byte is written in the DR register. A continuous transmit stream can be maintained if the next data to be transmitted is put in DR once the transmission is started (TxE=1)
+;- Receiver mode; Received byte is copied into DR (RxNE=1). A continuous transmit stream can be maintained if DR is read before the next data byte is received (RxNE=1).
+;NOTE: In slave mode, the address is not copied into DR.
+;Write collision is not managed (DR can be written if TxE=0).
+;If an ARLO event occurs on ACK pulse, the received byte is not copied into DR and so cannot be read.
+
+I2Cx_SR1 field descriptions;
+15 SMBALERT;SMBusalert 
+;In SMBus host mode
+;0; no SMBALERT
+;1; SMBALERT event occurred on pin
+;In SMBus slave mode;
+;0; no SMBALERT response address header
+;1; SMBALERT response address header to SMBALERT LOW received
+;- Cleared by software writing 0, or by hardware when PE=0.
+14 TIMEOUT;Timeout or Tlow error
+;0; No timeout error
+;1; SCL remained LOW for 25 ms (Timeout)
+;Master cumulative clock low extend time more than 10 ms (Tlow;mext) or
+;Slave cumulative clock low extend time more than 25 ms (Tlow;sext)
+;- When set in slave mode; slave resets the communication and lines are released by hardware
+;- When set in master mode; Stop condition sent by hardware
+;- Cleared by software writing 0, or by hardware when PE=0. NOTE: This functionality is available only in SMBus mode.
+13 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+12 PECERR;PEC Error in reception
+;0; no PEC error receiver returns ACK after PEC reception (if ACK=1)
+;1; PEC error receiver returns NACK after PEC reception (whatever ACK)
+;NOTE: Cleared by software writing 0, or by hardware when PE=0.
+11 OVR;Overrun/Underrun
+;0; No overrun/underrun 
+;1; Overrun or underrun
+;- Set by hardware in slave mode when NOSTRETCH=1 and;
+;- In reception when a new byte is received (including ACK pulse) and the DR register has not been read yet. New received byte is lost.
+;- In transmission when a new byte should be sent and the DR register has not been written yet. The same byte is sent twice.
+;- Cleared by software writing 0, or by hardware when PE=0.
+;NOTE: If the DR write occurs very close to SCL rising edge, the sent data is unspecified and a hold timing error occurs
+10 AF;Acknowledge failure
+;0; No acknowledge failure
+;1; Acknowledge failure
+;- Set by hardware when no acknowledge is returned.
+;- Cleared by software writing 0, or by hardware when PE=0.
+9 ARLO;Arbitration lost(mastermode)
+;0; No Arbitration Lost detected
+;1; Arbitration Lost detected
+;Set by hardware when the interface loses the arbitration of the bus to another master
+;- Cleared by software writing 0, or by hardware when PE=0.
+;After an ARLO event the interface switches back automatically to Slave mode (MSL=0).
+;NOTE: In SMBUS, the arbitration on the data in slave mode occurs only during the data phase, or the acknowledge transmission (not on the address acknowledge).
+8 BERR;Bus error
+;0; No misplaced Start or Stop condition
+;1; Misplaced Start or Stop condition
+;Set by hardware when the interface detects an SDA rising or falling edge while SCL is high, occurring in a non-valid position during a byte transfer.
+;Cleared by software writing 0, or by hardware when PE=0.
+7 TxE;Data register empty(transmitters) READ ONLY
+;0; Data register not empty
+;1; Data register empty
+;- Set when DR is empty in transmission. TxE is not set during address phase.
+;- Cleared by software writing to the DR register or by hardware after a start or a stop condition or when PE=0.
+;TxE is not set if either a NACK is received, or if next byte to be transmitted is PEC (PEC=1)
+;NOTE: TxE is not cleared by writing the first data being transmitted, or by writing data when BTF is set, as in both cases the data register is still empty.
+6 RxNE;Data register not empty(receivers) READ ONLY
+;0; Data register empty
+;1; Data register not empty
+;- Set when data register is not empty in receiver mode. RxNE is not set during address phase.
+;- Cleared by software reading or writing the DR register or by hardware when PE=0.
+;RxNE is not set in case of ARLO event.
+;NOTE: RxNE is not cleared by reading data when BTF is set, as the data register is still full.
+5 Reserved;This field is reserved. READ ONLY
+;This read-only field is reserved and always has the value 0.
+4 STOPF;Stop detection(slavemode) READ ONLY
+;0; No Stop condition detected
+;1; Stop condition detected
+;- Set by hardware when a Stop condition is detected on the bus by the slave after an acknowledge (if ACK=1).
+;- Cleared by software reading the SR1 register followed by a write in the CR1 register, or by hardware when PE=0
+;NOTE: The STOPF bit is not set after a NACK reception.
+;It is recommended to perform the complete clearing sequence (READ SR1 then WRITE CR1) after the STOPF is set. Refer to Figure 272.
+3 ADD10;10-bit header sent(Mastermode) READ ONLY
+;0; No ADD10 event occurred.
+;1; Master has sent first address byte (header).
+;- Set by hardware when the master has sent the first byte in 10-bit address mode.
+;- Cleared by software reading the SR1 register followed by a write in the DR register of the second address byte, or by hardware when PE=0.
+;NOTE: ADD10 bit is not set after a NACK reception
+2 BTF;Byte  finished READ ONLY
+;0; Data byte transfer not done
+;1; Data byte transfer succeeded
+;- Set by hardware when NOSTRETCH=0 and;
+;- In reception when a new byte is received (including ACK pulse) and DR has not been read yet (RxNE=1).
+;- In transmission when a new byte should be sent and DR has not been written yet (TxE=1).
+;- Cleared by software reading SR1 followed by either a read or write in the DR register or by hardware after a start or a stop condition in transmission or when PE=0.
+;NOTE: The BTF bit is not set after a NACK reception
+;The BTF bit is not set if next byte to be transmitted is the PEC (TRA=1 in I2C_SR2 register and PEC=1 in I2C_CR1 register)
+1 ADDR;Addresssent(mastermode)/matched(slavemode) READ ONLY
+;This bit is cleared by software reading SR1 register followed reading SR2, or by hardware when PE=0.
+;Address matched (Slave)
+;0; Address mismatched or not received.
+;1; Received address matched.
+;- Set by hardware as soon as the received slave address matched with the OAR registers content or a general call or a SMBus Device Default Address or SMBus Host or SMBus Alert is recognized. (when enabled depending on configuration).
+;NOTE: In slave mode, it is recommended to perform the complete clearing sequence (READ SR1 then READ SR2) after ADDR is set. Refer to Figure 272.
+;Address sent (Master)
+;0; No end of address transmission 
+;1; End of address transmission
+;- For 10-bit addressing, the bit is set after the ACK of the 2nd byte.
+;- For 7-bit addressing, the bit is set after the ACK of the byte. NOTE: ADDR is not set after a NACK reception
+0 SB; bit(Mastermode) READ ONLY
+;set and cleared by hardware.
+;0; No Start condition
+;1; Start condition generated.
+;- Set when a Start condition generated.
+;- Cleared by software by reading the SR1 register followed by writing the DR register, or by hardware when PE=0
+
+I2Cx_SR2 field descriptions;
+15-8 PEC[7-0];Packeterrorcheckingregister
+;This register contains the internal PEC when ENPEC=1.
+7 DUALF;Dual flag(Slavemode)
+;0; Received address matched with OAR1
+;1; Received address matched with OAR2
+;- Cleared by hardware after a Stop condition or repeated Start condition, or when PE=0.
+6 SMBHOST;SMBushostheader(Slavemode) 
+;0; No SMBus Host address
+;1; SMBus Host address received when SMBTYPE=1 and ENARP=1.
+;- Cleared by hardware after a Stop condition or repeated Start condition, or when PE=0.
+5 SMBDEFAULT;SMBusdevicedefaultaddress(Slavemode) 
+;0; No SMBus Device Default address
+;1; SMBus Device Default address received when ENARP=1
+;- Cleared by hardware after a Stop condition or repeated Start condition, or when PE=0.
+4 GENCALL;Generalcalladdress(Slavemode) 
+;0; No General Call
+;1; General Call Address received when ENGC=1
+;- Cleared by hardware after a Stop condition or repeated Start condition, or when PE=0.
+3 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+2 TRA;Transmitter/receiver
+;if LSB is set, TRA is 0.
+;if LSB is 0 and ACK is 0, TRA is 1.
+;if ACK is 1, TRA is 0.
+;if RxNE is 1, ITBUFEN is 1.
+;0; Data bytes received
+;1; Data bytes transmitted
+;This bit is set depending on the R/W bit of the address byte, at the end of total address phase.
+;It is also cleared by hardware after detection of Stop condition (STOPF=1), repeated Start condition, loss of bus arbitration (ARLO=1), or when PE=0.
+1 BUSY;Busbusy
+;0; No communication on the bus
+;1; Communication ongoing on the bus
+;- Set by hardware on detection of SDA or SCL low
+;- cleared by hardware on detection of a Stop condition.
+;It indicates a communication in progress on the bus. This information is still updated when the interface is disabled (PE=0).
+0 MSL;Master/slave 
+;0; Slave Mode
+;1; Master Mode
+;- Set by hardware as soon as the interface is in Master mode (SB=1).
+;- Cleared by hardware after detecting a Stop condition on the bus or a loss of arbitration, or by hardware when PE=0.
+
+I2Cx_CCR field descriptions;
+15 F/S;I2Cmastermodeselection
+;0; Sm mode I2C 
+;1; Fm mode I2C
+14 DUTY;Fmmodedutycycle 
+;0; Fm mode tlow/thigh = 2
+;1; Fm mode tlow/thigh = 16/9 (see CCR)
+13-12 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+11-0 CCR[11-0];ClockcontrolregisterinFm/Smmode(Mastermode) 
+;Controls the SCL clock in master mode.
+
+I2Cx_TRISE field descriptions;
+15-6 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+5-0 TRISE[5-0];MaximumrisetimeinFm/Smmode(Mastermode)
+;These bits should provide the maximum duration of the SCL feedback loop in master mode. The purpose is to keep a stable SCL frequency whatever the SCL rising edge duration. These bits must be programmed with the maximum SCL rise time given in the I2C bus specification, incremented by 1.
+;For instance; in Sm mode, the maximum allowed SCL rise time is 1000 ns.
+;If, in the I2C_CR2 register, the value of FREQ[5:0] bits is equal to 0x08 and TPCLK1 = 125 ns therefore the TRISE[5;0] bits must be programmed with 09h. (1000 ns / 125 ns = 8 + 1)
+;The filter value can also be added to TRISE[5:0].
+;If the result is not an integer, TRISE[5:0] must be programmed with the integer part, in order to respect the tHIGH parameter.
+;Note: TRISE[5:0] must be configured only when the I2C is disabled (PE = 0).

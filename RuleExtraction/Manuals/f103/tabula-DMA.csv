@@ -1,0 +1,251 @@
+0x40020000;DMA interrupt status register (DMA1_ISR);32;R;0h;
+0x40020004;DMA interrupt flag clear register (DMA1_IFCR);32;W;0h;
+0x40020008;DMA channel x configuration register (DMA1_CCR1);32;R/W;0h;
+0x4002000C;DMA channel x number of register (DMA1_CNDTR1);32;R/W;0h;
+0x40020010;DMA channel x peripheral address register (DMA1_CPAR1);32;R/W;0h;
+0x40020014;DMA channel x memory address register (DMA1_CMAR1);32;R/W;0h;
+0x4002001C;DMA channel x configuration register (DMA1_CCR2);32;R/W;0h;
+0x40020020;DMA channel x number of register (DMA1_CNDTR2);32;R/W;0h;
+0x40020024;DMA channel x peripheral address register (DMA1_CPAR2);32;R/W;0h;
+0x40020028;DMA channel x memory address register (DMA1_CMAR2);32;R/W;0h;
+0x40020030;DMA channel x configuration register (DMA1_CCR3);32;R/W;0h;
+0x40020034;DMA channel x number of register (DMA1_CNDTR3);32;R/W;0h;
+0x40020038;DMA channel x peripheral address register (DMA1_CPAR3);32;R/W;0h;
+0x4002003C;DMA channel x memory address register (DMA1_CMAR3);32;R/W;0h;
+0x40020044;DMA channel x configuration register (DMA1_CCR4);32;R/W;0h;
+0x40020048;DMA channel x number of register (DMA1_CNDTR4);32;R/W;0h;
+0x4002004C;DMA channel x peripheral address register (DMA1_CPAR4);32;R/W;0h;
+0x40020050;DMA channel x memory address register (DMA1_CMAR4);32;R/W;0h;
+0x40020058;DMA channel x configuration register (DMA1_CCR5);32;R/W;0h;
+0x4002005C;DMA channel x number of register (DMA1_CNDTR5);32;R/W;0h;
+0x40020060;DMA channel x peripheral address register (DMA1_CPAR5);32;R/W;0h;
+0x40020064;DMA channel x memory address register (DMA1_CMAR5);32;R/W;0h;
+0x4002006C;DMA channel x configuration register (DMA1_CCR6);32;R/W;0h;
+0x40020070;DMA channel x number of register (DMA1_CNDTR6);32;R/W;0h;
+0x40020074;DMA channel x peripheral address register (DMA1_CPAR6);32;R/W;0h;
+0x40020078;DMA channel x memory address register (DMA1_CMAR6);32;R/W;0h;
+0x40020080;DMA channel x configuration register (DMA1_CCR7);32;R/W;0h;
+0x40020084;DMA channel x number of register (DMA1_CNDTR7);32;R/W;0h;
+0x40020088;DMA channel x peripheral address register (DMA1_CPAR7);32;R/W;0h;
+0x4002008C;DMA channel x memory address register (DMA1_CMAR7);32;R/W;0h;
+0x40020400;DMA interrupt status register (DMA2_ISR);32;R;0h;
+0x40020404;DMA interrupt flag clear register (DMA2_IFCR);32;W;0h;
+0x40020408;DMA channel x configuration register (DMA2_CCR1);32;R/W;0h;
+0x4002040C;DMA channel x number of register (DMA2_CNDTR1);32;R/W;0h;
+0x40020410;DMA channel x peripheral address register (DMA2_CPAR1);32;R/W;0h;
+0x40020414;DMA channel x memory address register (DMA2_CMAR1);32;R/W;0h;
+0x4002041C;DMA channel x configuration register (DMA2_CCR2);32;R/W;0h;
+0x40020420;DMA channel x number of register (DMA2_CNDTR2);32;R/W;0h;
+0x40020424;DMA channel x peripheral address register (DMA2_CPAR2);32;R/W;0h;
+0x40020428;DMA channel x memory address register (DMA2_CMAR2);32;R/W;0h;
+0x40020430;DMA channel x configuration register (DMA2_CCR3);32;R/W;0h;
+0x40020434;DMA channel x number of register (DMA2_CNDTR3);32;R/W;0h;
+0x40020438;DMA channel x peripheral address register (DMA2_CPAR3);32;R/W;0h;
+0x4002043C;DMA channel x memory address register (DMA2_CMAR3);32;R/W;0h;
+0x40020444;DMA channel x configuration register (DMA2_CCR4);32;R/W;0h;
+0x40020448;DMA channel x number of register (DMA2_CNDTR4);32;R/W;0h;
+0x4002044C;DMA channel x peripheral address register (DMA2_CPAR4);32;R/W;0h;
+0x40020450;DMA channel x memory address register (DMA2_CMAR4);32;R/W;0h;
+0x40020458;DMA channel x configuration register (DMA2_CCR5);32;R/W;0h;
+0x4002045C;DMA channel x number of register (DMA2_CNDTR5);32;R/W;0h;
+0x40020460;DMA channel x peripheral address register (DMA2_CPAR5);32;R/W;0h;
+0x40020464;DMA channel x memory address register (DMA2_CMAR5);32;R/W;0h;
+0x4002046C;DMA channel x configuration register (DMA2_CCR6);32;R/W;0h;
+0x40020470;DMA channel x number of register (DMA2_CNDTR6);32;R/W;0h;
+0x40020474;DMA channel x peripheral address register (DMA2_CPAR6);32;R/W;0h;
+0x40020478;DMA channel x memory address register (DMA2_CMAR6);32;R/W;0h;
+0x40020480;DMA channel x configuration register (DMA2_CCR7);32;R/W;0h;
+0x40020484;DMA channel x number of register (DMA2_CNDTR7);32;R/W;0h;
+0x40020488;DMA channel x peripheral address register (DMA2_CPAR7);32;R/W;0h;
+0x4002048C;DMA channel x memory address register (DMA2_CMAR7);32;R/W;0h;
+
+DMA_ISR field descriptions;
+31-28 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+27 TEIF7;Channelxtransfererrorflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+26 HTIF7;Channelxhalftransferflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+25 TCIF7;Channelxtransfercompleteflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No transfer complete (TC) event on channel x
+;1; A transfer complete (TC) event occurred on channel x
+24 GIF7;Channelxglobalinterruptflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No TE, HT or TC event on channel x
+;1; A TE, HT or TC event occurred on channel x
+23 TEIF6;Channelxtransfererrorflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+22 HTIF6;Channelxhalftransferflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+21 TCIF6;Channelxtransfercompleteflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No transfer complete (TC) event on channel x
+;1; A transfer complete (TC) event occurred on channel x
+20 GIF6;Channelxglobalinterruptflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No TE, HT or TC event on channel x
+;1; A TE, HT or TC event occurred on channel x
+19 TEIF5;Channelxtransfererrorflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+18 HTIF5;Channelxhalftransferflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+17 TCIF5;Channelxtransfercompleteflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No transfer complete (TC) event on channel x
+;1; A transfer complete (TC) event occurred on channel x
+16 GIF5;Channelxglobalinterruptflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No TE, HT or TC event on channel x
+;1; A TE, HT or TC event occurred on channel x
+15 TEIF4;Channelxtransfererrorflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+14 HTIF4;Channelxhalftransferflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+13 TCIF4;Channelxtransfercompleteflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No transfer complete (TC) event on channel x
+;1; A transfer complete (TC) event occurred on channel x
+12 GIF4;Channelxglobalinterruptflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No TE, HT or TC event on channel x
+;1; A TE, HT or TC event occurred on channel x
+11 TEIF3;Channelxtransfererrorflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+10 HTIF3;Channelxhalftransferflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+9 TCIF3;Channelxtransfercompleteflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No transfer complete (TC) event on channel x
+;1; A transfer complete (TC) event occurred on channel x
+8 GIF3;Channelxglobalinterruptflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No TE, HT or TC event on channel x
+;1; A TE, HT or TC event occurred on channel x
+7 TEIF2;Channelxtransfererrorflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+6 HTIF2;Channelxhalftransferflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+5 TCIF2;Channelxtransfercompleteflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No transfer complete (TC) event on channel x
+;1; A transfer complete (TC) event occurred on channel x
+4 GIF2;Channelxglobalinterruptflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No TE, HT or TC event on channel x
+;1; A TE, HT or TC event occurred on channel x
+3 TEIF1;Channelxtransfererrorflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+2 HTIF1;Channelxhalftransferflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+1 TCIF1;Channelxtransfercompleteflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No transfer complete (TC) event on channel x
+;1; A transfer complete (TC) event occurred on channel x
+0 GIF1;Channelxglobalinterruptflag(x=1..7)
+; It is cleared by writing 1 to the corresponding bit in the DMA_IFCR register.
+;0; No TE, HT or TC event on channel x
+;1; A TE, HT or TC event occurred on channel x
+
+DMA_IFCR field descriptions;
+31-28 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+27 CTEIF1;Channelxtransfererrorflag(x=1..7)
+26 CHTIF1;Channelxhalftransferflag(x=1..7)
+25 CTCIF1;Channelxtransfercompleteflag(x=1..7)
+24 CGIF1;Channelxglobalinterruptflag(x=1..7)
+23 CTEIF2;Channelxtransfererrorflag(x=1..7)
+22 CHTIF2;Channelxhalftransferflag(x=1..7)
+21 CTCIF2;Channelxtransfercompleteflag(x=1..7)
+20 CGIF2;Channelxglobalinterruptflag(x=1..7)
+19 CTEIF3;Channelxtransfererrorflag(x=1..7)
+18 CHTIF3;Channelxhalftransferflag(x=1..7)
+17 CTCIF3;Channelxtransfercompleteflag(x=1..7)
+16 CGIF3;Channelxglobalinterruptflag(x=1..7)
+15 CTEIF4;Channelxtransfererrorflag(x=1..7)
+14 CHTIF4;Channelxhalftransferflag(x=1..7)
+13 CTCIF4;Channelxtransfercompleteflag(x=1..7)
+12 CGIF4;Channelxglobalinterruptflag(x=1..7)
+11 CTEIF5;Channelxtransfererrorflag(x=1..7)
+10 CHTIF5;Channelxhalftransferflag(x=1..7)
+9 CTCIF5;Channelxtransfercompleteflag(x=1..7)
+8 CGIF5;Channelxglobalinterruptflag(x=1..7)
+7 CTEIF6;Channelxtransfererrorflag(x=1..7)
+6 CHTIF6;Channelxhalftransferflag(x=1..7)
+5 CTCIF6;Channelxtransfercompleteflag(x=1..7)
+4 CGIF6;Channelxglobalinterruptflag(x=1..7)
+3 CTEIF7;Channelxtransfererrorflag(x=1..7)
+2 CHTIF7;Channelxhalftransferflag(x=1..7)
+1 CTCIF7;Channelxtransfercompleteflag(x=1..7)
+0 CGIF7;Channelxglobalinterruptflag(x=1..7)
+
+DMA_CCRn field descriptions;
+31-15 Reserved; must be kept at reset value.
+14 MEM2MEM;Memorytomemorymode 
+;This bit is set and cleared by software. 
+;0; Memory to memory mode disabled 
+;1; Memory to memory mode enabled
+13-12 PL; Channel priority level
+;These bits are set and cleared by software.
+;00; Low
+;01; Medium 
+;10; High
+;11; Very high
+11-10 MSIZE;Memorysize
+;These bits are set and cleared by software.
+;00; 8-bits
+;01; 16-bits 
+;10; 32-bits 
+;11; Reserved
+9-8 PSIZE;Peripheralsize
+;These bits are set and cleared by software.
+7 MINC;Memoryincrementmode
+;This bit is set and cleared by software. 
+;0; Memory increment mode disabled 
+;1; Memory increment mode enabled
+6 PINC;Peripheralincrementmode
+;This bit is set and cleared by software. 
+;0; Peripheral increment mode disabled 
+;1; Peripheral increment mode enabled
+5 CIRC;Circularmode
+;This bit is set and cleared by software. 
+;0; Circular mode disabled
+;1; Circular mode enabled
+4 DIR;Datatransferdirection
+;This bit is set and cleared by software.
+;0; Read from peripheral 
+;1; Read from memory
+3 TEIE;Transfererrorinterruptenable 
+;This bit is set and cleared by software. 
+;0; TE interrupt disabled
+;1; TE interrupt enabled
+2 HTIE;Half transfer interrupt enable
+;This bit is set and cleared by software. 
+;0; HT interrupt disabled
+;1; HT interrupt enabled
+1 TCIE;Transfercompleteinterruptenable 
+;This bit is set and cleared by software. 
+;0; TC interrupt disabled
+;1; TC interrupt enabled
+0 EN;Channelenable
+;This bit is set and cleared by software. 
+;0; Channel disabled
+;1; Channel enabled
+
+DMA_CNDTRn field descriptions;
+31-16 Reserved; must be kept at reset value.
+15-0 NDT;Numberofdatatotransfer
+;Number of data to be transferred (0 up to 65535). This register can only be written when the
+;channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto- reload mode.
+;If this register is zero, no transaction can be served whether the channel is enabled or not.
+
+DMA_CPARn field descriptions;
+31-0 PA;Peripheraladdress
+;Base address of the peripheral register from/to which the data will be read/written.
+;When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half- word address.
+;When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
+
+DMA_CMARn field descriptions;
+31-0 MA;Memoryaddress
+;When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address.
+;When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.

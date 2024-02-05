@@ -1,0 +1,463 @@
+4001_2000;Port configuration register low (GPIOG_CRL);32;R/W;4444_4444h;
+4001_2004;Port configuration register high (GPIOG_CRH);32;R/W;4444_4444h;
+4001_2008;Port input data register (GPIOG_IDR);32;R;0h;
+4001_200C;Port output data register (GPIOG_ODR);32;R/W;0h;
+4001_2010;Port bit set/reset register (GPIOG_BSRR);32;W;0h;
+4001_2014;Port bit reset register (GPIOG_BRR);32;W;0h;
+4001_2018;Port configuration lock register (GPIOG_LCKR);32;R/W;0h;
+4001_1C00;Port configuration register low (GPIOF_CRL);32;R/W;4444_4444h;
+4001_1C04;Port configuration register high (GPIOF_CRH);32;R/W;4444_4444h;
+4001_1C08;Port input data register (GPIOF_IDR);32;R;0h;
+4001_1C0C;Port output data register (GPIOF_ODR);32;R/W;0h;
+4001_1C10;Port bit set/reset register (GPIOF_BSRR);32;W;0h;
+4001_1C14;Port bit reset register (GPIOF_BRR);32;W;0h;
+4001_1C18;Port configuration lock register (GPIOF_LCKR);32;R/W;0h;
+4001_1800;Port configuration register low (GPIOE_CRL);32;R/W;4444_4444h;
+4001_1804;Port configuration register high (GPIOE_CRH);32;R/W;4444_4444h;
+4001_1808;Port input data register (GPIOE_IDR);32;R;0h;
+4001_180C;Port output data register (GPIOE_ODR);32;R/W;0h;
+4001_1810;Port bit set/reset register (GPIOE_BSRR);32;W;0h;
+4001_1814;Port bit reset register (GPIOE_BRR);32;W;0h;
+4001_1818;Port configuration lock register (GPIOE_LCKR);32;R/W;0h;
+4001_1400;Port configuration register low (GPIOD_CRL);32;R/W;4444_4444h;
+4001_1404;Port configuration register high (GPIOD_CRH);32;R/W;4444_4444h;
+4001_1408;Port input data register (GPIOD_IDR);32;R;0h;
+4001_140C;Port output data register (GPIOD_ODR);32;R/W;0h;
+4001_1410;Port bit set/reset register (GPIOD_BSRR);32;W;0h;
+4001_1414;Port bit reset register (GPIOD_BRR);32;W;0h;
+4001_1418;Port configuration lock register (GPIOD_LCKR);32;R/W;0h;
+4001_1000;Port configuration register low (GPIOC_CRL);32;R/W;4444_4444h;
+4001_1004;Port configuration register high (GPIOC_CRH);32;R/W;4444_4444h;
+4001_1008;Port input data register (GPIOC_IDR);32;R;0h;
+4001_100C;Port output data register (GPIOC_ODR);32;R/W;0h;
+4001_1010;Port bit set/reset register (GPIOC_BSRR);32;W;0h;
+4001_1014;Port bit reset register (GPIOC_BRR);32;W;0h;
+4001_1018;Port configuration lock register (GPIOC_LCKR);32;R/W;0h;
+4001_0C00;Port configuration register low (GPIOB_CRL);32;R/W;4444_4444h;
+4001_0C04;Port configuration register high (GPIOB_CRH);32;R/W;4444_4444h;
+4001_0C08;Port input data register (GPIOB_IDR);32;R;0h;
+4001_0C0C;Port output data register (GPIOB_ODR);32;R/W;0h;
+4001_0C10;Port bit set/reset register (GPIOB_BSRR);32;W;0h;
+4001_0C14;Port bit reset register (GPIOB_BRR);32;W;0h;
+4001_0C18;Port configuration lock register (GPIOB_LCKR);32;R/W;0h;
+4001_0800;Port configuration register low (GPIOA_CRL);32;R/W;4444_4444h;
+4001_0804;Port configuration register high (GPIOA_CRH);32;R/W;4444_4444h;
+4001_0808;Port input data register (GPIOA_IDR);32;R;0h;
+4001_080C;Port output data register (GPIOA_ODR);32;R/W;0h;
+4001_0810;Port bit set/reset register (GPIOA_BSRR);32;W;0h;
+4001_0814;Port bit reset register (GPIOA_BRR);32;W;0h;
+4001_0818;Port configuration lock register (GPIOA_LCKR);32;R/W;0h;
+4001_0000;Event control register (AFIO_EVCR);32;R/W;0h;
+4001_0004;AF remap and debug I/O configuration register (AFIO_MAPR);32;R/W;0h;
+4001_0008;External interrupt configuration register 1 (AFIO_EXTICR1);32;R;0h;
+4001_000C;External interrupt configuration register 2 (AFIO_EXTICR2);32;R/W;0h;
+4001_0010;External interrupt configuration register 3 (AFIO_EXTICR3);32;W;0h;
+4001_0014;External interrupt configuration register 4 (AFIO_EXTICR4);32;W;0h;
+4001_001C;AF remap and debug I/O configuration register2 (AFIO_MAPR2);32;R/W;0h;
+
+AFIO_MAPR2 field descriptions;
+10 FSMC_NADV;NADVconnect/disconnect
+;This bit is set and cleared by software. It controls the use of the optional FSMC_NADV signal.
+
+AFIO_EXTICR4 field descriptions;
+3-0 EXTI12; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+7-4 EXTI13; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+11-8 EXTI14; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+15-12 EXTI15; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+
+AFIO_EXTICR3 field descriptions;
+3-0 EXTI8; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+7-4 EXTI9; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+11-8 EXTI10; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+15-12 EXTI11; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+
+AFIO_EXTICR2 field descriptions;
+3-0 EXTI4; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+7-4 EXTI5; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+11-8 EXTI6; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+15-12 EXTI7; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+
+AFIO_EVCR field descriptions;
+7 EVOE;Eventoutputenable
+;Set and cleared by software. When set the EVENTOUT Cortex® output is connected to the I/O selected by the PORT[2:0] and PIN[3:0] bits
+6-4 PORT;Portselection
+;Set and cleared by software. Select the port used to output the Cortex® EVENTOUT signal.
+;Note: The EVENTOUT signal output capability is not extended to ports PF and PG.
+3-0 PIN;Pinselection(x=A..E)
+;Set and cleared by software. 
+
+AFIO_MAPR field descriptions;
+26-24 SWJ_CFG;SerialwireJTAGconfiguration
+20 ADC2_ETRGREG_REMAP;ADC2externaltriggerregularconversionremapping
+;Set and cleared by software.
+19 ADC2_ETRGINJ_REMAP;ADC2externaltriggerinjectedconversionremapping
+;Set and cleared by software. 
+18 ADC1_ETRGREG_REMAP;ADC1externaltriggerregularconversionremapping
+;Set and cleared by software
+
+AFIO_EXTICR1 field descriptions;
+3-0 EXTI0; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+7-4 EXTI1; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+11-8 EXTI2; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+15-12 EXTI3; EXTI x configuration (x= 0 to 3)
+;These bits are written by software to select the source input for EXTIx external interrupt.
+
+GPIOx_CRL field descriptions;
+31-30 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+27-26 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+23-22 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+19-18 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+15-14 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+11-10 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+7-6 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+3-2 CNFy[1-0];Portxconfigurationbits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+29-28 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+25-24 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+21-20 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+17-16 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+13-12 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+9-8 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+5-4 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+1-0 MODEy[1-0];Portxmodebits(y=0..7)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+
+GPIOx_CRH field descriptions;
+31-30 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20. Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+27-26 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+23-22 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+19-18 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+15-14 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+11-10 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+7-6 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+3-2 CNFy[1-0];Portxconfigurationbits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port. Refer to Table 20 Port bit configuration table.
+;In input mode (MODE[1-0]=00)
+;00; Analog mode
+;01; Floating input (reset state)
+;10; Input with pull-up / pull-down
+;11; Reserved
+;In output mode (MODE[1-0] >00)
+;00; General purpose output push-pull
+;01; General purpose output Open-drain
+;10; Alternate function output Push-pull
+;11; Alternate function output Open-drain
+29-28 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+25-24 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+21-20 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+17-16 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+13-12 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+9-8 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+5-4 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+1-0 MODEy[1-0];Portxmodebits(y=8..15)
+;These bits are written by software to configure the corresponding I/O port.
+;Refer to Table 20 Port bit configuration table. 
+;00; Input mode (reset state)
+;01; Output mode, max speed 10 MHz.
+;10; Output mode, max speed 2 MHz.
+;11; Output mode, max speed 50 MHz.
+
+
+GPIOx_IDR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 IDRy;Portinputdata(y=0..15)
+;These bits are read only and can be accessed in Word mode only. They contain the input value of the corresponding I/O port.
+
+GPIOx_ODR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 ODRy;Portoutputdata(y=0..15)
+;These bits can be read and written by software and can be accessed in Word mode only.
+;NOTE: For atomic bit set/reset, the ODR bits can be individually set and cleared by writing to the GPIOx_BSRR register (x = A .. G).
+
+GPIOx_BSRR field descriptions;
+31-16 BRy; Port x Reset bit y (y= 0 .. 15)
+;These bits are write-only and can be accessed in Word mode only.
+;0; No action on the corresponding ODRx bit
+;1; Reset the corresponding ODRx bit
+;NOTE: If both BSx and BRx are set, BSx has priority.
+15-0 BSy;PortxSetbity(y=0..15)
+;These bits are write-only and can be accessed in Word mode only. 
+;0; No action on the corresponding ODRx bit
+;1; Set the corresponding ODRx bit
+
+GPIOx_BRR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-0 BRy;PortxResetbity(y=0..15)
+;These bits are write-only and can be accessed in Word mode only.
+;0; No action on the corresponding ODRx bit 
+;1; Reset the corresponding ODRx bit
+
+GPIOx_LCKR field descriptions;
+31-17 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+16 LCKK[16];Lockkey
+;This bit can be read anytime. It can only be modified using the Lock Key Writing Sequence.
+;0; Port configuration lock key not active
+;1; Port configuration lock key active. GPIOx_LCKR register is locked until the next reset.
+15-0 LCKy;PortxLockbity(y=0..15)
+;These bits are read write but can only be written when the LCKK bit is 0.
+;0; Port configuration not locked 
+;1; Port configuration locked.

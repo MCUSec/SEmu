@@ -1,0 +1,135 @@
+0x40010400;Interrupt mask register (EXTI_IMR);32;R/W;0;
+0x40010404;Event mask register (EXTI_EMR);32;R/W;0;
+0x40010408;Rising trigger selection register (EXTI_RTSR);32;R/W;0;
+0x4001040C;Falling trigger selection register (EXTI_FTSR);32;R/W;0;
+0x40010410;Software interrupt event register (EXTI_SWIER);32;R/W;0;
+0x40010414;Pending register (EXTI_PR);32;R/W;0;
+
+6;PR[PR0];IMR0;-
+6;PR[PR0];EMR0;-
+7;PR[PR1];IMR1;-
+7;PR[PR1];EMR1;-
+8;PR[PR2];IMR2;-
+8;PR[PR2];EMR2;-
+9;PR[PR3];IMR3;-
+9;PR[PR3];EMR3;-
+10;PR[PR4];IMR4;-
+10;PR[PR4];EMR4;-
+23;PR[PR5];IMR5 > 0;-
+23;PR[PR5];EMR5 > 0;-
+23;PR[PR6];IMR5 > 0;-
+23;PR[PR6];EMR5 > 0;-
+23;PR[PR7];IMR5 > 0;-
+23;PR[PR7];EMR5 > 0;-
+23;PR[PR8];IMR5 > 0;-
+23;PR[PR8];EMR5 > 0;-
+23;PR[PR8];IMR5 > 0;-
+23;PR[PR9];EMR5 > 0;-
+40;PR[PR10];IMR6 > 0;-
+40;PR[PR10];EMR6 > 0;-
+40;PR[PR11];IMR6 > 0;-
+40;PR[PR11];EMR6 > 0;-
+40;PR[PR12];IMR6 > 0;-
+40;PR[PR12];EMR6 > 0;-
+40;PR[PR13];IMR6 > 0;-
+40;PR[PR13];EMR6 > 0;-
+40;PR[PR14];IMR6 > 0;-
+40;PR[PR14];EMR6 > 0;-
+40;PR[PR15];IMR6 > 0;-
+40;PR[PR15];EMR6 > 0;-
+
+EXTI_IMR field descriptions;
+0 IMR0;Interruptmaskonlinex
+;0; Interrupt request from line x is masked
+;1; Interrupt request from line x is not masked
+1 IMR1;Interruptmaskonlinex
+;0; Interrupt request from line x is masked
+;1; Interrupt request from line x is not masked
+2 IMR2;Interruptmaskonlinex
+;0; Interrupt request from line x is masked
+;1; Interrupt request from line x is not masked
+3 IMR3;Interruptmaskonlinex
+;0; Interrupt request from line x is masked
+;1; Interrupt request from line x is not masked
+4 IMR4;Interruptmaskonlinex
+;0; Interrupt request from line x is masked
+;1; Interrupt request from line x is not masked
+9-5 IMR5;Interruptmaskonlinex
+;0; Interrupt request from line x is masked
+;1; Interrupt request from line x is not masked
+15-10 IMR6;Interruptmaskonlinex
+;0; Interrupt request from line x is masked
+;1; Interrupt request from line x is not masked
+
+EXTI_EMR field descriptions;
+0 EMR0;Eventmaskonlinex
+;0; Event request from line x is masked
+;1; Event request from line x is not masked
+1 EMR1;Eventmaskonlinex
+;0; Event request from line x is masked
+;1; Event request from line x is not masked
+2 EMR2;Eventmaskonlinex
+;0; Event request from line x is masked
+;1; Event request from line x is not masked
+3 EMR3;Eventmaskonlinex
+;0; Event request from line x is masked
+;1; Event request from line x is not masked
+4 EMR4;Eventmaskonlinex
+;0; Event request from line x is masked
+;1; Event request from line x is not masked
+9-5 EMR5;Eventmaskonlinex
+;0; Event request from line x is masked
+;1; Event request from line x is not masked
+15-10 EMR6;Eventmaskonlinex
+;0; Event request from line x is masked
+;1; Event request from line x is not masked
+
+EXTI_RTSR field descriptions;
+22-0 TRx;Risingtriggereventconfigurationbitoflinex
+
+EXTI_FTSR field descriptions;
+22-0 TRx;Fallingtriggereventconfigurationbitoflinex
+
+EXTI_SWIER field descriptions;
+0 SWIER0;SoftwareInterruptonlinex
+1 SWIER1;SoftwareInterruptonlinex
+2 SWIER2;SoftwareInterruptonlinex
+3 SWIER3;SoftwareInterruptonlinex
+4 SWIER4;SoftwareInterruptonlinex
+5 SWIER5;SoftwareInterruptonlinex
+6 SWIER6;SoftwareInterruptonlinex
+7 SWIER7;SoftwareInterruptonlinex
+8 SWIER8;SoftwareInterruptonlinex
+9 SWIER9;SoftwareInterruptonlinex
+10 SWIER10;SoftwareInterruptonlinex
+11 SWIER11;SoftwareInterruptonlinex
+12 SWIER12;SoftwareInterruptonlinex
+13 SWIER13;SoftwareInterruptonlinex
+14 SWIER14;SoftwareInterruptonlinex
+15 SWIER15;SoftwareInterruptonlinex
+16 SWIER16;SoftwareInterruptonlinex
+17 SWIER17;SoftwareInterruptonlinex
+18 SWIER18;SoftwareInterruptonlinex
+19 SWIER19;SoftwareInterruptonlinex
+
+EXTI_PR field descriptions;
+19 PR19;Pendingbit  SSpecific
+18 PR18;Pendingbit  SSpecific
+17 PR17;Pendingbit  SSpecific
+16 PR16;Pendingbit  SSpecific
+15 PR15;Pendingbit  SSpecific
+14 PR14;Pendingbit  SSpecific
+13 PR13;Pendingbit  SSpecific
+12 PR12;Pendingbit SSpecific
+11 PR11;Pendingbit SSpecific
+10 PR10;Pendingbit SSpecific
+9 PR9;Pendingbit SSpecific
+8 PR8;Pendingbit SSpecific
+7 PR7;Pendingbit SSpecific
+6 PR6;Pendingbit SSpecific
+5 PR5;Pendingbit SSpecific
+4 PR4;Pendingbit SSpecific
+3 PR3;Pendingbit SSpecific
+2 PR2;Pendingbit SSpecific
+1 PR1;Pendingbit SSpecific
+0 PR0;Pendingbit SSpecific

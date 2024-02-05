@@ -1,0 +1,171 @@
+0x40029010;linkk transmit descriptor  (descriptors_TDES3);128;R/W;0;
+0x40029010;linkk transmit descriptor  (descriptors_TDES2);128;R/W;0;
+0x40029010;linkk transmit descriptor  (descriptors_TDES1);128;R/W;0;
+0x40029010;linkk transmit descriptor  (descriptors_TDES0);128;R/W;0;
+0x4002900C;linkk receive descriptor   (descriptors_RDES3);128;R/W;0;
+0x4002900C;linkk receive descriptor   (descriptors_RDES2);128;R/W;0;
+0x4002900C;linkk receive descriptor   (descriptors_RDES1);128;R/W;0;
+0x4002900C;linkk receive descriptor   (descriptors_RDES0);128;R/W;0;
+
+descriptors_RDES3 field descriptions;
+127-96 RBAP2/RTSH;Receive buffer 2 address pointer(next descriptor address)/Receive frame time stamp high
+;These bits take on two different functions: the application uses them to indicate to the DMA the location of where to store the data in memory, and then after transferring all the data the DMA may use these bits to pass back time stamp data.
+
+descriptors_RDES2 field descriptions;
+95-64 RBAP1/RTSL;Receive buffer 1 address pointer/Receive frame timestamp low
+;These bits take on two different functions: the application uses them to indicate to the DMA where to store the data in memory, and then after transferring all the data the DMA may use these bits to pass back time stamp data.
+
+descriptors_RDES1 field descriptions;
+63 DIC;Disable interrupt on completion
+;When set, this bit prevents setting the Status register’s RS bit (CSR5[6]) for the received frame ending in the buffer indicated by this descriptor. This, in turn, disables the assertion of the interrupt to Host due to RS for that frame.
+62-61 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+60-48 RBS2;Receive buffer2 size
+;These bits indicate the second data buffer size, in bytes. The buffer size must be a multiple of 4, 8, or 16, depending on the bus widths (32, 64 or 128, respectively), even if the value of RDES3 (buffer2 address pointer) is not aligned to bus width. If the buffer size is not an appropriate multiple of 4, 8 or 16, the resulting behavior is undefined. This field is not valid if RDES1[RCH] is set.
+47 RER;Receive end of ring
+;When set, this bit indicates that the descriptor list reached its final descriptor. The DMA returns to the base address of the list, creating a descriptor ring.
+46 RCH;Second address chained
+;When set, this bit indicates that the second address in the descriptor is the next descriptor address rather than the second buffer address. RDES1[15] takes precedence over RDES1[14].
+45 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+44-32;RBS1;Receive buffer 1 size
+;Indicates the first data buffer size in bytes. The buffer size must be a multiple of 4, 8 or 16, depending upon the bus widths (32, 64 or 128), even if the value of RDES2 (buffer1 address pointer) is not aligned. When the buffer size is not a multiple of 4, 8 or 16, the resulting behavior is undefined. If this field is 0, the DMA ignores this buffer and uses Buffer 2 or next descriptor depending on the value of RCH (bit 14).
+
+
+descriptors_RDES0 field descriptions;
+31 OWN;Own bit
+;When set, this bit indicates that the descriptor is owned by the DMA of the MAC Subsystem. When this bit is reset, it indicates that the descriptor is owned by the Host. The DMA clears this bit either when it completes the frame reception or when the buffers that are associated with this descriptor are full.
+30 AFM;Destination address filter fail
+;When set, this bit indicates a frame that failed the DA filter in the MAC Core.
+29-16 FL;Frame length
+;These bits indicate the byte length of the received frame that was transferred to host memory (including CRC). This field is valid only when last descriptor (RDES0[8]) is set and descriptor error (RDES0[14]) is reset.
+;This field is valid when last descriptor is set. When the last descriptor and error summary bits are not set, this field indicates the accumulated number of bytes that have been transferred for the current frame.
+15 ES;Error summary
+;If RDES0[DE] is 1, this field is 1.
+;If RDES0[OE] is 1, this field is 1.
+;If RDES0[IPHCE] is 1, this field is 1.
+;If RDES0[LCO] is 1, this field is 1.
+;If RDES0[RWT] is 1, this field is 1.
+;If RDES0[RE] is 1, this field is 1.
+;If RDES0[CE] is 1, this field is 1.
+;if RDES0[DE] is 0 and RDES0[OE] is 0 and RDES0[IPHCE] is 0 and RDES0[LCO] is 0 and RDES0[RWT] is 0 and RDES0[RE] is 0 and RDES0[CE] is 0, this field is 0.
+14 DE;Descriptor error
+;When set, this bit indicates a frame truncation caused by a frame that does not fit within the current descriptor buffers, and that the DMA does not own the next descriptor. The frame is truncated. This field is valid only when the last descriptor (RDES0[8]) is set.
+13 SAF;Source address filter fail
+;When set, this bit indicates that the SA field of frame failed the SA filter in the MAC Core.
+12 LE;Lengtherror
+;When set, this bit indicates that the actual length of the received frame does not match the value in the Length/ Type field. This bit is valid only when the Frame type (RDES0[5]) bit is reset.
+11 OE; Overflow error
+;When set, this bit indicates that the received frame was damaged due to buffer overflow.
+10 VLAN;VLAN tag
+;When set, this bit indicates that the frame pointed to by this descriptor is a VLAN frame tagged by the MAC core.
+9 FS;Firstdescriptor
+;When set, this bit indicates that this descriptor contains the first buffer of the frame. If the size of the first buffer is 0, the second buffer contains the beginning of the frame. If the size of the second buffer is also 0, the next descriptor contains the beginning of the frame.
+8 LS;Lastdescriptor
+;When set, this bit indicates that the buffers pointed to by this descriptor are the last buffers of the frame.
+7 IPHCE;IPv header check sum error
+;If IPHCE is set, it indicates an error in the IPv4 or IPv6 header. This error can be due to inconsistent Ethernet Type field and IP header Version field values, a header checksum mismatch in IPv4, or an Ethernet frame lacking the expected number of IP header bytes.
+6 LCO;Late collision
+;When set, this bit indicates that a late collision has occurred while receiving the frame in Half-duplex mode.
+5 FT;Frametype
+;When set, this bit indicates that the Receive frame is an Ethernet-type frame (the LT field is greater than or equal to 0x0600). When this bit is reset, it indicates that the received frame is an IEEE802.3 frame. This bit is not valid for Runt frames less than 14 bytes.
+4 RWT;Receive watchdog timeout
+;When set, this bit indicates that the Receive watchdog timer has expired while receiving the current frame and the current frame is truncated after the watchdog timeout.
+3 RE;Receive error
+;When set, this bit indicates that the RX_ERR signal is asserted while RX_DV is asserted during frame reception.
+2 DE;Dribble bit error
+;When set, this bit indicates that the received frame has a non-integer multiple of bytes (odd nibbles). This bit is valid only in MII mode.
+1 CE;CRC error
+;When set, this bit indicates that a cyclic redundancy check (CRC) error occurred on the received frame. This field is valid only when the last descriptor (RDES0[8]) is set.
+0 PCE;Payload check sum error
+;When set, it indicates that the TCP, UDP or ICMP checksum the core calculated does not match the received encapsulated TCP, UDP or ICMP segment’s Checksum field. This bit is also set when the received number of payload bytes does not match the value indicated in the Length field of the encapsulated IPv4 or IPv6 datagram in the received Ethernet frame.
+
+
+descriptors_TDES3 field descriptions;
+127-96 TBAP2;Transmitbuffer2addresspointer(Nextdescriptoraddress)/Transmitframetime stamp high
+;These bits have two different functions: they indicate to the DMA the location of data in memory, and after all data are transferred, the DMA can then use these bits to pass back time stamp data.
+
+descriptors_TDES2 field descriptions;
+95-64 TBAP1;Transmit buffer1 address pointer/Transmit frame timestamp low
+;These bits have two different functions: they indicate to the DMA the location of data in memory, and after all data are transferred, the DMA can then use these bits to pass back time stamp data.
+
+descriptors_TDES1 field descriptions;
+63-61 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+60-48 TBS2;Transmitbuffer2size
+;These bits indicate the second data buffer size in bytes. This field is not valid if TDES0[20] is set.
+47-45 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+44-32;TBS1;Transmitbuffer1size
+;These bits indicate the first data buffer byte size, in bytes. If this field is 0, the DMA ignores this buffer and uses Buffer 2 or the next descriptor, depending on the value of TCH (TDES0[20]).
+
+
+descriptors_TDES0 field descriptions;
+31 OWN;Own bit
+;When set, this bit indicates that the descriptor is owned by the DMA. When this bit is reset, it indicates that the descriptor is owned by the CPU. The DMA clears this bit either when it completes the frame transmission or when the buffers allocated in the descriptor are read completely. The ownership bit of the frame’s first descriptor must be set after all subsequent descriptors belonging to the same frame have been set.
+30 IC;Interrupt on completion
+;When set, this bit sets the Transmit Interrupt (ETH_DMASR[TS]) after the present frame has been transmitted.
+29 LS;Last segment
+;When set, this bit indicates that the buffer contains the last segment of the frame.
+28 FS;First segment
+;When set, this bit indicates that the buffer contains the first segment of a frame.
+27 DC;Disable CRC
+;When this bit is set, the MAC does not append a cyclic redundancy check (CRC) to the end of the transmitted frame. This is valid only when the first segment (TDES0[28]) is set.
+26 DP;Disable pad
+;When set, the MAC does not automatically add padding to a frame shorter than 64 bytes.
+;When this bit is reset, the DMA automatically adds padding and CRC to a frame shorter than 64 bytes, and the CRC field is added despite the state of the DC (TDES0[27]) bit. This is valid only when the first segment (TDES0[28]) is set.
+25 TTSE;Transmit timestamp enable
+;When TTSE is set and when TSE is set (ETH_PTPTSCR bit 0), IEEE1588 hardware time tamping is activated for the transmit frame described by the descriptor. This field is only valid when the First segment control bit (TDES0[28]) is set.
+24 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+23-22 CIC; Checksum insertion control
+;These bits control the checksum calculation and insertion. Bit encoding is as shown below:
+;00; Checksum Insertion disabled
+;01; Only IP header checksum calculation and insertion are enabled
+;10; IP header checksum and payload checksum calculation and insertion are enabled, but pseudo-header checksum is not calculated in hardware
+;11; IP Header checksum and payload checksum calculation and insertion are enabled, and pseudo-header checksum is calculated in hardware.
+21 TER;Transmit end of ring
+;When set, this bit indicates that the descriptor list reached its final descriptor. The DMA returns to the base address of the list, creating a descriptor ring.
+20 TCH;Secondaddresschained
+;When set, this bit indicates that the second address in the descriptor is the next descriptor address rather than the second buffer address. When TDES0[20] is set, TBS2 (TDES1[28:16]) is a “don’t care” value. TDES0[21] takes precedence over TDES0[20].
+19-18 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+17 TTSS;Transmit timestamp status
+;This field is used as a status bit to indicate that a time stamp was captured for the described transmit frame. When this bit is set, TDES2 and TDES3 have a time stamp value captured for the transmit frame. This field is only valid when the descriptor’s Last segment control bit (TDES0[29]) is set.
+16 IHE;IP header error
+;When set, this bit indicates that the MAC transmitter detected an error in the IP datagram header. The transmitter checks the header length in the IPv4 packet against the number of header bytes received from the application and indicates an error status if there is a mismatch. For IPv6 frames, a header error is reported if the main header length is not 40 bytes. Furthermore, the Ethernet length/type field value for an IPv4 or IPv6 frame must match the IP header version received with the packet. For IPv4 frames, an error status is also indicated if the Header Length field has a value less than 0x5.
+15 ES;Error summary
+;If TDES0[JT] is 1, this field is 1.
+;If TDES0[FF] is 1, this field is 1.
+;If TDES0[IPE] is 1, this field is 1.
+;If TDES0[LCA] is 1, this field is 1.
+;If TDES0[NC] is 1, this field is 1.
+;If TDES0[LCO] is 1, this field is 1.
+;If TDES0[EC] is 1, this field is 1.
+;If TDES0[ED] is 1, this field is 1.
+;If TDES0[UF] is 1, this field is 1.
+;if TDES0[JT] is 0 and TDES0[FF] is 0 and TDES0[IPE] is 0 and TDES0[LCA] is 0 and TDES0[NC] is 0 and TDES0[LCO] is 0 and TDES0[EC] is 0 and TDES0[ED] is 0 and TDES0[UF] is 0, this field is 0.
+14 JT;Jabber timeout
+;When set, this bit indicates the MAC transmitter has experienced a jabber timeout. This bit is only set when the MAC configuration register’s JD bit is not set.
+13 FF;Frame flushed
+;When set, this bit indicates that the DMA/MTL flushed the frame due to a software Flush command given by the CPU.
+12 IPE;IP payload error
+;When set, this bit indicates that MAC transmitter detected an error in the TCP, UDP, or ICMP IP datagram payload. The transmitter checks the payload length received in the IPv4 or IPv6 header against the actual number of TCP, UDP or ICMP packet bytes received from the application and issues an error status in case of a mismatch.
+11 LCA;Loss of carrier
+;When set, this bit indicates that a loss of carrier occurred during frame transmission (that is, the MII_CRS signal was inactive for one or more transmit clock periods during frame transmission). This is valid only for the frames transmitted without collision when the MAC operates in Half-duplex mode.
+10 NC;Nocarrier
+;When set, this bit indicates that the Carrier Sense signal form the PHY was not asserted during transmission.
+9 LCO;Late collision
+;When set, this bit indicates that frame transmission was aborted due to a collision occurring after the collision window (64 byte times, including preamble, in MII mode). This bit is not valid if the Underflow Error bit is set.
+8 EC;Excessive collision
+;When set, this bit indicates that the transmission was aborted after 16 successive collisions while attempting to transmit the current frame. If the RD (Disable retry) bit in the MAC Configuration register is set, this bit is set after the first collision, and the transmission of the frame is aborted.
+7 VF;VLAN frame
+;When set, this bit indicates that the transmitted frame was a VLAN-type frame.
+6-3 CC;Collision count
+;This 4-bit counter value indicates the number of collisions occurring before the frame was transmitted. The count is not valid when the Excessive collisions bit (TDES0[8]) is set.
+2 ED;Excessive deferral
+;When set, this bit indicates that the transmission has ended because of excessive deferral of over 24 288 bit times if the Deferral check (DC) bit in the MAC Control register is set high.
+1 UF;Underflow error
+;When set, this bit indicates that the MAC aborted the frame because data arrived late from the RAM memory. Underflow error indicates that the DMA encountered an empty transmit buffer while transmitting the frame. The transmission process enters the Suspended state and sets both Transmit underflow (ETH_DMASR[5]) and Transmit interrupt (ETH_DMASR[0]).
+0 DB;Deferred bit
+;When set, this bit indicates that the MAC defers before transmission because of the presence of the carrier. This bit is valid only in Half-duplex mode.

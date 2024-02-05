@@ -1,0 +1,285 @@
+4001_3800;Status register (USART1_SR);32;R/W;C0h;MUST CHECK
+4001_3804;Data register (USART1_DR);32;R/W;00h;
+4001_3808;Baud rate register (USART1_BRR);32;R/W;00h;
+4001_380C;Control register 1 (USART1_CR1);32;R/W;00h;
+4001_3810;Control register 2 (USART1_CR2);32;R/W;00h;
+4001_3814;Control register 3 (USART1_CR3);32;R/W;00h;
+4001_3818;Guard time and prescaler register (USART1_GTPR);32;R/W;00h;
+4000_4400;Status register (USART2_SR);32;R/W;C0h;MUST CHECK
+4000_4404;Data register (USART2_DR);32;R/W;00h;
+4000_4408;Baud rate register (USART2_BRR);32;R/W;00h;
+4000_440C;Control register 1 (USART2_CR1);32;R/W;00h;
+4000_4410;Control register 2 (USART2_CR2);32;R/W;00h;
+4000_4414;Control register 3 (USART2_CR3);32;R/W;00h;
+4000_4418;Guard time and prescaler register (USART2_GTPR);32;R/W;00h;
+4000_4800;Status register (USART3_SR);32;R/W;C0h;MUST CHECK
+4000_4804;Data register (USART3_DR);32;R/W;00h;
+4000_4808;Baud rate register (USART3_BRR);32;R/W;00h;
+4000_480C;Control register 1 (USART3_CR1);32;R/W;00h;
+4000_4810;Control register 2 (USART3_CR2);32;R/W;00h;
+4000_4814;Control register 3 (USART3_CR3);32;R/W;00h;
+4000_4818;Guard time and prescaler register (USART3_GTPR);32;R/W;00h;
+4000_4C00;Status register (USART4_SR);32;R/W;C0h;MUST CHECK
+4000_4C04;Data register (USART4_DR);32;R/W;00h;
+4000_4C08;Baud rate register (USART4_BRR);32;R/W;00h;
+4000_4C0C;Control register 1 (USART4_CR1);32;R/W;00h;
+4000_4C10;Control register 2 (USART4_CR2);32;R/W;00h;
+4000_4C14;Control register 3 (USART4_CR3);32;R/W;00h;
+4000_4C18;Guard time and prescaler register (USART4_GTPR);32;R/W;00h;
+4000_5000;Status register (USART5_SR);32;R/W;C0h;MUST CHECK
+4000_5004;Data register (USART5_DR);32;R/W;00h;
+4000_5008;Baud rate register (USART5_BRR);32;R/W;00h;
+4000_500C;Control register 1 (USART5_CR1);32;R/W;00h;
+4000_5010;Control register 2 (USART5_CR2);32;R/W;00h;
+4000_5014;Control register 3 (USART5_CR3);32;R/W;00h;
+4000_5018;Guard time and prescaler register (USART5_GTPR);32;R/W;00h;
+
+;TXT;-;DMAT
+;TC;-;DMAT
+;RXNE;-;DMAR
+Transmit data register empty;TXE;TXEIE;-
+CTS flag;CTS;CTSIE;-
+Transmission complete;TC;TCIE;-
+Received data ready to be read;RXNE;RXNEIE;-
+Overrun error detected;ORE;RXNEIE;-
+Idle line detected;IDLE;IDLEIE;-
+Parity error;PE;PEIE;-
+Break flag;LBD;LBDIE;-
+Noise flag;NE;EIE;-
+Overrun error;ORE;EIE;-
+Framing error;FE;EIE;-
+
+USART_SR field descriptions;
+9 CTS;CTS flag
+;This bit is set by hardware when the CTS input toggles, if the CTSE bit is set. It is cleared by software (by writing it to 0). An interrupt is generated if CTSIE=1 in the USART_CR3 register.
+;0; No change occurred on the CTS status line
+;1; A change occurred on the CTS status line This bit is not available for USART4 & USART5.
+8 LBD;LIN break detection flag
+;An interrupt is generated when LBD=1 if LBDIE=1. This bit is set by hardware when the LIN break is detected. It is cleared by software (by writing it to 0). An interrupt is generated if LBDIE = 1 in the USART_CR2 register.
+;0; LIN Break not detected
+;1; LIN break detected
+7 TXE;Transmit data register empty READ ONLY
+;This bit is set by hardware when the content of the TDR register has been transferred into the shift register. An interrupt is generated if the TXEIE bit =1 in the USART_CR1 register. It is cleared by a write to the USART_DR register.
+;0; Data is not transferred to the shift register
+;1; Data is transferred to the shift register)
+6 TC;Transmission complete
+;This bit is set by hardware if the transmission of a frame containing data is complete and if TXE is set. An interrupt is generated if TCIE=1 in the USART_CR1 register. It is cleared by a software sequence (a read from the USART_SR register followed by a write to the USART_DR register). The TC bit can also be cleared by writing a '0' to it. This clearing sequence is recommended only for multibuffer communication.
+;0; Transmission is not complete 
+;1; Transmission is complete
+5 RXNE;receive data register not empty
+;This bit is set by hardware when the content of the RDR shift register has been transferred to the USART_DR register. An interrupt is generated if RXNEIE=1 in the USART_CR1 register. It is cleared by a read to the USART_DR register. The RXNE flag can also be cleared by writing a zero to it. This clearing sequence is recommended only for multibuffer communication.
+;0; Data is not received
+;1; Received data is ready to be read.
+4 IDLE;IDLE line detected READ ONLY
+;This bit is set by hardware when an Idle Line is detected. An interrupt is generated if the IDLEIE=1 in the USART_CR1 register. It is cleared by a software sequence (an read to the USART_SR register followed by a read to the USART_DR register).
+;0; No Idle Line is detected
+;1; Idle Line is detected
+3 ORE;Overrun error READ ONLY
+;This bit is set by hardware when the word currently being received in the shift register is ready to be transferred into the RDR register while RXNE=1. An interrupt is generated if RXNEIE=1 in the USART_CR1 register. It is cleared by a software sequence (an read to the USART_SR register followed by a read to the USART_DR register).
+;0; No Overrun error
+;1; Overrun error is detected
+2 NE;Noise error flag READ ONLY
+;This bit is set by hardware when noise is detected on a received frame. It is cleared by a software sequence (an read to the USART_SR register followed by a read to the USART_DR register).
+;0; No noise is detected
+;1; Noise is detected
+1 FE;Framing error READ ONLY
+;This bit is set by hardware when a de-synchronization, excessive noise or a break character is detected. It is cleared by a software sequence (an read to the USART_SR register followed by a read to the USART_DR register).
+;0; No Framing error is detected
+;1; Framing error or break character is detected
+0 PE;Parity error READ ONLY
+;This bit is set by hardware when a parity error occurs in receiver mode. It is cleared by a software sequence (a read to the status register followed by a read to the USART_DR data register). The software must wait for the RXNE flag to be set before clearing the PE bit.
+;An interrupt is generated if PEIE = 1 in the USART_CR1 register.
+;0; No parity error 
+;1; Parity error
+
+USART_DR field descriptions;
+31-9 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+8-0 DR;Data value
+;Contains the Received or Transmitted data character, depending on whether it is read from or written to.
+;The Data register performs a double function (read and write) since it is composed of two registers, one for transmission (TDR) and one for reception (RDR)
+;The TDR register provides the parallel interface between the internal bus and the output shift register (see Figure 1).
+;The RDR register provides the parallel interface between the input shift register and the internal bus.
+;When transmitting with the parity enabled (PCE bit set to 1 in the USART_CR1 register), the value written in the MSB (bit 7 or bit 8 depending on the data length) has no effect because it is replaced by the parity.
+;When receiving with the parity enabled, the value read in the MSB bit is the received parity bit.
+
+USART_BRR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-4 DIV_Mantissa;mantissaofUSARTDIV
+;These 12 bits define the mantissa of the USART Divider (USARTDIV)
+3-0 DIV_Fraction;fraction of USART DIV
+;These 4 bits define the fraction of the USART Divider (USARTDIV)
+
+USART_CR1 field descriptions;
+31-14 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+13 UE;USART enable
+;When this bit is cleared the USART prescalers and outputs are stopped and the end of the current byte transfer in order to reduce power consumption. This bit is set and cleared by software. 
+;0; USART prescaler and outputs disabled
+;1; USART enabled
+12 M;Word length
+;This bit determines the word length. It is set or cleared by software. 
+;0; 1 Start bit, 8 Data bits, n Stop bit
+;1; 1 Start bit, 9 Data bits, n Stop bit
+;Note; The M bit must not be modified during a data transfer (both transmission and reception)
+11 WAKE;Wakeup method
+;This bit determines the USART wakeup method, it is set or cleared by software. 
+;0; Idle Line
+;1; Address Mark
+10 PCE;Parity control enable
+;This bit selects the hardware parity control (generation and detection). When the parity control is enabled, the computed parity is inserted at the MSB position (9th bit if M=1; 8th bit if M=0) and parity is checked on the received data. This bit is set and cleared by software. Once it is set, PCE is active after the current byte (in reception and in transmission).
+;0; Parity control disabled
+;1; Parity control enabled
+9 PS;Parity selection
+;This bit selects the odd or even parity when the parity generation/detection is enabled (PCE bit set). It is set and cleared by software. The parity will be selected after the current byte. 
+;0; Even parity
+;1; Odd parity
+8 PEIE;PE interrupt enable
+;This bit is set and cleared by software.
+;0; Interrupt is inhibited
+;1; A USART interrupt is generated whenever PE=1 in the USART_SR register
+7 TXEIE;TXE interrupt enable
+;This bit is set and cleared by software.
+;0; Interrupt is inhibited
+;1; A USART interrupt is generated whenever TXE=1 in the USART_SR register
+6 TCIE;Transmission complete interrupt enable
+;This bit is set and cleared by software.
+;0; Interrupt is inhibited
+;1; A USART interrupt is generated whenever TC=1 in the USART_SR register
+5 RXNEIE;RXNE interrupt enable
+;This bit is set and cleared by software.
+;0; Interrupt is inhibited
+;1; A USART interrupt is generated whenever ORE=1 or RXNE=1 in the USART_SR register
+4 IDLEIE;IDLE interrupt enable
+;This bit is set and cleared by software.
+;0; Interrupt is inhibited
+;1; A USART interrupt is generated whenever IDLE=1 in the USART_SR register
+3 TE;Transmitter enable
+;This bit enables the transmitter. It is set and cleared by software. 
+;0; Transmitter is disabled
+;1; Transmitter is enabled
+;2; When TE is set there is a 1 bit-time delay before the transmission starts.
+;Note: 1: During transmission, a “0” pulse on the TE bit (“0” followed by “1”) sends a preamble (idle line) after the current word, except in Smartcard mode.
+;2 RE;Receiver enable
+;This bit enables the receiver. It is set and cleared by software. 
+;0; Receiver is disabled
+;1; Receiver is enabled and begins searching for a start bit
+1 RWU;Receiver wakeup
+;This bit determines if the USART is in mute mode or not. It is set and cleared by software and can be cleared by hardware when a wakeup sequence is recognized.
+;0; Receiver in active mode
+;1; Receiver in mute mode
+;Note: 1: Before selecting Mute mode (by setting the RWU bit) the USART must first receive a data byte, otherwise it cannot function in Mute mode with wakeup by Idle line detection. 2; In Address Mark Detection wakeup configuration (WAKE bit=1) the RWU bit cannot be modified by software while the RXNE bit is set.
+0 SBK;Send break
+;This bit set is used to send break characters. It can be set and cleared by software. It should be set by software, and will be reset by hardware during the stop bit of break.
+;0; No break character is transmitted
+;1; Break character will be transmitted
+
+USART_CR2 field descriptions;
+31-15 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+14 LINEN;LIN mode enable
+;This bit is set and cleared by software.
+;0; LIN mode disabled
+;1; LIN mode enabled
+;The LIN mode enables the capability to send LIN Synch Breaks (13 low bits) using the SBK bit in the USART_CR1 register, and to detect LIN Sync breaks.
+13-12 STOP;STOP bits
+;These bits are used for programming the stop bits.
+;00; 1 Stop bit
+;01; 0.5 Stop bit
+;10; 2 Stop bits
+;11; 1.5 Stop bit
+;The 0.5 Stop bit and 1.5 Stop bit are not available for USART4 & USART5.
+11 CLKEN;Clock enable
+;This bit allows the user to enable the CK pin. 
+;0; CK pin disabled
+;1; CK pin enabled
+;This bit is not available for USART4 & USART5.
+10 CPOL;Clock polarity
+;This bit allows the user to select the polarity of the clock output on the CK pin in synchronous mode. It works in conjunction with the CPHA bit to produce the desired clock/data relationship
+;0; Steady low value on CK pin outside transmission window.
+;1; Steady high value on CK pin outside transmission window. This bit is not available for USART4 & USART5.
+9 CPHA;Clock phase
+;This bit allows the user to select the phase of the clock output on the CK pin in synchronous mode. It works in conjunction with the CPOL bit to produce the desired clock/data relationship (see figures 290 to 291)
+;0; The first clock transition is the first data capture edge.
+;1; The second clock transition is the first data capture edge. 
+;This bit is not available for USART4 & USART5.
+8 LBCL;Last bit clock pulse
+;This bit allows the user to select whether the clock pulse associated with the last data bit transmitted (MSB) has to be output on the CK pin in synchronous mode.
+;0; The clock pulse of the last data bit is not output to the CK pin
+;1; The clock pulse of the last data bit is output to the CK pin
+;The last bit is the 8th or 9th data bit transmitted depending on the 8 or 9 bit format selected by the M bit in the USART_CR1 register.
+;This bit is not available for USART4 & USART5.
+7 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+6 LBDIE;LIN break detection interrupt enable
+;Break interrupt mask (break detection using break delimiter).
+;0; Interrupt is inhibited
+;1; An interrupt is generated whenever LBD=1 in the USART_SR register
+5 LBDL;linbreakdetectionlength
+;This bit is for selection between 11 bit or 10 bit break detection. 
+;0; 10 bit break detection
+;1; 11 bit break detection
+4 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+3-0 ADD;AddressoftheUSARTnode
+;This bit-field gives the address of the USART node.
+;This is used in multiprocessor communication during mute mode, for wake up with address mark detection.
+
+USART_CR3 field descriptions;
+31-11 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+10 CTSIE;CTS interrupt enable
+;0; Interrupt is inhibited
+;1; An interrupt is generated whenever CTS=1 in the USART_SR register 
+;This bit is not available for USART4 & USART5.
+9 CTSE;CTS enable
+;0; CTS hardware flow control disabled
+;1; CTS mode enabled, data is only transmitted when the CTS input is asserted (tied to 0). If the CTS input is deasserted while a data is being transmitted, then the transmission is completed before stopping. If a data is written into the data register while CTS is deasserted, the transmission is postponed until CTS is asserted.
+;This bit is not available for USART4 & USART5.
+8 RTSE;RTS enable
+;0; RTS hardware flow control disabled
+;1; RTS interrupt enabled, data is only requested when there is space in the receive buffer. The transmission of data is expected to cease after the current character has been transmitted. The RTS output is asserted (tied to 0) when a data can be received.
+;This bit is not available for USART4 & USART5.
+7 DMAT;DMA interrupt enable transmitter 
+;This bit is set/reset by software
+;1; DMA mode is enabled for transmission 
+;0; DMA mode is disabled for transmission 
+;This bit is not available for USART5.
+6 DMAR;DMA interrupt enable receiver 
+;This bit is set/reset by software
+;1; DMA mode is enabled for reception 
+;0; DMA mode is disabled for reception This bit is not available for USART5.
+5 SCEN;Smartcardmodeenable
+;This bit is used for enabling Smartcard mode. 
+;0; Smartcard Mode disabled
+;1; Smartcard Mode enabled
+;This bit is not available for USART4 & USART5.
+4 NACK;Smart card NACK enable
+;0; NACK transmission in case of parity error is disabled 
+;1; NACK transmission during parity error is enabled This bit is not available for USART4 & USART5.
+3 HDSEL;Half-duplexselection
+;Selection of Single-wire Half-duplex mode
+;0; Half duplex mode is not selected 
+;1; Half duplex mode is selected
+2 IRLP;IrDAlow-power
+;This bit is used for selecting between normal and low-power IrDA modes
+;0; Normal mode
+;1; Low-power mode
+1 IREN;IrDAmodeenable
+;This bit is set and cleared by software. 
+;0; IrDA disabled
+;1; IrDA enabled
+0 EIE;Error interrupt enable
+;Error Interrupt Enable Bit is required to enable interrupt generation in case of a framing error, overrun error or noise error (FE=1 or ORE=1 or NE=1 in the USART_SR register) in case of Multi Buffer Communication (DMAR=1 in the USART_CR3 register).
+;0; Interrupt is inhibited
+;1; An interrupt is generated whenever DMAR=1 in the USART_CR3 register and FE=1 or ORE=1 or NE=1 in the USART_SR register.
+
+USART_GTPR field descriptions;
+31-16 Reserved;This field is reserved.
+;This read-only field is reserved and always has the value 0.
+15-8 GT;Guardtimevalue
+;This bit-field gives the Guard time value in terms of number of baud clocks.
+;This is used in Smartcard mode. The Transmission Complete flag is set after this guard time value.
+;This bit is not available for USART4 & USART5.
+7-0 PSC;Prescalervalue

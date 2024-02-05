@@ -1,0 +1,20 @@
+0x40003000;Key register (IWDG_KR);32;W;0h;
+0x40003004;Prescaler register (IWDG_PR);32;R/W;0h;
+0x40003008;Reload register (IWDG_RLR);32;R/W;0h;
+0x4000300C;Status register (IWDG_SR);32;R;0h;
+
+IWDG_KR field descriptions;
+15-0 KEY;Keyvalue(writeonly,read0000h)
+
+IWDG_PR field descriptions;
+2-0 PR;Prescalerdivider
+
+IWDG_RLR field descriptions;
+11-0 RL;Watchdog counter reload value
+
+IWDG_SR field descriptions;
+1 RVU;Watchdog counter reload value update
+;This bit is set by hardware to indicate that an update of the reload value is ongoing. It is reset by hardware when the reload value update operation is completed in the VDD voltage domain (takes up to 5 RC 40 kHz cycles).
+;Reload value can be updated only when RVU bit is reset.
+0 PVU;Watchdogprescalervalueupdate
+;This bit is set by hardware to indicate that an update of the prescaler value is ongoing. It is reset by hardware when the prescaler update operation is completed in the VDD voltage domain (takes up to 5 RC 40 kHz cycles).

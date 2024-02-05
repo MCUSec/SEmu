@@ -1,0 +1,580 @@
+0x40021000;Clock control register (RCC_CR);32;R/W;83h;
+0x40021004;Clock configuration register (RCC_CFGR);32;R/W;0h;
+0x40021008;Clock interrupt register (RCC_CIR);32;R/W;0h;
+0x4002100C;APB2 peripheral reset register (RCC_APB2RSTR);32;R/W;0h;
+0x40021010;APB1 peripheral reset register (RCC_APB1RSTR);32;R/W;0h;
+0x40021014;AHB Peripheral Clock enable register (RCC_AHBENR);32;R/W;14h;
+0x40021018;APB2 peripheral clock enable register (RCC_APB2ENR);32;R/W;0h;
+0x4002101C;APB1 peripheral clock enable register (RCC_APB1ENR);32;R/W;0h;
+0x40021020;Backup domain control register (RCC_BDCR);32;R/W;0h;
+0x40021024;Control/status register (RCC_CSR);32;R/W;0x0C000000;
+0x40021028;AHB peripheral clock reset register (RCC_AHBRSTR);32;R/W;0h;
+0x4002102C;Clock configuration register2 (RCC_CFGR2);32;R/W;0h;
+
+RCC_CR field descriptions;
+29 PLL3RDY;PLL3  READ ONLY
+28 PLL3ON;PLL3enable
+;Set and cleared by software to enable PLL3.
+;Cleared by hardware when entering Stop or Standby mode. 
+;0; PLL3 OFF
+;1; PLL3 ON
+27 PLL2RDY;PLL2  READ ONLY
+26 PLL2ON;PLL2enable
+;Set and cleared by software to enable PLL2.
+;Cleared by hardware when entering Stop or Standby mode. This bit can not be cleared if the PLL2 clock is used indirectly as system clock (i.e. it is used as PLL clock entry that is used as system clock).
+;0; PLL2 OFF
+;1; PLL2 ON
+25 PLLRDY;PLL clock ready flag READ ONLY
+;Set by hardware to indicate that the PLL is locked.
+;0; PLL unlocked 
+;1; PLL locked
+24 PLLON;PLL enable
+;Set and cleared by software to enable PLL.
+;Cleared by hardware when entering Stop or Standby mode. This bit can not be reset if the PLL clock is used as system clock or is selected to become the system clock. Software must disable the USB OTG FS clock before clearing this bit.
+;0; PLL OFF
+;1; PLL ON
+19 CSSON;Clocksecuritysystem enable
+;Set and cleared by software to enable the clock security system. When CSSON is set, the clock detector is enabled by hardware when the HSE oscillator is ready, and disabled by hardware if a HSE clock failure is detected.
+;0; Clock detector OFF
+;1; Clock detector ON (Clock detector ON if the HSE oscillator is ready, OFF if not)
+18 HSEBYP;Externalhigh-speedclockbypass
+;Set and cleared by software to bypass the oscillator with an external clock. The external clock must be enabled with the HSEON bit set, to be used by the device. The HSEBYP bit can be written only if the HSE oscillator is disabled.
+;0; external 3-25 MHz oscillator not bypassed
+;1; external 3-25 MHz oscillator bypassed with external clock
+17 HSERDY;Externalhigh-speed clock ready flag READ ONLY
+;Set by hardware to indicate that the HSE oscillator is stable. This bit needs 6 cycles of the HSE oscillator clock to fall down after HSEON reset.
+;0; HSE oscillator not ready
+;1; HSE oscillator ready
+16 HSEON;HSE clock enable
+;Set and cleared by software.
+;Cleared by hardware to stop the HSE oscillator when entering Stop or Standby mode. This bit cannot be reset if the HSE oscillator is used directly or indirectly as the system clock.
+;0; HSE oscillator OFF
+;1; HSE oscillator ON
+15-8 HSICAL;Internalhigh-speedclockcalibration  READ ONLY
+;These bits are initialized automatically at startup.
+7-3 HSITRIM;Internal high-speed clock trimming
+;These bits provide an additional user-programmable trimming value that is added to the HSICAL bits. It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the internal HSI RC.
+;The default value is 16, which, when added to the HSICAL value, should trim the HSI to 8 MHz ± 1%. The trimming step (Fhsitrim) is around 40 kHz between two consecutive HSICAL steps.
+1 HSIRDY;Internalhigh-speed clock ready flag READ ONLY
+;Set by hardware to indicate that internal 8 MHz RC oscillator is stable. After the HSION bit is cleared, HSIRDY goes low after 6 internal 8 MHz RC oscillator clock cycles.
+;0; Internal 8 MHz RC oscillator not ready
+;1; Internal 8 MHz RC oscillator ready
+0 HSION;Internalhigh-speed clock enable
+;Set and cleared by software.
+;Set by hardware to force the internal 8 MHz RC oscillator ON when leaving Stop or Standby mode or in case of failure of the external 3-25 MHz oscillator used directly or indirectly as system clock. This bit can not be cleared if the internal 8 MHz RC is used directly or indirectly as system clock or is selected to become the system clock.
+;0; Internal 8 MHz RC oscillator OFF 
+;1; Internal 8 MHz RC oscillator ON
+
+RCC_CFGR field descriptions;
+26-24 MCO;Microcontrollerclockoutput
+;Set and cleared by software.
+22 OTGFSPRE;USBOTGFSprescaler
+;Set and cleared by software to generate the 48 MHz USB OTG FS clock. This bit must be valid before enabling the OTG FS clock in the RCC_APB1ENR register. This bit can not be cleared if the OTG FS clock is enabled.
+;0; PLL VCO (2 × PLLCLK) clock is divided by 3 (PLL must be configured to output 72 MHz)
+;1; PLL VCO (2 × PLLCLK) clock is divided by 2 (PLL must be configured to output 48 MHz)
+21-18 PLLMUL;PLLmultiplicationfactor
+;These bits are written by software to define the PLL multiplication factor. They can be written only when PLL is disabled.
+17 PLLXTPRE;LSBofdivisionfactorPREDIV1
+16 PLLSRC;PLLentryclocksource
+15-14 ADCPRE;ADCprescaler
+13-11 PPRE2;APBhigh-speedprescaler(APB2)
+;Set and cleared by software to control the division factor of the APB High speed clock (PCLK2).
+10-8 PPRE1;APBLow-speedprescaler(APB1)
+7-4 HPRE;AHBprescaler
+;Set and cleared by software to control the division factor of the AHB clock.
+3-2 SWS;System clock switch status READ ONLY
+1-0 SW;SystemclockSwitch
+;Set and cleared by software to select SYSCLK source.
+;Set by hardware to force HSI selection when leaving Stop and Standby mode or in case of failure of the HSE oscillator used directly or indirectly as system clock (if the Clock Security System is enabled).
+
+RCC_CIR field descriptions;
+23 CSSC;Clocksecuritysystem interrupt clear WRITE ONLY
+;SWS indicates the value in SW.
+;HSIRDY indicates the value in HSION.
+;HSERDY indicates the value in HSEON.
+;PLLRDY indicates the value in PLLON.
+;PLLI2SRDY indicates the value in PLLI2SON.
+;PLLSAIRDY indicates the value in PLLSAION.
+;This bit is set by software to clear the CSSF flag.
+;0; No effect
+;1; Clear CSSF flag
+22 PLLRDYC;PLLReady interrupt clear WRITE ONLY
+;This bit is set by software to clear the PLLRDYC flag.
+;0; No effect
+;1; Clear PLLRDYF flag
+21 PLL2RDYC;PLL2Ready interrupt clear WRITE ONLY
+;This bit is set by software to clear the PLL2RDYF flag.
+;0; No effect
+;1; Clear PLL2RDYF flag
+20 PLLRDYC;PLLready interrupt clear WRITE ONLY
+;This bit is set by software to clear the PLLRDYF flag.
+;0; No effect
+;1; Clear PLLRDYF flag
+19 HSERDYC;HSEready interrupt clear WRITE ONLY
+;This bit is set by software to clear the HSERDYF flag.
+;0; No effect
+;1; Clear HSERDYF flag
+18 HSIRDYC;HSIready interrupt clear WRITE ONLY
+;This bit is set by software to clear the HSIRDYF flag.
+;0; No effect
+;1; Clear HSIRDYF flag
+17 LSERDYC;LSEready interrupt clear WRITE ONLY
+;This bit is set by software to clear the LSERDYF flag.
+;0; No effect
+;1; Clear LSERDYF flag
+16 LSIRDYC;LSIready interrupt clear WRITE ONLY
+;This bit is set by software to clear the LSIRDYF flag.
+;0; No effect
+;1; Clear LSIRDYF flag
+12 PLLRDYIE;PLL ready interrupt enable
+;Set and cleared by software to enable/disable interrupt caused by PLL lock. 
+;0; PLL lock interrupt disabled
+;1; PLL lock interrupt enabled
+11 HSERDYIE;HSE ready interrupt enable
+;Set and cleared by software to enable/disable interrupt caused by the external 3-25 MHz oscillator stabilization.
+;0; HSE ready interrupt disabled
+;1; HSE ready interrupt enabled
+10 HSIRDYIE;HSI ready interrupt enable
+;Set and cleared by software to enable/disable interrupt caused by the internal 8 MHz RC oscillator stabilization.
+;0; HSI ready interrupt disabled
+;1; HSI ready interrupt enabled
+9 LSERDYIE;LSE ready interrupt enable
+;Set and cleared by software to enable/disable interrupt caused by the external 32;kHz oscillator stabilization.
+;0; LSE ready interrupt disabled
+;1; LSE ready interrupt enabled
+8 LSIRDYIE;LSI ready interrupt enable
+;Set and cleared by software to enable/disable interrupt caused by internal RC 40 kHz oscillator stabilization.
+;0; LSI ready interrupt disabled
+;1; LSI ready interrupt enabled
+7 CSSF;Clocksecuritysystem interrupt flag READ ONLY
+;Set by hardware when a failure is detected in the external 3-25 MHz oscillator. It is cleared by software setting the CSSC bit.
+;0; No clock security interrupt caused by HSE clock failure
+;1; Clock security interrupt caused by HSE clock failure
+6 PLLRDYF;PLL ready interrupt flag READ ONLY
+;Set by hardware when the PLL locks and PLLRDYIE is set. It is cleared by software setting the PLLRDYC bit.
+;0; No clock ready interrupt caused by PLL lock
+;1; Clock ready interrupt caused by PLL lock
+5 PLL2RDYF;PLL2 ready interrupt flag READ ONLY
+;Set by hardware when the PLL2 locks and PLL2RDYDIE is set. It is cleared by software setting the PLL2RDYC bit.
+;0; No clock ready interrupt caused by PLL2 lock
+;1; Clock ready interrupt caused by PLL2 lock
+4 PLLRDYF;PLL ready interrupt flag READ ONLY
+;Set by hardware when the PLL locks and PLLRDYDIE is set. It is cleared by software setting the PLLRDYC bit.
+;0; No clock ready interrupt caused by PLL lock
+;1; Clock ready interrupt caused by PLL lock
+3 HSERDYF;HSE ready interrupt flag READ ONLY
+;Set by hardware when External High Speed clock becomes stable and HSERDYIE is set. It is cleared by software setting the HSERDYC bit.
+;0; No clock ready interrupt caused by the external 3-25 MHz oscillator
+;1; Clock ready interrupt caused by the external 3-25 MHz oscillator
+2 HSIRDYF;HSI ready interrupt flag READ ONLY
+;Set by hardware when the Internal High Speed clock becomes stable and HSIRDYIE is set. It is cleared by software setting the HSIRDYC bit.
+;0; No clock ready interrupt caused by the internal 8 MHz RC oscillator
+;1; Clock ready interrupt caused by the internal 8 MHz RC oscillator
+1 LSERDYF;LSE ready interrupt flag READ ONLY
+;Set by hardware when the External Low Speed clock becomes stable and LSERDYIE is set. It is cleared by software setting the LSERDYC bit.
+;0; No clock ready interrupt caused by the external 32;kHz oscillator
+;1; Clock ready interrupt caused by the external 32;kHz oscillator
+0 LSIRDYF;LSI ready interrupt flag READ ONLY
+;Set by hardware when Internal Low Speed clock becomes stable and LSIRDYIE is set. It is cleared by software setting the LSIRDYC bit.
+;0; No clock ready interrupt caused by the internal RC 40 kHz oscillator
+;1; Clock ready interrupt caused by the internal RC 40 kHz oscillator
+
+RCC_APB2RSTR field descriptions;
+21 TIM11RST;TIM11timerreset Set and cleared by software.
+;0; No effect
+;1; Reset TIM11 timer
+20 TIM10RST;TIM10timerreset Set and cleared by software.
+;0; No effect
+;1; Reset TIM10 timer
+19 TIM9RST;TIM9timerreset Set and cleared by software.
+;0; No effect
+;1; Reset TIM9 timer
+15 ADC3RST;ADC3interfacereset Set and cleared by software.
+;0; No effect
+;1; Reset ADC3 interface
+14 USART1RST;USART1 reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset USART1
+13 TIM8RST;TIM8timerreset 
+;Set and cleared by software.
+;0; No effect
+;1; Reset TIM8 timer
+12 SPI1RST;SPI1 reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset SPI 1
+11 TIM1RST;TIM1timer reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset TIM1 timer
+10 ADC2RST;ADC2interface reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset ADC 2 interface
+9 ADC1RST;ADC1interface reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset ADC 1 interface
+6 IOPERST;I/O port E reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset I/O port E
+5 IOPDRST;I/O port D reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset I/O port D
+4 IOPCRST;IO port C reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset I/O port C
+3 IOPBRST;IO port B reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset I/O port B
+2 IOPARST;I/O port A reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset I/O port A
+0 AFIORST;AlternatefunctionI/O reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset Alternate Function
+
+RCC_APB1RSTR field descriptions;
+29 DACRST;DACinterface reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset DAC interface
+28 PWRRST;Powerinterface reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset power interface
+27 BKPRST;Backupinterface reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset backup interface
+26 CAN2RST;CAN2 reset
+;Set and cleared by software. 
+;0; No effect
+;0; Reset CAN2
+25 CANRST;CAN reset
+;Set and cleared by software. 
+;0; No effect
+;0; Reset CAN
+22 I2C2RST; I2C 2  reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset I2C 2
+21 I2C1RST;I2C1 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset I2C 1
+20 UART5RST;USART5 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset USART 5
+19 UART4RST;USART4 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset USART 4
+18 USART3RST;USART3 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset USART 3
+17 USART2RST;USART2 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset USART 2
+15 SPI3RST; SPI3  reset
+;Set and cleared by software. 
+;0; No effect
+;0; Reset SPI 3
+14 SPI2RST; SPI2  reset
+;Set and cleared by software. 
+;0; No effect
+;0; Reset SPI2
+11 WWDGRST;Windowwatchdog reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset window watchdog
+5 TIM7RST;Timer7 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset timer 7
+4 TIM6RST;Timer6 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset timer 6
+3 TIM5RST;Timer5 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset timer 5
+2 TIM4RST;Timer4 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset timer 4
+1 TIM3RST;Timer3 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset timer 3
+0 TIM2RST;Timer2 reset
+;Set and cleared by software.
+;0; No effect
+;0; Reset timer 2
+
+RCC_AHBENR field descriptions;
+10 SDIOEN;SDIOclockenable
+;Set and cleared by software. 
+;0; SDIO clock disabled
+;1; SDIO clock enabled
+8 FSMCEN;FSMCclockenable 
+;Set and cleared by software. 
+;0; FSMC clock disabled
+;1; FSMC clock enabled
+6 CRCEN;CRCclock enable 
+;Set and cleared by software.
+4 FLITFEN;FLITF clock enable
+;Set and cleared by software to disable/enable FLITF clock during sleep mode.
+2 SRAMEN;SRAMinterfaceclock enable
+;Set and cleared by software to disable/enable SRAM interface clock during Sleep mode. 
+1 DMA2EN;DMA2clock enable 
+;Set and cleared by software.
+;0; DMA2 clock disabled 
+;1; DMA2 clock enabled
+0 DMA1EN;DMA1clock enable 
+;Set and cleared by software.
+;0; DMA1 clock disabled 
+;1; DMA1 clock enabled
+
+RCC_APB2ENR field descriptions;
+21 TIM11EN;TIM11timerclockenable
+;Set and cleared by software.
+;0; TIM11 timer clock disabled
+;1; TIM11 timer clock enabled
+20 TIM10EN;TIM10timerclockenable
+;Set and cleared by software.
+;0; TIM10 timer clock disabled
+;1; TIM10 timer clock enabled
+19 TIM9EN;TIM0timerclockenable
+;Set and cleared by software.
+;0; TIM9 timer clock disabled
+;1; TIM9 timer clock enabled
+15 ADC3EN;ADC3interfaceclockenable 
+;Set and cleared by software.
+;0; ADC3 interface clock disabled 
+;1; ADC3 interface clock enabled
+14 USART1EN;USART1 clock enable
+;Set and cleared by software.
+;0; USART1 clock disabled
+;1; USART1 clock enabled
+12 SPI1EN;SPI1 clock enable
+;Set and cleared by software. 
+;0; SPI 1 clock disabled
+;1; SPI 1 clock enabled
+11 TIM1EN;TIM1 Timer clock enable
+;Set and cleared by software.
+;0; TIM1 timer clock disabled
+;1; TIM1 timer clock enabled
+10 ADC2EN;ADC2 interface clock enable
+;Set and cleared by software.
+;0; ADC 2 interface clock disabled
+;1; ADC 2 interface clock enabled
+9 ADC1EN;ADC1 interface clock enable
+;Set and cleared by software.
+;0; ADC 1 interface disabled
+;1; ADC 1 interface clock enabled
+5 IOPDEN;I/O port D clock enable
+;Set and cleared by software. 
+;0; I/O port D clock disabled
+;1; I/O port D clock enabled
+4 IOPCEN;I/O port C clock enable
+;Set and cleared by software. 
+;0; I/O port C clock disabled 
+;1;I/O port C clock enabled
+3 IOPBEN;I/O port B clock enable
+;Set and cleared by software.
+;0; I/O port B clock disabled 
+;1;I/O port B clock enabled
+2 IOPAEN;I/O port A clock enable
+;Set and cleared by software.
+;0; I/O port A clock disabled 
+;1;I/O port A clock enabled
+0 AFIOEN;AlternatefunctionI/O clock enable
+;Set and cleared by software.
+;0; Alternate Function I/O clock disabled 
+;1; Alternate Function I/O clock enabled
+
+RCC_APB1ENR field descriptions;
+29 DACEN;DACinterface clock enable
+;Set and cleared by software.
+;0; DAC interface clock disabled
+;1; DAC interface clock enable
+28 PWREN;Powerinterface clock enable
+;Set and cleared by software.
+;0; Power interface clock disabled
+;1; Power interface clock enable
+27 BKPEN;Backupinterface clock enable
+;Set and cleared by software.
+;0; Backup interface clock disabled
+;1; Backup interface clock enabled
+25 CANEN;CAN clock enable
+;Set and cleared by software. 
+;0; CAN clock disabled
+;1; CAN clock enabled
+22 I2C2EN;I2C2 clock enable
+;Set and cleared by software. 
+;0; I2C 2 clock disabled
+;1; I2C 2 clock enabled
+21 I2C1EN;I2C1 clock enable
+;Set and cleared by software. 
+;0; I2C 1 clock disabled
+;1; I2C 1 clock enabled
+20 UART5EN;USART5 clock enable
+;Set and cleared by software.
+;0; USART 5 clock disabled
+;1; USART 5 clock enabled
+19 UART4EN;USART4 clock enable
+;Set and cleared by software.
+;0; USART 4 clock disabled
+;1; USART 4 clock enabled
+18 USART3EN;USART3 clock enable
+;Set and cleared by software.
+;0; USART 3 clock disabled
+;1; USART 3 clock enabled
+17 USART2EN;USART2 clock enable
+;Set and cleared by software.
+;0; USART 2 clock disabled
+;1; USART 2 clock enabled
+15 SPI3EN;SPI3 clock enable
+;Set and cleared by software. 
+;0; SPI 3 clock disabled
+;1; SPI 3 clock enabled
+14 SPI2EN;SPI2 clock enable
+;Set and cleared by software. 
+;0; SPI 2 clock disabled
+;1; SPI 2 clock enabled
+11 WWDGEN;Windowwatchdog clock enable
+;Set and cleared by software.
+;0; Window watchdog clock disabled
+;1; Window watchdog clock enabled
+5 TIM7EN;Timer7 clock enable
+;Set and cleared by software. 
+;0; Timer 7 clock disabled
+;1; Timer 7 clock enabled
+4 TIM6EN;Timer6 clock enable
+;Set and cleared by software. 
+;0; Timer 6 clock disabled
+;1; Timer 6 clock enabled
+3 TIM5EN;Timer5 clock enable
+;Set and cleared by software.
+;0; Timer 5 clock disabled 
+;1; Timer 5 clock enabled
+2 TIM4EN;Timer4 clock enable
+;Set and cleared by software.
+;0; Timer 4 clock disabled 
+;1; Timer 4 clock enabled
+1 TIM3EN;Timer3 clock enable
+;Set and cleared by software.
+;0; Timer 3 clock disabled 
+;1; Timer 3 clock enabled
+0 TIM2EN;Timer2 clock enable
+;Set and cleared by software.
+;0; Timer 2 clock disabled 
+;1; Timer 2 clock enabled
+
+RCC_BDCR field descriptions;
+16 BDRST;Backupdomainsoftware reset
+;Set and cleared by software.
+;0; Reset not activated
+;1; Resets the entire Backup domain
+15 RTCEN;RTC clock enable
+;Set and cleared by software.
+;0; RTC clock disabled 
+;1; RTC clock enabled
+9-8 RTCSEL;RTCclocksourceselection
+;Set by software to select the clock source for the RTC. Once the RTC clock source has been selected, it cannot be changed anymore unless the Backup domain is reset. The BDRST bit can be used to reset the RTCSEL bits.
+;00; No clock
+;01; LSE oscillator clock used as RTC clock
+;10; LSI oscillator clock used as RTC clock
+;11; HSE oscillator clock divided by 128 used as RTC clock
+2 LSEBYP;ExternalLowSpeedoscillatorbypass
+;Set and cleared by software to bypass oscillator in debug mode. This bit can be written only when the external 32;kHz oscillator is disabled.
+;0; LSE oscillator not bypassed
+;1; LSE oscillator bypassed
+1 LSERDY;ExternalLowSpeedoscillatorready READ ONLY
+;Set and cleared by hardware to indicate when the external 32;kHz oscillator is stable. After the LSEON bit is cleared, LSERDY goes low after 6 external low speed oscillator clock cycles
+;0; External 32;kHz oscillator not ready
+;1; External 32;kHz oscillator ready
+0 LSEON;ExternalLowSpeedoscillatorenable
+;Set and cleared by software.
+;0; External 32;kHz oscillator OFF 
+;1; External 32;kHz oscillator ON
+
+RCC_CSR field descriptions;
+31 LPWRRSTF;Low-power reset flag
+;Set by hardware when a Low-power management reset occurs. It is cleared by writing to the RMVF bit.
+30 WWDGRSTF;Windowwatchdog reset flag
+;Set by hardware when a window watchdog reset occurs. It is cleared by writing to the RMVF bit.
+;0; No window watchdog reset occurred
+;1; Window watchdog reset occurred
+29 IWDGRSTF;Independentwatchdog reset flag
+;Set by hardware when an independent watchdog reset from VDD domain occurs. It is cleared by writing to the RMVF bit.
+;0; No watchdog reset occurred
+;1; Watchdog reset occurred
+28 SFTRSTF;Software reset flag
+;Set by hardware when a software reset occurs. It is cleared by writing to the RMVF bit. 
+;0; No software reset occurred
+;1; Software reset occurred
+27 PORRSTF;POR/PDR reset flag
+;Set by hardware when a POR/PDR reset occurs. It is cleared by writing to the RMVF bit. 
+;0; No POR/PDR reset occurred
+;1; POR/PDR reset occurred
+26 PINRSTF;PIN reset flag
+;Set by hardware when a reset from the NRST pin occurs. It is cleared by writing to the RMVF bit.
+;0; No reset from NRST pin occurred
+;1; Reset from NRST pin occurred
+24 RMVF;Remove reset flag
+;Set by software to clear the reset flags. 
+;0; No effect
+;1; Clear the reset flags
+1 LSIRDY;Internallowspeedoscillatorready READ ONLY
+;Set and cleared by hardware to indicate when the internal RC 40 kHz oscillator is stable. After the LSION bit is cleared, LSIRDY goes low after 3 internal 40 kHz RC oscillator clock cycles.
+;0; Internal RC 40 kHz oscillator not ready
+;1; Internal RC 40 kHz oscillator ready
+0 LSION;Internallowspeedoscillatorenable 
+;Set and cleared by software.
+;0; Internal RC 40 kHz oscillator OFF 
+;1; Internal RC 40 kHz oscillator ON
+
+RCC_AHBRSTR field descriptions;
+14 ETHMACRST;EthernetMAC reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset ETHERNET MAC
+12 OTGFSRST;USBOTGFS reset
+;Set and cleared by software.
+;0; No effect
+;1; Reset USB OTG FS
+
+RCC_CFGR2 field descriptions;
+18 I2S3SRC;I2S3clocksource
+;Set and cleared by software to select I2S3 clock source. This bit must be valid before enabling I2S3 clock.
+;0; System clock (SYSCLK) selected as I2S3 clock entry
+;1; PLL VCO clock selected as I2S3 clock entry
+17 I2S2SRC;I2S2clocksource
+;Set and cleared by software to select I2S2 clock source. This bit must be valid before enabling I2S2 clock.
+;0; System clock (SYSCLK) selected as I2S2 clock entry
+;1; PLL VCO clock selected as I2S2 clock entry
+16 PREDIV1SRC;PREDIV1entryclocksource
+;Set and cleared by software to select PREDIV1 clock source. This bit can be written only when PLL is disabled.
+;0; HSE oscillator clock selected as PREDIV1 clock entry
+;1; PLL2 selected as PREDIV1 clock entry
+15-12 PLLMUL;PLLMultiplicationFactor
+;Set and cleared by software to control PLL multiplication factor. These bits can be written only when PLL is disabled.
+11-8 PLL2MUL;PLL2MultiplicationFactor
+;Set and cleared by software to control PLL2 multiplication factor. These bits can be written only when PLL2 is disabled.
+7-4 PREDIV2;PREDIV2divisionfactor
+;Set and cleared by software to select PREDIV2 division factor. These bits can be written only when both PLL2 and PLL are disabled.
+3-0 PREDIV1;PREDIV1divisionfactor
+;Set and cleared by software to select PREDIV1 division factor. These bits can be written only when PLL is disabled.

@@ -1,0 +1,63 @@
+0x0000_0040;0;7;0;0;WWDG;Window watchdog interrupt
+0x0000_0044;1;8;0;0;PVD;PVD through EXTI Line detection interrupt
+0x0000_0048;2;9;0;0;TAMPER;Tamper interrupt
+0x0000_004C;3;10;0;0;RTC;RTC global interrupt
+0x0000_0050;4;11;0;0;FLASH;Flash global interrupt
+0x0000_0054;5;12;0;0;RCC;RCC global interrupt
+0x0000_0058;6;13;0;0;EXTI0;EXTI Line0 interrupt
+0x0000_005C;7;14;0;0;EXTI1;EXTI Line1 interrupt
+0x0000_0060;8;15;0;0;EXTI2;EXTI Line2 interrupt
+0x0000_0064;9;16;0;0;EXTI3;EXTI Line3 interrupt
+0x0000_0068;10;17;0;0;EXTI4;EXTI Line4 interrupt
+0x0000_006C;11;18;0;0;DMA1_Channel1;DMA1 Channel1 global interrupt
+0x0000_0070;12;19;0;0;DMA1_Channel2;DMA1 Channel2 global interrupt
+0x0000_0074;13;20;0;0;DMA1_Channel3;DMA1 Channel3 global interrupt
+0x0000_0078;14;21;0;0;DMA1_Channel4;DMA1 Channel4 global interrupt
+0x0000_007C;15;22;0;0;DMA1_Channel5;DMA1 Channel5 global interrupt
+0x0000_0080;16;23;0;0;DMA1_Channel6;DMA1 Channel6 global interrupt
+0x0000_0084;17;24;0;0;DMA1_Channel7;DMA1 Channel7 global interrupt
+0x0000_0088;18;25;0;0;ADC1;ADC1 and ADC2 global interrupt
+0x0000_0088;18;25;0;0;ADC2;ADC1 and ADC2 global interrupt
+0x0000_008C;19;26;0;0;USB_HP_CAN_TX;USB High Priority or CAN TX interrupt
+0x0000_0090;20;27;0;0;USB_LP_CAN_RX0;USB Low Priority or CAN RX0 interrupt
+0x0000_0094;21;28;0;0;FDCAN1_IT0;CAN RX1 interrupt
+0x0000_0098;22;29;0;0;FDCAN1_IT1;CAN SCE interrupt
+0x0000_009C;23;30;0;0;EXTI9_5;EXTI Line[9:5] interrupt
+0x0000_00A0;24;31;0;0;TIM1_BRK;TIM1 Break interrupt
+0x0000_00A4;25;32;0;0;TIM1_UP;TIM1 Update interrupt
+0x0000_00A8;26;33;0;0;TIM1_TRG_COM;TIM1 Trigger and Commutation interrupt
+0x0000_00AC;27;34;0;0;TIM1_CC;TIM1 Capture Compare interrupt
+0x0000_00B0;28;35;0;0;TIM2;TIM2 global interrupt
+0x0000_00B4;29;36;0;0;TIM3;TIM3 global interrupt
+0x0000_00B8;30;37;0;0;TIM4;TIM4 global interrupt
+0x0000_00BC;31;38;0;0;I2C1_EV;I2C1 event interrupt
+0x0000_00C0;32;39;0;0;I2C1_ER;I2C1 error interrupt
+0x0000_00C4;33;40;0;0;I2C2_EV;I2C2 event interrupt
+0x0000_00C8;34;41;0;0;I2C2_ER;I2C2 error interrupt
+0x0000_00CC;35;42;0;0;SPI1;SPI1 global interrupt
+0x0000_00D0;36;43;0;0;SPI2;SPI2 global interrupt
+0x0000_00D4;37;44;0;0;USART1;USART1 global interrupt;
+0x0000_00D8;38;45;0;0;USART2;USART2 global interrupt;
+0x0000_00DC;39;46;0;0;USART3;USART3 global interrupt;
+0x0000_00E0;40;47;0;0;EXTI15_10;EXTI Line[15:10] interrupt
+0x0000_00E4;41;48;0;0;RTCAlarm;RTC alarm through EXTI line interrupt
+0x0000_00E8;42;49;0;0;USBWakeup;USB wakeup from suspend through EXTI line interrupt;
+0x0000_00EC;43;50;0;0;TIM8_BRK;TIM8 Break interrupt;
+0x0000_00F0;44;51;0;0;TIM8_UP;TIM8 Update interrupt;
+0x0000_00F4;45;52;0;0;TIM8_TRG_COM;TIM8 Trigger and Commutation interrupt;
+0x0000_00F8;46;53;0;0;TIM8_CC;TIM8 Capture Compare interrupt;
+0x0000_00FC;47;54;0;0;ADC3;ADC3 global interrupt;
+0x0000_0100;48;55;0;0;FSMC;FSMC global interrupt;
+0x0000_0104;49;56;0;0;LPTIM1;LPTIM1 global interrupt;
+0x0000_0108;50;57;0;0;TIM5;TIM5 global interrupt;
+0x0000_010C;51;58;0;0;SPI3;SPI3 global interrupt;
+0x0000_0110;52;59;0;0;USART4;USART4 global interrupt;
+0x0000_0114;53;60;0;0;USART5;USART5 global interrupt;
+0x0000_0118;54;61;0;0;TIM6;TIM6 global interrupt;
+0x0000_011C;55;62;0;0;TIM7;TIM7 global interrupt;
+0x0000_0120;56;63;0;0;DMA2_Channel1;DMA2 Channel1 global interrupt;
+0x0000_0124;57;64;0;0;DMA2_Channel2;DMA2 Channel2 global interrupt;
+0x0000_0128;58;65;0;0;DMA2_Channel3;DMA2 Channel3 global interrupt;
+0x0000_012C;59;66;0;0;DMA2_Channel4;DMA2 Channel4 and DMA2 Channel5 global interrupt;
+0x0000_012C;59;66;0;0;DMA2_Channel5;DMA2 Channel4 and DMA2 Channel5 global interrupt;
+0x0000_0134;61;68;0;0;ETH;Ethernet global interrupt
