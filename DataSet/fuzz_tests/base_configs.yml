@@ -46,6 +46,18 @@ f429/LwIP_TCP_Echo_Server/LwIP_TCP_Echo_Server.elf:
   - 0x8000D0C # "the start point of loop in main"
   systick_reload: 500 # there is a random eth start, check depends on systick, so recommend decreasing systick interval
 
+f429/LwIP_UDP_Echo_Client/LwIP_UDP_Echo_Client.elf:
+  rules: '../../RuleExtraction/extractedRules/f429.txt'
+  fork_points: 
+  - 0x8000CBA # "the start point of loop in main"
+  systick_reload: 500 # there is a random eth start, check depends on systick, so recommend decreasing systick interval
+
+f429/LwIP_UDP_Echo_Server/LwIP_UDP_Echo_Server.elf:
+  rules: '../../RuleExtraction/extractedRules/f429.txt'
+  fork_points:
+  - 0x8000C92 # "the start point of loop in main"
+  systick_reload: 500 # there is a random eth start, check depends on systick, so recommend decreasing systick interval
+
 k64/Console/Console.elf:
   rules: '../../RuleExtraction/extractedRules/k64.txt'
   fork_points: 
