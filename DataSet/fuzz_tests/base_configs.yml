@@ -1,3 +1,11 @@
+f103/3Dprinter/uEmu.3Dprinter.elf:
+  rules: '../../RuleExtraction/extractedRules/f103.txt'
+  fork_points:
+  - 0x800303a
+  # snapshot_record_address: 0x800303a
+  handlers:
+    _Z5delaym: do_return
+
 f103/Drone/Drone.elf:
   rules: '../../RuleExtraction/extractedRules/f103.txt'
   fork_points: 
